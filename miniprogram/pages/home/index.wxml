@@ -1,2 +1,46 @@
 <!--pages/home/index.wxml-->
-<text>pages/home/index.wxml</text>
+<view class="body">
+  <view class="header">
+    <view class="warp userinfo">
+      <view bindtap="login" wx:if="{{!islogin}}" class="state">
+        <view class="text">请登录</view>
+      </view>
+      <view wx:else class="login-name">
+        <text class="text"> {{userInfo.nickName}}</text>
+        ，您好
+      </view>
+    </view>
+    <view class="dialog_box warp justify-space_between">
+      <view wx:if="{{islogin}}">
+        <view>
+          您当前的积分为 300
+        </view>
+        <view>
+          兑换记录
+        </view>
+      </view>
+      <view wx:else>
+        未登录的时候这里显示 中奖名单的滚动条 向上滚
+      </view>
+    </view>
+    <view wx:if="{{islogin}}">
+      <view>
+        <image class="arrow" src="../../images/icon-arrow.png" mode="" />
+      </view>
+      <view>
+        
+      </view>      
+    </view>
+  </view>
+  <view class="container ">
+    <view class="btn justify-space_between">
+      <view>兑换按钮</view>
+      <view class="flex">
+        <text>全部</text>
+        <image class="more" src="../../images/icon-more.png" mode="" />
+      </view>
+    </view>
+    <!--  -->
+  </view>
+  <view class="footer"></view>
+</view>
