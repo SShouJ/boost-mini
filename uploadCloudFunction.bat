@@ -1,0 +1,1 @@
+"D:\微信web开发者工具\cli.bat" cloud functions deploy --e cloud1-7ge7nl2m42cee9e9 --n quickstartFunctions --r --project "D:\桌面\Project\boost-mini" --report_first --report
