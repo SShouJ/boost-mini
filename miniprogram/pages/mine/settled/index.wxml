@@ -1,0 +1,85 @@
+<!--pages/mine/settled/index.wxml-->
+<view class="box">
+  <view class="box-header">
+    <image class="avatar-header" src="../../../images/icon-home_active.png" mode="" />
+  </view>
+  <view>
+    <view class="box-title warp">
+      <text class="text-message">门店信息</text>
+    </view>
+    <view class="box-message_content">
+      <view class="message-content_item">
+        <view class="box-left">
+          <text class="text-star">*</text><text class="text">店铺名称</text>
+        </view>
+        <view class="box-rigth">
+          <view class="box-inp">
+            <input class="inp" type="nickname" placeholder="请输入店铺名称" maxlength="20" />
+          </view>
+        </view>
+      </view>
+
+      <view class="message-content_item">
+        <view class="box-left">
+          <text class="text-star">*</text><text class="text">店铺地址</text>
+        </view>
+        <view class="box-rigth">
+          <view class="box-inp"><input class="inps" type="text" placeholder="请选择" maxlength="20" /></view>
+          <image class="icon-more" src="../../../images/icon-more.png" mode="" />
+        </view>
+      </view>
+
+      <view class="message-content_item">
+        <view class="box-left">
+          <text class="text-star">*</text><text class="text">联系人姓名</text>
+        </view>
+        <view class="box-rigth">
+          <view class="box-inp">
+            <input class="inp" type="nickname" placeholder="请填写真实姓名" maxlength="20" />
+          </view>
+        </view>
+      </view>
+
+      <view class="message-content_item">
+        <view class="box-left">
+          <text class="text-star">*</text><text class="text">联系人手机号</text>
+        </view>
+        <view class="box-rigth">
+          <view class="box-inp">
+            <input class="inp" type="nickname" placeholder="请填写真实姓名" maxlength="20" />
+          </view>
+        </view>
+      </view>
+
+      <view class="message-content_item">
+        <view class="box-left">
+          <text class="text-star">*</text><text class="text">店铺简介</text>
+        </view>
+        <view class="box-rigth">
+          <view class="box-inp">
+            <input class="inp" type="text" placeholder="介绍一下你的店铺" maxlength="20" />
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="box-title warp">
+      <text class="text-authentication">资质认证(仅用于平台认证)</text>
+    </view>
+    <view class="box-authentication_content">
+      <view class="authentication-content_item">
+        <view class="box-left">
+          <view class="box-top">
+            <text class="text-star">*</text><text class="text">店铺简介</text>
+          </view>
+          <view class="box-bom">
+            <text class="bom-text">需文字清晰，边框完整，露出国徽</text>
+          </view>
+        </view>
+        <view class="box-rigth">
+             <image class="icon-add" src="../../../images/icon-mine.png" mode=""/>
+        </view>
+      </view>
+    </view>
+  </view>
+  <button 	type="primary">提交</button>
+</view>

@@ -5,6 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    islogin: false,
+    userInfo: {},
     actInfoList:[
       {
         id:1,
@@ -17,25 +19,56 @@ Page({
       },
     ],
    mineNav:[
-    
      {
       id:1,
       title:"我的活动",
-      image:"../../images/icon-activity.png"
+      image:"../../images/icon-myactive.png",
+      name:"myActive"
     },
     {
       id:2,
       title:"商家入驻",
-      image:"../../images/icon-activity.png"
+      image:"../../images/icon-settled.png",
+      name:"settled"
     },
     {
       id:3,
       title:"入驻审核",
-      image:"../../images/icon-activity.png"
+      image:"../../images/icon-audit.png",
+      name:"audit"
     }
    ]
   },
-
+  toPage(data){
+    console.log(data.currentTarget.dataset.name);
+    wx.navigateTo({
+      url: '/pages/mine/'+ data.currentTarget.dataset.name+'/index',
+    })
+  },
+  login() {
+    const _this = this;
+    wx.getSetting({
+      success(res) {
+        if (res.authSetting["scope.userInfo"]) { 
+          _this.setUserInfo();
+        }
+      }
+    })
+  },
+  // 设置data中userinfo和islogin的值
+  setUserInfo() {
+    wx.getUserProfile({
+      desc: '用于登录',
+      success: (res) => {
+        this.setData({
+          userInfo: res.userInfo
+        })
+        this.setData({
+          islogin: true
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
