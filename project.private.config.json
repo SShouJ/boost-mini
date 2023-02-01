@@ -65,6 +65,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "我的活动",
+          "pathName": "pages/mine/myActive/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

@@ -1,0 +1,103 @@
+.warp{
+  width: 680rpx;
+  margin: 0 auto;
+}
+body{
+  margin: 0 auto;
+  font-size: 30rpx;
+}
+.box-header{
+  /* border: 1rpx solid; */
+  background-color: white;
+  padding: 40rpx 0;
+  display:flex;
+  justify-content: center;
+}
+.avatar-header{
+  width: 124rpx;
+  height: 124rpx;
+  border: 1rpx solid black;
+  border-radius: 150rpx;
+}
+.text-message{
+  color: #6d6c6c;
+  font-size: 30rpx ;
+}
+.box-message_content{
+  background-color: white;
+}
+.message-content_item{
+  display: flex;
+  justify-content: space-between;
+  padding: 35rpx;
+  border-bottom: 1rpx solid #f6f6f6 ;
+}
+.box-title{
+  box-sizing: border-box;
+  padding: 15rpx 0;
+}
+.text-star{
+  font-size: 30rpx;
+  color: red;
+  font-weight: 700;
+  margin-right: 10rpx;
+}
+.text{
+  font-size: 30rpx;
+  color: black;
+  font-weight: 700;
+}
+
+.box-rigth{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.box-inp{
+  margin-left:30rpx ;
+}
+.inps{
+  width: 390rpx ;
+  height: 32rpx;
+  font-size: 30rpx;
+}
+.inp{
+  width: 420rpx ;
+  height: 32rpx;
+  font-size: 30rpx;
+}
+.icon-more{
+  width: 30rpx;
+  height: 30rpx;
+}
+.text-authentication{
+  color: #6d6c6c;
+}
+.box-authentication_content{
+  box-sizing: border-box;
+  background-color: white;
+}
+.authentication-content_item{
+  display: flex;
+  justify-content: space-between;
+  padding: 35rpx;
+  border-bottom: 1rpx solid #f6f6f6 ;
+}
+.box-top{
+  margin-bottom: 20rpx;
+}
+.bom-text{
+  font-size: 30rpx;
+  color: #6d6c6c;
+  margin-left: 22rpx;
+}
+.authentication-content_item .box-rigth{
+  border: 1rpx solid;
+ padding: 30rpx;
+ box-sizing: border-box;
+}
+.icon-add{
+  width: 56rpx;
+  height: 56rpx;
+}
+/* input字体设置 */
