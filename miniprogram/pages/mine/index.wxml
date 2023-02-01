@@ -1,2 +1,41 @@
 <!--pages/mine/index.wxml-->
-<text>pages/mine/index.wxml</text>
+<view class="box">
+  <view class="box-info" style="background:url('../../images/bgd_img.png') no-repeat; background-size: 100% 65%;  background-color: white;  " >
+    <view class="box-scan">
+      <image class="img-scan" src="../../images/icon-home.png" mode="" />
+    </view>
+    <view class="box-userinfo">
+    <view class="box-rigth">
+        <image class="img-avatar" src="../../images/avatar-nologin.png" mode="" />
+        <button  id="btn-username" >未授权</button>
+      </view>
+    <view class="box-integral">
+      300积分
+    </view>
+    </view>
+  </view>
+  <view class="activityInfo warp mb-20">
+      <view class="actInfo-item" wx:for="{{actInfoList}}" wx:key="id">
+          <view class="box-actinfo">
+            <view class="aa">
+             {{item.number}}
+           </view>
+           <view>
+             {{item.acttext}}
+           </view>
+          </view>
+      <view class="Vertical" wx:if="{{item.id < actInfoList.length}}">
+      </view>
+      </view>
+  </view>
+     <view class="box-nav warp">
+         <view class="nav-item" wx:for="{{mineNav}}" wx:key="id">
+         <image class="nav-img" src="{{item.image}}" mode=""/>
+           <text class="nav-text">{{item.title}}</text>
+
+           <view class="Vertical1" >
+           </view>
+         </view>
+     </view>
+     
+</view>

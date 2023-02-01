@@ -5,7 +5,35 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    actInfoList:[
+      {
+        id:1,
+        number:10,
+        acttext:'已参与活动'
+      }, {
+        id:2,
+        number:0,
+        acttext:'中奖记录'
+      },
+    ],
+   mineNav:[
+    
+     {
+      id:1,
+      title:"我的活动",
+      image:"../../images/icon-activity.png"
+    },
+    {
+      id:2,
+      title:"商家入驻",
+      image:"../../images/icon-activity.png"
+    },
+    {
+      id:3,
+      title:"入驻审核",
+      image:"../../images/icon-activity.png"
+    }
+   ]
   },
 
   /**

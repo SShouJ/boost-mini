@@ -1,2 +1,69 @@
 <!--pages/home/index.wxml-->
-<text>pages/home/index.wxml</text>
+<view class="body">
+  <view class="header pb-20" style="  background-image: url('https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/bgd-banner.png?sign=ef678583d2e5b09cf5f1da4747e2778f&t=1675216306')">
+    <view class="warp userinfo">
+      <view bindtap="login" wx:if="{{!islogin}}" class="state">
+        <view class="text">请登录</view>
+      </view>
+      <view wx:else class="login-name">
+        <text class="text"> {{userInfo.nickName}}</text>
+        ，您好
+      </view>
+    </view>
+    <view class="dialog_box warp">
+      <view wx:if="{{islogin}}" class="justify-space_between">
+        <view>
+          您当前的积分为 300
+        </view>
+        <view>
+          兑换记录
+        </view>
+      </view>
+      <view wx:else>
+        <view class="roll">
+          <view style="flex: 1;">
+            <view id="noticeItem" class="notice_item_style">
+              <view>
+                1111111111111111111111111111111111
+              </view>
+              <view>
+                2222222222222222222222222222222222
+              </view>
+              <view>
+                3333333333333333333333333333333333
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{islogin}}">
+      <view>
+        <image class="arrow" src="../../images/icon-arrow.png" mode="" />
+      </view>
+      <view>
+
+      </view>
+    </view>
+  </view>
+  <view class="container">
+    <view class="container_bgd">
+      <view class="banner warp justify-space_between item-center">
+        <view class="h3">兑换奖品</view>
+        <view class="flex item-center">
+          <view class="mr-10">全部</view>
+          <image class="more" src="../../images/icon-more.png" mode="" />
+        </view>
+      </view>
+    </view>
+    <!--  -->
+    <view class="nav">
+      <view class="hd">
+        <block wx:for="{{navList}}" wx:key="navList">
+          <view class="hd_flex {{nav_type == index ? 'hd_flex_on' : ''}}" catchtap="changeType" data-index="{{index}}">{{item}}</view>
+        </block>
+      </view>
+    </view>
+  </view>
+  <view class="footer"></view>
+</view>
