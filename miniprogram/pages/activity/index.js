@@ -6,11 +6,17 @@ Page({
    */
   data: {
     activityList:[],
+    navList:[],
+    target:2,
   },
   toDetails(e){
-    console.log(e);
     wx.navigateTo({
       url: '/pages/activityDetail/index?id='+e.currentTarget.dataset.id
+    })
+  },
+  changeItem(e){
+    this.setData({
+      target:e.currentTarget.dataset.id,
     })
   },
   /**
@@ -90,8 +96,27 @@ Page({
           ]
         },
       ]
+      let navList = [
+        {
+          id:1,
+          title:"全部",
+        },
+        {
+          id:2,
+          title:"待开奖",
+        },
+        {
+          id:3,
+          title:"已结束",
+        },
+        {
+          id:4,
+          title:"未开始",
+        },
+      ]
       this.setData({
         activityList,
+        navList
       })
   },
 
