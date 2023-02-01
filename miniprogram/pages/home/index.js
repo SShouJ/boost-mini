@@ -5,9 +5,53 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    islogin: false,
+    userInfo: {},
+    activities:[
+      {
+        id:1,
+        text:'信息1'
+      },
+      {
+        id:2,
+        text:'信息2'
+      },
+      {
+        id:3,
+        text:'信息3'
+      },
+      {
+        id:4,
+        text:'信息4'
+      },
+    ]
   },
 
+  login() {
+    const _this = this;
+    wx.getSetting({
+      success(res) {
+        if (res.authSetting["scope.userInfo"]) {
+
+          _this.setUserInfo();
+        }
+      }
+    })
+  },
+  // 设置data中userinfo和islogin的值
+  setUserInfo() {
+    wx.getUserProfile({
+      desc: '用于登录',
+      success: (res) => {
+        this.setData({
+          userInfo: res.userInfo
+        })
+        this.setData({
+          islogin: true
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
