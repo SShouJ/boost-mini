@@ -7,47 +7,98 @@ Page({
   data: {
     islogin: false,
     userInfo: {},
-    activities: [
+    prizeData: [
       {
         id: 1,
-        text: '信息1'
+        url: '../../images/activity.png',
+        title: '1这是轮播图的标题11111111',
+        day: '111',
+        date: '23:51:31',
+        integral: 100,
       },
       {
         id: 2,
-        text: '信息2'
+        url: '../../images/activity.png',
+        title: '2这是轮播图的标题11111111',
+        day: '222',
+        date: '23:52:31',
+        integral: 200,
       },
       {
         id: 3,
-        text: '信息3'
+        url: '../../images/activity.png',
+        title: '3这是轮播图的标题11111111',
+        day: '333',
+        date: '23:53:31',
+        integral: 300,
       },
       {
         id: 4,
-        text: '信息4'
+        url: '../../images/activity.png',
+        title: '4这是轮播图的标题11111111',
+        day: '444',
+        date: '23:54:31',
+        integral: 400,
       },
-    ],
-    navList: ['推荐', '男装', '女装', '手机', '电脑', '百货', '电器', '全部',],
-    nav_type: 0,
+      {
+        id: 5,
+        url: '../../images/activity.png',
+        title: '这是轮播图的标题11111111',
+        day: '555',
+        date: '23:55:31',
+        integral: 500,
+      },
+      {
+        id: 6,
+        url: '../../images/activity.png',
+        title: '6这是轮播图的标题11111111',
+        day: '666',
+        date: '23:56:31',
+        integral: 600,
+      },
+      {
+        id: 7,
+        url: '../../images/activity.png',
+        title: '7这是轮播图的标题11111111',
+        day: '777',
+        date: '23:57:31',
+        integral: 700,
+      },
+      {
+        id: 8,
+        url: '../../images/activity.png',
+        title: '8这是轮播图的标题11111111',
+        day: '888',
+        date: '23:58:31',
+        integral: 800,
+      },
+    ]
+
+    // navList: ['推荐', '男装', '女装', '手机', '电脑', '百货', '电器', '全部',],
+    // navType: 0,
   },
-  changeType: function (e) {
-    let {
-      index
-    } = e.currentTarget.dataset;
-    if (this.data.nav_type === index || index === undefined) {
-      return false;
-    } else {
-      // 当前点击的
-      console.log(this.data.navList[index])
-      this.setData({
-        nav_type: index
-      })
-    }
-  },
+  // 导航栏的
+  // changeType: function (e) {
+  //   console.log(e)
+  //   let {
+  //     index
+  //   } = e.currentTarget.dataset;
+  //   if (this.data.navType == index || index == undefined) {
+  //     console.log(this.data.navList[index]);
+  //     return false;
+  //   } else {
+  //     // 当前点击的
+  //     console.log(this.data.navList[index]);
+  //     this.setData({
+  //       navType: index
+  //     })
+  //   }
+  // },
   login() {
     const _this = this;
     wx.getSetting({
       success(res) {
         if (res.authSetting["scope.userInfo"]) {
-
           _this.setUserInfo();
         }
       }
@@ -56,12 +107,10 @@ Page({
   // 设置data中userinfo和islogin的值
   setUserInfo() {
     wx.getUserProfile({
-      desc: '用于登录',
+      desc: '用于获取用户头像昵称',
       success: (res) => {
         this.setData({
-          userInfo: res.userInfo
-        })
-        this.setData({
+          userInfo: res.userInfo,
           islogin: true
         })
       }

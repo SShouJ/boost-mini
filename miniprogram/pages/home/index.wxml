@@ -47,23 +47,48 @@
     </view>
   </view>
   <view class="container">
-    <view class="container_bgd">
-      <view class="banner warp justify-space_between item-center">
+    <view class="container_bgd warp mt-10">
+      <view class="banner justify-space_between item-center">
         <view class="h3">兑换奖品</view>
         <view class="flex item-center">
-          <view class="mr-10">全部</view>
+          <view class="mr-10" style=" color: #000">全部</view>
           <image class="more" src="../../images/icon-more.png" mode="" />
         </view>
       </view>
-    </view>
-    <!--  -->
-    <view class="nav">
-      <view class="hd">
-        <block wx:for="{{navList}}" wx:key="navList">
-          <view class="hd_flex {{nav_type == index ? 'hd_flex_on' : ''}}" catchtap="changeType" data-index="{{index}}">{{item}}</view>
-        </block>
+      <!-- 轮播图 -->
+      <view class="swiper">
+        <view class="swiper-box">
+          <view class="swiper_item mr-20" wx:for="{{prizeData}}" wx:key="index">
+            <view class="img">
+              <image class="swiper_img" src="{{item.url}}" mode="" />
+            </view>
+            <view class="swiper_img-describe">
+              <view class="title">
+                <text>{{item.title}}</text>
+              </view>
+              <view class="time mt-10">
+                剩
+                <text class="c-000">{{item.day}}</text>
+                天
+                <text class="c-000">{{item.date}}</text>
+              </view>
+            </view>
+            <view class="justify-space_between mt-10 item-center">
+              <view>{{item.integral}} 积分</view>
+              <view>兑换</view>
+            </view>
+          </view>
+        </view>
       </view>
     </view>
+    <!-- 导航栏因做的样式看着像电商平台了先注释了后期需要再说 -->
+    <!-- <view class="nav">
+      <view class="hd">
+        <block wx:for="{{navList}}" wx:key="navList">
+          <view class="hd_flex {{navType == index ? 'hd_flex_on' : ''}}" catchtap="changeType" data-index="{{index}}">{{item}}</view>
+        </block>
+      </view>
+    </view> -->
   </view>
   <view class="footer"></view>
 </view>

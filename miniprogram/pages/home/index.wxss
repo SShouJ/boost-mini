@@ -21,6 +21,11 @@
 
 .item-center {
   align-items: center;
+
+}
+
+.inline-block {
+  display: inline-block;
 }
 
 .mt-10 {
@@ -41,6 +46,10 @@
 
 .ml-20 {
   margin-left: 20rpx;
+}
+
+.c-000 {
+  color: #000;
 }
 
 .c-fff {
@@ -131,14 +140,17 @@
 }
 
 .body .container .container_bgd {
-  width: 100%;
-  padding: 20rpx 0;
-  background-color: #c88c8c;
+  box-sizing: border-box;
+  background: linear-gradient(to bottom, #fa6a38, #FFF, #FFF, #FFF, #FFF, #FFF);
+  border-radius: 20rpx;
+  box-sizing: border-box;
+  padding: 20rpx;
 }
 
 .body .container .banner .h3 {
   font-size: 34rpx;
   font-weight: 700;
+  color: #000;
 }
 
 .body .container .more {
@@ -146,9 +158,55 @@
   height: 30rpx;
 }
 
+.body .container .swiper {
+  color: #000;
+  background-color: #fff;
+  margin-top: 50rpx;
+  padding: 20rpx 0 0 0;
+  box-sizing: rpxborder-box;
+  border-radius: 20rpx;
+  overflow: scroll;
+}
+
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.body .container .swiper .swiper-box {
+  box-sizing: border-box;
+  display: flex;
+}
+
+.body .container .swiper .swiper_item {
+  width: 250rpx;
+  border: 1rpx solid #e2e0e0;
+  padding: 14rpx;
+}
+
+.body .container .swiper .swiper_item .swiper_img {
+  width: 250rpx;
+  height: 250rpx;
+}
+
+.body .container .swiper .swiper_item .swiper_img-describe .time {
+  font-size: 24rpx;
+  color: #a7a0a0;
+}
+
+.body .container .swiper .swiper_item .swiper_img-describe .title {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+}
+
+/* 导航栏的样式 */
+/* 
 .body .container .nav {
   width: 100%;
-  /* border: 1rpx solid #fff; */
   box-sizing: border-box;
   padding: 10rpx;
 }
@@ -187,4 +245,5 @@
   border-radius: 3rpx;
   left: 50%;
   transform: translateX(-50%);
-}
+} */
+/* 导航栏的样式 结束*/
