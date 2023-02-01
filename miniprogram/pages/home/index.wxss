@@ -147,18 +147,18 @@
   padding: 20rpx;
 }
 
-.body .container .banner .h3 {
+.body .container .container_bgd .banner .h3 {
   font-size: 34rpx;
   font-weight: 700;
   color: #000;
 }
 
-.body .container .more {
+.body .container .container_bgd .more {
   width: 30rpx;
   height: 30rpx;
 }
 
-.body .container .swiper {
+.body .container .container_bgd .swiper {
   color: #000;
   background-color: #fff;
   margin-top: 50rpx;
@@ -175,32 +175,40 @@
   color: transparent;
 }
 
-.body .container .swiper .swiper-box {
+.swiper .swiper-box {
   box-sizing: border-box;
   display: flex;
 }
 
-.body .container .swiper .swiper_item {
+.swiper .swiper_item {
   width: 250rpx;
   border: 1rpx solid #e2e0e0;
   padding: 14rpx;
 }
 
-.body .container .swiper .swiper_item .swiper_img {
+.swiper .swiper_item .swiper_img {
   width: 250rpx;
   height: 250rpx;
 }
 
-.body .container .swiper .swiper_item .swiper_img-describe .time {
+.swiper .swiper_item .swiper_img-describe .time {
   font-size: 24rpx;
   color: #a7a0a0;
 }
 
-.body .container .swiper .swiper_item .swiper_img-describe .title {
+.swiper .swiper_item .swiper_img-describe .title {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   -o-text-overflow: ellipsis;
+}
+
+.body .container .container_bgd .activity_list {
+  background-color: #fff;
+}
+
+.body .container .container_bgd .activity_list .title {
+  color: #000;
 }
 
 /* 导航栏的样式 */
