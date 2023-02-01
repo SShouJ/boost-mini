@@ -3,6 +3,9 @@
     "pages/home/index",
     "pages/activity/index",
     "pages/mine/index",
+    "pages/mine/myActive/index",
+    "pages/mine/settled/index",
+    "pages/mine/audit/index",
     "pages/activityDetail/index"
   ],
   "tabBar": {

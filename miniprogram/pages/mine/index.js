@@ -19,30 +19,37 @@ Page({
       },
     ],
    mineNav:[
-    
      {
       id:1,
       title:"我的活动",
-      image:"../../images/icon-myactive.png"
+      image:"../../images/icon-myactive.png",
+      name:"myActive"
     },
     {
       id:2,
       title:"商家入驻",
-      image:"../../images/icon-settled.png"
+      image:"../../images/icon-settled.png",
+      name:"settled"
     },
     {
       id:3,
       title:"入驻审核",
-      image:"../../images/icon-audit.png"
+      image:"../../images/icon-audit.png",
+      name:"audit"
     }
    ]
+  },
+  toPage(data){
+    console.log(data.currentTarget.dataset.name);
+    wx.navigateTo({
+      url: '/pages/mine/'+ data.currentTarget.dataset.name+'/index',
+    })
   },
   login() {
     const _this = this;
     wx.getSetting({
       success(res) {
-        if (res.authSetting["scope.userInfo"]) {
-
+        if (res.authSetting["scope.userInfo"]) { 
           _this.setUserInfo();
         }
       }

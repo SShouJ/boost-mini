@@ -34,7 +34,7 @@
       </view>
   </view>
      <view class="box-nav warp">
-         <view class="nav-item" wx:for="{{mineNav}}" wx:key="id">
+         <view  class="nav-item" wx:for="{{mineNav}}" wx:key="id" bindtap="toPage" data-name="{{item.name}}">
          <image class="nav-img" src="{{item.image}}" mode=""/>
            <text class="nav-text">{{item.title}}</text>
            <view class="Vertical1" >
