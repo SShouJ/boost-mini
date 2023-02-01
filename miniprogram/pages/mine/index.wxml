@@ -1,13 +1,18 @@
 <!--pages/mine/index.wxml-->
 <view class="box">
-  <view class="box-info" style="background:url('../../images/bgd_img.png') no-repeat; background-size: 100% 65%;  background-color: white;  " >
-    <view class="box-scan">
-      <image class="img-scan" src="../../images/icon-home.png" mode="" />
+  <view class="box-info mb-20" style="background:url('https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/bgd-banner.png?sign=ef678583d2e5b09cf5f1da4747e2778f&t=1675216306') no-repeat; background-size: 100% 100%;  background-color: white;" >
+    <view class="box-scan warp">
+      <image class="img-scan" src="../../images/icon-message.png" mode="" />
+      <image class="img-scan" src="../../images/icon-set.png" mode="" />
     </view>
     <view class="box-userinfo">
-    <view class="box-rigth">
+    <view class="box-rigth" bindtap="login" wx:if="{{!islogin}}">
         <image class="img-avatar" src="../../images/avatar-nologin.png" mode="" />
-        <button  id="btn-username" >未授权</button>
+        <view  id="btn-username" >未授权</view>
+      </view>
+      <view class="box-rigth" bindtap="login" wx:else="{{islogin}}">
+        <image class="img-avatar" src="{{userInfo.avatarUrl}}" mode="" />
+        <view  id="btn-username" >{{userInfo.nickName}}</view>
       </view>
     <view class="box-integral">
       300积分
@@ -32,7 +37,6 @@
          <view class="nav-item" wx:for="{{mineNav}}" wx:key="id">
          <image class="nav-img" src="{{item.image}}" mode=""/>
            <text class="nav-text">{{item.title}}</text>
-
            <view class="Vertical1" >
            </view>
          </view>
