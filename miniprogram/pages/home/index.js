@@ -6,7 +6,25 @@ Page({
    */
   data: {
     islogin: false,
-    userInfo: {}
+    userInfo: {},
+    activities:[
+      {
+        id:1,
+        text:'信息1'
+      },
+      {
+        id:2,
+        text:'信息2'
+      },
+      {
+        id:3,
+        text:'信息3'
+      },
+      {
+        id:4,
+        text:'信息4'
+      },
+    ]
   },
 
   login() {

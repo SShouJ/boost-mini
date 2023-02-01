@@ -22,6 +22,10 @@
   margin-right: 20rpx;
 }
 
+.pb-20 {
+  padding-bottom: 20rpx;
+}
+
 .mr-10 {
   margin-right: 10rpx;
 }
@@ -38,12 +42,15 @@
   width: 100vw;
   height: 100vh;
   background-color: #e6e3e3;
+  font-size: 30rpx;
 }
 
 .body .header {
   width: 100%;
   color: #fff;
-  background-color: #fa6a38;
+  /* background-color: #fa6a38; */
+  background-image: url('../../images/bgd-banner.png');
+  background-size: auto;
 }
 
 .body .header .userinfo .text,
@@ -62,6 +69,43 @@
   background-color: rgba(218, 139, 112, 0.788);
   border-radius: 16rpx;
   position: relative;
+}
+
+.body .header .dialog_box .roll {
+  width: 670rpx !important;
+  height: 30rpx;
+  overflow: hidden;
+}
+
+.notice_item_style {
+  -webkit-animation: marqueeText 5s linear 1s infinite;
+  animation: marqueeText 3s linear 1s infinite;
+  /* 两个动画连续使用 */
+  white-space: nowrap;
+}
+
+@keyframes marqueeText {
+  from {
+    transform: translateY(0%);
+    -webkit-transform: translateY(0%);
+  }
+
+  to {
+    transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+  }
+}
+
+@keyframes marqueeText2 {
+  from {
+    transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0%);
+    -webkit-transform: translateY(0%);
+  }
 }
 
 .body .header .arrow {

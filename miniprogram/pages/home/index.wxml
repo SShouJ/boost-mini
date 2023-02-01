@@ -1,6 +1,6 @@
 <!--pages/home/index.wxml-->
 <view class="body">
-  <view class="header">
+  <view class="header pb-20">
     <view class="warp userinfo">
       <view bindtap="login" wx:if="{{!islogin}}" class="state">
         <view class="text">请登录</view>
@@ -10,8 +10,8 @@
         ，您好
       </view>
     </view>
-    <view class="dialog_box warp justify-space_between">
-      <view wx:if="{{islogin}}">
+    <view class="dialog_box warp">
+      <view wx:if="{{islogin}}" class="justify-space_between">
         <view>
           您当前的积分为 300
         </view>
@@ -20,7 +20,21 @@
         </view>
       </view>
       <view wx:else>
-        未登录的时候这里显示 中奖名单的滚动条 向上滚
+        <view class="roll">
+          <view style="flex: 1;">
+            <view id="noticeItem" class="notice_item_style">
+              <view>
+                1111111111111111111111111111111111
+              </view>
+              <view>
+                2222222222222222222222222222222222
+              </view>
+              <view>
+                3333333333333333333333333333333333
+              </view>
+            </view>
+          </view>
+        </view>
       </view>
     </view>
     <view wx:if="{{islogin}}">
@@ -28,11 +42,11 @@
         <image class="arrow" src="../../images/icon-arrow.png" mode="" />
       </view>
       <view>
-        
-      </view>      
+
+      </view>
     </view>
   </view>
-  <view class="container ">
+  <view class="container">
     <view class="btn justify-space_between">
       <view>兑换按钮</view>
       <view class="flex">
