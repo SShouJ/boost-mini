@@ -7,26 +7,41 @@ Page({
   data: {
     islogin: false,
     userInfo: {},
-    activities:[
+    activities: [
       {
-        id:1,
-        text:'信息1'
+        id: 1,
+        text: '信息1'
       },
       {
-        id:2,
-        text:'信息2'
+        id: 2,
+        text: '信息2'
       },
       {
-        id:3,
-        text:'信息3'
+        id: 3,
+        text: '信息3'
       },
       {
-        id:4,
-        text:'信息4'
+        id: 4,
+        text: '信息4'
       },
-    ]
+    ],
+    navList: ['推荐', '男装', '女装', '手机', '电脑', '百货', '电器', '全部',],
+    nav_type: 0,
   },
-
+  changeType: function (e) {
+    let {
+      index
+    } = e.currentTarget.dataset;
+    if (this.data.nav_type === index || index === undefined) {
+      return false;
+    } else {
+      // 当前点击的
+      console.log(this.data.navList[index])
+      this.setData({
+        nav_type: index
+      })
+    }
+  },
   login() {
     const _this = this;
     wx.getSetting({

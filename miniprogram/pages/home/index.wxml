@@ -1,6 +1,6 @@
 <!--pages/home/index.wxml-->
 <view class="body">
-  <view class="header pb-20">
+  <view class="header pb-20" style="  background-image: url('https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/bgd-banner.png?sign=ef678583d2e5b09cf5f1da4747e2778f&t=1675216306')">
     <view class="warp userinfo">
       <view bindtap="login" wx:if="{{!islogin}}" class="state">
         <view class="text">请登录</view>
@@ -47,14 +47,23 @@
     </view>
   </view>
   <view class="container">
-    <view class="btn justify-space_between">
-      <view>兑换按钮</view>
-      <view class="flex">
-        <text>全部</text>
-        <image class="more" src="../../images/icon-more.png" mode="" />
+    <view class="container_bgd">
+      <view class="banner warp justify-space_between item-center">
+        <view class="h3">兑换奖品</view>
+        <view class="flex item-center">
+          <view class="mr-10">全部</view>
+          <image class="more" src="../../images/icon-more.png" mode="" />
+        </view>
       </view>
     </view>
     <!--  -->
+    <view class="nav">
+      <view class="hd">
+        <block wx:for="{{navList}}" wx:key="navList">
+          <view class="hd_flex {{nav_type == index ? 'hd_flex_on' : ''}}" catchtap="changeType" data-index="{{index}}">{{item}}</view>
+        </block>
+      </view>
+    </view>
   </view>
   <view class="footer"></view>
 </view>
