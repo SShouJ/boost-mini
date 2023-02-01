@@ -1,2 +1,31 @@
 <!--pages/activity/index.wxml-->
-<text>pages/activity/index.wxml</text>
+<view class="activity">
+
+    <!-- 分类 -->
+    <!-- 活动每一项 -->
+          <view class="activity-item wrap mb-10" wx:for="{{activityList}}" wx:for-item="item" wx:key="id" bindtap="toDetails" data-id="{{item.id}}"> 
+          <image class="activity-img" src="{{item.activityImg}}" mode="scaleToFill"/> 
+          <view class="activity-content">
+            <view class="activity-info pl-10 fs-30">
+                <view>
+                    <text class="fw-600">活动名称:</text>
+                    <text class="pl-10">{{item.activityName}}</text>
+                </view>
+                <view>
+                    <text class="fw-600">开始时间:</text>
+                    <text class="pl-10">{{item.start}}</text>
+                </view>
+                <view>
+                    <text class="fw-600">结束时间:</text>
+                    <text class="pl-10">{{item.end}}</text>
+                </view>
+            </view>
+            <view class="activity-status">
+                <image class="icon-48 mr-40" src="../../images/participated.png" mode="widthFix"/>
+            </view>
+          </view>
+          <view class="activity-prize">
+            <image wx:for="{{item.pressList}}" wx:for-item="press" wx:key="id" class="icon-48" src="{{press.pressImg}}" mode="widthFix"/>
+          </view>
+      </view>
+</view>
