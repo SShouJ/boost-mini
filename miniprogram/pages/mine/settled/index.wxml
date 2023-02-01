@@ -69,6 +69,7 @@
       <view class="authentication-content_item">
         <view class="box-left">
           <view class="box-top">
+          
             <text class="text-star">*</text><text class="text">店铺简介</text>
           </view>
           <view class="box-bom">
