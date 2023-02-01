@@ -2,7 +2,8 @@
   "pages": [
     "pages/home/index",
     "pages/activity/index",
-    "pages/mine/index"
+    "pages/mine/index",
+    "pages/activityDetail/index"
   ],
   "tabBar": {
     "list": [{
@@ -28,7 +29,7 @@
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTitleText": "抽抽乐",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",

@@ -5,14 +5,94 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    activityList:[],
   },
-
+  toDetails(e){
+    console.log(e);
+    wx.navigateTo({
+      url: '/pages/activityDetail/index?id='+e.currentTarget.dataset.id
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+      let activityList = [
+        {
+          id:1,
+          activityImg:"../../images/activity.png",
+          activityName:"活动名称1",
+          start:"2023-01-13",
+          end:"2023-01-15",
+          pressList:[
+            {
+              id:1001,
+              pressImg:"../../images/goods1.png",
+            },
+            {
+              id:1002,
+              pressImg:"../../images/goods1.png",
+            },
+            {
+              id:1003,
+              pressImg:"../../images/goods1.png",
+            },
+            {
+              id:1004,
+              pressImg:"../../images/goods1.png",
+            }
+          ]
+        },
+        {
+          id:2,
+          activityImg:"../../images/activity.png",
+          activityName:"活动名称2",
+          start:"2023-01-13",
+          end:"2023-01-15",
+          pressList:[
+            {
+              id:1005,
+              pressImg:"../../images/goods1.png",
+            },
+            {
+              id:1006,
+              pressImg:"../../images/goods1.png",
+            },
+            {
+              id:1007,
+              pressImg:"../../images/goods1.png",
+            },
+            {
+              id:1008,
+              pressImg:"../../images/goods1.png",
+            }
+          ]
+        },
+        {
+          id:3,
+          activityImg:"../../images/activity.png",
+          activityName:"活动名称1",
+          start:"2023-01-13",
+          end:"2023-01-15",
+          pressList:[
+            {
+              pressImg:"../../images/goods1.png",
+            },
+            {
+              pressImg:"../../images/goods1.png",
+            },
+            {
+              pressImg:"../../images/goods1.png",
+            },
+            {
+              pressImg:"../../images/goods1.png",
+            }
+          ]
+        },
+      ]
+      this.setData({
+        activityList,
+      })
   },
 
   /**

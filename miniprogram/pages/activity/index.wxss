@@ -1,1 +1,86 @@
 /* pages/activity/index.wxss */
+.wrap{
+  width: 710rpx;
+  margin: 0 auto;
+}
+
+/* 活动容器 */
+.activity{
+  background: #f3f5f5;
+  height: 100vh;
+}
+
+/* 每一项活动 */
+.activity-item{
+  background: #fff;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+
+/* 活动内容 */
+.activity-item .activity-content{
+  display: flex;
+  padding: 30rpx 0;
+}
+
+/* 活动信息 */
+.activity-item .activity-content .activity-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+/* 参与状态 */
+.activity-item .activity-content .activity-status{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* 活动奖品  */
+.activity-item .activity-prize{
+  display:flex ;
+  justify-content: space-around;
+  padding: 10rpx 0;
+}
+
+/* 活动头像 */
+.activity-img{
+  width: 710rpx;
+  height: 200rpx;
+  border: 1px solid #ccc;
+}
+
+/*  */
+.icon-48{
+  width: 130rpx;
+}
+
+.fs-15{
+  font-size: 30rpx;
+}
+
+.pl-10{
+  padding-left: 20rpx;
+}
+
+.mb-10{
+  margin-bottom: 20rpx;
+}
+
+.fw-600{
+  font-weight: 600;
+}
+
+.mb-10{
+  margin-bottom: 20rpx;
+}
+
+.mr-40{
+  margin-right: 80rpx;
+}
+
+.mt-5{
+  margin-top: 10rpx;
+}
