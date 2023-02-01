@@ -81,7 +81,8 @@
         </view>
       </view>
       <view class="activity_list">
-        <view class="title">兑换奖品</view>
+        <view class="title ">兑换奖品</view>
+
       </view>
     </view>
     <!-- 导航栏因做的样式看着像电商平台了先注释了后期需要再说 -->
