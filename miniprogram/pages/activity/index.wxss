@@ -70,6 +70,7 @@
   background: #fff;
   border-radius: 20rpx;
   overflow: hidden;
+  box-shadow:10rpx 0px 10rpx 0px #c2c2c2;
 }
 
 /* 活动内容 */
