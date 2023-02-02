@@ -43,6 +43,7 @@
       </view>
     </view>
   </view>
+
   <view class="container">
     <view class="container_bgd warp mt-10">
       <view class="banner justify-space_between item-center">
@@ -122,6 +123,7 @@
       </view>
     </view> -->
   </view>
+
   <view class="footer warp">
     <button class="nav_">
       <view>

@@ -1,4 +1,4 @@
-// pages/mine/settled/index.js
+// pages/mine/address/index.js
 Page({
 
   /**
@@ -7,9 +7,7 @@ Page({
   data: {
 
   },
-  updata(){
-    console.log(1);
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */

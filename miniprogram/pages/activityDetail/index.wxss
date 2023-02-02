@@ -1,1 +1,11 @@
 /* pages/activityDetail/index.wxss */
+.wrap{
+  width: 710rpx;
+  margin: 0 auto;
+}
+
+.activity-detail{
+  min-height: 100vh;
+  background-image: url(https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/activity-bg.png?sign=bc68550a9a05ebcfa73695648ec04f93&t=1675307371);
+  background-size: 100% 100%;
+}
