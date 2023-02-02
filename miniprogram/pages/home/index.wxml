@@ -50,10 +50,10 @@
     <view class="container_bgd warp mt-10">
       <view class="banner justify-space_between item-center">
         <view class="h3">限时抢购</view>
-        <!-- <view class="flex item-center">
+        <view class="flex item-center">
           <view class="mr-10" style=" color: #000">全部</view>
           <image class="more" src="../../images/icon-more.png" mode="" />
-        </view> -->
+        </view>
       </view>
       <!-- 轮播图 -->
       <view class="swiper">
@@ -82,7 +82,6 @@
       </view>
       <view class="activity_list">
         <view class="title ">兑换奖品</view>
-
       </view>
     </view>
     <!-- 导航栏因做的样式看着像电商平台了先注释了后期需要再说 -->

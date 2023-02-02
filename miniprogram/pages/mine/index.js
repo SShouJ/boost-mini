@@ -36,6 +36,11 @@ Page({
       title:"入驻审核",
       image:"../../images/icon-audit.png",
       name:"audit"
+    },{
+      id:4,
+      title:"收货地址",
+      image:"../../images/icon-audit.png",
+      name:"address"
     }
    ]
   },
