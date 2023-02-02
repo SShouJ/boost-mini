@@ -1,7 +1,27 @@
 <!--pages/activityDetail/index.wxml-->
-<view class="activity-detail">
-    <text>pages/activityDetail/index.wxml</text>
-    <view class="activity">
-      
+<view class="box">
+    <view class="box-title">
+      <image class="img-title" src="../../images/title.png" mode=""/>
+      <view class="btn">
+        多重好礼等你来拿
+      </view>
+      <text class="text-time">活动时间:3.12-4.12</text>
+    </view>
+    <view class="box-content wrap">
+      <view class="box-lottery">
+           <view class="text-title">
+             <text>参与活动，即可抽奖</text>
+           </view>
+           <view class="box-act_message wrap">
+                <view class="box-prizeDetails ">
+                  <image class="img-prizeDetails" src="../../images/banner1.png" mode=""/>
+                  <view class="box-rigth_prizeDetails">
+                      <view class="text-priceName">
+                        芋泥波波奶茶
+                      </view>
+                  </view>
+                </view>
+            </view>
+      </view>
     </view>
 </view>
