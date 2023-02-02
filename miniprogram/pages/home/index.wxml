@@ -125,7 +125,7 @@
   </view>
 
   <view class="footer warp">
-    <button class="nav_">
+    <button class="nav_activity">
       <view>
         查看更多奖品
       </view>

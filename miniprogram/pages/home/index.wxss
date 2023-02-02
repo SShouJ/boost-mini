@@ -245,7 +245,7 @@
   height: 320rpx;
 }
 
-.footer .btn {
+.activity_list .btn {
   padding: 6rpx 20rpx;
   color: #fff;
   background: linear-gradient(to right bottom, #f0ddb4, #cf9a53);
@@ -256,7 +256,7 @@
   padding-bottom: 30rpx;
 }
 
-.footer .nav_ {
+.footer .nav_activity {
   width: 100%;
   background-color: #fff;
   border-radius: 16rpx;
