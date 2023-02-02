@@ -28,8 +28,16 @@
   display: inline-block;
 }
 
+.bold {
+  font-weight: 700;
+}
+
 .mt-10 {
   margin-top: 10rpx;
+}
+
+.mtb-30 {
+  margin: 30rpx 0;
 }
 
 .mr-20 {
@@ -50,6 +58,10 @@
 
 .c-000 {
   color: #000;
+}
+
+.c-red {
+  color: red;
 }
 
 .c-fff {
@@ -144,11 +156,12 @@
   background: linear-gradient(to bottom, #fa6a38, #FFF, #FFF, #FFF, #FFF, #FFF);
   border-radius: 20rpx;
   box-sizing: border-box;
-  padding: 20rpx;
+  padding: 20rpx 20rpx 20rpx 20rpx;
 }
 
 .body .container .container_bgd .banner .h3 {
   font-size: 34rpx;
+  padding-top: 20rpx;
   font-weight: 700;
   color: #000;
 }
@@ -160,11 +173,9 @@
 
 .body .container .container_bgd .swiper {
   color: #000;
-  background-color: #fff;
-  margin-top: 50rpx;
-  padding: 20rpx 0 0 0;
+  margin-top: 20rpx;
+  padding: 20rpx 20rpx 0 0;
   box-sizing: rpxborder-box;
-  border-radius: 20rpx;
   overflow: scroll;
 }
 
@@ -203,12 +214,62 @@
   -o-text-overflow: ellipsis;
 }
 
-.body .container .container_bgd .activity_list {
+.activity_list .title {
+  color: #000 !important;
+  font-size: 40rpx;
+  font-weight: 700;
+  text-align: center;
+}
+
+.activity_list .activity {
+  padding: 20rpx;
+  border-radius: 20rpx;
+  flex-wrap: wrap;
+  gap: 40rpx 0;
+}
+
+.activity_list .activity-item {
+  width: 320rpx;
+  border-radius: 20rpx;
+  color: #000;
+  box-sizing: border-box;
   background-color: #fff;
 }
 
-.body .container .container_bgd .activity_list .title {
-  color: #000;
+.activity_list .activity-item .title {
+  font-size: 36rpx;
+}
+
+.activity_list .activity-item .activity_img {
+  width: 320rpx;
+  height: 320rpx;
+}
+
+.footer .btn {
+  padding: 6rpx 20rpx;
+  color: #fff;
+  background: linear-gradient(to right bottom, #f0ddb4, #cf9a53);
+  border-radius: 50rpx;
+}
+
+.footer {
+  padding-bottom: 30rpx;
+}
+
+.footer .nav_ {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 16rpx;
+  font-size: 30rpx;
+  color: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer .icon_more {
+  width: 26rpx;
+  height: 26rpx;
 }
 
 /* 导航栏的样式 */

@@ -7,7 +7,7 @@ Page({
   data: {
     islogin: false,
     userInfo: {},
-    prizeData: [
+    swiperPrize: [
       {
         id: 1,
         url: '../../images/activity.png',
@@ -72,8 +72,45 @@ Page({
         date: '23:58:31',
         integral: 800,
       },
-    ]
-
+    ],
+    prizeLift: [
+      {
+        id: 1,
+        url: '../../images/activity.png',
+        title: '1这是奖品列表的数据',
+        integral: 100,
+      },
+      {
+        id: 2,
+        url: '../../images/activity.png',
+        title: '2这是奖品列表的数据',
+        integral: 200,
+      },
+      {
+        id: 3,
+        url: '../../images/activity.png',
+        title: '3这是奖品列表的数据',
+        integral: 300,
+      },
+      {
+        id: 4,
+        url: '../../images/activity.png',
+        title: '4这是奖品列表的数据',
+        integral: 400,
+      },
+      {
+        id: 5,
+        url: '../../images/activity.png',
+        title: '5这是奖品列表的数据',
+        integral: 500,
+      },
+      {
+        id: 6,
+        url: '../../images/activity.png',
+        title: '6这是奖品列表的数据',
+        integral: 600,
+      },
+    ],
     // navList: ['推荐', '男装', '女装', '手机', '电脑', '百货', '电器', '全部',],
     // navType: 0,
   },
