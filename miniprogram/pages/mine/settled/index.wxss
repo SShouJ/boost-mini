@@ -16,7 +16,7 @@ body{
 .avatar-header{
   width: 124rpx;
   height: 124rpx;
-  border: 1rpx solid black;
+  border: 1rpx solid rgb(85, 84, 84);
   border-radius: 150rpx;
 }
 .text-message{
@@ -47,7 +47,12 @@ body{
   color: black;
   font-weight: 700;
 }
-
+.not-text{
+  margin-left: 20rpx;
+  font-size: 30rpx;
+  color: black;
+  font-weight: 700;
+}
 .box-rigth{
   display: flex;
   justify-content: space-between;
@@ -56,11 +61,7 @@ body{
 .box-inp{
   margin-left:30rpx ;
 }
-.inps{
-  width: 390rpx ;
-  height: 32rpx;
-  font-size: 30rpx;
-}
+
 .inp{
   width: 420rpx ;
   height: 32rpx;
@@ -92,12 +93,15 @@ body{
   margin-left: 22rpx;
 }
 .authentication-content_item .box-rigth{
-  border: 1rpx solid;
+  border: 1rpx solid #ccc;
  padding: 30rpx;
  box-sizing: border-box;
 }
 .icon-add{
   width: 56rpx;
   height: 56rpx;
+}
+.btn{
+  margin-top: 20rpx;
 }
 /* input字体设置 */
