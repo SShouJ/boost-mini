@@ -52,6 +52,7 @@ Page({
   },
   login() {
     const _this = this;
+    if(this.data.islogin) return;
     wx.getSetting({
       success(res) {
         if (res.authSetting["scope.userInfo"]) { 
@@ -66,9 +67,7 @@ Page({
       desc: '用于登录',
       success: (res) => {
         this.setData({
-          userInfo: res.userInfo
-        })
-        this.setData({
+          userInfo: res.userInfo,
           islogin: true
         })
       }

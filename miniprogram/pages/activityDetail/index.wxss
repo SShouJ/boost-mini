@@ -4,8 +4,79 @@
   margin: 0 auto;
 }
 
-.activity-detail{
+.box{
   min-height: 100vh;
-  background-image: url(https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/activity-bg.png?sign=bc68550a9a05ebcfa73695648ec04f93&t=1675307371);
+  background-image: url(https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/active.png?sign=1819444eb2800d394ea61dc33128ea48&t=1675328406);
   background-size: 100% 100%;
+}
+.box-title{
+  margin-top: 50rpx;
+  /* border: 1rpx solid; */
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+.img-title{
+  width: 400rpx;
+  height: 80rpx;
+}
+.btn{
+  margin-bottom: 20rpx;
+  background-image: linear-gradient(rgb(239, 9, 0),#ef0900,#fca86c);
+  box-shadow: 2px 2px 2px 1px rgba(239, 9, 0, 0.8);
+  border: 1rpx solid;
+  padding: 5rpx 20rpx;
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #fdf7df;
+  border-radius: 10rpx;
+}
+.text-time{
+  font-size: 26rpx;
+  color: #fc520f;
+  font-weight: 700;
+}
+.box-lottery{
+  height: 700rpx;
+  margin: 0rpx 10rpx;
+  background-image: url(https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/lottery.png?sign=405e36a7339ee367551eacca96f69598&t=1675327128);
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: space-around */
+}
+.box-content{
+  margin-top: 20rpx;
+}
+.text-title{
+  /* border: 1rpx solid; */
+  padding: 16rpx 20rpx;
+}
+.text-title text{
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #fdf7df;
+}
+.box-act_message{
+  /* border: 1rpx solid red; */
+  padding: 110rpx 80rpx 0rpx 65rpx;
+  box-sizing: border-box;
+
+}
+.box-prizeDetails{
+  border: 1rpx solid;
+  border-radius:10rpx ;
+display: flex;
+justify-content: flex-start;
+}
+.img-prizeDetails{
+  /* border: 1rpx solid; */
+  border-radius:10rpx 0 0 10rpx ;
+
+  width: 200rpx;
+  height: 190rpx;
+}
+.box-rigth_prizeDetails{
+   /* padding: ; */
 }

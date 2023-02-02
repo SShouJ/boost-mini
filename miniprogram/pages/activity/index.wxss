@@ -32,7 +32,11 @@
 .welfare .label .item .img-wrap{
   width: 76rpx;
   height: 76rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
+  background: #fff;
   overflow: hidden;
 }
 
@@ -70,6 +74,7 @@
   background: #fff;
   border-radius: 20rpx;
   overflow: hidden;
+  box-shadow:10rpx 0px 10rpx 0px #c2c2c2;
 }
 
 /* 活动内容 */
@@ -194,6 +199,11 @@
   height: 76rpx;
 }
 
+.icon-19{
+  width: 38rpx;
+  height: 38rpx;
+}
+
 .cl-orange{
   color: #ffc6b2;
 }
@@ -209,3 +219,4 @@
 .cl-red{
   color: #fa6a38;
 }
+

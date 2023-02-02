@@ -7,7 +7,7 @@
     <view class="label">
         <view class="item">
           <view class="img-wrap">
-            <image class="icon-38" src="../../images/goods1.png" mode="scaleToFill"/>
+            <image class="icon-19" src="../../images/icon-detail.png" mode="scaleToFill"/>
           </view>
           <view class="desc"> 
             <text class="fs-12 cl-orange">查看详情</text>
@@ -16,7 +16,7 @@
         <image class="icon-arrow mt-19" src="../../images/icon-activity_arrow.png" mode="widthFix"/>
         <view class="item">
           <view class="img-wrap">
-            <image class="icon-38" src="../../images/goods1.png" mode="scaleToFill"/>
+            <image class="icon-19" src="../../images/icon-join.png" mode="scaleToFill"/>
           </view>
           <view class="desc">
             <text class="fs-12 cl-orange">点击参与</text>
@@ -25,7 +25,7 @@
         <image class="icon-arrow mt-19" src="../../images/icon-activity_arrow.png" mode="widthFix"/>
         <view class="item">
           <view class="img-wrap">
-            <image class="icon-38" src="../../images/goods1.png" mode="scaleToFill"/>
+            <image class="icon-19" src="../../images/icon-prize.png" mode="scaleToFill"/>
           </view>
           <view class="desc">
             <text class="fs-12 cl-orange">等待开奖</text>
@@ -34,7 +34,7 @@
         <image class="icon-arrow mt-19" src="../../images/icon-activity_arrow.png" mode="widthFix"/>
         <view class="item">
           <view class="img-wrap">
-            <image class="icon-38" src="../../images/goods1.png" mode="scaleToFill"/>
+            <image class="icon-19" src="../../images/icon-award.png" mode="scaleToFill"/>
           </view>
           <view class="desc">
             <text class="fs-12 cl-orange">领取奖励</text>
@@ -53,24 +53,7 @@
     </view>
   </view>
   <!-- 活动每一项 -->
-  <view class="activity-item wrap mb-10" wx:for="{{activityList}}" wx:for-item="item" wx:key="id" bindtap="toDetails" data-id="{{item.id}}">
-    <image class="activity-img" src="{{item.activityImg}}" mode="scaleToFill" />
-    <view class="activity-info">
-      <view class="activity-title fs-20 fw-600">妙克管家：一元搬家嗨FUN天</view>
-      <view class="activity-press mt-5 fs-12 cl-grey">笔记本电脑,笔筒</view>
-      <view class="activity-duration mt-15">
-          <view class="spot bg-green"></view>
-          <text class="ml-5 fs-14">2020年2月3日~2月26日</text>
-      </view>
-      <view class="activity-duration mt-5">
-          <view class="spot bg-red"></view>
-          <text class="ml-5 fs-14">上海市杨浦区宁国路百联滨江购物中心</text>
-      </view>
-    </view>
-    <view class="hr"></view>
-    <view class="operator flex-between">
-      <text class="fs-14">已经参加200人</text>
-      <view class="btn fs-14 bg-red cl-fff">进入活动</view>
-    </view>
+  <view class="wrap mb-10" wx:for="{{activityList}}"  wx:key="id">
+    <activity bindtap="toDetails" activityItem="{{item}}" data-id="{{item.id}}"></activity>
   </view>
 </view>
