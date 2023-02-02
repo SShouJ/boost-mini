@@ -1,7 +1,7 @@
 <!--pages/mine/settled/index.wxml-->
 <view class="box">
   <view class="box-header">
-    <image class="avatar-header" src="../../../images/icon-home_active.png" mode="" />
+    <image class="avatar-header" src="../../../images/dianpu.png" mode="" />
   </view>
   <view>
     <view class="box-title warp">
@@ -24,8 +24,8 @@
           <text class="text-star">*</text><text class="text">店铺地址</text>
         </view>
         <view class="box-rigth">
-          <view class="box-inp"><input class="inps" type="text" placeholder="请选择" maxlength="20" /></view>
-          <image class="icon-more" src="../../../images/icon-more.png" mode="" />
+          <view class="box-inp"><input class="inp" type="text" placeholder="请输入店铺地址" maxlength="20" /></view>
+         
         </view>
       </view>
 
@@ -69,18 +69,31 @@
       <view class="authentication-content_item">
         <view class="box-left">
           <view class="box-top">
-          
-            <text class="text-star">*</text><text class="text">店铺简介</text>
+            <text class="text-star">*</text><text class="text">营业执照</text>
           </view>
           <view class="box-bom">
             <text class="bom-text">需文字清晰，边框完整，露出国徽</text>
           </view>
         </view>
         <view class="box-rigth">
-             <image class="icon-add" src="../../../images/icon-mine.png" mode=""/>
+             <image class="icon-add" src="../../../images/icon-add.png" bindtap="updata" mode=""/>
+        </view>
+      </view>
+
+      <view class="authentication-content_item">
+        <view class="box-left">
+          <view class="box-top">
+            <text class="not-text">其他资质认证照片</text>
+          </view>
+          <view class="box-bom">
+            <text class="bom-text">需文字清晰，边框完整（非必填）</text>
+          </view>
+        </view>
+        <view class="box-rigth" >
+             <image class="icon-add" src="../../../images/icon-add.png" bindtap="updata" mode=""/>
         </view>
       </view>
     </view>
   </view>
-  <button 	type="primary">提交</button>
+  <button class="btn"	type="primary" >提交</button>
 </view>
