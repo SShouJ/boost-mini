@@ -1,2 +1,7 @@
 <!--pages/activityDetail/index.wxml-->
-<text>pages/activityDetail/index.wxml</text>
+<view class="activity-detail">
+    <text>pages/activityDetail/index.wxml</text>
+    <view class="activity">
+      
+    </view>
+</view>
