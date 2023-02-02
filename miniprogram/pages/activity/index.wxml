@@ -7,7 +7,7 @@
     <view class="label">
         <view class="item">
           <view class="img-wrap">
-            <image class="icon-38" src="../../images/goods1.png" mode="scaleToFill"/>
+            <image class="icon-19" src="../../images/icon-detail.png" mode="scaleToFill"/>
           </view>
           <view class="desc"> 
             <text class="fs-12 cl-orange">查看详情</text>
@@ -16,7 +16,7 @@
         <image class="icon-arrow mt-19" src="../../images/icon-activity_arrow.png" mode="widthFix"/>
         <view class="item">
           <view class="img-wrap">
-            <image class="icon-38" src="../../images/goods1.png" mode="scaleToFill"/>
+            <image class="icon-19" src="../../images/icon-join.png" mode="scaleToFill"/>
           </view>
           <view class="desc">
             <text class="fs-12 cl-orange">点击参与</text>
@@ -25,7 +25,7 @@
         <image class="icon-arrow mt-19" src="../../images/icon-activity_arrow.png" mode="widthFix"/>
         <view class="item">
           <view class="img-wrap">
-            <image class="icon-38" src="../../images/goods1.png" mode="scaleToFill"/>
+            <image class="icon-19" src="../../images/icon-prize.png" mode="scaleToFill"/>
           </view>
           <view class="desc">
             <text class="fs-12 cl-orange">等待开奖</text>
@@ -34,7 +34,7 @@
         <image class="icon-arrow mt-19" src="../../images/icon-activity_arrow.png" mode="widthFix"/>
         <view class="item">
           <view class="img-wrap">
-            <image class="icon-38" src="../../images/goods1.png" mode="scaleToFill"/>
+            <image class="icon-19" src="../../images/icon-award.png" mode="scaleToFill"/>
           </view>
           <view class="desc">
             <text class="fs-12 cl-orange">领取奖励</text>
