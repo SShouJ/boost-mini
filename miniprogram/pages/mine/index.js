@@ -62,7 +62,7 @@ Page({
       console.log('------------我是调用查找用户的接口---------------');
       console.log(res);
       console.log('---------------------------我是调用查找用户的接口结束--------------------');
-      if(res.result.status){
+      if(res.result.status == 1){
         _this.setData({
           userInfo:res.result.data,
           islogin:true,
@@ -75,6 +75,7 @@ Page({
   },
   // 设置data中userinfo和islogin的值
   setUserInfo() {
+    console.log()
     wx.getUserProfile({
       desc: '用于登录',
       success: (res) => {

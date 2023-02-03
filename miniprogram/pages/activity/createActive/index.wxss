@@ -1,0 +1,70 @@
+/* pages/activity/createActive/index.wxss */
+.wrap{
+  width: 680rpx;
+  margin: 0 auto;
+}
+
+.activity>.tip{
+  padding: 20rpx 32rpx;
+}
+
+.activity>.tip>.tip-text{
+  width: 580rpx;
+  line-height: 200%;
+}
+
+.activity>.tip>.close-btn{
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: 50%;
+  border: 2rpx solid #fff;
+}
+
+.activity>.form-item{
+  background: #fff;
+}
+
+.flex-center{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bg-warning{
+  background: #ff6738;
+}
+
+.fs-14{
+  font-size: 28rpx;
+}
+
+.cl-white{
+  color: #fff;
+}
+
+
+.all-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-18{
+  width: 36rpx;
+}
+
+.fs-15{
+  font-size: 30rpx;
+}
+
+.fw-700{
+  font-weight: 700;
+}
+
+.pd-17{
+  padding: 17rpx;
+}
+
+.cl-grey{
+  color: #6d6c6c;
+}
