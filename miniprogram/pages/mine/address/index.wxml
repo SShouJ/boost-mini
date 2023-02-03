@@ -1,2 +1,42 @@
 <!--pages/mine/address/index.wxml-->
-<text>pages/mine/address/index.wxml</text>
+<view class="body">
+  <!-- 空状态 -->
+  <view class="background" wx:if="{{ isOpenNull }}">
+    <view>
+      <image src="../../../images/bgd-location.png" mode="" />
+      <view class="test">暂无收货地址</view>
+    </view>
+  </view>
+
+  <!-- 有数据的状态 -->
+  <view class="address-list" wx:else=""></view>
+
+  <!-- 添加地址的按钮 -->
+  <view bindtap="addAddress" class="add_address wrap">
+    <button class="but item-justify_center">
+      <image class="add mr-20" src="../../../images/icon-add_border.png" mode="" />
+      <text>添加收货地址</text>
+    </button>
+  </view>
+
+  <!-- 弹层 -->
+  <view wx:if="{{ isOpenDialog }}" class="dialog item-justify_center">
+    <view class="dialog_box">
+      <!-- 标题 -->
+      <view class="dialog-header item-justify_center">
+        <view class="title">弹层</view>
+      </view>
+      <!-- 内容 -->
+      <view class="dialog-container-overflow">
+        <view class="dialog-container">
+          内容
+        </view>
+      </view>
+      <!-- 底部 -->
+      <view class="dialog-footer item-justify_center">
+        <button bindtap="determine" class="dialog-ok mr-20" hover-class="dialog-ok_hover">确定</button>
+        <button bindtap="cancel" class="dialog-no" hover-class="dialog-no_hover">取消</button>
+      </view>
+    </view>
+  </view>
+</view>
