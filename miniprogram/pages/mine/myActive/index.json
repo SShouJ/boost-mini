@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "activity":"/components/activityModal/activityModal"
+  }
 }

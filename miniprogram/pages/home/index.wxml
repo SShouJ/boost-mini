@@ -1,7 +1,7 @@
 <!--pages/home/index.wxml-->
 <view class="body">
   <view class="header pb-20" style="  background-image: url('https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/bgd-banner.png?sign=ef678583d2e5b09cf5f1da4747e2778f&t=1675216306')">
-    <view class="warp userinfo">
+    <view class="wrap userinfo">
       <view bindtap="login" wx:if="{{!islogin}}" class="state">
         <view class="text">请登录</view>
       </view>
@@ -10,7 +10,7 @@
         ，您好
       </view>
     </view>
-    <view class="dialog_box warp">
+    <view class="dialog_box wrap">
       <view wx:if="{{islogin}}" class="justify-space_between">
         <view>
           您当前的积分为 300
@@ -45,7 +45,7 @@
   </view>
 
   <view class="container">
-    <view class="container_bgd warp mt-10">
+    <view class="container_bgd wrap mt-10">
       <view class="banner justify-space_between item-center">
         <view class="h3">限时抢购</view>
         <!-- 导航栏 -->
@@ -88,7 +88,7 @@
         </view>
       </view>
     </view>
-    <view class="activity_list warp mtb-30">
+    <view class="activity_list wrap mtb-30">
       <view class="title">兑换奖品</view>
       <!-- 奖品列表 -->
       <view class="activity justify-space_between">
@@ -124,7 +124,7 @@
     </view> -->
   </view>
 
-  <view class="footer warp">
+  <view class="footer wrap">
     <button class="nav_activity">
       <view>
         查看更多奖品

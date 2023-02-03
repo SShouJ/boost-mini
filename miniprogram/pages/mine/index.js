@@ -53,11 +53,23 @@ Page({
   login() {
     const _this = this;
     if(this.data.islogin) return;
-    wx.getSetting({
-      success(res) {
-        if (res.authSetting["scope.userInfo"]) { 
-          _this.setUserInfo();
-        }
+    wx.cloud.callFunction({
+      name: 'user',
+      data: {
+        type:"findUser",
+      }
+    }).then(res=>{
+      console.log('------------我是调用查找用户的接口---------------');
+      console.log(res);
+      console.log('---------------------------我是调用查找用户的接口结束--------------------');
+      if(res.result.status){
+        _this.setData({
+          userInfo:res.result.data,
+          islogin:true,
+        })
+        console.log(_this.data.userInfo);
+      }else{
+        _this.setUserInfo();
       }
     })
   },
@@ -66,6 +78,17 @@ Page({
     wx.getUserProfile({
       desc: '用于登录',
       success: (res) => {
+        // 这边如果没有登录自动把数据加上去
+        wx.cloud.callFunction({
+          name: 'user',
+          data: {
+            type:'addUser',
+            nickName:res.userInfo.nickName,
+            avatarUrl:res.userInfo.avatarUrl,
+          }
+        }).then(res=>{
+          console.log(res.result);
+        })
         this.setData({
           userInfo: res.userInfo,
           islogin: true
@@ -77,14 +100,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    this.login();
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
-
   },
 
   /**

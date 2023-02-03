@@ -1,1 +1,121 @@
 /* pages/mine/address/index.wxss */
+.wrap {
+  width: 710rpx !important;
+  margin: 0 auto;
+}
+
+.mr-10 {
+  margin-right: 10rpx;
+}
+
+.mr-20 {
+  margin-right: 20rpx;
+}
+
+.body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f4f4f4;
+  position: relative;
+}
+
+.item-justify_center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add_address {
+  padding-top: 30rpx;
+}
+
+.add_address .but {
+  width: 100%;
+  background-color: #f52620;
+  color: #fff;
+  border-radius: 16rpx;
+}
+
+.add_address .but .add {
+  width: 34rpx;
+  height: 34rpx;
+}
+
+.background {
+  padding: 80rpx 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.background image {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+/* 弹层样式开始 */
+.dialog {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(24, 24, 24, 0.623);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.dialog .dialog_box {
+  width: 600rpx;
+  background-color: #fff;
+  box-sizing: border-box;
+  border-radius: 20rpx;
+  position: relative;
+}
+
+.dialog .dialog_box .dialog-header {
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #ccc;
+}
+
+.dialog .dialog_box .dialog-container-overflow {
+  max-height: 350rpx;
+  padding: 20rpx;
+  overflow: scroll;
+  margin-bottom: 109rpx;
+}
+
+.dialog .dialog-footer {
+  border-top: 1rpx solid #ccc;
+  width: 100%;
+  position: absolute;
+  bottom: 0 !important;
+  padding: 20rpx 0;
+}
+
+.dialog .dialog-footer .dialog-ok,
+.dialog-no {
+  width: 160rpx !important;
+  padding: 10rpx 0;
+  color: #fff;
+  border-radius: 15rpx;
+}
+
+.dialog .dialog-footer .dialog-ok {
+  background-color: #f53535;
+
+}
+
+.dialog .dialog-footer .dialog-no {
+  background-color: #bdb9b9;
+}
+
+.dialog-ok_hover {
+  background-color: #f35252 !important;
+}
+
+.dialog-no_hover {
+  background-color: #d3cdcd !important;
+}
+/* 弹层样式结束 */

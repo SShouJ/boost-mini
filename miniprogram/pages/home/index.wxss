@@ -1,5 +1,5 @@
 /* pages/home/index.wxss */
-.warp {
+.wrap {
   width: 710rpx !important;
   margin: 0 auto;
 }
