@@ -17,3 +17,11 @@
   height: 6rpx;
   background: #d85c56;
 }
+
+.mt-5{
+  margin-top: 10rpx;
+}
+
+.cl-red{
+  color: #d85c56;
+}

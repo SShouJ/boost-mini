@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    navList = [
+    navList : [
       {
         id:1,
         title:"全部",
@@ -22,7 +22,8 @@ Page({
         id:4,
         title:"未开始",
       },
-    ]
+    ],
+    target:2,
   },
 
   /**

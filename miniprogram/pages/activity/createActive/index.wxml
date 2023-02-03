@@ -17,7 +17,7 @@
   <view class="form-item pd-17 fs-15">
       <view class="label">
           <text>*</text>
-          <text>活动主题图</text>
+          <text class="ml-">活动主题图</text>
       </view>
   </view>
 </view>
