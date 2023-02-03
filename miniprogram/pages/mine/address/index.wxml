@@ -9,7 +9,7 @@
   </view>
 
   <!-- 有数据的状态 -->
-  <view class="address-list" wx:else=""></view>
+  <view class="address-list" wx:else></view>
 
   <!-- 添加地址的按钮 -->
   <view bindtap="addAddress" class="add_address wrap">

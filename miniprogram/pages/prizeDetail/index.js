@@ -1,25 +1,26 @@
-// pages/activityDetail/index.js
+// pages/prizeDetail/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
+    parentPass: ''
   },
-  toPage(data){
-    console.log(data.currentTarget.dataset.name);
-    wx.navigateTo({
-      url: '/pages/'+ data.currentTarget.dataset.name+'/index',
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    console.log(options)
+    console.log('传过来的id：', options._identification)
+    this.set_data('parentPass', options._identification)
   },
 
+  set_data(key, value) {
+    let data = {}
+    data[key] = value;
+    this.setData(data)
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

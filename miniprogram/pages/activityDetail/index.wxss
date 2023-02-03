@@ -5,12 +5,52 @@
 }
 
 .box{
+  position: relative;
   min-height: 100vh;
   background-image: url(https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/active.png?sign=1819444eb2800d394ea61dc33128ea48&t=1675328406);
   background-size: 100% 100%;
 }
+.box-exchange{
+  position: absolute;
+  top: 3%;
+  left: 3%;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.box-customer{
+  position: absolute;
+  top: 4%;
+  right: 3%;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.box-rule{
+  position: absolute;
+  top: 11%;
+  right: 3%;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.icon-exchange{
+  width: 50rpx;
+  height: 50rpx;
+}
+.icon-customer{
+  width: 50rpx;
+  height: 50rpx;
+}
+.fs-20{
+  font-size: 20rpx;
+}
+.icon-rule{
+  width: 50rpx;
+  height: 50rpx;
+}
 .box-title{
-  margin-top: 50rpx;
+  margin-top: 70rpx;
   /* border: 1rpx solid; */
   display: flex;
   flex-direction: column;
@@ -33,50 +73,157 @@
 }
 .text-time{
   font-size: 26rpx;
-  color: #fc520f;
+  color: #a8351b;
   font-weight: 700;
 }
 .box-lottery{
-  height: 700rpx;
-  margin: 0rpx 10rpx;
-  background-image: url(https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/lottery.png?sign=405e36a7339ee367551eacca96f69598&t=1675327128);
-  background-size: 100% 100%;
+  /* height: 700rpx; */
+ 
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: space-around */
 }
 .box-content{
-  margin-top: 20rpx;
+  margin-top: 3%;
+  /* border: 1rpx solid; */
+  position: relative;
 }
 .text-title{
-  /* border: 1rpx solid; */
-  padding: 16rpx 20rpx;
+  box-sizing: border-box;
+  border: 1rpx solid #ff7d44;
+  padding: 2.2% 50rpx;
+  border-radius: 50rpx;
+  background-image: linear-gradient(#ff7d44,#ff7d44,#f51400);
+  box-shadow: 2px 2px 2px 1px rgba(190, 107, 31, 0.8);
+  z-index: 10;
+  position: absolute;
+  
 }
 .text-title text{
   font-size: 36rpx;
   font-weight: 700;
   color: #fdf7df;
+  
 }
 .box-act_message{
-  /* border: 1rpx solid red; */
-  padding: 110rpx 80rpx 0rpx 65rpx;
+  margin-top: 60rpx;
+  padding: 30rpx 20rpx;
   box-sizing: border-box;
-
+  border-radius:30rpx ;
+  border: 10rpx solid #f8b026;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+ 
 }
 .box-prizeDetails{
-  border: 1rpx solid;
+  box-sizing: border-box;
+  border: 1rpx solid #f6f6f6;
+  box-shadow: 2px 2px 2px 0px rgba(0, 9, 0, 0.1);
   border-radius:10rpx ;
 display: flex;
-justify-content: flex-start;
-}
-.img-prizeDetails{
-  /* border: 1rpx solid; */
-  border-radius:10rpx 0 0 10rpx ;
+justify-content: space-between;
 
+}
+
+.img-prizeDetails{
+  border-radius:10rpx 0 0 10rpx ;
   width: 200rpx;
   height: 190rpx;
 }
 .box-rigth_prizeDetails{
-   /* padding: ; */
+  box-sizing: border-box;
+  padding: 3%;
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+}
+.text-priceName{
+  font-size: 30rpx;
+  font-weight: 700;
+  
+}
+.box-state{
+  display: flex;
+  justify-content: space-between;
+  align-items: center
+}
+.text-number{
+  font-size: 24rpx;
+  font-weight: 600;
+  color:#FA3D2A;
+}
+.btn-lottery{
+  padding: 1.8% 7%;
+  background-image: radial-gradient(#FA3D2A,#FB4832);
+  color: #fdf7df;
+  border: 1rpx solid #FA3D2A;
+  border-radius: 30rpx;
+  font-size: 24rpx;
+  font-weight: 700;
+}
+.box-progressBar{  
+  margin-top: 6%;
+  width: 90%;
+  padding: 20rpx 0;
+  position: relative;
+}
+.progressBar{
+  padding: 10rpx 0rpx;
+  background-color: #ff292d ;
+  border-radius: 50rpx;
+}
+.countdown{
+  width: 50%;
+  padding: 20rpx;
+  margin-top: 8%;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+.btn-share{
+  margin-top: 5%;
+  width: 90%;
+  border: 1rpx solid;
+  border-radius: 50rpx;
+  text-align: center;
+  padding: 20rpx 30rpx;
+  background-color: #ff292d ;
+  color: white;
+  font-size: 30rpx;
+font-weight: 600;
+}
+.act-message_bom{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.icon-jp{
+  width: 50rpx;
+  height: 50rpx;
+}
+.box-post{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 5%;
+  left: 10%;
+}
+.box-post2{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+}
+.box-post3{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 5%;
+  left: 90%;
 }
