@@ -22,7 +22,12 @@ Component({
     btnClass:['','them-light','them-low'],
     btnText:['','进入活动','活动已结束'],
   },
-
+  toPage(data){
+    console.log();
+    wx.navigateTo({
+      url: '/pages/home/index',
+    })
+  },
   /**
    * 组件的方法列表
    */

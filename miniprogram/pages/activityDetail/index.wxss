@@ -5,12 +5,52 @@
 }
 
 .box{
+  position: relative;
   min-height: 100vh;
   background-image: url(https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/active.png?sign=1819444eb2800d394ea61dc33128ea48&t=1675328406);
   background-size: 100% 100%;
 }
+.box-exchange{
+  position: absolute;
+  top: 3%;
+  left: 3%;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.box-customer{
+  position: absolute;
+  top: 4%;
+  right: 3%;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.box-rule{
+  position: absolute;
+  top: 11%;
+  right: 3%;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.icon-exchange{
+  width: 50rpx;
+  height: 50rpx;
+}
+.icon-customer{
+  width: 50rpx;
+  height: 50rpx;
+}
+.fs-20{
+  font-size: 20rpx;
+}
+.icon-rule{
+  width: 50rpx;
+  height: 50rpx;
+}
 .box-title{
-  margin-top: 50rpx;
+  margin-top: 70rpx;
   /* border: 1rpx solid; */
   display: flex;
   flex-direction: column;
@@ -168,7 +208,7 @@ font-weight: 600;
   flex-direction: column;
   align-items: center;
   position: absolute;
-  top: 10%;
+  top: 5%;
   left: 10%;
 }
 .box-post2{
@@ -176,7 +216,7 @@ font-weight: 600;
   flex-direction: column;
   align-items: center;
   position: absolute;
-  top: 10%;
+  top: 5%;
   left: 50%;
 }
 .box-post3{
@@ -184,6 +224,6 @@ font-weight: 600;
   flex-direction: column;
   align-items: center;
   position: absolute;
-  top: 10%;
-  left: 92%;
+  top: 5%;
+  left: 90%;
 }

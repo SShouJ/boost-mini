@@ -22,7 +22,7 @@
       <text class="fs-14 fw-600">{{activityItem.count}}</text>
         人
       </view>
-      <view class="btn fs-12 {{btnClass[activityItem.type]}}">{{btnText[activityItem.type]}}</view>
+      <view class="btn fs-12 fw-600 {{btnClass[activityItem.type]}}">{{btnText[activityItem.type]}}</view>
     </view>
   </view>
 </view>

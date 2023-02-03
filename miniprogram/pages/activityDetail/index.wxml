@@ -1,5 +1,20 @@
 <!--pages/activityDetail/index.wxml-->
 <view class="box">
+<!-- 积分商城 -->
+ <view class="box-exchange">
+   <image class="icon-exchange" src="../../images/icon-exchange.png" mode=""/>
+   <text class="fs-20">兑换</text>
+ </view>
+ <!-- 活动规则 -->
+ <view class="box-rule">
+  <image class="icon-rule" src="../../images/icon-rule.png" mode=""/>
+  <text class="fs-20">兑换</text>
+ </view>
+ <!-- 客服 -->
+ <view class="box-customer">
+  <image class="icon-customer" src="../../images/icon-customer.png" mode=""/>
+  <text class="fs-20">兑换</text>
+ </view>
   <view class="box-title">
     <image class="img-title" src="../../images/title.png" mode="" />
     <view class="btn">
@@ -36,20 +51,20 @@
               </view>
               <view class="box-post">
                 <image class="icon-jp" src="../../images/icon-add.png" mode=""/>
-                <text>10人</text>
+                <text>200人</text>
               </view>
               <view class="box-post2">
                 <image class="icon-jp" src="../../images/icon-add.png" mode=""/>
-                <text>50人</text>
+                <text>500人</text>
               </view>
               <view class="box-post3">
                 <image class="icon-jp" src="../../images/icon-add.png" mode=""/>
-                <text>100 人</text>
+                <text>1000人</text>
               </view>
           </view>
           <!-- 倒计时 -->
           <view class="countdown">
-                还剩 23：59：59 结束
+                还剩 23：59：59 开奖
           </view>
           <!-- 分享btn -->
           <view class="btn-share">
