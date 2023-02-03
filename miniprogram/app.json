@@ -7,7 +7,9 @@
     "pages/mine/address/index",
     "pages/mine/settled/index",
     "pages/mine/audit/index",
-    "pages/activityDetail/index"
+    "pages/activityDetail/index",
+    "pages/prize/index",
+    "pages/prizeDetail/index"
   ],
   "tabBar": {
     "list": [{

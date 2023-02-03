@@ -32,6 +32,10 @@
   font-weight: 700;
 }
 
+.mt-30 {
+  margin-top: 30rpx;
+}
+
 .mt-10 {
   margin-top: 10rpx;
 }
@@ -140,9 +144,9 @@
 
 .body .header .arrow {
   width: 30rpx;
-  height: 25rpx;
+  height: 16rpx;
   position: absolute;
-  top: 97rpx;
+  top: 92rpx;
   left: 50rpx;
 }
 
@@ -215,17 +219,21 @@
 }
 
 .activity_list .title {
-  color: #000 !important;
-  font-size: 40rpx;
-  font-weight: 700;
-  text-align: center;
+  width: 100vw;
+}
+
+.activity_list .title image {
+  margin: 0 auto;
+  width: 303rpx;
+  height: 91rpx;
 }
 
 .activity_list .activity {
-  padding: 20rpx;
-  border-radius: 20rpx;
+  box-sizing: border-box;
+  padding: 90rpx 20rpx 20rpx 20rpx;
   flex-wrap: wrap;
-  gap: 40rpx 0;
+  gap: 20rpx 0;
+  background-size: 100% 100%;
 }
 
 .activity_list .activity-item {
@@ -233,16 +241,24 @@
   border-radius: 20rpx;
   color: #000;
   box-sizing: border-box;
-  background-color: #fff;
+  border: 1rpx solid #ed9210;
 }
 
 .activity_list .activity-item .title {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10rpx 20rpx;
   font-size: 36rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
 }
 
 .activity_list .activity-item .activity_img {
-  width: 320rpx;
-  height: 320rpx;
+  width: 316rpx;
+  height: 316rpx;
+  border-radius: 20rpx 20rpx 0 0;
 }
 
 .activity_list .btn {
