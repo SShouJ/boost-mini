@@ -15,6 +15,7 @@ Page({
         day: '111',
         date: '23:51:31',
         integral: 100,
+        nav: 'prizeDetail',
       },
       {
         id: 2,
@@ -23,6 +24,7 @@ Page({
         day: '222',
         date: '23:52:31',
         integral: 200,
+        nav: 'prizeDetail',
       },
       {
         id: 3,
@@ -31,6 +33,7 @@ Page({
         day: '333',
         date: '23:53:31',
         integral: 300,
+        nav: 'prizeDetail',
       },
       {
         id: 4,
@@ -39,6 +42,7 @@ Page({
         day: '444',
         date: '23:54:31',
         integral: 400,
+        nav: 'prizeDetail',
       },
       {
         id: 5,
@@ -47,6 +51,7 @@ Page({
         day: '555',
         date: '23:55:31',
         integral: 500,
+        nav: 'prizeDetail',
       },
       {
         id: 6,
@@ -55,6 +60,7 @@ Page({
         day: '666',
         date: '23:56:31',
         integral: 600,
+        nav: 'prizeDetail',
       },
       {
         id: 7,
@@ -63,6 +69,7 @@ Page({
         day: '777',
         date: '23:57:31',
         integral: 700,
+        nav: 'prizeDetail',
       },
       {
         id: 8,
@@ -71,44 +78,51 @@ Page({
         day: '888',
         date: '23:58:31',
         integral: 800,
+        nav: 'prizeDetail',
       },
     ],
     prizeLift: [
       {
-        id: 1,
+        id: 0,
         url: '../../images/activity.png',
         title: '1这是奖品列表的数据',
         integral: 100,
+        nav: 'prizeDetail',
+      },
+      {
+        id: 1,
+        url: '../../images/activity.png',
+        title: '2这是奖品列表的数据',
+        integral: 200,
+        nav: 'prizeDetail',
       },
       {
         id: 2,
         url: '../../images/activity.png',
-        title: '2这是奖品列表的数据',
-        integral: 200,
+        title: '3这是奖品列表的数据',
+        integral: 300,
+        nav: 'prizeDetail',
       },
       {
         id: 3,
         url: '../../images/activity.png',
-        title: '3这是奖品列表的数据',
-        integral: 300,
+        title: '4这是奖品列表的数据',
+        integral: 400,
+        nav: 'prizeDetail',
       },
       {
         id: 4,
         url: '../../images/activity.png',
-        title: '4这是奖品列表的数据',
-        integral: 400,
+        title: '5这是奖品列表的数据',
+        integral: 500,
+        nav: 'prizeDetail',
       },
       {
         id: 5,
         url: '../../images/activity.png',
-        title: '5这是奖品列表的数据',
-        integral: 500,
-      },
-      {
-        id: 6,
-        url: '../../images/activity.png',
         title: '6这是奖品列表的数据',
         integral: 600,
+        nav: 'prizeDetail',
       },
     ],
     // navList: ['推荐', '男装', '女装', '手机', '电脑', '百货', '电器', '全部',],
@@ -151,6 +165,13 @@ Page({
           islogin: true
         })
       }
+    })
+  },
+  // 跳转方法
+  nav(data) {
+    let item = data.currentTarget.dataset.name;
+    wx.navigateTo({
+      url: '/pages/' + item.nav + '/index?_identification=' + item.id,
     })
   },
   /**

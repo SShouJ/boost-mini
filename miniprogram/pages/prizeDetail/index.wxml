@@ -1,0 +1,6 @@
+<!--pages/prizeDetail/index.wxml-->
+<text>pages/prizeDetail/index.wxml</text>
+<view>
+  父页面传过来的值：
+  {{parentPass}}
+</view>
