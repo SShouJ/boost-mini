@@ -73,7 +73,6 @@
               </view>
             </view>
             <view class="justify-space_between mt-10 item-center">
-
               <view class="flex">
                 <view class="bold mr-10 c-red">
                   {{item.integral}}
@@ -88,10 +87,13 @@
         </view>
       </view>
     </view>
+    
     <view class="activity_list wrap mtb-30">
-      <view class="title">兑换奖品</view>
+      <view class="title justify-space_between">
+        <image src="../../images/points-redemption.png" mode="" />
+      </view>
       <!-- 奖品列表 -->
-      <view class="activity justify-space_between">
+      <view class="activity mt-30 justify-space_between" style="background-image: url('https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/bgd-Points_redemption.png?sign=dd96acc856d6eff5763fc16ebc02e74f&t=1675410137')">
         <view class="activity-item" bindtap="nav" data-name="{{item}}" wx:for="{{prizeLift}}" wx:key="index">
           <view class="img">
             <image class="activity_img" src="{{item.url}}" mode="" />

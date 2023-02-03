@@ -10,7 +10,7 @@ Page({
     swiperPrize: [
       {
         id: 1,
-        url: '../../images/activity.png',
+        url: '../../images/goods1.png',
         title: '1这是轮播图的标题11111111',
         day: '111',
         date: '23:51:31',
@@ -19,7 +19,7 @@ Page({
       },
       {
         id: 2,
-        url: '../../images/activity.png',
+        url: '../../images/goods1.png',
         title: '2这是轮播图的标题11111111',
         day: '222',
         date: '23:52:31',
@@ -28,7 +28,7 @@ Page({
       },
       {
         id: 3,
-        url: '../../images/activity.png',
+        url: '../../images/goods1.png',
         title: '3这是轮播图的标题11111111',
         day: '333',
         date: '23:53:31',
@@ -37,7 +37,7 @@ Page({
       },
       {
         id: 4,
-        url: '../../images/activity.png',
+        url: '../../images/goods1.png',
         title: '4这是轮播图的标题11111111',
         day: '444',
         date: '23:54:31',
@@ -46,7 +46,7 @@ Page({
       },
       {
         id: 5,
-        url: '../../images/activity.png',
+        url: '../../images/goods1.png',
         title: '这是轮播图的标题11111111',
         day: '555',
         date: '23:55:31',
@@ -55,7 +55,7 @@ Page({
       },
       {
         id: 6,
-        url: '../../images/activity.png',
+        url: '../../images/goods1.png',
         title: '6这是轮播图的标题11111111',
         day: '666',
         date: '23:56:31',
@@ -64,7 +64,7 @@ Page({
       },
       {
         id: 7,
-        url: '../../images/activity.png',
+        url: '../../images/goods1.png',
         title: '7这是轮播图的标题11111111',
         day: '777',
         date: '23:57:31',
@@ -73,7 +73,7 @@ Page({
       },
       {
         id: 8,
-        url: '../../images/activity.png',
+        url: '../../images/goods1.png',
         title: '8这是轮播图的标题11111111',
         day: '888',
         date: '23:58:31',
@@ -84,42 +84,42 @@ Page({
     prizeLift: [
       {
         id: 0,
-        url: '../../images/activity.png',
+        url: '../../images/price.png',
         title: '1这是奖品列表的数据',
         integral: 100,
         nav: 'prizeDetail',
       },
       {
         id: 1,
-        url: '../../images/activity.png',
+        url: '../../images/price.png',
         title: '2这是奖品列表的数据',
         integral: 200,
         nav: 'prizeDetail',
       },
       {
         id: 2,
-        url: '../../images/activity.png',
+        url: '../../images/price.png',
         title: '3这是奖品列表的数据',
         integral: 300,
         nav: 'prizeDetail',
       },
       {
         id: 3,
-        url: '../../images/activity.png',
+        url: '../../images/price.png',
         title: '4这是奖品列表的数据',
         integral: 400,
         nav: 'prizeDetail',
       },
       {
         id: 4,
-        url: '../../images/activity.png',
+        url: '../../images/price.png',
         title: '5这是奖品列表的数据',
         integral: 500,
         nav: 'prizeDetail',
       },
       {
         id: 5,
-        url: '../../images/activity.png',
+        url: '../../images/price.png',
         title: '6这是奖品列表的数据',
         integral: 600,
         nav: 'prizeDetail',
