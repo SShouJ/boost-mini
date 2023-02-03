@@ -1,19 +1,19 @@
 <!--pages/activityDetail/index.wxml-->
 <view class="box">
 <!-- 积分商城 -->
- <view class="box-exchange">
+ <view class="box-exchange" bindtap="toPage" data-name='prize'>
    <image class="icon-exchange" src="../../images/icon-exchange.png" mode=""/>
    <text class="fs-20">兑换</text>
  </view>
  <!-- 活动规则 -->
  <view class="box-rule">
   <image class="icon-rule" src="../../images/icon-rule.png" mode=""/>
-  <text class="fs-20">兑换</text>
+  <text class="fs-20">规则</text>
  </view>
  <!-- 客服 -->
  <view class="box-customer">
   <image class="icon-customer" src="../../images/icon-customer.png" mode=""/>
-  <text class="fs-20">兑换</text>
+  <text class="fs-20">客服</text>
  </view>
   <view class="box-title">
     <image class="img-title" src="../../images/title.png" mode="" />

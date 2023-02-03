@@ -7,7 +7,12 @@ Page({
   data: {
     
   },
-
+  toPage(data){
+    console.log(data.currentTarget.dataset.name);
+    wx.navigateTo({
+      url: '/pages/'+ data.currentTarget.dataset.name+'/index',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
