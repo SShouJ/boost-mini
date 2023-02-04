@@ -1,6 +1,85 @@
-<!--pages/prizeDetail/index.wxml-->
-<text>pages/prizeDetail/index.wxml</text>
-<view>
-  父页面传过来的值：
-  {{parentPass}}
+<!-- 奖品详情页面 pages/prizeDetail/index.wxml -->
+<view class="body">
+  <scroll-view scroll-y="true" bindscroll="scroll" style="width: 100% - 100rpx;">
+    <view class="header">
+      <view class="prize">
+        <view class="prize_img">
+          <image mode="widthFix" src="{{ detailData.url }}" />
+        </view>
+        <view class="prize_img-prompt_box">
+          <!-- 奖品顶部图片部分 -->
+          <view class="position">
+            <view class="left_text">
+              <text class="bold_9 mr-10" style="font-size: 70rpx; font-style: italic;">{{ detailData.integral }}</text>
+              <text>积分</text>
+            </view>
+
+            <view class="right_text">
+              <text wx:if="{{ detailData.date }}" class="bold_9">{{ detailData.date }}开抢</text>
+              <text wx:else>目前无信息</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- 奖品标题部分 -->
+      <view class="prize_name">
+        <view class=" justify-space_between item-center">
+          <view class="left flex item-center">
+            <view class="integral mr-20 c-red">{{ detailData.integral }}积分</view>
+            <view class="original_price pt-10">3.3元</view>
+          </view>
+          <view class="right">4件已兑换</view>
+        </view>
+        <view class="prize_title mt-20 bold_7">{{ detailData.title }}</view>
+      </view>
+    </view>
+    <view class="container">
+      <!-- 兑换方法 -->
+      <view class="container_exchange mt-20">
+        <view class="title bold_7">兑换方法</view>
+        <view class="exchange_describe mt-20 justify-space_around">
+          <view class="item">
+            <image src="../../images/icon-EC.png" mode="" />
+            <view class="text">
+              <view>点立即兑换</view>
+              <view>获取兑换码</view>
+            </view>
+          </view>
+          <view class="x">------</view>
+          <view class="item">
+            <image src="../../images/icon-success.png" mode="" />
+            <view class="text">
+              <view>自动兑换</view>
+              <view>兑换成功</view>
+            </view>
+          </view>
+          <view class="x">------</view>
+          <view class="item">
+            <image src="../../images/icon-activity.png" mode="" />
+            <view class="text">
+              <view>
+                请前往商家
+              </view>
+              <view>
+                领取奖品
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- 权益介绍 -->
+      <view class="prize_description mt-20">
+        <view class="prize_description_title bold_7">权益介绍</view>
+        <view class="description">
+          我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <view class="footer mt-20 justify-space_around">
+    <view class="exchange justify-space_around">
+      立即兑换
+    </view>
+  </view>
 </view>
