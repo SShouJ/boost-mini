@@ -22,12 +22,23 @@
 
 .activity>.form-item{
   background: #fff;
+  border-bottom: 2rpx solid #f6f6f6;
+}
+
+.upload-wrap{
+  border:1px solid #ccc;
 }
 
 .flex-center{
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.flex-around{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .bg-warning{
@@ -49,6 +60,12 @@
   justify-content: center;
 }
 
+.flex-between{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .icon-18{
   width: 36rpx;
 }
@@ -65,6 +82,23 @@
   padding: 17rpx;
 }
 
+.pd-15{
+  padding: 30rpx;
+}
+
 .cl-grey{
   color: #6d6c6c;
+}
+
+.cl-red{
+  color: red;
+}
+
+.ml-5{
+  margin-left: 10rpx;
+}
+
+.icon-28{
+  width: 56rpx;
+  height: 56rpx;
 }
