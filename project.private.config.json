@@ -72,6 +72,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "创建活动页面",
+          "pathName": "pages/activity/createActive/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

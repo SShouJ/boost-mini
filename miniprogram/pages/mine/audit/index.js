@@ -5,7 +5,25 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    navList : [
+      {
+        id:1,
+        title:"全部",
+      },
+      {
+        id:2,
+        title:"待开奖",
+      },
+      {
+        id:3,
+        title:"已结束",
+      },
+      {
+        id:4,
+        title:"未开始",
+      },
+    ],
+    target:2,
   },
 
   /**

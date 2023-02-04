@@ -44,7 +44,7 @@
   </view>
   <!-- 分类 -->
   <view class="nav">
-    <view class="nav-item" wx:for="{{navList}}" bindtap="changeItem" data-id="{{item.id}}" 
+    <view class="nav-item fw-600" wx:for="{{navList}}" bindtap="changeItem" data-id="{{item.id}}" 
     wx:key="id">
       <view class="nav-title">
         <text class="{{ item.id == target ? 'cl-red' : ''}} fs-14">{{item.title}}</text>
@@ -53,7 +53,9 @@
     </view>
   </view>
   <!-- 活动每一项 -->
-  <view class="wrap mb-10" wx:for="{{activityList}}"  wx:key="id">
-    <activity bindtap="toDetails" activityItem="{{item}}" data-id="{{item.id}}"></activity>
-  </view>
+  <scroll-view style="height: calc(100vh - 480rpx);" 	scroll-y="{{true}}">
+    <view class="wrap mb-10" wx:for="{{activityList}}"  wx:key="id">
+      <activity bindtap="toDetails" activityItem="{{item}}" data-id="{{item.id}}"></activity>
+    </view>
+  </scroll-view>
 </view>

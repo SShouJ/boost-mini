@@ -1,0 +1,44 @@
+<!--pages/activity/createActive/index.wxml-->
+<view class="activity">
+  <view class="tip bg-warning flex-center">
+      <view class="tip-text fs-14 cl-white">
+        <text>活动开始后不能修改、删除活动，发布后分享给学员学员即可查看活动详情并在线报名</text>
+      </view>
+      <view class="close-btn  all-center">
+        <image class="icon-18" src="../../../images/icon-close.png" mode="widthFix"/>
+      </view>
+  </view>
+  <!-- 标题 -->
+  <view class="title cl-grey pd-17">
+    <text class="fs-15">活动设置</text>
+  </view>
+  <!-- 表单内容 -->
+
+  <view class="form-item pd-17 fs-15 flex-between">
+      <view class="label">
+          <text class="cl-red">*</text>
+          <text class="ml-5">活动主题图</text>
+      </view>
+      <view class="upload-wrap pd-15">
+          <image class="icon-28" src="../../../images/icon-add.png" mode="widthFix"/>
+      </view>
+  </view>
+  <view class="form-item pd-17 fs-15 flex-between">
+      <view class="label">
+          <text class="cl-red">*</text>
+          <text class="ml-5">活动标题</text>
+      </view>
+      <input type="text" placeholder="请输入活动标题"/>
+  </view>
+  <view class="form-item pd-17 fs-15">
+      <view class="label">
+          <text class="cl-red">*</text>
+          <text class="ml-5">活动时间</text>
+      </view>
+      <view class="pd-17 flex-around fs-15">
+        <picker mode="date">活动开始时间</picker>
+        <text>至</text>
+        <picker mode="date">活动结束时间</picker>
+      </view>
+  </view>
+</view>
