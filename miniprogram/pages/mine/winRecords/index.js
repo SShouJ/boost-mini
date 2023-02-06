@@ -1,6 +1,5 @@
-// pages/activityDetail/index.js
+// pages/mine/winRecords/index.js
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -8,6 +7,7 @@ Page({
     showIndex:null,//打开弹窗的对应下标
     height:'',//屏幕高度
   },
+  // 打开弹窗
   openPopup(e){
     var index = e.currentTarget.dataset.index;
     this.setData({
@@ -20,19 +20,6 @@ Page({
       showIndex:null
     })
   },
-  toPage(data){
-    console.log(data.currentTarget.dataset.name);
-    wx.navigateTo({
-      url: '/pages/'+ data.currentTarget.dataset.name+'/index',
-    })
-  },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(options) {
-    console.log(options)
-  },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -46,6 +33,21 @@ Page({
         });
       },
     })
+  },
+
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad(options) {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady() {
+
   },
 
   /**

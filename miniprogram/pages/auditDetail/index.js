@@ -5,7 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
+   
     audit:[
+      
       {
         id:1,
         title:'店铺名称',

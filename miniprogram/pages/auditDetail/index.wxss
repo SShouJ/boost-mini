@@ -37,3 +37,16 @@
 .pd-tb-20{
   padding: 20rpx 0;
 }
+.mb-20{
+  margin-bottom: 20rpx;
+}
+.banner{
+  width: 670rpx;  
+}
+.box-btn{
+  margin-top: 50rpx;
+  display: flex;
+}
+
+
+

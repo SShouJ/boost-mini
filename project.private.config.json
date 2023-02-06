@@ -79,6 +79,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "中奖",
+          "pathName": "pages/mine/winRecords/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

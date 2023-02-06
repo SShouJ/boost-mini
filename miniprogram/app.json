@@ -4,6 +4,7 @@
     "pages/activity/index",
     "pages/activity/createActive/index",
     "pages/mine/index",
+    "pages/mine/winRecords/index",
     "pages/mine/myActive/index",
     "pages/mine/address/index",
     "pages/mine/settled/index",
