@@ -1,0 +1,27 @@
+<!--pages/auditDetail/index.wxml-->
+<view class="box">
+  <view class="box-item warp">
+    <view class="item-top">
+      <text class="fs-30 fw-600">宇将军</text>
+      <text class="fs-26 fw-600">2023年12月11日23:22</text>
+    </view>
+    <view class="item-bom pd-20">
+      <view wx:for="{{audit}}" wx:key="id">
+        <view class="item-title pd-tb-20" wx:if="{{item.title != '营业执照'}}">
+          <view class="title fs-30 fw-600">{{item.title}}:</view>
+          <view class="content">{{item.titles}}</view>
+        </view>
+        <view class="pd-tb-20" wx:if="{{item.title == '营业执照'}}">
+          <view class="title mb-20 fs-30 fw-600">{{item.title}}:</view>
+          <view class="content">
+            <image class="banner" src="{{item.titles}}" mode=""/>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="box-btn">
+    <button type="primary">通过</button>
+    <button type="warn">不通过</button>
+  </view>
+</view>

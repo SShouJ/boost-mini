@@ -4,13 +4,16 @@
     "pages/activity/index",
     "pages/activity/createActive/index",
     "pages/mine/index",
+    "pages/mine/winRecords/index",
     "pages/mine/myActive/index",
     "pages/mine/address/index",
     "pages/mine/settled/index",
     "pages/mine/audit/index",
+    "pages/auditDetail/index",
     "pages/activityDetail/index",
     "pages/prize/index",
-    "pages/prizeDetail/index"
+    "pages/prizeDetail/index",
+    "pages/record/index"
   ],
   "tabBar": {
     "list": [{

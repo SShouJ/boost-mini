@@ -1,0 +1,140 @@
+/* pages/record/index.wxss */
+.wrap {
+  width: 710rpx;
+  margin: 0 auto;
+}
+
+.fs-28 {
+  font-size: 28rpx;
+}
+
+.mr-10 {
+  margin-right: 10rpx;
+}
+
+.mr-20 {
+  margin-right: 20rpx;
+}
+
+.mr-30 {
+  margin-right: 30rpx;
+}
+
+.ml-10 {
+  margin-left: 10rpx;
+}
+
+.ml-20 {
+  margin-left: 20rpx;
+}
+
+.ml-30 {
+  margin-left: 30rpx;
+}
+
+.mt-10 {
+  margin-top: 10rpx;
+}
+
+.mt-20 {
+  margin-top: 20rpx;
+}
+
+.mt-30 {
+  margin-top: 30rpx;
+}
+
+.mb-10 {
+  margin-bottom: 10rpx;
+}
+
+.mb-20 {
+  margin-bottom: 20rpx;
+}
+
+.mb-30 {
+  margin-bottom: 30rpx;
+}
+
+.c-8f8f8f {
+  color: #8f8f8f;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+
+.flex {
+  display: flex;
+}
+
+.flex-item-center {
+  display: flex;
+  align-items: center;
+}
+
+.justify-space_between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.a_j-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-space-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+}
+
+.body .box .date {
+  font-size: 30rpx;
+  color: #000;
+  box-sizing: border-box;
+  padding: 20rpx 40rpx;
+  background-color: #f3f3f3;
+  border-bottom: 1rpx solid #e7e6e6;
+}
+
+.body .box .date image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.body .box .item {
+  background-color: #fff;
+  padding: 20rpx 40rpx;
+}
+
+.solid {
+  border-bottom: 1rpx solid #e7e6e6;
+}
+
+.body .box .item .left .title{
+  font-size: 34rpx;
+}
+
+.body .box .item .left .img {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50rpx;
+}
+
+.body .box .item .left image {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50rpx;
+}

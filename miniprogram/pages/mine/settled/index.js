@@ -8,6 +8,12 @@ Page({
     businessLicense:'',
     otherImage:'',
   },
+  bindKeyInput: function (e) {
+    this.setData({
+      inputValue: e.detail.value,
+    })
+    console.log(e);
+  },
   updata(){
     console.log(1);
   },

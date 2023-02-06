@@ -1,10 +1,36 @@
 <!--pages/mine/audit/index.wxml-->
-<view class="nav">
-    <view class="nav-item fw-600" wx:for="{{navList}}" bindtap="changeItem" data-id="{{item.id}}" 
-    wx:key="id">
+<view class="box">
+  <!-- nav导航栏 -->
+  <view class="nav">
+    <view class="nav-item fw-600" wx:for="{{navList}}" bindtap="changeItem" data-id="{{item.id}}" wx:key="id">
       <view class="nav-title">
         <text class="{{ item.id == target ? 'cl-red' : ''}} fs-14">{{item.title}}</text>
       </view>
       <view class="{{ item.id == target ? 'nav-line' : ''}}  mt-5"></view>
     </view>
   </view>
+  <scroll-view style="height: calc(100vh - 120rpx);" 	scroll-y="{{true}}">
+  <view class="box-item warp mb-20" wx:for="{{aa}}" wx:key="id">
+    <view class="item-top">
+      <text class="fs-30 fw-600">宇将军</text>
+      <!-- 审核状态 -->
+      <view class="box-auditStatus" >
+        <view class="dot mt-8"></view>
+        <text class="fs-30 fw-600">待审核</text>
+      </view>
+    </view>
+    <view class="item-bom">
+      <view class="box-title">
+        <text class="fs-30 fw-600 mg-20" wx:for="{{audit}}" wx:key="id">{{item.title}}:</text>
+      </view>
+      <view class="box-title ml-30">
+        <text class="fs-30 mg-20" wx:for="{{audits}}" wx:key="id">{{item.title}}</text>
+      </view>
+    </view>
+      <view class="dis">
+      <text class="fs-24 fw-600">2023年12月11日23:22</text>
+        <text class="fs-30" bindtap="toPage" data-name="auditDetail">查看详情></text>
+      </view>
+  </view>
+</scroll-view>
+</view>

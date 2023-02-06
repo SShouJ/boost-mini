@@ -168,10 +168,22 @@ Page({
     })
   },
   // 跳转方法
-  nav(data) {
+  swiperNav(data) {
     let item = data.currentTarget.dataset.name;
     wx.navigateTo({
-      url: '/pages/' + item.nav + '/index?_identification=' + item.id,
+      url: '/pages/' + item.nav + '/index?_identification=swiper,' + item.id,
+    })
+  },
+  prizeLiftNav(data) {
+    let item = data.currentTarget.dataset.name;
+    wx.navigateTo({
+      url: '/pages/' + item.nav + '/index?_identification=prizeLift,' + item.id,
+    })
+  },
+  // 
+  toRecord() {
+    wx.navigateTo({
+      url: '/pages/record/index?',
     })
   },
   /**
