@@ -1,2 +1,59 @@
 <!--pages/prize/index.wxml-->
-<text>pages/prize/index.wxml</text>
+<view class="body">
+
+  <view class="header">
+    <view class="header_userinfo wrap flex-space-between">
+      <view class="left">
+        <view>当前积分</view>
+        <view class="a_j-center">
+          <view class="left_integral">80</view>
+          <image class="icon-more ml-10" src="../../images/icon-more_fc4b08.png" mode="" />
+        </view>
+      </view>
+      <view class="right">兑换记录</view>
+    </view>
+  </view>
+
+  <scroll-view class="mt-20" scroll-y="{{true}}" style="height:calc(100vh - 330rpx)">
+    <view class="nav_box">
+
+      <view class="nav">
+        <view class="nav-item fw-600" wx:for="{{navList}}" bindtap="changeItem" data-id="{{item.id}}" wx:key="id">
+          <view class="nav-title">
+            <text class="{{ item.id == target ? 'cl-red' : ''}} fs-28">{{item.title}}</text>
+          </view>
+          <view class="{{ item.id == target ? 'nav-line' : ''}}  mt-10"></view>
+        </view>
+      </view>
+
+      <!-- 内容部分 -->
+      <scroll-view scroll-y="{{true}}" style="height:calc(100% - 130rpx)">
+        <view class="nav_box-content">
+          <!-- 奖品列表 -->
+          <view class="activity mt-30 justify-space_between">
+            <view class="activity-item" bindtap="prizeLiftNav" data-name="{{item}}" wx:for="{{prizeLift}}" wx:key="index">
+              <view class="img">
+                <image class="activity_img" src="{{item.url}}" mode="" />
+              </view>
+              <view class="title">
+                <text>{{item.title}}</text>
+              </view>
+              <view style="padding:0 20rpx 20rpx 20rpx" class="justify-space_between  item-center">
+                <view class="flex">
+                  <view class="c-red bold mr-10">
+                    {{item.integral}}
+                  </view>
+                  <view>
+                    积分
+                  </view>
+                </view>
+                <view class="btn">兑换</view>
+              </view>
+            </view>
+          </view>
+          <!-- 奖品列表 -->
+        </view>
+      </scroll-view>
+    </view>
+  </scroll-view>
+</view>

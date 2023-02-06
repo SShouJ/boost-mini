@@ -220,6 +220,11 @@
   -o-text-overflow: ellipsis;
 }
 
+
+.activity {
+  background-image: url('https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/bgd-Points_redemption.png?sign=dd96acc856d6eff5763fc16ebc02e74f&t=1675410137')
+}
+
 .activity_list .title {
   width: 100vw;
 }
@@ -276,13 +281,17 @@
 
 .footer .nav_activity {
   width: 100%;
-  background-color: #fff;
+  background-color: #ff6f43;
   border-radius: 16rpx;
   font-size: 30rpx;
-  color: #ccc;
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.footer .nav_activity-hover {
+  background-color: #ff8965;
 }
 
 .footer .icon_more {

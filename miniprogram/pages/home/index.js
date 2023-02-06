@@ -180,6 +180,12 @@ Page({
       url: '/pages/' + item.nav + '/index?_identification=prizeLift,' + item.id,
     })
   },
+  // 
+  toPrizeList() {
+    wx.navigateTo({
+      url: '/pages/prize/index?',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

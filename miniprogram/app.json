@@ -10,7 +10,8 @@
     "pages/mine/audit/index",
     "pages/activityDetail/index",
     "pages/prize/index",
-    "pages/prizeDetail/index"
+    "pages/prizeDetail/index",
+    "pages/record/index"
   ],
   "tabBar": {
     "list": [{
