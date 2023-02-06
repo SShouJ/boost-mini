@@ -1,0 +1,39 @@
+.warp{
+  width: 710rpx;
+  margin: 0 auto;
+}
+.box-item{
+  background-color: white;
+  box-sizing: border-box;
+  border-radius: 0rpx 0rpx 20rpx 20rpx;
+}
+.item-top{
+  padding:40rpx 30rpx;
+  border-bottom: 1rpx dashed black;
+  display: flex;
+  justify-content: space-between;
+}
+.fs-26{
+  font-size: 26rpx;
+}
+.fs-30{
+  font-size: 30rpx;
+}
+.fw-600{
+  font-weight: 600;
+}
+.item-title{
+  display: flex;
+}
+.title{
+  width: 30%;
+}
+.content{
+  width: 70% ;
+}
+.pd-20{
+  padding: 20rpx;
+}
+.pd-tb-20{
+  padding: 20rpx 0;
+}
