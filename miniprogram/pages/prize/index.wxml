@@ -9,7 +9,7 @@
           <image class="icon-more ml-10" src="../../images/icon-more_fc4b08.png" mode="" />
         </view>
       </view>
-      <view class="right" bindtap="toRecord" hover-class="nav_activity-hover" hover-start-time='10'>兑换记录</view>
+      <view class="right" bindtap="toRecord">兑换记录</view>
     </view>
   </view>
 

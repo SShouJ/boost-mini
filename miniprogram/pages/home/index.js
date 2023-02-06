@@ -186,6 +186,11 @@ Page({
       url: '/pages/record/index?',
     })
   },
+  toPrize() {
+    wx.navigateTo({
+      url: '/pages/prize/index?',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

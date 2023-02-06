@@ -111,13 +111,10 @@
     </view>
 
     <view class="footer wrap">
-      <button class="nav_activity" bindtap="toPrizeList" hover-class="nav_activity-hover" hover-start-time='10'>
+      <button class="nav_activity" bindtap="toPrize" hover-class="nav_activity-hover" hover-start-time='10'>
         <view>
           查看更多奖品
         </view>
-        <!-- <view>
-          <image class="icon_more" src="../../images/icon-more.png" mode="" />
-        </view> -->
       </button>
     </view>
   </scroll-view>
