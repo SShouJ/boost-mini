@@ -181,9 +181,9 @@ Page({
     })
   },
   // 
-  toPrizeList() {
+  toRecord() {
     wx.navigateTo({
-      url: '/pages/prize/index?',
+      url: '/pages/record/index?',
     })
   },
   /**
