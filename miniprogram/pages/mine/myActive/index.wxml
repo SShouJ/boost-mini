@@ -13,4 +13,8 @@
   <view class="wrap mb-10" wx:for="{{activityList}}"  wx:key="id">
     <activity bindtap="toDetails" activityItem="{{item}}" data-id="{{item.id}}"></activity>
   </view>
+
+  <view class="create-active all-center" bindtap="toActive">
+    <image class="icon-20" src="../../../images/icon-add.png" mode="widthFix"/>
+  </view>
 </view>
