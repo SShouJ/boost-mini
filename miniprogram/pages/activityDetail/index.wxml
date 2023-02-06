@@ -6,10 +6,26 @@
    <text class="fs-20">兑换</text>
  </view>
  <!-- 活动规则 -->
- <view class="box-rule">
+ <view class="box-rule" bindtap="openPopup" data-index="0">
   <image class="icon-rule" src="../../images/icon-rule.png" mode=""/>
-  <text class="fs-20">规则</text>
+  <text class="fs-20" bindtap="openPopup" data-index="0">规则</text>
  </view>
+ <view class="popup-box" wx:if="{{showIndex=='0'}}" bindtap="closePopup"></view> 
+<view class="info-top" wx:if="{{showIndex=='0'}}">
+  <view class="row-info">
+    <view>
+      <text class="line left-line"></text>
+      <text>活动规则</text>
+      <text class="line right-line"></text>
+    </view>
+   
+  </view>
+  <view class="row-btn">
+    <!-- <view class="left-btn" bindtap="closePopup">取消</view>
+    <view class="right-btn">确认</view> -->
+  </view>
+</view>
+ 
  <!-- 客服 -->
  <view class="box-customer">
   <image class="icon-customer" src="../../images/icon-customer.png" mode=""/>
@@ -57,13 +73,13 @@
               </view>
               <view class="box-post2">
                 <view class="box-img">
-                <image class="icon-jp" src="../../images/icon-add.png" mode=""/>
+                <image class="icon-jp" src="../../images/icon-prize.png" mode=""/>
                </view>
                 <text>500人</text>
               </view>
               <view class="box-post3">
                 <view class="box-img">
-                <image class="icon-jp" src="../../images/icon-add.png" mode=""/>
+                <image class="icon-jp" src="../../images/icon-prize.png" mode=""/>
                </view>
                 <text>1000人</text>
               </view>
@@ -81,4 +97,7 @@
       </view>
     </view>
   </view>
+
+
+
 </view>
