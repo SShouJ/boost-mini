@@ -81,8 +81,8 @@
           "scene": null
         },
         {
-          "name": "所有奖品",
-          "pathName": "pages/prize/index",
+          "name": "兑换记录",
+          "pathName": "pages/record/index",
           "query": "",
           "launchMode": "default",
           "scene": null

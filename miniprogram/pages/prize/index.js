@@ -82,6 +82,12 @@ Page({
       url: '/pages/' + item.nav + '/index?_identification=prizeLift,' + item.id,
     })
   },
+
+  toRecord(){
+    wx.navigateTo({
+      url: '/pages/record/index',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

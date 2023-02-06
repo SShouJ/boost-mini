@@ -1,6 +1,5 @@
 <!--pages/prize/index.wxml-->
 <view class="body">
-
   <view class="header">
     <view class="header_userinfo wrap flex-space-between">
       <view class="left">
@@ -10,7 +9,7 @@
           <image class="icon-more ml-10" src="../../images/icon-more_fc4b08.png" mode="" />
         </view>
       </view>
-      <view class="right">兑换记录</view>
+      <view class="right" bindtap="toRecord" hover-class="nav_activity-hover" hover-start-time='10'>兑换记录</view>
     </view>
   </view>
 

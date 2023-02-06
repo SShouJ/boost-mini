@@ -1,2 +1,25 @@
 <!--pages/record/index.wxml-->
-<text>pages/record/index.wxml</text>
+<view class="body">
+  <view class="box">
+
+    <view class="date flex-item-center">
+      <text>2023年02月</text>
+      <image src="../../images/icon-down_arrow.png" mode="" />
+    </view>
+
+    <scroll-view scroll-y="{{true}}" style="height: calc(100vh - 90rpx)">
+      <view wx:for="{{ recordData }}" wx:key="index" class="item solid justify-space_between">
+        <view class="left flex-item-center">
+          <view class="img">
+            <image src="../../images/avatar-nologin.png" mode="" />
+          </view>
+          <view class="ml-20">
+            <view class="title">{{ item.title }}</view>
+            <view class="c-8f8f8f fs-28 mt-10">{{ item.date +' '+ item.time }}</view>
+          </view>
+        </view>
+        <view class="right">{{ item. describe}}</view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

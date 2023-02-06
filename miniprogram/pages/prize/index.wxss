@@ -1,6 +1,4 @@
 /* pages/prize/index.wxss */
-
-
 .wrap {
   width: 710rpx;
   margin: 0 auto;
@@ -148,6 +146,7 @@
   padding: 30rpx 0;
   display: flex;
   justify-content: space-around;
+  background-color: rgba(255, 255, 255, 0.589);
 }
 
 .nav .nav-item {
@@ -160,11 +159,11 @@
 .nav .nav-line {
   width: 50rpx;
   height: 6rpx;
-  background: #d85c56;
+  background: #fc4b08;
 }
 
 .cl-red {
-  color: #d85c56;
+  color: #fc4b08;
 }
 
 .nav_box-content {
