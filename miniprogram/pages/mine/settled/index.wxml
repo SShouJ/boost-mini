@@ -14,7 +14,7 @@
         </view>
         <view class="box-rigth">
           <view class="box-inp">
-            <input class="inp" type="nickname" placeholder="请输入店铺名称" maxlength="20" />
+            <input class="inp" type="nickname" placeholder="请输入店铺名称" maxlength="20" 	bindinput='bindKeyInput'  />
           </view>
         </view>
       </view>
@@ -57,7 +57,7 @@
         </view>
         <view class="box-rigth">
           <view class="box-inp">
-            <input class="inp" type="text" placeholder="介绍一下你的店铺" maxlength="20" />
+            <input class="inp" type="text" placeholder="介绍一下你的店铺" maxlength="100" />
           </view>
         </view>
       </view>

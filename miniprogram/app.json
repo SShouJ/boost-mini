@@ -8,6 +8,7 @@
     "pages/mine/address/index",
     "pages/mine/settled/index",
     "pages/mine/audit/index",
+    "pages/auditDetail/index",
     "pages/activityDetail/index",
     "pages/prize/index",
     "pages/prizeDetail/index",

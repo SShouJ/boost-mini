@@ -16,6 +16,9 @@ body{
   flex-direction: column;
   border-radius:10rpx
 }
+.tc-hui{
+  color: #8a8888;
+}
 .box-scan{
   display: flex;
   justify-content: flex-end
@@ -31,6 +34,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-bottom: 100rpx;
 }
 .box-rigth{
   display: flex;
@@ -39,8 +43,8 @@ body{
   /* border: 1rpx solid; */
 }
 .box-rigth .img-avatar{
-  width: 200rpx;
-  height: 200rpx;
+  width: 180rpx;
+  height: 180rpx;
   border-radius: 120rpx;
   border: 5rpx solid white;
 }
@@ -57,7 +61,7 @@ body{
     /* border: 1rpx solid; */
     border-radius: 20rpx;
     color:white;
-    background-color: #e7820e;
+    background-color: rgba(248, 178, 178, 0.3); 
   }
   .box-nav{
     background-color: white;
@@ -103,7 +107,29 @@ body{
     margin-left: 100rpx;
     border: 1rpx solid #cccccc;
   }
-  .Vertical{
-    /* margin-left: 100rpx; */
-    border: 1rpx solid #cccccc;
+.box-feet{
+  margin: 50rpx;
+  display: flex;
+  justify-content: center;
+}
+  .text-feet{
+    padding: 0 10rpx;
+    font-size: 24rpx;
+    color: #928f8f;
+  }
+  .bor{
+    border-left:1rpx solid #a7a5a5 ;
+    border-right:1rpx solid #a7a5a5;
+  }
+  .fw-6{
+    font-weight: 600;
+  }
+  
+  .fooder-top{
+    display: flex;
+    justify-content: center;
+  }
+  .fs-20{
+    font-size: 20rpx;
+    color:#a7a5a5;
   }
