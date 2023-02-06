@@ -1,6 +1,6 @@
 <!-- 奖品详情页面 pages/prizeDetail/index.wxml -->
 <view class="body">
-  <scroll-view scroll-y="true" bindscroll="scroll" style="width: 100% - 100rpx;">
+  <scroll-view scroll-y="{{true}}" style="height:calc(100vh - 120rpx)">
     <view class="header">
       <view class="prize">
         <view class="prize_img">
@@ -78,7 +78,7 @@
   </scroll-view>
 
   <view class="footer mt-20 justify-space_around">
-    <view class="exchange justify-space_around">
+    <view class="exchange item-center justify-space_around">
       立即兑换
     </view>
   </view>

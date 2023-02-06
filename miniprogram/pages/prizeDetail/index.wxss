@@ -95,12 +95,7 @@
   width: 100vw;
   background-color: #f6f6f6;
   font-size: 30rpx;
-}
-
-.body .slide {
-  width: 100vw;
-
-  overflow: scroll;
+  box-sizing: border-box;
 }
 
 .header {
@@ -224,7 +219,6 @@
 
 .footer .exchange {
   width: 100%;
-  height: 40rpx;
   padding: 20rpx 20rpx;
   background-color: #73aaff;
   color: #fff;
