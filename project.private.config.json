@@ -81,8 +81,8 @@
           "scene": null
         },
         {
-          "name": "中奖",
-          "pathName": "pages/mine/winRecords/index",
+          "name": "兑换记录",
+          "pathName": "pages/record/index",
           "query": "",
           "launchMode": "default",
           "scene": null
