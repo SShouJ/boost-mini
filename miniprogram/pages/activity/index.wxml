@@ -53,7 +53,9 @@
     </view>
   </view>
   <!-- 活动每一项 -->
-  <view class="wrap mb-10" wx:for="{{activityList}}"  wx:key="id">
-    <activity bindtap="toDetails" activityItem="{{item}}" data-id="{{item.id}}"></activity>
-  </view>
+  <scroll-view style="height: calc(100vh - 480rpx);" 	scroll-y="{{true}}">
+    <view class="wrap mb-10" wx:for="{{activityList}}"  wx:key="id">
+      <activity bindtap="toDetails" activityItem="{{item}}" data-id="{{item.id}}"></activity>
+    </view>
+  </scroll-view>
 </view>

@@ -78,6 +78,8 @@
   background-color: #F8F8F8;
   font-size: 30rpx;
   color: rgb(224, 19, 19);
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .body .header {
@@ -184,11 +186,11 @@
 }
 
 ::-webkit-scrollbar {
-  display: none;
   width: 0;
   height: 0;
   color: transparent;
 }
+
 
 .swiper .swiper-box {
   box-sizing: border-box;
