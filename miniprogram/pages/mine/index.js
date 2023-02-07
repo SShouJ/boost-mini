@@ -50,6 +50,12 @@ Page({
       url: '/pages/mine/'+ data.currentTarget.dataset.name+'/index',
     })
   },
+  toFeedbackPages(data){
+    console.log(data.currentTarget.dataset.name);
+    wx.navigateTo({
+      url: '/feedback/pages/'+ data.currentTarget.dataset.name,
+    })
+  },
   login() {
     const _this = this;
     if(this.data.islogin) return;

@@ -75,7 +75,7 @@
             <text class="bom-text">需文字清晰，边框完整，露出国徽</text>
           </view>
         </view>
-        <view class="box-rigth" bindtap="chooseImg">
+        <view class="box-rigth" bindtap="chooseImg" data-name="businessLicense">
              <image class="icon-add"  src="{{businessLicense ? businessLicense : '../../../images/icon-add.png'}}" bindtap="updata" mode=""/>
         </view>
       </view>
@@ -89,11 +89,11 @@
             <text class="bom-text">需文字清晰，边框完整（非必填）</text>
           </view>
         </view>
-        <view class="box-rigth" >
-             <image class="icon-add" src="{{otherImage ? otherImage : '../../../images/icon-add.png'}}" bindtap="chooseImg2" mode=""/>
+        <view class="box-rigth" bindtap="chooseImg" data-name="otherImage">
+             <image class="icon-add" src="{{otherImage ? otherImage : '../../../images/icon-add.png'}}"  mode=""/>
         </view>
       </view>
     </view>
   </view>
-  <button class="btn"	type="primary" >提交</button>
+  <button class="btn"	type="primary" bindtap="submit">提交</button>
 </view>
