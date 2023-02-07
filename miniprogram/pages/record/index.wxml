@@ -7,7 +7,7 @@
     </view>
   </view>
 
-  <scroll-view scroll-y="{{true}}" bindscroll="scroll" data-name="{{item.date}}" enable-flex="true" style="height: calc(100vh - 90rpx)">
+  <scroll-view scroll-y="{{true}}" bindscroll="scroll" enable-flex="true" style="height: calc(100vh - 90rpx)">
     <view wx:for="{{ date }}" wx:key="index" class="box">
       <view class="date flex-item-center">
         <text>{{ item.date }}</text>
