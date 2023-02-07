@@ -87,6 +87,7 @@
   padding: 30rpx 0 100rpx 0;
   color: #fff;
   background-image: url('https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/home-banner.png?sign=a10f1699a9385e6153ba7d6a1547ce2e&t=1675686858');
+  opacity: .9;
   background-repeat: no-repeat;
   background-size: 100%;
 }
@@ -229,7 +230,7 @@
 
 
 .activity {
-  background-image: url('https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/bgd-Points_redemption.png?sign=dd96acc856d6eff5763fc16ebc02e74f&t=1675410137')
+  background-image: url('https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/bgd-Points_redemption.png?sign=3e93b9f53fd8864f67ff43f8b2a7c5f8&t=1675763108')
 }
 
 .activity_list .title {
@@ -288,7 +289,7 @@
 
 .footer .nav_activity {
   width: 100%;
-  background-color: #cf2b32;
+  background-color: #d74d50;
   border-radius: 16rpx;
   font-size: 30rpx;
   color: #fff;
@@ -298,55 +299,10 @@
 }
 
 .footer .nav_activity-hover {
-  background-color: #c7484f;
+  background-color: #d46163;
 }
 
 .footer .icon_more {
   width: 26rpx;
   height: 26rpx;
 }
-
-/* 导航栏的样式 */
-/* 
-.body .container .nav {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 10rpx;
-}
-
-.hd {
-
-  width: 100%;
-  height: 88rpx;
-  line-height: 88rpx;
-  display: flex;
-  background: #fff;
-}
-
-.hd_flex {
-  flex: 1;
-  text-align: center;
-  font-size: 28rpx;
-  font-family: PingFang SC;
-  font-weight: 500;
-  color: #333333;
-}
-
-.hd_flex_on {
-  font-size: 30rpx;
-  color: #FA871E;
-  position: relative;
-}
-
-.hd_flex_on::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  width: 40%;
-  height: 6rpx;
-  background: #FA871E;
-  border-radius: 3rpx;
-  left: 50%;
-  transform: translateX(-50%);
-} */
-/* 导航栏的样式 结束*/
