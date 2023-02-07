@@ -98,15 +98,23 @@
   width: 100vw;
   height: 100vh;
   background-color: #fff;
+  position: relative;
+}
+
+.body .box {
+  width: 100vw;
 }
 
 .body .box .date {
   font-size: 30rpx;
+  width: 100%;
   color: #000;
   box-sizing: border-box;
   padding: 20rpx 40rpx;
   background-color: #f3f3f3;
   border-bottom: 1rpx solid #e7e6e6;
+  /* position: fixed;
+  z-index: 999; */
 }
 
 .body .box .date image {
@@ -123,7 +131,7 @@
   border-bottom: 1rpx solid #e7e6e6;
 }
 
-.body .box .item .left .title{
+.body .box .item .left .title {
   font-size: 34rpx;
 }
 

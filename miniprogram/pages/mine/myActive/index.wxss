@@ -27,6 +27,27 @@
   background: #fa6a38;
 }
 
+.create-active{
+  position: fixed;
+  width: 80rpx;
+  height: 80rpx;
+  right: 50rpx;
+  bottom: 100rpx;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid #ccc;
+}
+
+.all-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-20{
+  width: 40rpx;
+}
+
 .mt-5{
   margin-top: 10rpx;
 }

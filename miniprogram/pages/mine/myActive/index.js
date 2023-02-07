@@ -14,6 +14,11 @@ Page({
       target:e.currentTarget.dataset.id,
     })
   },
+  toActive(){
+    wx.navigateTo({
+      url: "/pages/activity/createActive/index",
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载

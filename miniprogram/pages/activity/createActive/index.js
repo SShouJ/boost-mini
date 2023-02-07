@@ -5,14 +5,30 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    prizeArr:[],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    let prizeArr = [
+      {
+        id:1,
+        prizeName:'笔记本',
+      },
+      {
+        id:1,
+        prizeName:'笔记本',
+      },
+      {
+        id:1,
+        prizeName:'笔记本',
+      },
+  ];
+    this.setData({
+      prizeArr:prizeArr,
+    })
   },
 
   /**

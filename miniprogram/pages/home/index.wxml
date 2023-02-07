@@ -1,6 +1,6 @@
 <!--pages/home/index.wxml-->
 <view class="body">
-  <view class="header pb-20" style="  background-image: url('https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/bgd-banner.png?sign=ef678583d2e5b09cf5f1da4747e2778f&t=1675216306')">
+  <view class="header pb-20">
     <view class="wrap userinfo">
       <view bindtap="login" wx:if="{{!islogin}}" class="state">
         <view class="text">请登录</view>
@@ -10,12 +10,13 @@
         ，您好
       </view>
     </view>
+
     <view class="dialog_box wrap">
       <view wx:if="{{islogin}}" class="justify-space_between">
         <view>
           您当前的积分为 300
         </view>
-        <view>
+        <view bindtap="toRecord">
           兑换记录
         </view>
       </view>
@@ -37,13 +38,9 @@
         </view>
       </view>
     </view>
-    <view wx:if="{{islogin}}">
-      <view>
-        <image class="arrow" src="../../images/icon-arrow.png" mode="" />
-      </view>
-    </view>
+    <view class="arrow" wx:if="{{islogin}}"></view>
   </view>
-  <scroll-view scroll-y="{{true}}" style="height:calc(100vh - 170rpx)">
+  <scroll-view scroll-y="{{true}}" style="height:calc(100vh - 300rpx)">
     <view class="container">
       <view class="container_bgd wrap mt-10">
         <view class="banner justify-space_between item-center">
@@ -114,24 +111,12 @@
     </view>
 
     <view class="footer wrap">
-      <button class="nav_activity" bindtap="toPrizeList" hover-class="nav_activity-hover" hover-start-time='10'>
+      <button class="nav_activity" bindtap="toPrize" hover-class="nav_activity-hover" hover-start-time='10'>
         <view>
           查看更多奖品
         </view>
-        <!-- <view>
-          <image class="icon_more" src="../../images/icon-more.png" mode="" />
-        </view> -->
       </button>
     </view>
   </scroll-view>
 
 </view>
-
-<!-- 导航栏因做的样式看着像电商平台了先注释了后期需要再说 -->
-<!-- <view class="nav">
-      <view class="hd">
-        <block wx:for="{{navList}}" wx:key="navList">
-          <view class="hd_flex {{navType == index ? 'hd_flex_on' : ''}}" catchtap="changeType" data-index="{{index}}">{{item}}</view>
-        </block>
-      </view>
-    </view> --

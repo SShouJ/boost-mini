@@ -14,12 +14,12 @@
   </view>
   <!-- 表单内容 -->
 
-  <view class="form-item pd-17 fs-15 flex-between">
-      <view class="label">
+  <view class="form-item pd-17 fs-15">
+      <view class="label  pd-17">
           <text class="cl-red">*</text>
           <text class="ml-5">活动主题图</text>
       </view>
-      <view class="upload-wrap pd-15">
+      <view class="upload-wrap pd-50  all-center">
           <image class="icon-28" src="../../../images/icon-add.png" mode="widthFix"/>
       </view>
   </view>
@@ -28,7 +28,7 @@
           <text class="cl-red">*</text>
           <text class="ml-5">活动标题</text>
       </view>
-      <input type="text" placeholder="请输入活动标题"/>
+      <input class="wd-210" type="text" placeholder="请输入活动标题"/>
   </view>
   <view class="form-item pd-17 fs-15">
       <view class="label">
@@ -41,4 +41,62 @@
         <picker mode="date">活动结束时间</picker>
       </view>
   </view>
+  <view class="form-item pd-17 fs-15 flex-between">
+      <view class="label">
+          <text class="cl-red">*</text>
+          <text class="ml-5">一等奖</text>
+      </view>
+      <picker mode="selector" range="{{prizeArr}}"  range-key="prizeName" value="{{0}}">
+        <view class="fs-15 wd-210">
+          请选择奖品
+        </view>
+      </picker>
+  </view>
+  <view class="form-item pd-17 fs-15 flex-between">
+      <view class="label">
+          <text class="cl-red">*</text>
+          <text class="ml-5">二等奖</text>
+      </view>
+      <picker mode="selector" range="{{prizeArr}}"  range-key="prizeName" value="{{0}}">
+        <view class="fs-15 wd-210">
+          请选择奖品
+        </view>
+      </picker>
+  </view>
+  <view class="form-item pd-17 fs-15 flex-between">
+      <view class="label">
+          <text class="cl-red">*</text>
+          <text class="ml-5">三等奖</text>
+      </view>
+      <picker mode="selector" range="{{prizeArr}}"  range-key="prizeName" value="{{0}}">
+        <view class="fs-15 wd-210">
+          请选择奖品
+        </view>
+      </picker>
+  </view>
+  <!-- 活动规则 -->
+  <view class="title cl-grey pd-17">
+    <text class="fs-15">活动规则</text>
+  </view>
+  <view class="form-item pd-17 fs-15">
+    <view class="pd-30 bd">
+        <view>
+          <text>1.点击上方“我要玩”进行报名，填写姓名和手机号即可!</text>
+        </view>
+        <view>
+          <text>2.报名成功后,邀请好友帮忙点赞收集月饼，一个好友点赞后可以获得一个月饼</text>
+        </view>
+        <view>
+          <text>3.月饼达到50个之后，即可购买课程</text>
+        </view>
+        <view>
+          <text>4.活动购买课程需要在规定时间内上课，不补课，不顺延，不退费</text>
+        </view>
+      </view>
+    </view>
+    <view class="btn-wrap all-center pd-30">
+        <view class="btn pd-12_20 bg-blue cl-white fs-15">
+            立即发布
+        </view>
+    </view>
 </view>

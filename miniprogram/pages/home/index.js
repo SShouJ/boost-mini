@@ -125,26 +125,7 @@ Page({
         nav: 'prizeDetail',
       },
     ],
-    // navList: ['推荐', '男装', '女装', '手机', '电脑', '百货', '电器', '全部',],
-    // navType: 0,
   },
-  // 导航栏的
-  // changeType: function (e) {
-  //   console.log(e)
-  //   let {
-  //     index
-  //   } = e.currentTarget.dataset;
-  //   if (this.data.navType == index || index == undefined) {
-  //     console.log(this.data.navList[index]);
-  //     return false;
-  //   } else {
-  //     // 当前点击的
-  //     console.log(this.data.navList[index]);
-  //     this.setData({
-  //       navType: index
-  //     })
-  //   }
-  // },
   login() {
     const _this = this;
     wx.getSetting({
@@ -181,7 +162,12 @@ Page({
     })
   },
   // 
-  toPrizeList() {
+  toRecord() {
+    wx.navigateTo({
+      url: '/pages/record/index?',
+    })
+  },
+  toPrize() {
     wx.navigateTo({
       url: '/pages/prize/index?',
     })
