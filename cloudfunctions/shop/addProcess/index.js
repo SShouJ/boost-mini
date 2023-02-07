@@ -59,7 +59,7 @@ exports.main = async (event, context) => {
   }
   //提交审核
   try {
-    await db.collection('shop').add({
+    await db.collection('process').add({
       data:{
         name,
         openid,
@@ -68,6 +68,7 @@ exports.main = async (event, context) => {
         phone,
         desc,
         business,
+        type:0,
       }
     })
     return {
@@ -78,8 +79,8 @@ exports.main = async (event, context) => {
   } catch (error) {
     return {
       status:0,
-      msg:"fail",
-      data:error,
+      msg:error,
+      data:[],
     }
   }
 };

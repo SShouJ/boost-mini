@@ -27,8 +27,9 @@ Page({
     dateInfo: 'ces',
     content: {
       isShow: true,
-    }
+    },
   },
+
   scroll: function (e) {
     console.log(e)
     if (e.detail.scrollTop >= 216) {
@@ -50,7 +51,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    console.log('options',options)
+
   },
 
   /**

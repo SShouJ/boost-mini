@@ -10,7 +10,7 @@ Page({
     swiperPrize: [
       {
         id: 1,
-        url: '../../images/goods1.png',
+        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
         title: '1这是轮播图的标题11111111',
         day: '111',
         date: '23:51:31',
@@ -19,7 +19,7 @@ Page({
       },
       {
         id: 2,
-        url: '../../images/goods1.png',
+        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
         title: '2这是轮播图的标题11111111',
         day: '222',
         date: '23:52:31',
@@ -28,7 +28,7 @@ Page({
       },
       {
         id: 3,
-        url: '../../images/goods1.png',
+        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
         title: '3这是轮播图的标题11111111',
         day: '333',
         date: '23:53:31',
@@ -37,7 +37,7 @@ Page({
       },
       {
         id: 4,
-        url: '../../images/goods1.png',
+        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
         title: '4这是轮播图的标题11111111',
         day: '444',
         date: '23:54:31',
@@ -46,7 +46,7 @@ Page({
       },
       {
         id: 5,
-        url: '../../images/goods1.png',
+        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
         title: '这是轮播图的标题11111111',
         day: '555',
         date: '23:55:31',
@@ -55,7 +55,7 @@ Page({
       },
       {
         id: 6,
-        url: '../../images/goods1.png',
+        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
         title: '6这是轮播图的标题11111111',
         day: '666',
         date: '23:56:31',
@@ -64,7 +64,7 @@ Page({
       },
       {
         id: 7,
-        url: '../../images/goods1.png',
+        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
         title: '7这是轮播图的标题11111111',
         day: '777',
         date: '23:57:31',
@@ -73,7 +73,7 @@ Page({
       },
       {
         id: 8,
-        url: '../../images/goods1.png',
+        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
         title: '8这是轮播图的标题11111111',
         day: '888',
         date: '23:58:31',
@@ -84,42 +84,42 @@ Page({
     prizeLift: [
       {
         id: 0,
-        url: '../../images/price.png',
+        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/iphoue.png?sign=5633dd4c0d1081abef83f06bbfa941d6&t=1675763424',
         title: '1这是奖品列表的数据',
         integral: 100,
         nav: 'prizeDetail',
       },
       {
         id: 1,
-        url: '../../images/price.png',
+        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/iphoue.png?sign=5633dd4c0d1081abef83f06bbfa941d6&t=1675763424',
         title: '2这是奖品列表的数据',
         integral: 200,
         nav: 'prizeDetail',
       },
       {
         id: 2,
-        url: '../../images/price.png',
+        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/iphoue.png?sign=5633dd4c0d1081abef83f06bbfa941d6&t=1675763424',
         title: '3这是奖品列表的数据',
         integral: 300,
         nav: 'prizeDetail',
       },
       {
         id: 3,
-        url: '../../images/price.png',
+        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/iphoue.png?sign=5633dd4c0d1081abef83f06bbfa941d6&t=1675763424',
         title: '4这是奖品列表的数据',
         integral: 400,
         nav: 'prizeDetail',
       },
       {
         id: 4,
-        url: '../../images/price.png',
+        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/iphoue.png?sign=5633dd4c0d1081abef83f06bbfa941d6&t=1675763424',
         title: '5这是奖品列表的数据',
         integral: 500,
         nav: 'prizeDetail',
       },
       {
         id: 5,
-        url: '../../images/price.png',
+        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/iphoue.png?sign=5633dd4c0d1081abef83f06bbfa941d6&t=1675763424',
         title: '6这是奖品列表的数据',
         integral: 600,
         nav: 'prizeDetail',
@@ -176,7 +176,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    // this.login()
   },
 
   /**
@@ -190,7 +190,15 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    // this.login()
+    const _this = this;
+    wx.getSetting({
+      success(res) {
+        if (res.authSetting["scope.userInfo"]) {
+          _this.setUserInfo();
+        }
+      }
+    })
   },
 
   /**

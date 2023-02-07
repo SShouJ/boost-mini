@@ -73,7 +73,7 @@
                     积分
                   </view>
                 </view>
-                <view>兑换</view>
+                <view class="bold">兑换</view>
               </view>
             </view>
           </view>
@@ -82,7 +82,7 @@
 
       <view class="activity_list wrap mtb-30">
         <view class="title justify-space_between">
-          <image src="../../images/points-redemption.png" mode="" />
+          <image src="https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/points-redemption.png?sign=9d83768089a16b95384de16fdfb12fa6&t=1675774843" mode="" />
         </view>
         <!-- 奖品列表 -->
         <view class="activity mt-30 justify-space_between">
