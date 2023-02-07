@@ -7,7 +7,7 @@
 .box{
   position: relative;
   min-height: 100vh;
-  background-image: url(https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/active.png?sign=1819444eb2800d394ea61dc33128ea48&t=1675328406);
+  background-image: url(https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/active.png?sign=5e90b5fc5bd814d5c77af701189bfe04&t=1675752822);
   background-size: 100% 100%;
 }
 
@@ -243,7 +243,15 @@ background-color: #ef0900;
    font-weight: 600;
    text-align: center;
 }
-
+.fs-30{
+  font-size: 30rpx;
+}
+.fs-24{
+  font-size: 24rpx;
+}
+.fw-700{
+  font-weight: 700;
+}
 
 
 
@@ -252,13 +260,15 @@ background-color: #ef0900;
   position: fixed;
   z-index: 999;
   width: 80%;
-  height: 50%;
+  /* height: 50%; */
   left: 10%;
   right: 10%;
   top: 20%;
   background-color: #fdf7df;
  border-radius:30rpx ;
- border: 10rpx solid #f8b026;
+ border: 10rpx solid #fe4927;
+ padding: 80rpx 50rpx;
+box-sizing: border-box;
 }
 .popup-box{
   position: absolute;
@@ -267,4 +277,23 @@ background-color: #ef0900;
   background-color: rgba(14, 13, 13, 0.5);
   width: 100%;
   height: 100%;
+  
+}
+.img-rule{
+  width: 280rpx;
+  height: 80rpx;
+  border-radius: 20rpx;
+  position: absolute;
+  top: -5%;
+  left: 27%;
+}
+.box-rule_text{
+  /* padding: 80rpx 30rpx; */
+}
+.icon-shut{
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  bottom: -20%;
+  left: 45%;
 }

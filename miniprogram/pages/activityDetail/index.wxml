@@ -10,19 +10,26 @@
   <image class="icon-rule" src="../../images/icon-rule.png" mode=""/>
   <text class="fs-20" bindtap="openPopup" data-index="0">规则</text>
  </view>
- <view class="popup-box" wx:if="{{showIndex=='0'}}" bindtap="closePopup"></view> 
+ <view class="popup-box" wx:if="{{showIndex=='0'}}" ></view> 
 <view class="info-top" wx:if="{{showIndex=='0'}}">
   <view class="row-info">
     <view>
-      <text class="line left-line"></text>
-      <text>活动规则</text>
-      <text class="line right-line"></text>
+      <image class="img-rule" src="https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/ceshi.png?sign=76cf024b1abc4882d93b7f57a55d423e&t=1675752981" mode=""/>
     </view>
-   
+    <scroll-view style="height: calc(100vh - 800rpx);" 	scroll-y="{{true}}">
+     <view class="box-rule_text">
+     <text class="fs-30 fw-700"> 一、活动时间</text>
+     <view class="fs-24">即日起—2020年3月31日</view>
+     <text class="fs-30 fw-700"> 二、活动规则</text>
+     <view class="fs-24">1、活动期间，同一用户每天可获得1次抽奖机会，每次抽奖机会将消耗1积分，随机出奖，积分一旦消耗不支持退回。</view>
+     <view class="fs-24">2、同一支付宝账号、手机号、身份证、手机终端，符合以上任一条件的，均视为同一用户。</view>
+     <view class="fs-24">3、活动仅限中国大陆地区的支付宝实名认证用户在中国大陆地区参与和使用。支付宝会员用户需保持其支付宝会员服务在活动期间未关闭方可参加本活动。</view>
+     <view class="fs-24">4、如出现不可抗力或情势变更的情况（包括重大灾害事件、活动受政府机关指令需要停止举办或调整的、活动遭受严重网络攻击或因系统故障等）导致活动需要停止或调整的，我们有权终止活动而无需向用户进行赔偿或补偿。</view> <view class="fs-24">5、在参与活动过程中，如用户出现作弊等违法违规行为我们有权撤销用户参与活动及奖励使用资格，并有权收回用户已经获得的权益。</view>
+     </view>
+    </scroll-view>
   </view>
-  <view class="row-btn">
-    <!-- <view class="left-btn" bindtap="closePopup">取消</view>
-    <view class="right-btn">确认</view> -->
+  <view class="row-btn" bindtap="closePopup">
+   <image class="icon-shut" src="../../images/icon-shut.png" mode=""/>
   </view>
 </view>
  
@@ -32,7 +39,7 @@
   <text class="fs-20">客服</text>
  </view>
   <view class="box-title">
-    <image class="img-title" src="../../images/title.png" mode="" />
+    <image class="img-title" src="https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/title.png?sign=40a6a46b242154af85f44e4d775070f8&t=1675752922" mode="" />
     <view class="btn">
       多重好礼等你来拿
     </view>
@@ -46,7 +53,7 @@
       <!-- 奖品信息展示 -->
       <view class="box-act_message wrap">
         <view class="box-prizeDetails">
-          <image class="img-prizeDetails" src="../../images/price.png" mode="" />
+          <image class="img-prizeDetails" src="https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/price.png?sign=e25105db0f3e5e751f08f38eb28b7f36&t=1675752960" mode="" />
           <view class="box-rigth_prizeDetails">
             <view class="text-priceName">
               iphone 14 Pro Max暗夜紫(12G/512G/全网通) 
