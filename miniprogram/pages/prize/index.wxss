@@ -183,7 +183,7 @@
 .activity {
   box-sizing: border-box;
   flex-wrap: wrap;
-  gap: 20rpx 0;
+  gap: 40rpx 0;
   background-size: 100% 100%;
 }
 
@@ -192,7 +192,7 @@
   border-radius: 20rpx;
   color: #000;
   box-sizing: border-box;
-  border: 1rpx solid #ed9210;
+  border: 1rpx solid #fc4b08;
 }
 
 .activity-item .title {

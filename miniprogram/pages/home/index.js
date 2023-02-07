@@ -176,7 +176,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    // this.login()
   },
 
   /**
@@ -190,7 +190,15 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    // this.login()
+    const _this = this;
+    wx.getSetting({
+      success(res) {
+        if (res.authSetting["scope.userInfo"]) {
+          _this.setUserInfo();
+        }
+      }
+    })
   },
 
   /**

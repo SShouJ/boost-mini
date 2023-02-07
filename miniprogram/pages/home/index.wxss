@@ -87,7 +87,7 @@
   padding: 30rpx 0 100rpx 0;
   color: #fff;
   background-image: url('https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/home-banner.png?sign=a10f1699a9385e6153ba7d6a1547ce2e&t=1675686858');
-  opacity: .9;
+  opacity: .8;
   background-repeat: no-repeat;
   background-size: 100%;
 }
@@ -100,7 +100,6 @@
 }
 
 .body .header .dialog_box {
-  /* border: 1rpx solid #c99d8d70; */
   box-sizing: border-box;
   margin-top: 26rpx;
   font-size: 25rpx;
@@ -120,7 +119,6 @@
 .notice_item_style {
   -webkit-animation: marqueeText 5s linear 1s infinite;
   animation: marqueeText 3s linear 1s infinite;
-  /* 两个动画连续使用 */
   white-space: nowrap;
 }
 
@@ -167,17 +165,19 @@
 
 .body .container .container_bgd {
   box-sizing: border-box;
-  background: linear-gradient(to bottom, #c2252d, #d3999c, #FFF, #FFF, #FFF, #FFF, #FFF);
+  background-size: 100% 100%;
   border-radius: 20rpx;
   box-sizing: border-box;
-  padding: 20rpx 20rpx 20rpx 20rpx;
+  border: 4rpx solid #ed9210;
 }
 
 .body .container .container_bgd .banner .h3 {
   font-size: 34rpx;
-  padding-top: 20rpx;
+  width: 100%;
   font-weight: 700;
-  color: #fff;
+  padding: 30rpx 30rpx;
+  color: #000;
+  border-bottom: 4rpx solid #ed9210;
 }
 
 .body .container .container_bgd .more {
@@ -188,7 +188,7 @@
 .body .container .container_bgd .swiper {
   color: #000;
   margin-top: 20rpx;
-  padding: 20rpx 20rpx 0 0;
+  padding: 20rpx;
   box-sizing: rpxborder-box;
   overflow: scroll;
 }
@@ -207,7 +207,7 @@
 
 .swiper .swiper_item {
   width: 250rpx;
-  border: 1rpx solid #e2e0e0;
+  border: 1rpx solid #ed9210;
   padding: 14rpx;
 }
 
@@ -279,7 +279,7 @@
 .activity_list .btn {
   padding: 6rpx 20rpx;
   color: #fff;
-  background: linear-gradient(to right bottom, #f0ddb4, #cf9a53);
+  background-color: #d74d50;
   border-radius: 50rpx;
 }
 
