@@ -166,7 +166,7 @@
 
 .body .container .container_bgd {
   box-sizing: border-box;
-  background: linear-gradient(to bottom, #cf2b32, #FFF, #FFF, #FFF, #FFF, #FFF);
+  background: linear-gradient(to bottom, #c2252d, #d3999c, #FFF, #FFF, #FFF, #FFF, #FFF);
   border-radius: 20rpx;
   box-sizing: border-box;
   padding: 20rpx 20rpx 20rpx 20rpx;
@@ -288,7 +288,7 @@
 
 .footer .nav_activity {
   width: 100%;
-  background-color: #ff6f43;
+  background-color: #cf2b32;
   border-radius: 16rpx;
   font-size: 30rpx;
   color: #fff;
@@ -298,7 +298,7 @@
 }
 
 .footer .nav_activity-hover {
-  background-color: #ff8965;
+  background-color: #c7484f;
 }
 
 .footer .icon_more {

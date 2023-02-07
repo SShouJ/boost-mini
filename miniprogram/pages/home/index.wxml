@@ -120,12 +120,3 @@
   </scroll-view>
 
 </view>
-
-<!-- 导航栏因做的样式看着像电商平台了先注释了后期需要再说 -->
-<!-- <view class="nav">
-      <view class="hd">
-        <block wx:for="{{navList}}" wx:key="navList">
-          <view class="hd_flex {{navType == index ? 'hd_flex_on' : ''}}" catchtap="changeType" data-index="{{index}}">{{item}}</view>
-        </block>
-      </view>
-    </view> --

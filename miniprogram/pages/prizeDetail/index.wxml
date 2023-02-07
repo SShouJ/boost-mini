@@ -78,7 +78,7 @@
   </scroll-view>
 
   <view class="footer mt-20 justify-space_around">
-    <view class="exchange item-center justify-space_around">
+    <view class="exchange item-center justify-space_around" hover-class="active" hover-stay-time="0">
       立即兑换
     </view>
   </view>

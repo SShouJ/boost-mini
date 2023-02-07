@@ -220,8 +220,13 @@
 .footer .exchange {
   width: 100%;
   padding: 20rpx 20rpx;
-  background-color: #73aaff;
-  color: #fff;
+  background-color: rgb(216, 92, 86);
+  color: #fff; 
   font-size: 36rpx;
-  border-radius: 50rpx;
+  border-radius: 20rpx;
+}
+
+.footer .active{
+  background-color: rgba(216, 92, 86, 0.5);
+  color: #fff;
 }
