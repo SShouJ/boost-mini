@@ -43,13 +43,13 @@
      </view>
      
      <view class="box-feet">
-         <view class="text-feet">
+         <view class="text-feet" bindtap="toFeedbackPages" data-name="feedBack">
           意见反馈
          </view>
          <view class="text-feet bor">
           免责说明
          </view>
-         <view class="text-feet">
+         <view class="text-feet" bindtap="toFeedbackPages"  data-name="complaints">
           我要投诉
          </view>
      </view>

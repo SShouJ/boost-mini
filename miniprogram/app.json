@@ -15,6 +15,16 @@
     "pages/prizeDetail/index",
     "pages/record/index"
   ],
+ 
+  "subpackages": [
+    {
+      "root": "feedback",
+      "pages": [
+        "pages/feedBack",
+        "pages/complaints"
+      ]
+    }
+  ],
   "tabBar": {
     "list": [{
       "pagePath": "pages/home/index",

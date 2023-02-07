@@ -118,7 +118,7 @@
   width: 100%;
   height: 100rpx;
   border-radius: 0 0 30rpx 30rpx;
-  background-image: url('https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/bgd-integral.png?sign=dfc4d8425714b2b300a930f4d0842f15&t=1675416464');
+  background-image: url('https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/bgd-integral.png?sign=a7ed125d5ebb9a0bab6591740cbf826f&t=1675763958');
   background-size: 100% 100%;
   position: absolute;
   bottom: 0rpx;

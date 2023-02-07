@@ -96,7 +96,7 @@
   height: 300rpx;
   padding: 90rpx 20rpx 0 20rpx;
   box-sizing: border-box;
-  background: url('https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/banner4.png?sign=47770d1819a211c905129b5c7aa7e3ba&t=1675667953');
+  background: url('https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/banner3.png?sign=108040761f5386965fdae8a790663e39&t=1675764312');
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
