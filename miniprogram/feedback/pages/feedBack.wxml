@@ -1,0 +1,17 @@
+<!--feedback/pages/feedBack.wxml-->
+<view class="box">
+    <!-- 建议 -->
+    <view class="proposal mt-20">
+        <form bindsubmit="bindFormSubmit">
+            <textarea placeholder="请写下您的意见或建议(必填)" class="textarea" maxlength="-1"    	placeholder-style="font-size:30rpx;color:#ccc;" name="textarea"/>
+        </form>
+        <view class="camera">
+            <image src="../../images/icon-more.png" mode=""/>
+            上传图片
+        </view>
+    </view>
+    <view class="box-phone">
+      <text>联系电话</text>
+      
+    </view>
+</view>
