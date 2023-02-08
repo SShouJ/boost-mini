@@ -46,6 +46,7 @@ Page({
       name:"shop",
       data:{
         type:"addShop",
+        
       }
     }).then(res=>{
       console.log(res.result);
