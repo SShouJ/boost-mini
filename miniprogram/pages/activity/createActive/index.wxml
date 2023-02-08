@@ -1,11 +1,10 @@
-<!--pages/activity/createActive/index.wxml-->
 <view class="activity">
-  <view class="tip bg-warning flex-center">
+  <view class="tip bg-warning flex-center" wx:if="{{showTip}}">
       <view class="tip-text fs-14 cl-white">
         <text>活动开始后不能修改、删除活动，发布后分享给学员学员即可查看活动详情并在线报名</text>
       </view>
       <view class="close-btn  all-center">
-        <image class="icon-18" src="../../../images/icon-close.png" mode="widthFix"/>
+        <image bindtap="closeTip" class="icon-18" src="../../../images/icon-close.png" mode="widthFix"/>
       </view>
   </view>
   <!-- 标题 -->
@@ -28,7 +27,7 @@
           <text class="cl-red">*</text>
           <text class="ml-5">活动标题</text>
       </view>
-      <input class="wd-210" type="text" placeholder="请输入活动标题"/>
+      <input class="wd-210" type="text" bindinput="getInputValue" placeholder="请输入活动标题"/>
   </view>
   <view class="form-item pd-17 fs-15">
       <view class="label">
@@ -36,67 +35,59 @@
           <text class="ml-5">活动时间</text>
       </view>
       <view class="pd-17 flex-around fs-15">
-        <picker mode="date">活动开始时间</picker>
+        <picker mode="date">
+          <view class="date">
+            活动开始时间
+          </view>
+        </picker>
         <text>至</text>
-        <picker mode="date">活动结束时间</picker>
+        <picker mode="date">
+          <view class="date">
+            活动结束时间
+          </view>
+        </picker>
       </view>
   </view>
-  <view class="form-item pd-17 fs-15 flex-between">
-      <view class="label">
-          <text class="cl-red">*</text>
-          <text class="ml-5">一等奖</text>
-      </view>
-      <picker mode="selector" range="{{prizeArr}}"  range-key="prizeName" value="{{0}}">
-        <view class="fs-15 wd-210">
-          请选择奖品
+  <view class="prize-container pd-15 bg-whte">
+    <view class="form-item pd-17 fs-15 flex-between">
+        <view class="label">
+            <text class="cl-red">*</text>
+            <text class="ml-5">一等奖</text>
         </view>
-      </picker>
-  </view>
-  <view class="form-item pd-17 fs-15 flex-between">
-      <view class="label">
-          <text class="cl-red">*</text>
-          <text class="ml-5">二等奖</text>
-      </view>
-      <picker mode="selector" range="{{prizeArr}}"  range-key="prizeName" value="{{0}}">
-        <view class="fs-15 wd-210">
-          请选择奖品
+        <picker mode="selector" range="{{prizeArr}}"  range-key="prizeName" value="{{0}}">
+          <view class="fs-15 wd-210">
+            请选择奖品
+          </view>
+        </picker>
+    </view>
+    <view class="form-item pd-17 fs-15 flex-between">
+        <view class="label">
+            <text class="cl-red">*</text>
+            <text class="ml-5">奖品名称</text>
         </view>
-      </picker>
-  </view>
-  <view class="form-item pd-17 fs-15 flex-between">
-      <view class="label">
-          <text class="cl-red">*</text>
-          <text class="ml-5">三等奖</text>
-      </view>
-      <picker mode="selector" range="{{prizeArr}}"  range-key="prizeName" value="{{0}}">
-        <view class="fs-15 wd-210">
-          请选择奖品
+        <input class="wd-210" type="text" placeholder="请输入奖品名称"/>
+    </view>
+    <view class="form-item pd-17 fs-15 flex-between">
+        <view class="label">
+            <text class="cl-red">*</text>
+            <text class="ml-5">奖品名称</text>
         </view>
-      </picker>
+        <input class="wd-210" type="text" placeholder="请输入满足人数"/>
+    </view>
   </view>
   <!-- 活动规则 -->
   <view class="title cl-grey pd-17">
+    <text class="cl-red">*</text>
     <text class="fs-15">活动规则</text>
   </view>
   <view class="form-item pd-17 fs-15">
-    <view class="pd-30 bd">
-        <view>
-          <text>1.点击上方“我要玩”进行报名，填写姓名和手机号即可!</text>
-        </view>
-        <view>
-          <text>2.报名成功后,邀请好友帮忙点赞收集月饼，一个好友点赞后可以获得一个月饼</text>
-        </view>
-        <view>
-          <text>3.月饼达到50个之后，即可购买课程</text>
-        </view>
-        <view>
-          <text>4.活动购买课程需要在规定时间内上课，不补课，不顺延，不退费</text>
-        </view>
-      </view>
+    <view class="bd">
+        <textarea class="text-area" placeholder="请输入商品规则"/>
+    </view>
     </view>
     <view class="btn-wrap all-center pd-30">
         <view class="btn pd-12_20 bg-blue cl-white fs-15">
             立即发布
-        </view>
+        </view>、
     </view>
 </view>

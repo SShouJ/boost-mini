@@ -48,7 +48,7 @@ exports.main = async (event, context) => {
       }
     }
     if(keys[i] == 'phone' && event[keys[i]]){
-      if(!/^((13[0-9])|(14[5|7|9])|(15([0-9])|(17[0-9])|(18[0-9])|(19[8|9]))\\d{8})$/.test(event[keys[i]])){
+      if(!/^(13[0-9]|14[01456879]|15[0-35-9]|16[2567]|17[0-8]|18[0-9]|19[0-35-9])\d{8}$/.test(event[keys[i]])){
         return {
           status:0,
           msg:'手机号格式有误',
