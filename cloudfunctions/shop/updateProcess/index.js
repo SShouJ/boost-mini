@@ -28,7 +28,16 @@ exports.main = async (event, context) => {
         msg,
       }
     })
+    return {
+      status:1,
+      msg:'success',
+      data:[],
+    }
   } catch (error) {
-    
+    return {
+      status:0,
+      msg:'fail',
+      data:[],
+    }
   }
 };

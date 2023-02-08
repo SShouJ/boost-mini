@@ -95,11 +95,20 @@
           <view class="countdown">
                 还剩2天23：59：59开奖
           </view>
+          <!-- <view wx:if="{{joinFalg}}">
+            a 
+          </view> -->
           <!-- 分享btn -->
-          <view class="btn-share">
-                  还差10人可获得下一级奖品，立即参与
+          <button wx:if="{{joinFlag}}" class="style-clear" type="default" open-type="share" bindshare="onShareAppMessage">
+          <view class="btn-share"  bindtap="join"  data-flag="false">
+                  {{text}}
           </view>
-        
+          </button>
+          <button wx:else="{{!joinFlag}}" class="style-clear" type="default" >
+          <view class="btn-share"  bindtap="join" data-flag="true">
+                  {{text}}
+          </view>
+          </button>
         </view>
       </view>
     </view>

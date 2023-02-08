@@ -12,10 +12,18 @@ Page({
     end:'',//活动结束时间
     rule:'',//商品规则
     showTip:true,
-    prizeForms:[{
-      id:'formId1',
-      
-    }],
+    prizeForms:[
+      {
+        id:'formId1',
+        prizeName:'',
+        prizeNumber:0,
+      },
+      {
+        id:'formId2',
+        prizeName:'',
+        prizeNumber:0,
+      },
+  ],
   },
 
   /**

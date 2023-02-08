@@ -5,73 +5,73 @@ Page({
    * 页面的初始数据
    */
   data: {
-    businessLicense:'',
-    otherImage:'',
-    timer:null,
-    fnArr:[],
-    storeinfo:{
-    storeName:'',
-    storeAddress:'',
-    name:'',
-    phone:'',
-    desc:'',
-  },
-  business:'',
+    businessLicense: '',
+    otherImage: '',
+    timer: null,
+    fnArr: [],
+    storeinfo: {
+      storeName: '',
+      storeAddress: '',
+      name: '',
+      phone: '',
+      desc: '',
+    },
+    business: '',
   },
   // 获取inp值
-debounce(e) {
-  console.log(e.currentTarget.dataset.name);
-  let name=e.currentTarget.dataset.name;
+  debounce(e) {
+    console.log(e.currentTarget.dataset.name);
+    let name = e.currentTarget.dataset.name;
 
     this.setData({
-      [`storeinfo.${name}`]:e.detail.value
+      [`storeinfo.${name}`]: e.detail.value
     })
     console.log(this.data.storeinfo);
- 
-},
-  updata(){
+
+  },
+  updata() {
     console.log(1);
   },
-  chooseImg(e){
+  chooseImg(e) {
     let name = e.currentTarget.dataset.name;
     let _this = this;
     wx.chooseMedia({
-      count:1,
-      mediaType:['image'],
-      sourceType:['album'],
-      success:function(res){
-       wx.cloud.uploadFile({
-         cloudPath: new Date().getTime()+'.png',
-         filePath: res.tempFiles[0].tempFilePath, // 文件路径
-       }).then(res => {
-         // get resource ID
-         console.log(res.fileID)
-         _this.setData({
-           [`${name}`]:res.fileID
-         })
-       })
+      count: 1,
+      mediaType: ['image'],
+      sourceType: ['album'],
+      success: function (res) {
+        wx.cloud.uploadFile({
+          cloudPath: new Date().getTime() + '.png',
+          filePath: res.tempFiles[0].tempFilePath, // 文件路径
+        }).then(res => {
+          // get resource ID
+          console.log(res.fileID)
+          _this.setData({
+            [`${name}`]: res.fileID,
+            business: res.fileID
+          })
+        })
       },
-      fail:function(res){
-        business:res
+      fail: function (res) {
+        console.log(res);
       }
     })
-    console.log(this.data.business);
   },
-  submit(){
+  submit() {
     console.log('-------------我是提交----------')
-    console.log(this.data.storeinfo.storeName);
+    console.log(this.data.business);
     wx.cloud.callFunction({
-      name:"shop",
-      data:{
-        type:"addProcess",
-        storeName:this.data.storeinfo.storeName,
-    storeAddress:this.data.storeinfo.storeAddress,
-    name:this.data.storeinfo.name,
-    phone:this.data.storeinfo.phone,
-    desc:this.data.storeinfo.desc,
-    business:this.data.business,
+      name: "shop",
+      data: {
+        type: "addProcess",
+        storeName: this.data.storeinfo.storeName,
+        storeAddress: this.data.storeinfo.storeAddress,
+        name: this.data.storeinfo.name,
+        phone: this.data.storeinfo.phone,
+        desc: this.data.storeinfo.desc,
+        business: this.data.business,
       }
-    }).then(res=>{
+    }).then(res => {
       console.log(res.result);
     })
   },

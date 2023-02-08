@@ -74,18 +74,30 @@ Page({
       url: '/pages/'+ data.currentTarget.dataset.name+'/index',
     })
   },
+  //获取申请入驻列表
+  getProcess(){
+    wx.cloud.callFunction({
+      name: "shop",
+     data:{
+      type:"getProcess",
+      status:''
+     }
+    }).then(res=>{
+      console.log(res.result);
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    this.getProcess()
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
-
+    
   },
 
   /**
