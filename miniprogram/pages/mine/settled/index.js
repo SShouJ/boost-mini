@@ -7,13 +7,28 @@ Page({
   data: {
     businessLicense:'',
     otherImage:'',
+    timer:null,
+    fnArr:[],
+    storeinfo:{
+    storeName:'',
+    storeAddress:'',
+    name:'',
+    phone:'',
+    desc:'',
   },
-  bindKeyInput: function (e) {
+  business:'',
+  },
+  // 获取inp值
+debounce(e) {
+  console.log(e.currentTarget.dataset.name);
+  let name=e.currentTarget.dataset.name;
+
     this.setData({
-      inputValue: e.detail.value,
+      [`storeinfo.${name}`]:e.detail.value
     })
-    console.log(e);
-  },
+    console.log(this.data.storeinfo);
+ 
+},
   updata(){
     console.log(1);
   },
@@ -37,16 +52,24 @@ Page({
        })
       },
       fail:function(res){
-        console.log(res);
+        business:res
       }
     })
+    console.log(this.data.business);
   },
   submit(){
+    console.log('-------------我是提交----------')
+    console.log(this.data.storeinfo.storeName);
     wx.cloud.callFunction({
       name:"shop",
       data:{
-        type:"addShop",
-        
+        type:"addProcess",
+        storeName:this.data.storeinfo.storeName,
+    storeAddress:this.data.storeinfo.storeAddress,
+    name:this.data.storeinfo.name,
+    phone:this.data.storeinfo.phone,
+    desc:this.data.storeinfo.desc,
+    business:this.data.business,
       }
     }).then(res=>{
       console.log(res.result);

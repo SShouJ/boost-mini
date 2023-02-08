@@ -6,28 +6,46 @@ Page({
    */
   data: {
     prizeArr:[],
+    banner:'',//活动图片
+    title:'',//活动标题
+    start:'',//活动开始时间
+    end:'',//活动结束时间
+    rule:'',//商品规则
+    showTip:true,
+    prizeForms:[{
+      id:'formId1',
+      
+    }],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    let prizeArr = [
-      {
-        id:1,
-        prizeName:'笔记本',
-      },
-      {
-        id:1,
-        prizeName:'笔记本',
-      },
-      {
-        id:1,
-        prizeName:'笔记本',
-      },
-  ];
+      let prizeArr = [
+        {
+          id:1,
+          prizeName:'笔记本',
+        },
+        {
+          id:1,
+          prizeName:'笔记本',
+        },
+        {
+          id:1,
+          prizeName:'笔记本',
+        },
+    ];
     this.setData({
       prizeArr:prizeArr,
+    })
+  },
+  getInputValue(e){
+    console.log(e.detail);
+  },
+  closeTip(e){
+    this.setData({
+      showTip:!this.data.showTip
     })
   },
 

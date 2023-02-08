@@ -20,7 +20,7 @@
   border: 2rpx solid #fff;
 }
 
-.activity>.form-item{
+.activity .form-item{
   background: #fff;
   border-bottom: 2rpx solid #f6f6f6;
 }
@@ -134,4 +134,18 @@
 
 .pd-12_20{
   padding: 24rpx 40rpx;
+}
+
+.date{
+  border-bottom: 2rpx solid #ccc;
+  padding: 30rpx;
+}
+
+.bg-whte{
+  background: white;
+}
+
+.text-area{
+  height: 200rpx;
+  width: 100%;
 }
