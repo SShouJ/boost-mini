@@ -5,8 +5,11 @@ Page({
    * 页面的初始数据
    */
   data: {
+    text:'还差10人可获得下一级奖品，立即参与',
     showIndex:null,//打开弹窗的对应下标
     height:'',//屏幕高度
+    joinFlag:false,
+    showFlag:false
   },
   openPopup(e){
     var index = e.currentTarget.dataset.index;
@@ -26,10 +29,42 @@ Page({
       url: '/pages/'+ data.currentTarget.dataset.name+'/index',
     })
   },
+  join(data){
+    console.log(data.currentTarget.dataset);
+    var _this = this
+    // console.log(data);
+    this.setData({
+      joinFlag:true,
+      showFlag:data.currentTarget.dataset.flag,
+      text:'还差10人可获得下一级奖品，点击分享',
+    })
+    console.log(this.data.showFlag);
+    if (this.data.showFlag == "true") {
+      wx.showModal({
+        title: '活动提示',
+        content: '参与成功，分享好友的积分换豪礼',
+        showCancel:'false',
+        success (res) {
+          if (res.confirm) {
+            _this.setData({
+              showFlag : false
+            })
+            console.log(_this.data.showFlag)
+          }
+        }
+      })
+    }
+    // console.log(this.data.joinFalg);
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    
+    wx.showShareMenu({
+      withShareTicket: true,
+      menus:['shareAppMessage','shareTimeline']
+  })
     console.log(options)
   },
 

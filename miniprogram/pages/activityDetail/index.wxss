@@ -51,7 +51,7 @@ align-items: center;
   height: 50rpx;
 }
 .box-title{
-  margin-top: 70rpx;
+  margin-top: 15%;
   /* border: 1rpx solid; */
   display: flex;
   flex-direction: column;
@@ -287,8 +287,12 @@ box-sizing: border-box;
   top: -5%;
   left: 27%;
 }
-.box-rule_text{
-  /* padding: 80rpx 30rpx; */
+/* 清除btn默认样式 */
+.style-clear {
+  width: 100% !important;
+  font-weight: 400;
+  padding: 0;
+  background-color: transparent !important;
 }
 .icon-shut{
   width: 50rpx;

@@ -54,7 +54,7 @@
           我要投诉
          </view>
      </view>
-     <view class="fooder">
+     <view class="fooder"> 
        <view class="fooder-top">
          <text class="text-feet fw-6">—  活动抽奖  —</text>
        </view>
