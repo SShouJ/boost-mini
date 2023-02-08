@@ -12,15 +12,17 @@
     </view>
 
     <view class="dialog_box wrap">
-      <view wx:if="{{islogin}}" class="justify-space_between">
-        <view>
-          您当前的积分为 300
-        </view>
-        <view bindtap="toRecord">
-          兑换记录
+      <view wx:if="{{islogin}}" style="background-image: url('https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/home-header_jt.png?sign=c40795dd2673dd885aa489c9317bf1ef&t=1675826406'); padding: 20rpx 20rpx 20rpx 20rpx; background-size: 100% 100%;">
+        <view class="justify-space_between" style="padding-top: 20rpx;">
+          <view>
+            您当前的积分为 300
+          </view>
+          <view bindtap="toRecord">
+            兑换记录
+          </view>
         </view>
       </view>
-      <view wx:else>
+      <view wx:else style="background-image: url('https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/home-header.png?sign=8c3c9fbd287e7a2046b2d35003cfb577&t=1675826436'); padding: 20rpx; background-size: 100% 100%;">
         <view class="roll">
           <view style="flex: 1;">
             <view id="noticeItem" class="notice_item_style">
@@ -38,11 +40,11 @@
         </view>
       </view>
     </view>
-    <view class="arrow" wx:if="{{islogin}}"></view>
+    <!-- <view class="arrow" wx:if="{{islogin}}"></view> -->
   </view>
   <scroll-view scroll-y="{{true}}" style="height:calc(100vh - 300rpx)">
     <view class="container">
-      <view class="container_bgd wrap mt-10">
+      <view class="container_bgd wrap mt-30">
         <view class="banner justify-space_between item-center">
           <view class="h3">限时抢购</view>
         </view>
@@ -73,7 +75,7 @@
                     积分
                   </view>
                 </view>
-                <view>兑换</view>
+                <view class="bold">兑换</view>
               </view>
             </view>
           </view>
@@ -82,7 +84,7 @@
 
       <view class="activity_list wrap mtb-30">
         <view class="title justify-space_between">
-          <image src="../../images/points-redemption.png" mode="" />
+          <image src="https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/points-redemption.png?sign=9d83768089a16b95384de16fdfb12fa6&t=1675774843" mode="" />
         </view>
         <!-- 奖品列表 -->
         <view class="activity mt-30 justify-space_between">

@@ -1,4 +1,8 @@
 /* feedback/pages/feedBack.wxss */
+.wrap{
+  width: 710rpx;
+  margin: 0 auto;
+}
 .proposal{
   background-color: white;
   border-radius: 15rpx;
@@ -23,4 +27,35 @@
   width: 70rpx;
   height: 70rpx;
   filter: invert(100%)
+}
+.box-inp{
+  padding: 20rpx;
+}
+.box-inp input{
+  width: 140%;
+  height: 50rpx;
+  font-size: 30rpx;
+}
+.box-phone{
+  background-color: white;
+  margin-top: 20rpx;
+  padding: 0rpx 30rpx ;
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+}
+.box-phone{
+  font-size: 30rpx;
+
+}
+.fs-24{
+  
+  font-size: 24rpx;
+  color: #666464;
+}
+.box-text{
+  padding: 30rpx 50rpx;
+}
+.btn{
+  margin-top: 100rpx;
 }

@@ -8,11 +8,13 @@
   </view>
 
   <scroll-view scroll-y="{{true}}" bindscroll="scroll" enable-flex="true" style="height: calc(100vh - 90rpx)">
-    <view wx:for="{{ date }}" wx:key="index" class="box">
-      <view class="date flex-item-center">
-        <text>{{ item.date }}</text>
-        <image src="../../images/icon-down_arrow.png" mode="" />
-      </view>
+    <view class="box">
+      <!-- <view wx:for="{{ date }}" wx:key="index">
+        <view class="date flex-item-center">
+          <text>{{ item.date }}</text>
+          <image src="../../images/icon-down_arrow.png" mode="" />
+        </view>
+      </view> -->
 
       <view wx:for="{{ recordData }}" wx:key="index" wx:for-item="data" class="item solid justify-space_between">
         <view class="left flex-item-center">
