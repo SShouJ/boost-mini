@@ -12,7 +12,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    if (options.data) {
+      console.log('这是奖品详情页面兑换成功之后传的参数', JSON.parse(options.data))
+    }
   },
 
   /**

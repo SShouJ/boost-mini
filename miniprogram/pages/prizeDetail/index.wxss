@@ -1,5 +1,4 @@
 /* pages/prizeDetail/index.wxss */
-/* pages/home/index.wxss */
 .wrap {
   width: 710rpx !important;
   margin: 0 auto;
