@@ -13,9 +13,14 @@ exports.main = async (event, context) => {
   if(!status && status !==0){
     // 获取所有的
     try {
-      let res = await db.collection('process').where().get();
+      let res = await db.collection('process').get();
       console.log('------------------我是获取审核列表的接口-----------------');
       console.log(res);
+      return {
+        status:1,
+        msg:'success',
+        data:res.data,
+      }
     } catch (error) {
       return {
         status:0,
@@ -33,7 +38,7 @@ exports.main = async (event, context) => {
         return {
           status:1,
           msg:'success',
-          data:[],
+          data:res.data,
         }
       } catch (error) {
         return {
