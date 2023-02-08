@@ -58,6 +58,9 @@
   color: #fff;
 }
 
+.flex{
+  display: flex;
+}
 
 .all-center{
   display: flex;
@@ -148,4 +151,30 @@
 .text-area{
   height: 200rpx;
   width: 100%;
+}
+
+.wd-100{
+  width: 200rpx;
+}
+
+.ml-50{
+  margin-left: 100rpx;
+}
+
+.icon-15{
+  width: 30rpx;
+}
+
+.cl-green{
+  color: #03b15a;
+}
+
+
+
+.pd-5{
+  padding: 10rpx;
+}
+
+.round{
+  border-radius: 50%;
 }
