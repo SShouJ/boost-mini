@@ -52,6 +52,10 @@
       </view>
       <!-- 奖品信息展示 -->
       <view class="box-act_message wrap">
+        <view class="box-morePrice">
+          <text class="fs-30 fw-700">当前阶段奖品：</text>
+          <text class="fs-24 cl-blue">查看全部奖品</text>
+        </view>
         <view class="box-prizeDetails">
           <image class="img-prizeDetails" src="https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/price.png?sign=e25105db0f3e5e751f08f38eb28b7f36&t=1675752960" mode="" />
           <view class="box-rigth_prizeDetails">

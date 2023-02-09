@@ -6,16 +6,20 @@
       <image class="img-scan" src="../../images/icon-set.png" mode="" />
     </view>
     <view class="box-userinfo">
-    <view class="box-rigth" bindtap="login" wx:if="{{!islogin}}">
+    <view class="box-rigth" bindtap="setUserInfo" wx:if="{{!islogin}}">
         <image class="img-avatar" src="../../images/avatar-nologin.png" mode="" />
         <view  id="btn-username" >未授权</view>
       </view>
-      <view class="box-rigth" bindtap="login" wx:else="{{islogin}}">
+      <view class="box-rigth"  wx:else="{{islogin}}">
         <image class="img-avatar" src="{{userInfo.avatarUrl}}" mode="" />
-        <view  id="btn-username" >{{userInfo.nickName}}</view>
+        <view  id="btn-username" >
+          <view>{{userInfo.nickName}}</view>
+          <view class="fs-24 box-integral">300积分</view>
+        </view>
       </view>
     <view class="box-integral">
-      300积分
+      <text class="fs-24">个人主页</text>
+      <image class="icon-info" src="../../images/icon-more.png" mode=""/>
     </view>
     </view>
   </view>

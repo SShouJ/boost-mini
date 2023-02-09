@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    text:'还差10人可获得下一级奖品，立即参与',
+    text:'还差10人可抽取下一级奖品，立即参与',
     showIndex:null,//打开弹窗的对应下标
     height:'',//屏幕高度
     joinFlag:false,
@@ -36,14 +36,14 @@ Page({
     this.setData({
       joinFlag:true,
       showFlag:data.currentTarget.dataset.flag,
-      text:'还差10人可获得下一级奖品，点击分享',
+      text:'还差10人可抽取下一级奖品，点击分享',
     })
     console.log(this.data.showFlag);
     if (this.data.showFlag == "true") {
       wx.showModal({
         title: '活动提示',
         content: '参与成功，分享好友的积分换豪礼',
-        showCancel:'false',
+        showCancel:false,
         success (res) {
           if (res.confirm) {
             _this.setData({
