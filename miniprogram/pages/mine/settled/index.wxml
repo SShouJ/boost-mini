@@ -34,7 +34,7 @@
         </view>
         <view class="box-rigth">
           <view class="box-inp">
-            <input class="inp" type="nickname" bindinput='debounce' data-name='name' placeholder="请填写真实姓名" maxlength="20" />
+            <input class="inp" type="number" bindinput='debounce' data-name='name' placeholder="请填写真实姓名" maxlength="20" />
           </view>
         </view>
       </view>
@@ -45,7 +45,7 @@
         </view>
         <view class="box-rigth">
           <view class="box-inp">
-            <input class="inp" type="nickname" bindinput='debounce' data-name='phone' placeholder="请填写真实姓名" maxlength="20" />
+            <input class="inp" type="nickname" bindinput='debounce' data-name='phone' placeholder="请填写真实手机号" maxlength="20" />
           </view>
         </view>
       </view>

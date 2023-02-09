@@ -12,12 +12,15 @@
       </view>
       <view class="box-rigth"  wx:else="{{islogin}}">
         <image class="img-avatar" src="{{userInfo.avatarUrl}}" mode="" />
-        <view  id="btn-username" >
+        <view  id="btn-username" class="fw-700">
           <view>{{userInfo.nickName}}</view>
-          <view class="fs-24 box-integral">300积分</view>
+          <view class="fs-24 box-integral">
+          <image class="icon-integral" src="../../images/icon-success.png" mode=""/>
+          <text class="fs-24">300积分</text>
+          </view>
         </view>
       </view>
-    <view class="box-integral">
+    <view class="box-infopage">
       <text class="fs-24">个人主页</text>
       <image class="icon-info" src="../../images/icon-more.png" mode=""/>
     </view>
