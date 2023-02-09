@@ -20,7 +20,7 @@
       </view>
     </view>
   </view>
-  <view class="box-btn">
+  <view class="box-btn warp">
     <button type="primary">通过</button>
     <button type="warn">不通过</button>
   </view>

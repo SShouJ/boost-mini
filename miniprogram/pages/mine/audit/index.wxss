@@ -92,3 +92,7 @@ body{
 .mb-20{
   margin-bottom: 20rpx;
 }
+.box-from{
+  display: flex;
+  flex-direction: column;
+}

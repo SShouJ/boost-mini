@@ -11,7 +11,7 @@ body{
   margin-bottom: 20rpx;
 }
 .box-info{
-  padding: 20rpx;
+  padding: 20rpx 0rpx  20rpx 20rpx;
   display: flex;
   flex-direction: column;
   border-radius:10rpx
@@ -34,7 +34,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 100rpx;
+  padding-bottom: 50rpx;
 }
 .box-rigth{
   display: flex;
@@ -57,11 +57,20 @@ body{
     margin-left: 40rpx;
   }
   .box-integral{
-    padding: 10rpx 20rpx;
+    padding: 10rpx 0rpx 10rpx 20rpx;
     /* border: 1rpx solid; */
-    border-radius: 20rpx;
+    border-radius: 20rpx 0 0 20rpx;
     color:white;
     background-color: rgba(248, 178, 178, 0.3); 
+    display: flex;
+    align-items: center;
+  }
+  .icon-info{
+    width: 30rpx;
+    height: 30rpx;
+  }
+  .fs-24{
+    font-size: 24rpx;
   }
   .box-nav{
     background-color: white;

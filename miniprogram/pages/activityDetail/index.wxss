@@ -124,9 +124,16 @@ align-items: center;
   border-radius:10rpx ;
 display: flex;
 justify-content: space-between;
-
+margin: 20rpx;
 }
-
+.box-morePrice{
+  margin: 10rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.cl-blue{
+  color: #FA3D2A;
+}
 .img-prizeDetails{
   border-radius:10rpx 0 0 10rpx ;
   width: 200rpx;
