@@ -12,16 +12,18 @@ exports.main = async (event, context) => {
   //审核
   try {
     let res = await db.collection('process').doc(id).get();
+    console.log('-----------我是获取详细信息的接口--------------');
     return {
       status:1,
       msg:'success',
       data:res.data,
     }
   } catch (error) {
+    console.log(error)
     return {
       status:0,
       msg:'faile',
-      data:error,
+      data:[],
     }
   }
 };

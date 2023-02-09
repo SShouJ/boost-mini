@@ -11,7 +11,7 @@
   </view>
   <!-- 活动每一项 -->
   <view class="wrap mb-10" wx:for="{{activityList}}"  wx:key="id">
-    <activity bindtap="toDetails" activityItem="{{item}}" data-id="{{item.id}}"></activity>
+    <activity bindtap="" activityItem="{{item}}" data-id="{{item.id}}"></activity>
   </view>
 
   <view class="create-active all-center" bindtap="toActive">
