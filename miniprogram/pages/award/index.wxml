@@ -1,2 +1,81 @@
 <!--pages/award/index.wxml-->
-<text>pages/award/index.wxml</text>
+<view class="body">
+  <view class="content">
+    <view class="header">
+      <view>
+        <view class="img">
+          <image src="../../images/avatar-nologin.png" mode="widthFix" />
+        </view>
+        <view class="describe">
+          <view class="title mtb-30 bold_9">某某某奖品</view>
+
+          <view class="mtb-30 exchange-code bold_7">
+            <text>兑奖码：</text>
+            <text>4995270120</text>
+          </view>
+
+          <view class="date">
+            <view class="bold_7 label c-8a8787" style="text-align: center;">领取时间:</view>
+            <view class="mt-10 c-afa5a5">
+              2021.06.04 00:00 至 2021.07.04 00:00
+            </view>
+          </view>
+          <view class="address mt-20">
+            <view class="bold_7 label c-8a8787">领取地址:</view>
+            <view class="mt-10 c-afa5a5">某某区莫某楼某某某号房间某某某某某某某某某某某某</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="middle justify-space_between">
+      <view class="circle left"></view>
+      <view class="dashed-line"></view>
+      <view class="circle right"></view>
+    </view>
+
+    <view class="footer">
+      <view class="describe">
+        <view class="details">
+          <view class="title bold_7">兑奖卷详情</view>
+          <view class="flex mt-20">
+            <view class="label">兑奖日期</view>
+            <view class="text">2021.06.04 00:00 至 2021.07.04 00:00</view>
+          </view>
+          <view class="flex mt-20">
+            <view class="label">领取须知</view>
+            <view class="text">
+              兑奖请前往兑奖地址兑换,请于兑奖日期期限内前往兑奖！过期兑奖码无效,如有疑问请联系商家客服。兑奖码最终解释权归商家所有。
+            </view>
+          </view>
+        </view>
+
+        <view class="middle justify-space_between">
+          <view class="circle left"></view>
+          <view class="dashed-line"></view>
+          <view class="circle right"></view>
+        </view>
+
+        <view class="customer_service justify-space_between">
+          <view class="label bold_7">客服电话</view>
+          <view class="text flex">
+            <view class="phone c-afa5a5">0325168546</view>
+            <view class="mlr-10 c-afa5a5">l</view>
+            <view class="icon">
+              <image src="../../images/icon-customer.png" mode="widthFix" />
+            </view>
+          </view>
+        </view>
+
+        <view class="border_bottom"></view>
+
+        <view class="about">
+          <view class="label bold_7">关于我们</view>
+          <view class="text mt-20">
+            关于我们关于我们关于我们关于我们关于我们关于我们关于我们关于我们关于我们关于我们关于我们关于我们关于我们关于我们关于我们关于我们关于我们
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -6,6 +6,10 @@ Page({
    */
   data: {
     detailData: {},
+    data: {
+      dataName: '',
+      dataId: ''
+    },
     // swiperPrize  prizeLift 这两个数据需要换成接口返回的数据
     swiperPrize: [
       {
@@ -133,6 +137,12 @@ Page({
   onLoad(options) {
     let dataName = options._identification.split(',')[0];
     let dataId = options._identification.split(',')[1];
+
+    this.setData({
+      data: {
+        dataName: dataName, dataId: dataId
+      },
+    })
     console.log(dataName + ' --- ', dataId);
     if (dataName == 'swiper') {
       this.pushData(this.data.swiperPrize, dataId)
@@ -140,6 +150,20 @@ Page({
       this.pushData(this.data.prizeLift, dataId)
     }
   },
+  // 兑换按钮
+  exchange() {
+    wx.showToast({
+      title: '成功',
+      icon: 'success',
+      duration: 600,
+    })
+    setTimeout(() => {
+      wx.navigateTo({
+        url: '/pages/award/index?data=' + JSON.stringify(this.data.data)
+      })
+    }, 500)
+  },
+  // 
   pushData(data, id) {
     data.forEach(item => {
       if (item.id == id) {

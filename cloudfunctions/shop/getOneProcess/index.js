@@ -7,12 +7,11 @@ const db = cloud.database()
 
 // 获取openId云函数入口函数
 exports.main = async (event, context) => {
-  let { status } = event;
+  let { id } = event;
   // status 1 通过  status 2 不通过  status 0 待审核
   //审核
-  let condition = !status && status !== 0 ? {} : { type: status };
   try {
-    let res = await db.collection('process').where(condition).get();
+    let res = await db.collection('process').doc(id).get();
     return {
       status:1,
       msg:'success',
