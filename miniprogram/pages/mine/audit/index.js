@@ -6,32 +6,29 @@ Page({
    */
   data: {
     aa:[
-      {id:1},
-      {id:2},
-      {id:3},
-      {id:4},
-      {id:5},
-      {id:6},
+      {
+        id:1
+      }
     ],
     navList : [
       {
-        id:1,
+        id:0,
         title:"全部",
       },
       {
-        id:2,
+        id:1,
         title:"待审核",
       },
       {
-        id:3,
+        id:2,
         title:"已通过",
       },
       {
-        id:4,
+        id:3,
         title:"未通过",
       },
     ],
-    target:2,
+    target:1,
     audit:[
       {
         id:1,
@@ -47,26 +44,13 @@ Page({
         title:'联系人手机号',
       },
     ],
-    audits:[
-      {
-        id:1,
-        title:'小周炒面',
-      }, {
-        id:2,
-        title:'卫辉城管局家属院',
-      }, {
-        id:3,
-        title:'周将军',
-      }, {
-        id:4,
-        title:123123123,
-      }, 
-    ]
+    audits:[]
   },
   changeItem(e){
     this.setData({
       target:e.currentTarget.dataset.id,
     })
+    this.getProcess()
   },
   toPage(data){
     console.log(data.currentTarget.dataset.name);
@@ -76,20 +60,35 @@ Page({
   },
   //获取申请入驻列表
   getProcess(){
+    
+    this.setData({
+      audits:[]
+    })
+    wx.showLoading({
+      title: '加载中',
+    })
+    
     wx.cloud.callFunction({
       name: "shop",
      data:{
       type:"getProcess",
-      status:''
+      status:this.data.target-1
      }
     }).then(res=>{
+      
       console.log(res.result);
+      this.setData({
+        audits:res.result.data
+      })
+      wx.hideLoading()
+      console.log(this.data.audits);
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    console.log(this.data);
     this.getProcess()
   },
 
