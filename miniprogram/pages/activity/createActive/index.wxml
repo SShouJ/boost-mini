@@ -103,41 +103,30 @@
 
 <wxs module="tools">
   function toChiness(num) {
-    if (!reg.test(num)) {
-      return
+    console.log(Number.isNaN(num))
+    if (Number.isNaN(num)) {
+      return;
     }
-    let reg = new RegExp("/^\d*(\.\d*)?$/");
-    let reg2 = new RegExp("/(^0*)/","g");
-    var AA = ["零", "一", "二", "三", "四", "五", "六", "七", "八", "九"];
-    var BB = ["", "十", "百", "千", "万", "亿", "点", ""];
-    var a = ("" + num).replace(reg2, "").split(".");
-    var k = 0;
-    var re = "";
-    for (var i = a[0].length - 1; i >= 0; i--) {
-      switch (k) {
-        case 0:
-          re = BB[7] + re;
-          break;
-        case 4:
-          // if (!new RegExp("0{4}\\d{" + (a[0].length - i - 1) + "}$").test(a[0]))
-            re = BB[4] + re;
-          break;
-        case 8:
-          re = BB[5] + re;
-          BB[7] = BB[5];
-          k = 0;
-          break;
+    let chinesNumber = ["零", "一", "二", "三", "四", "五", "六", "七", "八", "九"];
+    let bitArr = ["", "十", "百"];
+    let numStr = num.toString();
+    let numArr = numStr.split("");
+    let str = '';
+    //如果是十   前面的 一 省略   如果是
+    for (var i = 0; i < numArr.length; i++) {
+      let shu = chinesNumber[numArr[i]];
+      let wei = bitArr[numArr.length - 1 - i];
+      
+      if (i == 0 && numArr[0] == 1 && numArr.length == 2) {
+        shu = "";
       }
-      if (k % 4 == 2 && a[0].charAt(i + 2) != 0 && a[0].charAt(i + 1) == 0) re = AA[0] + re;
-      if (a[0].charAt(i) != 0) re = AA[a[0].charAt(i)] + BB[k % 4] + re;
-      k++;
+      if (numArr[i] == 0) {
+        wei = '';
+      }
+      str +=shu+''+wei;
     }
-    if (a.length > 1) //加上小数部分(如果有小数部分)
-    {
-      re += BB[6];
-      for (var i = 0; i < a[1].length; i++) re += AA[a[1].charAt(i)];
-    }
-    return re;
+    console.log(str);
+    return str;
   }
   module.exports = {
     toChiness: toChiness
