@@ -35,15 +35,15 @@
       <text class="ml-5">活动时间</text>
     </view>
     <view class="pd-17 flex-around fs-15">
-      <picker mode="date">
-        <view class="date">
-          活动开始时间
+      <picker bindchange="bindDateChange" data-name="startTime" mode="date">
+        <view  class="date">
+         {{time.startTime}}
         </view>
       </picker>
       <text>至</text>
-      <picker mode="date">
+      <picker bindchange="bindDateChange" data-name="endTime" mode="date">
         <view class="date">
-          活动结束时间
+          {{time.endTime}}
         </view>
       </picker>
     </view>
@@ -54,7 +54,7 @@
         <text class="cl-red">*</text>
         <text class="ml-5">{{tools.toChiness(5)}}等奖</text>
       </view>
-      <picker mode="selector" range="{{prizeArr}}" range-key="prizeName" value="{{0}}">
+      <picker mode="selector"  range="{{prizeArr}}" range-key="prizeName" value="{{1}}">
         <view class="fs-15 wd-210">
           请选择奖品
         </view>
