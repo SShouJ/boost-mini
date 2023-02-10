@@ -93,6 +93,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "个人中心",
+          "pathName": "feedback/pages/personalCenter",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

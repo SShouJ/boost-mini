@@ -15,15 +15,16 @@
 
   <scroll-view class="mt-20" scroll-y="{{true}}" style="height:calc(100vh - 330rpx)">
     <view class="nav_box">
-
-      <view class="nav">
-        <view class="nav-item fw-600" wx:for="{{navList}}" bindtap="changeItem" data-id="{{item.id}}" wx:key="id">
-          <view class="nav-title">
-            <text class="{{ item.id == target ? 'cl-red' : ''}} fs-28">{{item.title}}</text>
-          </view>
-          <view class="{{ item.id == target ? 'nav-line' : ''}}  mt-10"></view>
+      <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100vw;" enable-flex>
+        <view class="nav">
+          <sticky-section class="nav-item fw-600" wx:for="{{navList}}" bindtap="changeItem" data-id="{{item.id}}" wx:key="id">
+            <view class="nav-title">
+              <view class="{{ item.id == target ? 'cl-red' : ''}} fs-28">{{item.title}}</view>
+            </view>
+            <view class="{{ item.id == target ? 'nav-line' : ''}}  mt-10"></view>
+          </sticky-section>
         </view>
-      </view>
+      </scroll-view>
 
       <!-- 内容部分 -->
       <scroll-view scroll-y="{{true}}" style="height:calc(100% - 130rpx)">
@@ -55,4 +56,26 @@
       </scroll-view>
     </view>
   </scroll-view>
+
+  <!-- 弹层  用户刚进入当前页面需要让用户先选择  爱好   -->
+  <view wx:if="{{ isOpenDialog }}" class="dialog item-justify_center">
+    <view class="dialog_box">
+      <!-- 标题 -->
+      <view class="dialog-header item-justify_center">
+        <view class="title">请选择您喜欢的类型</view>
+      </view>
+      <!-- 内容 -->
+      <view class="dialog-container-overflow">
+        <view class="dialog-container">
+          内容
+        </view>
+      </view>
+      <!-- 底部 -->
+      <view class="dialog-footer flex-space-between">
+        <button bindtap="determine" class="dialog-ok mr-20" hover-class="dialog-ok_hover">确定</button>
+        <button bindtap="cancel" class="dialog-no" hover-class="dialog-no_hover">取消</button>
+      </view>
+    </view>
+  </view>
+
 </view>

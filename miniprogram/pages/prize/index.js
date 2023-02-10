@@ -9,7 +9,7 @@ Page({
     navList: [
       {
         id: 1,
-        title: "全部1",
+        title: "推荐",
       },
       {
         id: 2,
@@ -23,8 +23,41 @@ Page({
         id: 4,
         title: "全部4",
       },
+      {
+        id: 5,
+        title: "全部5",
+      },
+      {
+        id: 6,
+        title: "全部6",
+      },
+      {
+        id: 7,
+        title: "全部7",
+      },
+      {
+        id: 8,
+        title: "全部8",
+      },
     ],
     prizeLift: [],
+    isOpenDialog: false,
+  },
+  // 是否打开弹层 传布尔值 true打开 反之关闭
+  isOpen(isok) {
+    this.setData({
+      isOpenDialog: isok,
+    })
+  },
+  // 弹层 确定 按钮的方法
+  determine() {
+    console.log('点击了确认按钮');
+    this.isOpen(false)
+  },
+  // 弹层 取消 按钮的方法
+  cancel() {
+    // 关闭弹层
+    this.isOpen(false)
   },
 
   // changeItem 是监测tab列表当前选中的是哪个的方法
@@ -32,7 +65,7 @@ Page({
     this.setData({
       target: e.currentTarget.dataset.id,
     })
-    console.log('当前选中的是第',this.data.target,'个tab列表');
+    console.log('当前选中的是第', this.data.target, '个tab列表');
     this.getPrizeList(this.data.target);
   },
 
@@ -206,7 +239,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    
+    // 用户用户第一次进入该页面就打开弹层让用户选择爱好
+    this.isOpen(true)
   },
 
   /**
@@ -220,7 +254,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-    console.log('当前选中的是第',this.data.target,'个tab列表');
+    console.log('当前选中的是第', this.data.target, '个tab列表');
     this.getPrizeList(this.data.target);
   },
 

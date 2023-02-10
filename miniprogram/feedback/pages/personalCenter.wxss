@@ -1,0 +1,7 @@
+/* feedback/pages/personalCenter.wxss */
+.fs-20{
+  font-size: 20rpx;
+}
+.fw-700{
+  font-weight: 700;
+}
