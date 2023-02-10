@@ -84,6 +84,12 @@
   justify-content: space-between;
 }
 
+.item-justify_center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .body {
   width: 100vw;
   height: 100vh;
@@ -143,22 +149,26 @@
 
 /* nav列表 */
 .nav {
-  padding: 30rpx 0;
+  width: 100% !important;
+  padding: 16rpx 0;
   display: flex;
-  justify-content: space-around;
-  background-color: rgba(255, 255, 255, 0.589);
+  /* justify-content: space-around; */
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 .nav .nav-item {
+  min-width: 100rpx !important;
   display: flex;
   align-items: center;
   flex-direction: column;
+  justify-content: space-around;
 }
 
 /* 横线 */
 .nav .nav-line {
-  width: 50rpx;
+  min-width: 50rpx;
   height: 6rpx;
+  display: block;
   background: #fc4b08;
 }
 
@@ -218,3 +228,71 @@
   background: linear-gradient(to right bottom, #f0ddb4, #cf9a53);
   border-radius: 50rpx;
 }
+
+/* 弹层样式开始 */
+.dialog {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(24, 24, 24, 0.623);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.dialog .dialog_box {
+  width: 600rpx;
+  min-height: 400rpx;
+  background-color: #fff;
+  box-sizing: border-box;
+  border-radius: 20rpx;
+  position: relative;
+}
+
+.dialog .dialog_box .dialog-header {
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #ccc;
+  text-align: center;
+}
+
+.dialog .dialog_box .dialog-container-overflow {
+  max-height: 350rpx;
+  padding: 20rpx;
+  overflow: scroll;
+  margin-bottom: 109rpx;
+}
+
+.dialog .dialog-footer {
+  border-top: 1rpx solid #ccc;
+  width: 100%;
+  min-height: 70rpx;
+  position: absolute;
+  bottom: 0 !important;
+  padding: 20rpx 0;
+}
+
+.dialog .dialog-footer .dialog-ok,
+.dialog-no {
+  width: 160rpx !important;
+  padding: 10rpx 0;
+  display: inline-block;
+  color: #fff;
+  border-radius: 15rpx;
+}
+
+.dialog .dialog-footer .dialog-ok {
+  background-color: #f53535;
+}
+
+.dialog .dialog-footer .dialog-no {
+  background-color: #bdb9b9;
+}
+
+.dialog-ok_hover {
+  background-color: #f35252 !important;
+}
+
+.dialog-no_hover {
+  background-color: #d3cdcd !important;
+}
+
+/* 弹层样式结束 */
