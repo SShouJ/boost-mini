@@ -14,6 +14,11 @@ Page({
       target:e.currentTarget.dataset.id,
     })
   },
+  toDetail(e){
+    wx.navigateTo({
+      url: "/pages/activityDetail/index?id="+e.currentTarget.dataset.id,
+    })
+  },
   toActive(){
     wx.navigateTo({
       url: "/pages/activity/createActive/index",

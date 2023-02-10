@@ -56,29 +56,29 @@ Page({
       url: '/feedback/pages/'+ data.currentTarget.dataset.name,
     })
   },
-  login() {
-    const _this = this;
-    if(this.data.islogin) return;
-    wx.cloud.callFunction({
-      name: 'user',
-      data: {
-        type:"findUser",
-      }
-    }).then(res=>{
-      console.log('------------我是调用查找用户的接口---------------');
-      console.log(res);
-      console.log('---------------------------我是调用查找用户的接口结束--------------------');
-      if(res.result.status == 1){
-        _this.setData({
-          userInfo:res.result.data,
-          islogin:true,
-        })
-        console.log(_this.data.userInfo);
-      }else{
-        _this.setUserInfo();
-      }
-    })
-  },
+  // login() {
+  //   const _this = this;
+  //   if(this.data.islogin) return;
+  //   wx.cloud.callFunction({
+  //     name: 'user',
+  //     data: {
+  //       type:"findUser",
+  //     }
+  //   }).then(res=>{
+  //     console.log('------------我是调用查找用户的接口---------------');
+  //     console.log(res);
+  //     console.log('---------------------------我是调用查找用户的接口结束--------------------');
+  //     if(res.result.status == 1){
+  //       _this.setData({
+  //         userInfo:res.result.data,
+  //         islogin:true,
+  //       })
+  //       console.log(_this.data.userInfo);
+  //     }else{
+  //       _this.setUserInfo();
+  //     }
+  //   })
+  // },
   // 设置data中userinfo和islogin的值
   setUserInfo() {
     console.log()
@@ -103,11 +103,22 @@ Page({
       }
     })
   },
+  setUserInfo() {
+    wx.getUserProfile({
+      desc: '用于获取用户头像昵称',
+      success: (res) => {
+        this.setData({
+          userInfo: res.userInfo,
+          islogin: true
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    this.login();
+    // this.login();
   },
 
   /**
