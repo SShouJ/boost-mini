@@ -41,7 +41,7 @@ Page({
       },
     ],
     prizeLift: [],
-    isOpenDialog: true,
+    isOpenDialog: false,
   },
   // 是否打开弹层 传布尔值 true打开 反之关闭
   isOpen(isok) {
@@ -239,7 +239,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    // 用户用户第一次进入该页面就打开弹层让用户选择爱好
+    this.isOpen(true)
   },
 
   /**
