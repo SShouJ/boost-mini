@@ -19,7 +19,6 @@ exports.main = async (event, context) => {
       data:res.data,
     }
   } catch (error) {
-    console.log(error)
     return {
       status:0,
       msg:'faile',

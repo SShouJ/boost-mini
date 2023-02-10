@@ -39,6 +39,7 @@ exports.main = async (event, context) => {
   let keys = Object.keys(tipsObj);
   console.log('------------------------增加店铺的方法-----------------------');
   console.log(keys);
+  
   for(let i = 0; i < keys.length; i++){
     if(!event[keys[i]] && tipsObj[keys[i]].isBool){
       return {
