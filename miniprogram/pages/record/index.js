@@ -31,7 +31,6 @@ Page({
   },
 
   scroll: function (e) {
-    console.log(e)
     if (e.detail.scrollTop >= 216) {
       if (!this.data.content.isShow) {
         this.setData({

@@ -60,6 +60,7 @@ exports.main = async (event, context) => {
   }
   //提交审核
   try {
+    let time = Date.now();
     await db.collection('process').add({
       data:{
         name,
@@ -70,6 +71,7 @@ exports.main = async (event, context) => {
         desc,
         business,
         type:0,
+        time:time,
       }
     })
     return {
