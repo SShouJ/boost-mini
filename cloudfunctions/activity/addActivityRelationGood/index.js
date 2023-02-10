@@ -7,7 +7,7 @@ const db = cloud.database();
 // 云函数入口函数
 exports.main = async (event, context) => {
     //给活动添加奖品的接口
-    let { prizeLevel, activityId,goodId,goodPrize } = event;
+    let { prizeLevel, activityId,goodId,goodPrize ,count} = event;
     let ruleObj = {
       prizeLevel:{
         isRequire:true,
@@ -24,7 +24,11 @@ exports.main = async (event, context) => {
       goodPrize:{
         isRequire:true,
         msg:"满足人数不能为空"
-      }
+      },
+      count:{
+        isRequire:true,
+        msg:"奖品数量不能为空"
+      },
     }
     let ruleKeys = Object.keys(ruleObj);
     for (let i = 0; i < ruleKeys.length ; i++) {
@@ -61,6 +65,7 @@ exports.main = async (event, context) => {
           activityId,
           goodId,
           goodPrize,
+          count,
         }
       })
       return {

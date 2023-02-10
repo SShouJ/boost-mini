@@ -1,0 +1,54 @@
+<!--feedback/pages/message.wxml-->
+<view class="news-page">
+    <scroll-view scroll-y="{{true}}" style="height: 100%;">
+        <view class="wrap box">
+
+            <view class="item">
+                <view class="header flex-between">
+                    <view class="title">
+                        审核结果
+                    </view>
+                    <view class="date">
+                        21:43
+                    </view>
+                </view>
+                <view class="content">
+                        <view class="text">
+                            您的入驻审核没有通过，请重新认真填写资料上传您的入驻审核没有通过，请重新认真填写资料上传您的入驻审核没有通过，请重新认真填写资料上传您的入驻审核没有通过，请重新认真填写资料上传您的入驻审核没有通过，请重新认真填写资料上传
+                        </view>
+                </view>
+                <view class="foot flex-between">
+                    <view class="title">
+                        查看详情
+                    </view>
+                    <view class="entry">
+                        <image src="../../images/icon-more.png" mode="" />
+                    </view>
+                </view>
+            </view>
+            <view class="item">
+                <view class="header flex-between">
+                    <view class="title">
+                        审核结果
+                    </view>
+                    <view class="date">
+                        21:43
+                    </view>
+                </view>
+                <view class="content">
+                <view class="text">
+                        您的入驻审核没有通过，请重新认真填写资料上传hahahhahahaahahahhahha哈哈哈哈哈哈哈哈哈啊哈哈哈
+                </view>
+                </view>
+                <view class="foot flex-between">
+                    <view class="title">
+                        查看详情
+                    </view>
+                    <view class="entry">
+                        <image src="../../images/icon-more.png" mode="" />
+                    </view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>
