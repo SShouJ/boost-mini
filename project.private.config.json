@@ -82,7 +82,7 @@
         },
         {
           "name": "领奖",
-          "pathName": "pages/award/index",
+          "pathName": "pages/prize/index",
           "query": "",
           "launchMode": "default",
           "scene": null
