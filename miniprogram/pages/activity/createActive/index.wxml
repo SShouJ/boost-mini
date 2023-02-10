@@ -48,15 +48,16 @@
       </picker>
     </view>
   </view>
-  <view class="prize-container pd-12_20  bg-whte" wx:for="{{prizeForms}}" wx:key="id">
+  <view class="prize-container pd-12_20  bg-whte" wx:for="{{prizeForms}}" wx:key="index">
     <view class="form-item pd-17 fs-15 flex-between">
       <view class="label">
         <text class="cl-red">*</text>
-        <text class="ml-5">{{tools.toChiness(5)}}等奖</text>
+        <text class="ml-5">奖品</text>
       </view>
-      <picker mode="selector"  range="{{prizeArr}}" range-key="prizeName" value="{{1}}">
+      <picker mode="selector" data-index="{{index}}"  range="{{prizeArr}}" range-key="goodName" bindchange="bindPriceChange" value="{{0}}">
         <view class="fs-15 wd-210">
-          请选择奖品
+          <!-- 请选择奖品 -->
+          {{item.goodName}}
         </view>
       </picker>
     </view>
@@ -82,7 +83,7 @@
     <view class="all-center pd-5">
       <image class="icon-15" src="../../../images/icon-add.png" mode="widthFix" />
     </view>
-    <text class="ml-5 cl-green">添加奖品</text>
+    <text class="ml-5 cl-green" bindtap="addItem">添加奖品</text>
   </view>
   <!-- 活动规则 -->
   <view class="title cl-grey pd-17">

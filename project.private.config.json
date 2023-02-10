@@ -95,8 +95,8 @@
           "scene": null
         },
         {
-          "name": "所有奖品页面",
-          "pathName": "pages/prize/index",
+          "name": "个人中心",
+          "pathName": "feedback/pages/personalCenter",
           "query": "",
           "launchMode": "default",
           "scene": null

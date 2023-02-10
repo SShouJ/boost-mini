@@ -23,7 +23,8 @@
       "pages": [
         "pages/feedBack",
         "pages/complaints",
-        "pages/message"
+        "pages/message",
+        "pages/personalCenter"
       ]
     }
   ],

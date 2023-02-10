@@ -48,7 +48,7 @@
 
 .bg-warning{
   background: #ff6738;
-}
+}                                                                                                                                                                                                                                                                                                                                        
 
 .fs-14{
   font-size: 28rpx;

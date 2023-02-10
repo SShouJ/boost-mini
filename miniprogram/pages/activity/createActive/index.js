@@ -5,6 +5,12 @@ Page({
    * 页面的初始数据
    */
   data: {
+    item:{
+       count:null,
+       goodName:'请选择奖品',
+       goodprize:null,
+    },
+  
     prizeArr:[],
     banner:'',//活动图片
     title:'',//活动标题
@@ -18,39 +24,45 @@ Page({
     },
     prizeForms:[
       {
-        id:'formId1',
-        prizeName:'',
-        prizeNumber:0,
-      },
-      {
-        id:'formId2',
-        prizeName:'',
-        prizeNumber:0,
-      },
+        count:null,
+        goodName:'请选择奖品',
+        goodprize:null,
+     },
+     {
+      count:null,
+      goodName:'请选择奖品',
+      goodprize:null,
+   },
   ],
   },
-
+//获取奖品列表
+getGoodList(){
+  wx.cloud.callFunction({
+    name: "activity",
+   data:{
+    type:"getGoodList",
+   }
+  }).then(res =>{
+    console.log(res.result.data.data);
+    let goodList = res.result.data.data
+    this.setData({
+      prizeArr:goodList
+    })
+  })
+},
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-      let prizeArr = [
-        {
-          id:1,
-          prizeName:'笔记本',
-        },
-        {
-          id:1,
-          prizeName:'iphone 14',
-        },
-        {
-          id:1,
-          prizeName:'小汽车',
-        },
-    ];
-    this.setData({
-      prizeArr:prizeArr,
-    })
+    this.getGoodList()
+  },
+  
+  addItem(){
+    console.log(1);
+    this.data.prizeForms.push(this.data.item)
+     this.setData({
+      prizeForms:this.data.prizeForms
+     })
   },
   getInputValue(e){
     console.log(e.detail);
@@ -68,9 +80,14 @@ Page({
     })
     console.log(this.data.time);
   },
-  bindChangeValue:function(e){
+  bindPriceChange:function(e){
+    console.log(e);
     let index = e.target.dataset.index;//所处的下标
-
+    console.log(index);
+    this.setData({
+      [`prizeForms[${index}].goodName`]:this.data.prizeArr[e.detail.value].goodName
+    }); 
+    // // console.log(this.data.prizeForms[index].id);
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
