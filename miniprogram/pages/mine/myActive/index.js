@@ -14,20 +14,14 @@ Page({
       target:e.currentTarget.dataset.id,
     })
   },
+  toDetail(e){
+    wx.navigateTo({
+      url: "/pages/activityDetail/index?id="+e.currentTarget.dataset.id,
+    })
+  },
   toActive(){
-
-    // wx.navigateTo({
-    //   url: "/pages/activity/createActive/index",
-    // })
-    wx.cloud.callFunction({
-      name:"shop",
-      data:{
-        type:"updateProcess",
-        id:"f28436a263e3528d020d5c0d36f83d75",
-        status:1,
-      },
-    }).then(res=>{
-      console.log(res);
+    wx.navigateTo({
+      url: "/pages/activity/createActive/index",
     })
   },
 
