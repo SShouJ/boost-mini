@@ -50,7 +50,7 @@
       </view>
       <view class="dis">
         <text class="fs-24 fw-600">2023年12月11日23:22</text>
-        <text class="fs-30" bindtap="toPage" data-name="auditDetail">查看详情></text>
+        <text class="fs-30" bindtap="toPage" data-name="auditDetail" data-id="{{item._id}}">查看详情></text>
       </view>
     </view>
   </scroll-view>

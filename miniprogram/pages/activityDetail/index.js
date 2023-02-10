@@ -9,7 +9,8 @@ Page({
     showIndex:null,//打开弹窗的对应下标
     height:'',//屏幕高度
     joinFlag:false,
-    showFlag:false
+    showFlag:false,
+    percent:68
   },
   openPopup(e){
     var index = e.currentTarget.dataset.index;
@@ -37,6 +38,7 @@ Page({
       joinFlag:true,
       showFlag:data.currentTarget.dataset.flag,
       text:'还差10人可抽取下一级奖品，点击分享',
+      percent:90
     })
     console.log(this.data.showFlag);
     if (this.data.showFlag == "true") {
