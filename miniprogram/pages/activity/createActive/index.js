@@ -12,6 +12,10 @@ Page({
     end:'',//活动结束时间
     rule:'',//商品规则
     showTip:true,
+    time:{
+      startTime:'活动开始时间',
+    endTime:'活动结束时间',
+    },
     prizeForms:[
       {
         id:'formId1',
@@ -56,7 +60,14 @@ Page({
       showTip:!this.data.showTip
     })
   },
-
+  bindDateChange: function(e) {
+    console.log('picker发送选择改变，携带值为', e.target.dataset.name)
+    var time = e.target.dataset.name
+    this.setData({
+      [`time.${time}`]: e.detail.value
+    })
+    console.log(this.data.time);
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
