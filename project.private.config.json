@@ -86,6 +86,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "消息",
+          "pathName": "feedback/pages/message",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

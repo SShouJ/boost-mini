@@ -74,8 +74,11 @@
         <view class="act-message_bom">
         <!-- 进度条 -->
           <view class="box-progressBar">
-              <view class="progressBar">
-              </view>
+              <!-- <view class="progressBar">
+              </view> -->
+              <view class="progress-box">
+  <progress percent="{{percent}}" border-radius="20" activeColor="#FA3D2A" backgroundColor="#ece6e6" active stroke-width="8" active-mode="forwards" />
+</view>
               <view class="box-post">
                <view class="box-img">
                 <image class="icon-jp" src="../../images/icon-prize.png" mode=""/>

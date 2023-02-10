@@ -12,23 +12,23 @@ Page({
     ],
     navList : [
       {
-        id:0,
+        id:3,
         title:"全部",
       },
       {
-        id:1,
+        id:0,
         title:"待审核",
       },
       {
-        id:2,
+        id:1,
         title:"已通过",
       },
       {
-        id:3,
+        id:2,
         title:"未通过",
       },
     ],
-    target:1,
+    target:0,
     audit:[
       {
         id:1,
@@ -52,10 +52,16 @@ Page({
     })
     this.getProcess()
   },
+ 
   toPage(data){
-    console.log(data.currentTarget.dataset.name);
+    // console.log(data.currentTarget.dataset.id);
     wx.navigateTo({
       url: '/pages/'+ data.currentTarget.dataset.name+'/index',
+       success: function(res) {
+                    // 通过 eventChannel 向被打开页面传送数据
+        console.log(res);
+                    res.eventChannel.emit('acceptDataFromOpenerPage', { data: data.currentTarget.dataset.id })
+                  }
     })
   },
   //获取申请入驻列表
@@ -72,14 +78,15 @@ Page({
       name: "shop",
      data:{
       type:"getProcess",
-      status:this.data.target-1
+      status:this.data.target
      }
     }).then(res=>{
       
-      console.log(res.result);
+      
       this.setData({
         audits:res.result.data
       })
+      // console.log(this.data.audits);
       wx.hideLoading()
       console.log(this.data.audits);
     })

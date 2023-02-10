@@ -22,7 +22,8 @@
       "root": "feedback",
       "pages": [
         "pages/feedBack",
-        "pages/complaints"
+        "pages/complaints",
+        "pages/message"
       ]
     }
   ],

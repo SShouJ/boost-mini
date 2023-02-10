@@ -37,11 +37,11 @@ Page({
         },
         {
           id:1,
-          prizeName:'笔记本',
+          prizeName:'iphone 14',
         },
         {
           id:1,
-          prizeName:'笔记本',
+          prizeName:'小汽车',
         },
     ];
     this.setData({
