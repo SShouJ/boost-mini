@@ -68,6 +68,10 @@ Page({
     })
     console.log(this.data.time);
   },
+  bindChangeValue:function(e){
+    let index = e.target.dataset.index;//所处的下标
+
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

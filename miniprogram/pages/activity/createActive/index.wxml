@@ -54,7 +54,7 @@
         <text class="cl-red">*</text>
         <text class="ml-5">{{tools.toChiness(5)}}等奖</text>
       </view>
-      <picker mode="selector" range="{{prizeArr}}" range-key="prizeName" value="{{1}}">
+      <picker mode="selector"  range="{{prizeArr}}" range-key="prizeName" value="{{1}}">
         <view class="fs-15 wd-210">
           请选择奖品
         </view>
