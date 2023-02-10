@@ -24,7 +24,22 @@ Page({
         title: "全部4",
       },
     ],
-    prizeLift: [
+    prizeLift: [],
+  },
+
+  // changeItem 是监测tab列表当前选中的是哪个的方法
+  changeItem(e) {
+    this.setData({
+      target: e.currentTarget.dataset.id,
+    })
+    console.log('当前选中的是第',this.data.target,'个tab列表');
+    this.getPrizeList(this.data.target);
+  },
+
+  // getPrizeList 是获取奖品列表数据的方法
+  getPrizeList(type) {
+    // prizeLift1 prizeLift2 prizeLift3 prizeLift4 这几个等接口出来要分别改成一个对应的 掉接口的方法
+    let prizeLift1 = [
       {
         id: 0,
         url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
@@ -67,16 +82,113 @@ Page({
         integral: 600,
         nav: 'prizeDetail',
       },
-    ],
-  },
-
-  changeItem(e) {
-    console.log(e)
+    ];
+    let prizeLift2 = [
+      {
+        id: 0,
+        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
+        title: '1这是分类2里的数据',
+        integral: 100,
+        nav: 'prizeDetail',
+      },
+      {
+        id: 1,
+        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
+        title: '2这是分类2里的数据',
+        integral: 200,
+        nav: 'prizeDetail',
+      },
+      {
+        id: 2,
+        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
+        title: '3这是分类2里的数据',
+        integral: 300,
+        nav: 'prizeDetail',
+      },
+      {
+        id: 3,
+        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
+        title: '4这是分类2里的数据',
+        integral: 400,
+        nav: 'prizeDetail',
+      },
+    ];
+    let prizeLift3 = [
+      {
+        id: 0,
+        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
+        title: '1分类三的数据',
+        integral: 100,
+        nav: 'prizeDetail',
+      },
+      {
+        id: 1,
+        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
+        title: '2分类三的数据',
+        integral: 200,
+        nav: 'prizeDetail',
+      },
+      {
+        id: 2,
+        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
+        title: '3分类三的数据',
+        integral: 300,
+        nav: 'prizeDetail',
+      },
+      {
+        id: 3,
+        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
+        title: '4分类三的数据',
+        integral: 400,
+        nav: 'prizeDetail',
+      },
+    ];
+    let prizeLift4 = [
+      {
+        id: 0,
+        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
+        title: '1分类四的数据',
+        integral: 100,
+        nav: 'prizeDetail',
+      },
+      {
+        id: 1,
+        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
+        title: '2分类四的数据',
+        integral: 200,
+        nav: 'prizeDetail',
+      },
+      {
+        id: 2,
+        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
+        title: '3分类四的数据',
+        integral: 300,
+        nav: 'prizeDetail',
+      },
+      {
+        id: 3,
+        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
+        title: '4分类四的数据',
+        integral: 400,
+        nav: 'prizeDetail',
+      },
+    ];
+    let data = null
+    if (type == 1) {
+      data = prizeLift1
+    } else if (type == 2) {
+      data = prizeLift2
+    } else if (type == 3) {
+      data = prizeLift3
+    } else if (type == 4) {
+      data = prizeLift4
+    }
     this.setData({
-      target: e.currentTarget.dataset.id,
+      prizeLift: data
     })
   },
 
+  // prizeLiftNav 跳转详情页面 + 传参 的方法
   prizeLiftNav(data) {
     let item = data.currentTarget.dataset.name;
     wx.navigateTo({
@@ -84,7 +196,8 @@ Page({
     })
   },
 
-  toRecord(){
+  // toRecord 是跳转到兑换记录的方法
+  toRecord() {
     wx.navigateTo({
       url: '/pages/record/index',
     })
@@ -92,7 +205,9 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad(options) { },
+  onLoad(options) {
+    
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -105,7 +220,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    console.log('当前选中的是第',this.data.target,'个tab列表');
+    this.getPrizeList(this.data.target);
   },
 
   /**
