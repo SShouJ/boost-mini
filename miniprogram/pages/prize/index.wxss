@@ -233,16 +233,17 @@
 .dialog {
   width: 100vw;
   height: 100vh;
-  background-color: rgba(24, 24, 24, 0.623);
+  background-color: rgba(82, 82, 82, 0.6);
   position: absolute;
   top: 0;
   left: 0;
 }
 
 .dialog .dialog_box {
-  width: 600rpx;
+  width: 700rpx;
   min-height: 400rpx;
   background-color: #fff;
+  color: #000;
   box-sizing: border-box;
   border-radius: 20rpx;
   position: relative;
@@ -250,19 +251,65 @@
 
 .dialog .dialog_box .dialog-header {
   padding: 20rpx 0;
-  border-bottom: 1rpx solid #ccc;
+  border-bottom: 1rpx solid #202020;
   text-align: center;
 }
 
 .dialog .dialog_box .dialog-container-overflow {
-  max-height: 350rpx;
-  padding: 20rpx;
+  width: 100%;
+  background-color: #ccc;
+  min-height: 350rpx !important;
+  max-height: 500rpx !important;
   overflow: scroll;
   margin-bottom: 109rpx;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20rpx 20rpx;
+  padding: 10rpx;
+  box-sizing: border-box;
 }
 
+.dialog .dialog_box .dialog-container-overflow .dialog-container {
+  margin-bottom: 109rpx;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 26rpx 26rpx;
+  overflow: hidden;
+  position: relative;
+}
+
+.vague1 {
+  position: absolute;
+  top: 82rpx;
+  left: 0;
+  height: 100rpx;
+  width: 100%;
+  background-image: linear-gradient(rgba(255, 255, 255, .9), rgba(255, 255, 255, .8), rgba(255, 255, 255, .6), rgba(255, 255, 255, .4), rgba(255, 255, 255, .2), rgba(255, 255, 255, 0));
+}
+
+.vague2 {
+  position: absolute;
+  left: 0;
+  bottom: 100rpx;
+  height: 100rpx;
+  width: 100%;
+  background-image: linear-gradient(to top, rgba(255, 255, 255, .9), rgba(255, 255, 255, .8), rgba(255, 255, 255, .6), rgba(255, 255, 255, .4), rgba(255, 255, 255, .2), rgba(255, 255, 255, 0));
+}
+
+/* 弹层中 中间内容部分 */
+.dialog-container .item {
+  width: 130rpx;
+  height: 130rpx;
+  background-color: #fff;
+  border-radius: 100rpx;
+  color: #000;
+  background-color: #fff !important;
+  
+}
+
+/* 弹层中 中间内容部分 */
+
 .dialog .dialog-footer {
-  border-top: 1rpx solid #ccc;
   width: 100%;
   min-height: 70rpx;
   position: absolute;
@@ -294,5 +341,6 @@
 .dialog-no_hover {
   background-color: #d3cdcd !important;
 }
+
 
 /* 弹层样式结束 */

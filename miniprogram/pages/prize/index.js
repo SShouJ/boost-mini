@@ -41,6 +41,82 @@ Page({
       },
     ],
     prizeLift: [],
+    hobbys: [
+      {
+        id: 1,
+        hobby: '爱好1'
+      },
+      {
+        id: 2,
+        hobby: '爱好1'
+      }, {
+        id: 3,
+        hobby: '爱好1'
+      }, {
+        id: 4,
+        hobby: '爱好1'
+      }, {
+        id: 5,
+        hobby: '爱好1'
+      }, {
+        id: 6,
+        hobby: '爱好1'
+      }, {
+        id: 7,
+        hobby: '爱好1'
+      }, {
+        id: 8,
+        hobby: '爱好1'
+      }, {
+        id: 9,
+        hobby: '爱好1'
+      }, {
+        id: 10,
+        hobby: '爱好1'
+      }, {
+        id: 11,
+        hobby: '爱好1'
+      },{
+        id: 12,
+        hobby: '爱好1'
+      },{
+        id: 13,
+        hobby: '爱好1'
+      },{
+        id: 14,
+        hobby: '爱好1'
+      },{
+        id: 15,
+        hobby: '爱好1'
+      },{
+        id: 16,
+        hobby: '爱好1'
+      },{
+        id: 17,
+        hobby: '爱好1'
+      },{
+        id: 18,
+        hobby: '爱好1'
+      },{
+        id: 18,
+        hobby: '爱好1'
+      },{
+        id: 19,
+        hobby: '爱好1'
+      },{
+        id:20,
+        hobby: '爱好1'
+      },{
+        id: 21,
+        hobby: '爱好1'
+      },{
+        id: 22,
+        hobby: '爱好1'
+      },{
+        id:23,
+        hobby: '爱好1'
+      },
+    ],
     isOpenDialog: false,
   },
   // 是否打开弹层 传布尔值 true打开 反之关闭

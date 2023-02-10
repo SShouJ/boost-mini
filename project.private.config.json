@@ -93,6 +93,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "所有奖品页面",
+          "pathName": "pages/prize/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

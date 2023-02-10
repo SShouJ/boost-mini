@@ -161,7 +161,6 @@ Page({
       url: '/pages/' + item.nav + '/index?_identification=prizeLift,' + item.id,
     })
   },
-  // 
   toRecord() {
     wx.navigateTo({
       url: '/pages/record/index?',
