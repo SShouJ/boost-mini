@@ -71,6 +71,7 @@ Page({
   },
 
   changeItem(e) {
+    console.log(e)
     this.setData({
       target: e.currentTarget.dataset.id,
     })
