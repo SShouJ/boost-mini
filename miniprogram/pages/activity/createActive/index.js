@@ -5,6 +5,11 @@ Page({
    * 页面的初始数据
    */
   data: {
+    item:{
+       id:'',
+       count:5,
+       goodprize:200,
+    },
     prizeArr:[],
     banner:'',//活动图片
     title:'',//活动标题
@@ -18,39 +23,40 @@ Page({
     },
     prizeForms:[
       {
-        id:'formId1',
-        prizeName:'',
-        prizeNumber:0,
-      },
-      {
-        id:'formId2',
-        prizeName:'',
-        prizeNumber:0,
-      },
+        id:'',
+        count:5,
+        goodprize:200,
+     },
+     {
+      id:'',
+      count:5,
+      goodprize:200,
+   },
   ],
   },
-
+//获取奖品列表
+getGoodsList(){
+  wx.cloud.callFunction({
+    name: "activity",
+   data:{
+    type:"getGoodsList",
+   }
+  }).then(res =>{
+    console.log(res);
+  })
+},
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-      let prizeArr = [
-        {
-          id:1,
-          prizeName:'笔记本',
-        },
-        {
-          id:1,
-          prizeName:'iphone 14',
-        },
-        {
-          id:1,
-          prizeName:'小汽车',
-        },
-    ];
-    this.setData({
-      prizeArr:prizeArr,
-    })
+    this.getGoodsList()
+  },
+  
+  addItem(){
+    this.data.prizeForms.push(this.data.item)
+     this.setData({
+       prizeForms:this.data.prizeForms
+     })
   },
   getInputValue(e){
     console.log(e.detail);
@@ -68,9 +74,9 @@ Page({
     })
     console.log(this.data.time);
   },
-  bindChangeValue:function(e){
-    let index = e.target.dataset.index;//所处的下标
-
+  bindPriceChange:function(e){
+    // let index = e.target.dataset.index;//所处的下标
+console.log(e);
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
