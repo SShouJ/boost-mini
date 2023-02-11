@@ -156,6 +156,9 @@
 .wd-100{
   width: 200rpx;
 }
+.wd-125{
+  width: 250rpx;
+}
 
 .ml-50{
   margin-left: 100rpx;

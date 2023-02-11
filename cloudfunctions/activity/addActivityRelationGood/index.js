@@ -4,6 +4,7 @@ const getOneActivity = require("../getOneActivity/index");//获取一个活动
 const getOneGood = require("../getOneGood/index");//获取一个商品
 cloud.init({ env: cloud.DYNAMIC_CURRENT_ENV }) // 使用当前云环境
 const db = cloud.database();
+
 // 云函数入口函数
 exports.main = async (event, context) => {
     //给活动添加奖品的接口
