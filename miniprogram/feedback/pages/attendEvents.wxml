@@ -1,2 +1,19 @@
-<!--feedback/pages/attendEvents.wxml-->
-<text>feedback/pages/attendEvents.wxml</text>
+
+<view class="activity">
+  <view class="nav">
+    <view class="nav-item" wx:for="{{navList}}" bindtap="changeItem" data-id="{{item.id}}" 
+    wx:key="id">
+      <view class="nav-title">
+        <text class="{{ item.id == target ? 'cl-red' : ''}} fs-14">{{item.title}}</text>
+      </view>
+      <view class="{{ item.id == target ? 'nav-line' : ''}}  mt-5"></view>
+    </view>
+  </view>
+  <!-- 活动每一项 -->
+  <view class="wrap mb-10" wx:for="{{activityList}}"  wx:key="id">
+    <activity bindtap="toDetail" activityItem="{{item}}" data-id="{{item.id}}"></activity>
+  </view>
+
+  
+</view>
+
