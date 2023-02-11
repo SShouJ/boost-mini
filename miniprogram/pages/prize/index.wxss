@@ -305,7 +305,7 @@
   color: #000;
   background-color: #fff;
 }
-.dialog-container .active{
+.active{
   background-color: red !important;
   color: #fff !important;
 }

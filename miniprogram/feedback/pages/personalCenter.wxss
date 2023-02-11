@@ -1,7 +1,71 @@
-/* feedback/pages/personalCenter.wxss */
-.fs-20{
-  font-size: 20rpx;
+body {
+  background-color: rgb(245, 247, 251);
 }
-.fw-700{
+
+.ta-c {
+  text-align: center;
+}
+
+.box-personalCenter {
+  width: 680rpx;
+  margin: 72rpx auto 0 auto;
+  padding: 20rpx;
+  background-color: #fff;
+}
+.item-pd{
+  padding: 36rpx 20rpx 36rpx 20rpx;
+}
+.pd-lr_20{
+  padding: 0 20rpx;
+}
+.item-personalCenter {
+ 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(245,245,245);
+}
+
+.userAvatar {
+  width: 100rpx;
+  height: 100rpx;
+  object-fit: cover;
+  padding-bottom: 15rpx;
+}
+.item-personalCenter_right{
+  display: flex;
+  align-items: center;
+}
+
+.fw-700 {
   font-weight: 700;
+}
+.fz-28{
+  font-size: 28rpx;
+}
+.cl-g{
+  color: gray;
+}
+.pr-33{
+  padding-right: 33rpx;
+}
+.bor-bom_f{
+  border-bottom: 1px solid #fff;
+}
+.icon-more{
+  width: 40rpx;
+  height: 40rpx;
+  object-fit: cover;
+}
+.item-bottom{
+  width: 680rpx;
+  margin: 50rpx auto;
+  background-color: #fff;
+  padding: 17rpx;
+}
+.item-bottom_pwd{
+  padding: 18rpx 10rpx 18rpx 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
