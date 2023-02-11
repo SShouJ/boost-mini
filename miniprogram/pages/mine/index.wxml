@@ -28,7 +28,7 @@
   </view>
   <view class="activityInfo warp mb-20">
       <view class="actInfo-item" wx:for="{{actInfoList}}" wx:key="id">
-          <view class="box-actinfo">
+          <view class="box-actinfo"  bindtap="toFeedbackPages"  data-name="{{item.page}}">
             <view class="aa">
              {{item.number}}
            </view>

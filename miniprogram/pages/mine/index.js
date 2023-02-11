@@ -11,11 +11,14 @@ Page({
       {
         id:1,
         number:10,
-        acttext:'已参与活动'
+        acttext:'已参与活动',
+        page:"attendEvents"
+
       }, {
         id:2,
         number:0,
-        acttext:'中奖记录'
+        acttext:'中奖记录',
+        page:"winningRecords"
       },
     ],
    mineNav:[
