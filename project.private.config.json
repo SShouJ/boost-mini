@@ -81,7 +81,7 @@
           "scene": null
         },
         {
-          "name": "领奖",
+          "name": "",
           "pathName": "pages/prize/index",
           "query": "",
           "launchMode": "default",

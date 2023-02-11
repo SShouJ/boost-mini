@@ -43,80 +43,81 @@ Page({
     prizeLift: [],
     hobbys: [
       {
-        id: 1,
+        id: 1, isActive: false,
         hobby: '爱好1'
       },
       {
-        id: 2,
+        id: 2, isActive: false,
         hobby: '爱好1'
       }, {
-        id: 3,
+        id: 3, isActive: false,
         hobby: '爱好1'
       }, {
-        id: 4,
+        id: 4, isActive: false,
         hobby: '爱好1'
       }, {
-        id: 5,
+        id: 5, isActive: false,
         hobby: '爱好1'
       }, {
-        id: 6,
+        id: 6, isActive: false,
         hobby: '爱好1'
       }, {
-        id: 7,
+        id: 7, isActive: false,
         hobby: '爱好1'
       }, {
-        id: 8,
+        id: 8, isActive: false,
         hobby: '爱好1'
       }, {
-        id: 9,
+        id: 9, isActive: false,
         hobby: '爱好1'
       }, {
-        id: 10,
+        id: 10, isActive: false,
         hobby: '爱好1'
       }, {
-        id: 11,
+        id: 11, isActive: false,
         hobby: '爱好1'
-      },{
-        id: 12,
+      }, {
+        id: 12, isActive: false,
         hobby: '爱好1'
-      },{
-        id: 13,
+      }, {
+        id: 13, isActive: false,
         hobby: '爱好1'
-      },{
-        id: 14,
+      }, {
+        id: 14, isActive: false,
         hobby: '爱好1'
-      },{
-        id: 15,
+      }, {
+        id: 15, isActive: false,
         hobby: '爱好1'
-      },{
-        id: 16,
+      }, {
+        id: 16, isActive: false,
         hobby: '爱好1'
-      },{
-        id: 17,
+      }, {
+        id: 17, isActive: false,
         hobby: '爱好1'
-      },{
-        id: 18,
+      }, {
+        id: 18, isActive: false,
         hobby: '爱好1'
-      },{
-        id: 18,
+      }, {
+        id: 18, isActive: false,
         hobby: '爱好1'
-      },{
-        id: 19,
+      }, {
+        id: 19, isActive: false,
         hobby: '爱好1'
-      },{
-        id:20,
+      }, {
+        id: 20, isActive: false,
         hobby: '爱好1'
-      },{
-        id: 21,
+      }, {
+        id: 21, isActive: false,
         hobby: '爱好1'
-      },{
-        id: 22,
+      }, {
+        id: 22, isActive: false,
         hobby: '爱好1'
-      },{
-        id:23,
-        hobby: '爱好1'
+      }, {
+        id: 23, isActive: false,
+        hobby: '爱好1',
       },
     ],
+    isActiveS: [],
     isOpenDialog: false,
   },
   // 是否打开弹层 传布尔值 true打开 反之关闭
@@ -124,6 +125,18 @@ Page({
     this.setData({
       isOpenDialog: isok,
     })
+  },
+  // choice 是来排断爱好选择的方法
+  choice(data) {
+    let item = data.currentTarget.dataset.name;
+    console.log(item);
+    if (this.data.isActiveS.indexOf(item) == -1) {
+      console.log("不存在")
+      this.data.isActiveS.push(item);
+    } else {
+      console.log("存在,索引是：", this.data.isActiveS.indexOf(item))
+    }
+    console.log(this.data.isActiveS);
   },
   // 弹层 确定 按钮的方法
   determine() {
