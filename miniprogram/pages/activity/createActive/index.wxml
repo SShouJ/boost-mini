@@ -18,8 +18,8 @@
       <text class="cl-red">*</text>
       <text class="ml-5">活动主题图</text>
     </view>
-    <view class="upload-wrap pd-50  all-center">
-      <image class="icon-28" src="../../../images/icon-add.png" mode="widthFix" />
+    <view class="upload-wrap pd-50  all-center" bindtap="chooseImg">
+      <image class="" src="{{banner}}" mode="aspectFit" />
     </view>
   </view>
   <view class="form-item pd-17 fs-15 flex-between">
@@ -27,7 +27,7 @@
       <text class="cl-red">*</text>
       <text class="ml-5">活动标题</text>
     </view>
-    <input class="wd-210" type="text" bindinput="getInputValue" placeholder="请输入活动标题" />
+    <input class="wd-210" type="text" bindinput="getInputValue" data-name="title" placeholder="请输入活动标题" />
   </view>
   <view class="form-item pd-17 fs-15">
     <view class="label">
@@ -37,7 +37,7 @@
     <view class="pd-17 flex-around fs-15">
       <picker bindchange="bindDateChange" data-name="startTime" mode="date">
         <view  class="date">
-         {{time.startTime}}
+         {{time.startTime}} 
         </view>
       </picker>
       <text>至</text>
@@ -54,19 +54,19 @@
         <text class="cl-red">*</text>
         <text class="ml-5">奖品</text>
       </view>
-      <picker mode="selector" data-index="{{index}}"  range="{{prizeArr}}" range-key="goodName" bindchange="bindPriceChange" value="{{0}}">
+      <input class="wd-210" type="text" placeholder="{{item.goodName}}" bindinput="getInputValue" data-name="goodName" data-index="{{index}}" />
+      <!-- <picker mode="selector" data-index="{{index}}"  range="{{prizeArr}}" range-key="goodName" bindchange="bindPriceChange" value="{{0}}">
         <view class="fs-15 wd-210">
-          <!-- 请选择奖品 -->
           {{item.goodName}}
         </view>
-      </picker>
+      </picker> -->
     </view>
     <view class="form-item pd-17 fs-15 flex-between">
       <view class="label">
         <text class="cl-red">*</text>
-        <text class="ml-5">奖品名称</text>
+        <text class="ml-5">奖品数量</text>
       </view>
-      <input class="wd-210" type="text" placeholder="请输入奖品名称" />
+      <input class="wd-210" type="text" bindinput="getInputValue" placeholder="{{item.count}}" data-index="{{index}}" data-name="count" />
     </view>
     <view class="form-item pd-17 fs-15 flex-between">
       <view class="label">
@@ -74,7 +74,7 @@
         <text class="ml-5">满足条件</text>
       </view>
       <view class="wd-210 flex">
-        <input class="wd-100" type="number" placeholder="满足人数" />
+        <input class="wd-125" type="text" bindinput="getInputValue" placeholder="{{item.goodPrize}}" data-name="goodPrize" data-index="{{index}}" />
         <text>人</text>
       </view>
     </view>
@@ -92,11 +92,11 @@
   </view>
   <view class="form-item pd-17 fs-15">
     <view class="bd">
-      <textarea class="text-area" placeholder="请输入商品规则" />
+      <textarea class="text-area" bindinput="getInputValue" data-name="rule" placeholder="请输入商品规则" />
     </view>
   </view>
   <view class="btn-wrap all-center pd-30">
-    <view class="btn pd-12_20 bg-blue cl-white fs-15">
+    <view class="btn pd-12_20 bg-blue cl-white fs-15" bindtap="createActive">
       立即发布
     </view>
   </view>
