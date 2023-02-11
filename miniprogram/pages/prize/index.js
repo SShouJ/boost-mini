@@ -41,9 +41,11 @@ Page({
       },
     ],
     prizeLift: [],
-    hobbys: [
+    hobbys: [],
+    hobbysData: [
       {
-        id: 1, isActive: false,
+        id: 1, 
+        isActive: false,
         hobby: '爱好1'
       },
       {
@@ -117,7 +119,7 @@ Page({
         hobby: '爱好1',
       },
     ],
-    isActiveS: [],
+    selected:[],
     isOpenDialog: false,
   },
   // 是否打开弹层 传布尔值 true打开 反之关闭
@@ -129,18 +131,23 @@ Page({
   // choice 是来排断爱好选择的方法
   choice(data) {
     let item = data.currentTarget.dataset.name;
-    console.log(item);
-    if (this.data.isActiveS.indexOf(item) == -1) {
-      console.log("不存在")
-      this.data.isActiveS.push(item);
-    } else {
-      console.log("存在,索引是：", this.data.isActiveS.indexOf(item))
-    }
-    console.log(this.data.isActiveS);
+    this.data.hobbysData.forEach((e) => {
+      if (e.id == item.id) {
+        e.isActive = !e.isActive;
+      }
+    })
+    this.setData({
+      hobbys: this.data.hobbysData
+    })
   },
   // 弹层 确定 按钮的方法
   determine() {
-    console.log('点击了确认按钮');
+    this.data.hobbysData.forEach((e=>{
+      if(e.isActive){
+        this.data.selected.push(e);
+      }
+    }))
+    console.log('弹层里选中的',this.data.selected);
     this.isOpen(false)
   },
   // 弹层 取消 按钮的方法
@@ -330,6 +337,9 @@ Page({
   onLoad(options) {
     // 用户用户第一次进入该页面就打开弹层让用户选择爱好
     this.isOpen(true)
+    this.setData({
+      hobbys: this.data.hobbysData
+    })
   },
 
   /**
