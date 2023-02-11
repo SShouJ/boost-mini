@@ -11,12 +11,10 @@ exports.main = async (event, context) => {
     console.log(context);
     try {
       let res = await db.collection('activity').doc(id).get();
-      console.log('----------获取单个活动的接口---------');
-      console.log(res);//获取单个商品的接口
       return{
         status:1,
         msg:'success',
-        data:res,
+        data:res.data,
       }
     } catch (error) {
       return {
