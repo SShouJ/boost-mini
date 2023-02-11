@@ -1,6 +1,5 @@
 // 云函数入口文件
 const cloud = require('wx-server-sdk')
-// const addActivityRelationGood = require("../addActivityRelationGood/index");
 cloud.init({ env: cloud.DYNAMIC_CURRENT_ENV }) // 使用当前云环境
 const db = cloud.database();
 // 云函数入口函数
@@ -50,16 +49,17 @@ exports.main = async (event, context) => {
     }
     try {
       //增加活动完成,需要再增加奖品
-    await db.collection('activity').add({
-        data:{
-          createPeople: openid,//创建人id
-          activityName,//活动名称
-          start,//开始时间
-          end,//结束时间  开奖时间
-          rule,//商品规则
-          prizeArr,//奖品的数组
-        }
-      })
+      //活动id，
+      await db.collection('activity').doc().update({
+          data:{
+            createPeople: openid,//创建人id
+            activityName,//活动名称
+            start,//开始时间
+            end,//结束时间  开奖时间
+            rule,//商品规则
+            prizeArr,//奖品的数组
+          }
+        })
       //增加奖品
       return {
         status:1,
