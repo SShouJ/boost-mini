@@ -20,7 +20,7 @@
           </view>
         </view>
       </view>
-    <view class="box-infopage">
+    <view class="box-infopage" bindtap="toFeedbackPages" data-name="personalCenter">
       <text class="fs-24">个人主页</text>
       <image class="icon-info" src="../../images/icon-more.png" mode=""/>
     </view>
@@ -28,7 +28,7 @@
   </view>
   <view class="activityInfo warp mb-20">
       <view class="actInfo-item" wx:for="{{actInfoList}}" wx:key="id">
-          <view class="box-actinfo">
+          <view class="box-actinfo"  bindtap="toFeedbackPages"  data-name="{{item.page}}">
             <view class="aa">
              {{item.number}}
            </view>

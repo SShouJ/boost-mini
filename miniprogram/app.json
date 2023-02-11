@@ -24,7 +24,9 @@
         "pages/feedBack",
         "pages/complaints",
         "pages/message",
-        "pages/personalCenter"
+        "pages/personalCenter",
+        "pages/attendEvents",
+        "pages/winningRecords"
       ]
     }
   ],

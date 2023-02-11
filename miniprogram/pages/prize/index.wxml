@@ -68,7 +68,7 @@
       <view class="dialog-container-overflow">
         <view class="dialog-container a_j-center">
 
-          <view class="item item-justify_center" wx:for="{{ hobbys }}" bindtap="choice" data-name="{{ item }}" wx:key="index">
+          <view class="item item-justify_center {{ item.isActive? 'active':'' }}" wx:for="{{ hobbys }}" bindtap="choice" data-name="{{ item }}" wx:key="index">
             {{ item.hobby }}
           </view>
 
