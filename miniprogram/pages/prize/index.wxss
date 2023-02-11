@@ -251,7 +251,6 @@
 
 .dialog .dialog_box .dialog-header {
   padding: 20rpx 0;
-  border-bottom: 1rpx solid #202020;
   text-align: center;
 }
 
@@ -276,11 +275,12 @@
   gap: 26rpx 26rpx;
   overflow: hidden;
   position: relative;
+  padding-top: 58rpx;
 }
 
 .vague1 {
   position: absolute;
-  top: 82rpx;
+  top: 81rpx;
   left: 0;
   height: 100rpx;
   width: 100%;
@@ -303,10 +303,12 @@
   background-color: #fff;
   border-radius: 100rpx;
   color: #000;
-  background-color: #fff !important;
-  
+  background-color: #fff;
 }
-
+.dialog-container .active{
+  background-color: red !important;
+  color: #fff !important;
+}
 /* 弹层中 中间内容部分 */
 
 .dialog .dialog-footer {
@@ -327,7 +329,7 @@
 }
 
 .dialog .dialog-footer .dialog-ok {
-  background-color: #f53535;
+  background-color: #fc4b08;
 }
 
 .dialog .dialog-footer .dialog-no {
