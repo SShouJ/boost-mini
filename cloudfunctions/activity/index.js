@@ -4,6 +4,7 @@ const addActivity = require('./addActivity/index');
 const getGoodList = require('./getGoodList/index');
 const getActivityByCategory = require('./getActivityByCategory/index');
 const getActivityDetail = require('./getActivityDetail/index');
+const getMyActivity = require('./getMyActivity/index');
 cloud.init({ env: cloud.DYNAMIC_CURRENT_ENV }) // 使用当前云环境
 
 // 云函数入口函数
@@ -18,5 +19,7 @@ exports.main = async (event, context) => {
       return await getActivityByCategory.main(event,context);
     case 'getActivityDetail':
       return await getActivityDetail.main(event,context);
+    case 'getMyActivity':
+      return  await getMyActivity.main(event,context);
   }
 }
