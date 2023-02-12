@@ -4,22 +4,25 @@
   <view class="activity-item">
     <image class="activity-img" src="{{activityItem.banner}}" mode="scaleToFill" />
     <view class="activity-info">
-      <view class="activity-title fs-20 fw-600">{{activityItem.activityTitle}}</view>
-      <view class="activity-press mt-5 fs-12 cl-grey">笔记本电脑,笔筒</view>
+      <view class="activity-title fs-20 fw-600">{{activityItem.activityName}}</view>
+      <view class="activity-press mt-5 fs-12 cl-grey">
+      {{}}
+      <!-- <text class="fs-12" >{{acitvityItem.prizeArr}}</text> -->
+      </view>
       <view class="activity-duration mt-5">
           <view class="spot bg-green"></view>
-          <text class="ml-5 fs-14">{{activityItem.begin}}~{{activityItem.end}}</text>
+          <text class="ml-5 fs-14">{{activityItem.start}}~{{activityItem.end}}</text>
       </view>
       <view class="activity-duration mt-5">
           <view class="spot bg-red"></view>
-          <text class="ml-5 fs-14">{{activityItem.position}}</text>
+          <text wx:for="{{activityItem.prizeArr}}" wx:key="id" class="ml-5 fs-14">{{item.goodName}}</text>
       </view>
     </view>
     <view class="hr"></view>
     <view class="operator flex-between">
       <view class="fs-14">
       已经参加
-      <text class="fs-14 fw-600">{{activityItem.count}}</text>
+      <text class="fs-14 fw-600">{{activityItem.peopleList.length}}</text>
         人
       </view>
       <view class="btn fs-12 fw-600 {{btnClass[activityItem.type]}}">{{btnText[activityItem.type]}}</view>

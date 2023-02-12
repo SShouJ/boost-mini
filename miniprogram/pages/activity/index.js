@@ -28,7 +28,11 @@ Page({
       status:1
      }
     }).then(res=>{
-      console.log(res.result);
+      console.log(res.result.data.list);
+      let list = res.result.data.list
+      this.setData({
+        activityList : res.result.data.list
+      })
     })
   },
   /**
@@ -36,28 +40,8 @@ Page({
    */
   onLoad(options) {
     this.getActivityList()
-      let activityList = [
-        {
-          id:1,
-          activityTitle:"妙克管家：一元搬家嗨FUN天",
-          begin:"2022年2月3日",
-          end:"2022年2月26日",
-          position:"上海市杨浦区宁国路百联滨江购物中心",
-          count:200,
-          banner:"../../images/bg1.png",
-          type:1,
-          pressList:[
-            {
-              id:10001,
-              name:'笔记本电脑',
-            },
-            {
-              id:10001,
-              name:'笔筒',
-            },
-          ]
-        },
-      ];
+     
+      
       let navList = [
         {
           id:1,
@@ -76,10 +60,7 @@ Page({
           title:"未开始",
         },
       ]
-      this.setData({
-        activityList,
-        navList
-      })
+      
   },
 
   /**
