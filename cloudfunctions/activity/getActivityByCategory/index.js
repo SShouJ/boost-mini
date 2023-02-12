@@ -11,13 +11,13 @@ exports.main = async (event, context) => {
     let idention  =  status&&status!== 1 ? {type:status} : {};
     console.log('---------------根据类目筛选活动--------------------------');
     try {
-     let res =  await db.collection('activity').where(idention).aggregate()
+     let res =  await db.collection('activity').aggregate()
       .lookup({
         from: 'user_relation_activity',
         localField: '_id',
         foreignField: 'activityId',
         as: 'peopleList',
-      })
+      }).match(idention)
       .end()
       .then(res=>{
         return {
@@ -34,7 +34,7 @@ exports.main = async (event, context) => {
         }
       })
       console.log('-----------------我是根据类目获取活动-----------------------');
-      console.log(res);
+      return res;
     } catch (error) {
       return {
         status:0,

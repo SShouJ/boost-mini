@@ -25,7 +25,7 @@ Page({
       name: "activity",
      data:{
       type:"getActivityByCategory",
-      status:"1"
+      status:1
      }
     }).then(res=>{
       console.log(res.result);
