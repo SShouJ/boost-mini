@@ -21,14 +21,25 @@ Page({
       showIndex:index
     })
   },
+  //转时间
+  toHHmmss (data) {
+    var time;
+    var hours = parseInt((data % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = parseInt((data % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = (data % (1000 * 60)) / 1000;
+    time = (hours < 10 ? ('0' + hours) : hours) + ':' + (minutes < 10 ? ('0' + minutes) : minutes) + ':' + (seconds < 10 ? ('0' + seconds) : seconds);
+    return time;
+ },
+ 
   date(){
    let date = new Date().getTime()
    date = 1676246400000 - date
-  let  seconds = (date % (1000 * 60)) / 1000;
+   date = this.toHHmmss(date)
+  // let  seconds = (date % (1000 * 60)) / 1000;
     this.setData({
-      time:seconds
+      time:date
     })
-    console.log(this.data.timeDate);
+    // console.log(date);
   },
   //关闭弹窗
   closePopup(){
