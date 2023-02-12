@@ -1,2 +1,40 @@
-<!--feedback/pages/winningRecords.wxml-->
-<text>feedback/pages/winningRecords.wxml</text>
+<view class="box">
+  <view class="nav">
+    <view class="nav-item" wx:for="{{navList}}" bindtap="changeItem" data-id="{{item.id}}" wx:key="id">
+      <view class="nav-title">
+        <text class="cl-yellow {{ item.id == target ? 'cl-yellow' : ''}} fs-34">{{item.title}}</text>
+      </view>
+      <view class="cl-yellow {{ item.id == target ? 'nav-line' : ''}}  mt-5"></view>
+    </view>
+  </view>
+  <view class="warp">
+    <view class="container">
+      <view class="page-body">
+        <view class="page-section page-section-spacing swiper">
+          <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+            <block wx:for="{{background}}" wx:key="*this">
+              <swiper-item>
+                <image class="swiper-item" src="{{item}}" mode="" />
+              </swiper-item>
+            </block>
+          </swiper>
+        </view>
+      </view>
+    </view>
+    <view class="pl-30">
+      <view class="fz-30">一等奖：翡翠妮【2克拉】莫桑拉 · · · <text class="cl-g">x10份</text></view>
+      <view class="pt-40 fz-30">二等奖：800元现金抵扣券<text class="cl-g">x200份</text></view>
+      <view class="pt-40 fz-30">三等奖：100元现金抵扣券<text class="cl-g">x300份</text></view>
+      <view class="pd-tb_40 fz-20 flex-center">
+        <view class="flex-center">
+          <text class="pr-30 cl-g">02月07日 11:00自动开奖</text>
+          <view class="assistance cl-r">助力</view>
+        </view>
+        <text class="cl-r fz-25 fw-700 pr-30">已结束</text>
+      </view>
+    </view>
+  </view>
+  <view class="box-bottom">
+    <text class="fz-25 cl-a7a7a7">—— 结束三个月的测试抽奖将自动隐藏 ——</text>
+  </view>
+</view>

@@ -7,6 +7,7 @@ const db = cloud.database();
 // 云函数入口函数
 exports.main = async (event, context) => {
     let nowTime = Date.now();
+    console.log('-------我执行了----------');
     await db.collection('activity').where({
       start:_.lt(nowTime)
     }).update({

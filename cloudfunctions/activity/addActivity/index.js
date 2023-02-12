@@ -27,6 +27,10 @@ exports.main = async (event, context) => {
       rule:{
         isRequire:true,
         msg:'活动规则不能为空',
+      },
+      banner:{
+        isRequire:true,
+        msg:'活动主图不能为空',
       }
     }
     let ruleKeys = Object.keys(ruleObj);
@@ -40,7 +44,7 @@ exports.main = async (event, context) => {
           break;
         }
     }
-    let { activityName, start,end,rule,prizeArr} = event;
+    let { activityName, start,end,rule,prizeArr,banner} = event;
     if(!prizeArr.length){
       return {
         status:0,
@@ -60,6 +64,7 @@ exports.main = async (event, context) => {
           end,//结束时间  开奖时间
           rule,//商品规则
           prizeArr,//奖品的数组
+          banner,//活动主图
         }
       })
       //增加奖品
