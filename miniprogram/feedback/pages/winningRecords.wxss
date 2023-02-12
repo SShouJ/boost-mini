@@ -98,8 +98,10 @@ swiper {
 .fw-700{
   font-weight: 700;
 }
-
-.flex {
+.pd-tb_40{
+  padding: 40rpx 0 40rpx 0;
+}
+.flex-center {
   display: flex;
   align-items: center;
   justify-content: space-between;
