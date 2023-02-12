@@ -23,23 +23,28 @@ Page({
   },
   //转时间
   toHHmmss (data) {
-    var time;
-    var hours = parseInt((data % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = parseInt((data % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = (data % (1000 * 60)) / 1000;
-    time = (hours < 10 ? ('0' + hours) : hours) + ':' + (minutes < 10 ? ('0' + minutes) : minutes) + ':' + (seconds < 10 ? ('0' + seconds) : seconds);
-    return time;
+         //将时间戳格式转换成年月日时分秒
+         var date = new Date(data);
+         var Y = date.getFullYear() + '-';
+         var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+         var D = (date.getDate() < 10 ? '0' + (date.getDate()) : date.getDate()) + ' ';
+   
+         var h = (date.getHours() < 10 ? '0' + (date.getHours()) : date.getHours()) + ':';
+         var m = (date.getMinutes() < 10 ? '0' + (date.getMinutes()) : date.getMinutes()) + ':';
+         var s = (date.getSeconds() < 10 ? '0' + (date.getSeconds()) : date.getSeconds());
+         var strDate = Y + M + D + h + m + s;
+         return strDate   
  },
  
   date(){
    let date = new Date().getTime()
-   date = 1676246400000 - date
+   date = 1676246400000
    date = this.toHHmmss(date)
   // let  seconds = (date % (1000 * 60)) / 1000;
     this.setData({
       time:date
     })
-    // console.log(date);
+    console.log(this.data.time);
   },
   //关闭弹窗
   closePopup(){
