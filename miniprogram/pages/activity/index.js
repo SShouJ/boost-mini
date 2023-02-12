@@ -19,10 +19,23 @@ Page({
       target:e.currentTarget.dataset.id,
     })
   },
+  //获取活动列表
+  getActivityList(){
+    wx.cloud.callFunction({
+      name: "activity",
+     data:{
+      type:"getActivityByCategory",
+      status:"1"
+     }
+    }).then(res=>{
+      console.log(res.result);
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    this.getActivityList()
       let activityList = [
         {
           id:1,
@@ -41,66 +54,6 @@ Page({
             {
               id:10001,
               name:'笔筒',
-            },
-          ]
-        },
-        {
-          id:2,
-          activityTitle:"妙克管家：一元搬家嗨FUN天1",
-          begin:"2022年2月3日",
-          end:"2022年2月26日",
-          banner:"../../images/bg2.png",
-          position:"乌拉拉小斑马",
-          count:300,
-          type:2,
-          pressList:[
-            {
-              id:10001,
-              name:'笔筒',
-            },
-            {
-              id:10001,
-              name:'笔记本电脑',
-            },
-          ]
-        },
-        {
-          id:3,
-          activityTitle:"妙克管家：一元搬家嗨FUN天1",
-          begin:"2022年2月3日",
-          end:"2022年2月26日",
-          banner:"../../images/bg3.png",
-          position:"乌拉拉小斑马",
-          count:300,
-          type:2,
-          pressList:[
-            {
-              id:10001,
-              name:'笔筒',
-            },
-            {
-              id:10001,
-              name:'笔记本电脑',
-            },
-          ]
-        },
-        {
-          id:4,
-          activityTitle:"妙克管家：一元搬家嗨FUN天1",
-          begin:"2022年2月3日",
-          end:"2022年2月26日",
-          banner:"../../images/bg4.png",
-          position:"乌拉拉小斑马",
-          count:300,
-          type:2,
-          pressList:[
-            {
-              id:10001,
-              name:'笔筒',
-            },
-            {
-              id:10001,
-              name:'笔记本电脑',
             },
           ]
         },

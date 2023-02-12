@@ -5,18 +5,41 @@ Page({
    * 页面的初始数据
    */
   data: {
+    time:1800,
+    countdown:'',
     text:'还差10人可抽取下一级奖品，立即参与',
     showIndex:null,//打开弹窗的对应下标
     height:'',//屏幕高度
     joinFlag:false,
     showFlag:false,
-    percent:68
+    percent:68,
+    timeDate:''
   },
   openPopup(e){
     var index = e.currentTarget.dataset.index;
     this.setData({
       showIndex:index
     })
+  },
+  //转时间
+  toHHmmss (data) {
+    var time;
+    var hours = parseInt((data % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = parseInt((data % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = (data % (1000 * 60)) / 1000;
+    time = (hours < 10 ? ('0' + hours) : hours) + ':' + (minutes < 10 ? ('0' + minutes) : minutes) + ':' + (seconds < 10 ? ('0' + seconds) : seconds);
+    return time;
+ },
+ 
+  date(){
+   let date = new Date().getTime()
+   date = 1676246400000 - date
+   date = this.toHHmmss(date)
+  // let  seconds = (date % (1000 * 60)) / 1000;
+    this.setData({
+      time:date
+    })
+    // console.log(date);
   },
   //关闭弹窗
   closePopup(){
@@ -58,18 +81,29 @@ Page({
     }
     // console.log(this.data.joinFalg);
   },
+  countdown(){
+    var minute=Math.floor(this.data.time  / 60 );
+    var second=this.data.time  % 60
+    second<10?second='0'+second:'';
+    this.setData({
+        countdown:minute+':'+second,
+        time:this.data.time-1
+    })
+    setTimeout(this.countdown, 1000);
+},
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    
+    this.countdown()
+    this.date()
     wx.showShareMenu({
       withShareTicket: true,
       menus:['shareAppMessage','shareTimeline']
   })
     console.log(options)
   },
-
+  // 倒计时
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

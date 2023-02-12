@@ -50,7 +50,9 @@ exports.main = async (event, context) => {
     }
     try {
       //增加活动完成,需要再增加奖品
-    await db.collection('activity').add({
+      start = new Date(start).getTime();
+      end = new Date(end).getTime();
+      await db.collection('activity').add({
         data:{
           createPeople: openid,//创建人id
           activityName,//活动名称

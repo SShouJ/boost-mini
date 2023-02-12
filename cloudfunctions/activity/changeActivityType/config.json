@@ -1,0 +1,9 @@
+{
+  "triggers": [
+    {
+      "name": "changeActivityType",
+      "type": "timer",
+      "config": "0 0 6 * * * *"
+    }
+  ]
+}
