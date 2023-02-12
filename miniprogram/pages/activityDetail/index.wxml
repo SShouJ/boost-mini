@@ -100,7 +100,7 @@
           </view>
           <!-- 倒计时 -->
           <view class="countdown">
-                还剩2天23：59：59开奖
+                还剩2天{{countdown}}开奖
           </view>
           <!-- <view wx:if="{{joinFalg}}">
             a 
@@ -121,6 +121,6 @@
     </view>
   </view>
 
-
+  <text>{{countdown}}</text>
 
 </view>
