@@ -1,66 +1,38 @@
-// feedback/pages/winningRecords.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
-  data: {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
   onShareAppMessage() {
+    return {
+      title: 'swiper',
+      path: 'page/component/pages/swiper/swiper'
+    }
+  },
 
+  data: {
+    background: ['https://imgcps.jd.com/img-cubic/creative_server_cia_jdcloud/v2/2000367/11677993862/FocusFullshop/CkJqZnMvdDEvODAzOTMvMjcvMjI5ODMvNDk0NzEvNjNlMDAzY2ZGZDQ5NjU5ZjcvYzA5NjZjZTMyOGE2MjY5Mi5wbmcSCTQtdHlfMF81NTACOO-LekITCg_nvo7oj7Hppa7msLTmnLoQAUIQCgznp5LmnYDku7cxMjgQAkIQCgznq4vljbPmiqLotK0QBkIHCgPmiqIQB1iGl8DAKw/cr/s/q.jpg', 'https://imgcps.jd.com/ling4/100032149194/5Lqs6YCJ5aW96LSn/5L2g5YC85b6X5oul5pyJ/p-5bd8253082acdd181d02fa06/762a309a/cr/s/q.jpg', 'https://img10.360buyimg.com/pop/s1180x940_jfs/t1/196131/35/14559/51636/60fa7c07E255a9704/a1afa2ce64332286.jpg.avif'],
+    indicatorDots: true,
+    vertical: false,
+    autoplay: false,
+    interval: 2000,
+    duration: 500,
+    navList : [
+      {
+        id:0,
+        title:"普通抽奖",
+      },
+      {
+        id:1,
+        title:"即抽即开",
+      },
+    ],
+    target:0,
+  },
+  changeItem(e){
+    this.setData({
+      target:e.currentTarget.dataset.id,
+    })
+  },
+  onLoad(){
+    this.setData({
+      autoplay: !this.data.autoplay
+    })
   }
 })

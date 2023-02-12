@@ -1,1 +1,123 @@
-/* feedback/pages/winningRecords.wxss */
+.box {
+  background-color: #f7f7f7;
+}
+
+.nav {
+  background-color: #e04540;
+  padding: 30rpx 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.nav .nav-item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.cl-yellow {
+  color: #ead9a0;
+}
+
+.nav .nav-line {
+  width: 130rpx;
+  height: 2rpx;
+  background: #ead9a0;
+}
+
+.mt-5 {
+  margin-top: 10rpx;
+}
+
+.fs-34 {
+  font-size: 34rpx;
+}
+
+swiper {
+  width: 695rpx;
+  height: 355rpx;
+  margin: 27rpx auto;
+  border: 10rpx solid #374582;
+  border-radius: 20rpx 20rpx 0 0;
+}
+
+.container {
+  width: 715rpx;
+  margin: 0 auto;
+}
+
+.warp {
+  width: 715rpx;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 0 0 30rpx 30rpx;
+}
+
+.swiper-item {
+  width: 715rpx;
+}
+
+.cl-g {
+  color: #767676;
+}
+
+.pl-30 {
+  padding-left: 30rpx;
+}
+
+.pt-40 {
+  padding-top: 40rpx;
+}
+
+.fz-20 {
+  font-size: 20rpx;
+}
+
+.fz-30 {
+  font-size: 30rpx;
+}
+
+.assistance {
+  width: 60rpx;
+  height: 40rpx;
+  background-color: #fff5f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cl-r{
+  color: #cd4d36;
+}
+.fz-25{
+  font-size: 25rpx;
+}
+.fw-700{
+  font-weight: 700;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.fl-f{
+  float: left;
+}
+.pr-30{
+  padding-right: 30rpx;
+}
+.pb-40{
+  padding-bottom: 40rpx;
+}
+.cl-a7a7a7{
+  color: #a7a7a7;
+}
+.box-bottom{
+  width: 500rpx;
+  margin: 0 auto;
+  padding-top: 24rpx;
+}
