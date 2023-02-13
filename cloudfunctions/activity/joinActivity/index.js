@@ -10,6 +10,7 @@ exports.main = async (event, context) => {
     let { activityId } = event;
     const wxContext = cloud.getWXContext();
     const openid = wxContext.OPENID;//用户的open_id;
+    console.log('------------------参加活动的接口-----------------------');
     try {
       let activityRes =  await getOneActivity.main({id:activityId},context);
       if(!Object.keys(activityRes.data).length){
@@ -26,7 +27,7 @@ exports.main = async (event, context) => {
         }
       }
       let userRes     =  await getOneUser.main({id:openid},context);
-      if(!Object.keys(userRes).length){
+      if(!Object.keys(userRes.data).length){
         return {
           status:0,
           msg:'用户不存在',
