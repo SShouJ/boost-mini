@@ -1,6 +1,9 @@
 {
-  "permissions": {
-    "openapi": [
-    ]
-  }
+  "triggers": [
+    {
+      "name": "changeActivityType",
+      "type": "timer",
+      "config":"0 0 8,18 * * * *"
+    }
+  ]
 }
