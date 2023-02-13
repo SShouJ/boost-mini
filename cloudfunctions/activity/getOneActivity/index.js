@@ -8,7 +8,7 @@ exports.main = async (event, context) => {
     //只是获取一个商品
     let { id } = event;
     console.log('---------------获取单个活动中的context字段-----------------');
-    console.log(context);
+    console.log(id);
     try {
       let res = await db.collection('activity').doc(id).get();
       return{
