@@ -1,1 +1,97 @@
-/* feedback/pages/redemptionHistory.wxss */
+.box {
+  background-color: #f2f2f2;
+}
+
+.warp {
+  width: 710rpx;
+  margin: 0 auto;
+}
+
+.item-singlecargo {
+  box-sizing: border-box;
+  padding: 40rpx 30rpx 40rpx 30rpx;
+  background-color: #fff;
+  border-radius: 0 0 10rpx 10rpx;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20rpx;
+}
+
+.flex-space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cl-868686 {
+  color: #868686;
+}
+
+.fz-28 {
+  font-size: 28rpx;
+}
+
+.pd-rb_30 {
+  /* padding-right: 45rpx; */
+  padding-bottom: 30rpx;
+}
+
+.cl-e56b58 {
+  color: #e56b58;
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+
+.box-commodity {
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.img-commodity {
+  width: 150rpx;
+  height: 110rpx;
+}
+
+.pd-lr_40 {
+  padding-left: 30rpx;
+  padding-right: 40rpx;
+}
+
+.pd-tr_30 {
+  padding-top: 30rpx;
+  /* padding-right: 45rpx; */
+}
+
+.pt-15 {
+  padding-top: 15rpx;
+}
+
+.fz-30 {
+  font-size: 30rpx;
+}
+
+.icon {
+  width: 24rpx;
+  height: 24rpx;
+}
+.box-total{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  /* padding-right: 45rpx; */
+}
+.btn{
+  width: 180rpx;
+  height: 60rpx;
+  border: 1px solid #e56b58;
+  border-radius: 30rpx;
+  text-align: center;
+  line-height: 60rpx;
+  color: #e56b58;
+}
+
+.pd-tb_20{
+  padding-top: 20rpx;
+  padding-bottom: 40rpx;
+}
