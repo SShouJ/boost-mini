@@ -19,7 +19,12 @@ Page({
         number:0,
         acttext:'中奖记录',
         page:"winningRecords"
-      },
+      },{
+        id:3,
+        number:0,
+        acttext:'兑换记录',
+        page:"winningRecords"
+      }
     ],
    mineNav:[
      {

@@ -26,7 +26,8 @@
         "pages/message",
         "pages/personalCenter",
         "pages/attendEvents",
-        "pages/winningRecords"
+        "pages/winningRecords",
+        "pages/redemptionHistory"
       ]
     }
   ],
