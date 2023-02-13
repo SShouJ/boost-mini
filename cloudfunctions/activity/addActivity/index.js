@@ -65,6 +65,7 @@ exports.main = async (event, context) => {
           rule,//商品规则
           prizeArr,//奖品的数组
           banner,//活动主图
+          type:0
         }
       })
       //增加奖品
