@@ -107,6 +107,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "兑换记录",
+          "pathName": "feedback/pages/redemptionHistory",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }
