@@ -8,6 +8,8 @@ const db = cloud.database();
 exports.main = async (event, context) => {
     let nowTime = Date.now();
     console.log('-------我执行了----------');
+    let res = await db.collection('activity').get();
+    console.log(res);
     await db.collection('activity').where({
       start:_.lt(nowTime)
     }).update({
@@ -29,4 +31,5 @@ exports.main = async (event, context) => {
         type:3
       }
     })
+    return '我执行了';
 }
