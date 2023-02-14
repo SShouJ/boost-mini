@@ -93,7 +93,6 @@ Page({
     console.log("--------------")
     wx.getUserProfile({
       desc: '用于登录',
-    
       success: (res) => {
         console.log(res);
         // 这边如果没有登录自动把数据加上去

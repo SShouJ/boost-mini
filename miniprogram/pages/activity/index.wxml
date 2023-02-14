@@ -54,8 +54,13 @@
   </view>
   <!-- 活动每一项 -->
   <scroll-view style="height: calc(100vh - 480rpx);" 	scroll-y="{{true}}">
-    <view class="wrap mb-10" wx:for="{{activityList}}"  wx:key="id">
+  <view class="fs-30 " wx:if="{{activityList.length == 0}}">
+    暂无活动
+  </view>
+    <view wx:else="">
+      <view class="wrap mb-10" wx:for="{{activityList}}"  wx:key="id">
       <activity bindtap="toDetails" activityItem="{{item}}" data-id="{{item._id}}"></activity>
+    </view>
     </view>
   </scroll-view>
 </view>
