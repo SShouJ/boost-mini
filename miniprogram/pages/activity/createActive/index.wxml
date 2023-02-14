@@ -18,7 +18,7 @@
       <text class="cl-red">*</text>
       <text class="ml-5">活动主题图</text>
     </view>
-    <view class="upload-wrap pd-50  all-center" bindtap="chooseImg">
+    <view class="upload-wrap   all-center" bindtap="chooseImg">
       <image class="" src="{{banner}}" mode="aspectFit" />
     </view>
   </view>
@@ -71,7 +71,7 @@
         <text class="cl-red">*</text>
         <text class="ml-5">奖品数量</text>
       </view>
-      <input class="wd-210" type="text" bindinput="getInputValue" placeholder="{{item.count}}" data-index="{{index}}" data-name="count" />
+      <input class="wd-210" type="number" bindinput="getInputValue" placeholder="{{item.count}}" data-index="{{index}}" data-name="count" />
     </view>
     <view class="form-item pd-17 fs-15 flex-between">
       <view class="label">

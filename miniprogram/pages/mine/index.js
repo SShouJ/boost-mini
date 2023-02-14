@@ -7,6 +7,7 @@ Page({
   data: {
     islogin: false,
     userInfo: {},
+    avatarUrl:'',
     actInfoList:[
       {
         id:1,
@@ -71,6 +72,7 @@ Page({
       name: 'user',
       data: {
         type:"findUser",
+        avatarUrl:'cloud://cloud1-7ge7nl2m42cee9e9.636c-cloud1-7ge7nl2m42cee9e9-1316264853/avatar/avatar1.png',
       }
     }).then(res=>{
       console.log('------------我是调用查找用户的接口---------------');
@@ -78,7 +80,8 @@ Page({
       console.log('---------------------------我是调用查找用户的接口结束--------------------');
       if(res.result.status == 1){
         _this.setData({
-          userInfo:res.result.data,
+          userInfo:res.result.event.userInfo,
+          avatarUrl:res.result.event.userInfo.avatarUrl,
           islogin:true,
         })
         console.log(_this.data.userInfo);
@@ -92,7 +95,6 @@ Page({
     console.log("--------------")
     wx.getUserProfile({
       desc: '用于登录',
-    
       success: (res) => {
         console.log(res);
         // 这边如果没有登录自动把数据加上去
@@ -100,14 +102,18 @@ Page({
           name: 'user',
           data: {
             type:'findUser',
-            nickName:res.userInfo.nickName,
-            avatarUrl:res.userInfo.avatarUrl,
+            avatarUrl:'cloud://cloud1-7ge7nl2m42cee9e9.636c-cloud1-7ge7nl2m42cee9e9-1316264853/avatar/avatar1.png',
           }
         }).then(res=>{
           console.log(res.result);
+          this.setData({
+            userInfo:res.result.event.userInfo,
+            avatarUrl:res.result.event.userInfo.avatarUrl,
+          })
         })
+        this.login();
         this.setData({
-          userInfo: res.userInfo,
+          // userInfo: res.userInfo,
           islogin: true
         })
       }

@@ -22,7 +22,6 @@ exports.main = async (event, context) => {
       end:{
         isRequire:true,
         msg:'活动结束时间不能为空',
-        
       },
       rule:{
         isRequire:true,
@@ -41,7 +40,6 @@ exports.main = async (event, context) => {
             msg:ruleObj[ruleKeys[i]].msg,
             data:[],
           }
-          break;
         }
     }
     let { activityName, start,end,rule,prizeArr,banner} = event;
@@ -58,14 +56,15 @@ exports.main = async (event, context) => {
       end = new Date(end).getTime();
       await db.collection('activity').add({
         data:{
-          createPeople: openid,//创建人id
+          openid: openid,//创建人id
           activityName,//活动名称
           start,//开始时间
           end,//结束时间  开奖时间
           rule,//商品规则
           prizeArr,//奖品的数组
           banner,//活动主图
-          type:0
+          type:0,//活动类型
+          created:Date.now(),//创建时间
         }
       })
       //增加奖品

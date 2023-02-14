@@ -1,42 +1,42 @@
 <view class="box">
 <view class="box-personalCenter">
   <view class="item-personalCenter pd-lr_20">
-    <text class="fw-700 fz-28">用户头像</text>
+    <text class="fw-700 fs-28">用户头像</text>
     <view class="item-personalCenter_right">
     <image src="../../images/avatar-nologin.png" mode="" class="userAvatar pr-33" />
     <image src="../../images/icon-more.png" class="icon-more" mode=""/>
     </view>
   </view>
   <view class="item-personalCenter item-pd">
-    <text class="fw-700 fz-28">姓名</text>
+    <text class="fw-700 fs-28">姓名</text>
     <view class="item-personalCenter_right">
-    <text class="cl-g pr-33">张三</text>
+    <text class="cl-g pr-33 fs-28">张三</text>
     <image src="../../images/icon-more.png" class="icon-more" mode=""/>
     </view>
   </view>
   <view class="item-personalCenter item-pd">
-    <text class="fw-700 fz-28">组织机构岗位</text>
+    <text class="fw-700 fs-28">组织机构岗位</text>
     <view class="item-personalCenter_right">
-    <text class="cl-g pr-33">动力装备部专工</text>
+    <text class="cl-g pr-33 fs-28">动力装备部专工</text>
     <image src="../../images/icon-more.png" class="icon-more" mode=""/>
     </view>
   </view>
   <view class="item-personalCenter item-pd">
-    <text class="fw-700 fz-28">工号</text>
+    <text class="fw-700 fs-28">工号</text>
     <view class="item-personalCenter_right">
-    <text class="cl-g pr-33">007</text>
+    <text class="cl-g pr-33 fs-28">007</text>
     <image src="../../images/icon-more.png" class="icon-more" mode=""/>
     </view>
   </view>
   <view class="item-personalCenter item-pd">
-    <text class="fw-700 fz-28">手机号码</text>
+    <text class="fw-700 fs-28">手机号码</text>
     <view class="item-personalCenter_right">
-    <text class="cl-g pr-33">187292827777</text>
+    <text class="cl-g pr-33 fs-28">187292827777</text>
     <image src="../../images/icon-more.png" class="icon-more" mode=""/>
     </view>
   </view>
   <view class="item-personalCenter item-pd bor-bom_f">
-    <text class="fw-700 fz-28">身份证号码</text>
+    <text class="fw-700 fs-28">身份证号码</text>
     <view class="item-personalCenter_right">
     <input type="text" bindinput="aa" />
     <image src="../../images/icon-more.png" mode="" class="icon-more"/>
@@ -45,12 +45,12 @@
 </view>
 <view class="item-bottom">
 <view class="item-bottom_pwd">
-    <text class="fw-700 fz-28">密码</text>
+    <text class="fw-700 fs-28">密码</text>
     <view class="item-personalCenter_right">
-    <text class="cl-g pr-33">去修改</text>
+    <text class="cl-g pr-33 fs-28">去修改</text>
     <image src="../../images/icon-more.png" mode="" class="icon-more"/>
     </view>
   </view> 
 </view>
-<button type="primary">修改个人信息</button>
+<button type="primary" class="fs-30">修改个人信息</button>
 </view>

@@ -23,20 +23,7 @@ Page({
       showIndex:index
     })
   },
-  //转时间
-  toHHmmss (data) {
-         //将时间戳格式转换成年月日时分秒
-         var date = new Date(data);
-         var Y = date.getFullYear() + '-';
-         var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
-         var D = (date.getDate() < 10 ? '0' + (date.getDate()) : date.getDate()) + ' ';
-   
-         var h = (date.getHours() < 10 ? '0' + (date.getHours()) : date.getHours()) + ':';
-         var m = (date.getMinutes() < 10 ? '0' + (date.getMinutes()) : date.getMinutes()) + ':';
-         var s = (date.getSeconds() < 10 ? '0' + (date.getSeconds()) : date.getSeconds());
-         var strDate = Y + M + D + h + m + s;
-         return strDate   
- },
+ 
  getAcitvityDetail(id){
   wx.cloud.callFunction({
     name: "activity",

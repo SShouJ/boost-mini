@@ -6,14 +6,12 @@ Page({
    */
   data: {
     detailsList:[{
-      name:'刘将军',
-      time:'2023年12月11日23:22',
-      businessLicense:'../../images/img-businesslicense.png',
-      shopName:'小刘酒吧',
-      shopAddress:'卫辉市比干大道',
-      contacts:'刘将军',
-      contactsTelephone:'18203477587',
-      briefIntroduction:'666'
+      oddNum:'62056856842546',
+      commodity:'../../images/commodity-one.png',
+      commodityName:'三诺血糖测试仪100支试纸测量血糖的医仪器',
+      price:'2540',
+      num:'1',
+      sum:'2540',
     }]
   },
 
