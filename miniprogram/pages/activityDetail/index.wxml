@@ -45,7 +45,11 @@
     <view class="btn">
       多重好礼等你来拿
     </view>
-    <text class="text-time">活动时间:{{activityDetail[0].start}}至{{activityDetail[0].end}}</text>
+    <view class="text-time">
+    <text>活动时间:</text>
+            <text> {{activityDetail[0].start}}</text>
+            <text>至</text>
+           <text>{{activityDetail[0].end}}</text></view>
   </view>
   <view class="box-content wrap">
     <view class="box-lottery">
@@ -107,7 +111,7 @@
           </view>
           <!-- 倒计时 -->
           <view class="countdown">
-                还剩2天{{countdown}}开奖
+                还剩2天23:59:59开奖
           </view>
           <!-- <view wx:if="{{joinFalg}}">
             a 
@@ -128,6 +132,6 @@
     </view>
   </view>
 
-  <text>{{countdown}}</text>
+  
 
 </view>

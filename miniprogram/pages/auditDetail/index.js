@@ -30,6 +30,26 @@ Page({
       console.log(this.data.audits);
     })
   },
+ 
+  //t通过
+  audit(e){
+    console.log(e.target.dataset.id);
+    
+      wx.cloud.callFunction({
+        name:'shop',
+        data:{
+          type:'updateProcess',
+          id:this.data.auditDetail._id,
+          status:Number(e.target.dataset.id),
+          msg:'通过',
+        }
+      }).then(res=>{
+        console.log(res);
+        wx.navigateTo({
+          url: '/pages/auditDetail/index',
+        })
+      })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

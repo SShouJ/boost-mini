@@ -55,11 +55,16 @@
         <text class="ml-5">奖品</text>
       </view>
       <input class="wd-210" type="text" placeholder="{{item.goodName}}" bindinput="getInputValue" data-name="goodName" data-index="{{index}}" />
-      <!-- <picker mode="selector" data-index="{{index}}"  range="{{prizeArr}}" range-key="goodName" bindchange="bindPriceChange" value="{{0}}">
-        <view class="fs-15 wd-210">
-          {{item.goodName}}
-        </view>
-      </picker> -->
+     
+    </view>
+    <view class="form-item pd-17 fs-15 flex-aligncenter ">
+      <view class="label">
+        <text class="cl-red">*</text>
+        <text class="ml-5">奖品图片</text>
+      </view>
+       <view >
+        <image class="img-upload" bindtap="chooseImg" src="{{item.goodImg}}" data-index="{{index}}" alt=""/>
+       </view>
     </view>
     <view class="form-item pd-17 fs-15 flex-between">
       <view class="label">
