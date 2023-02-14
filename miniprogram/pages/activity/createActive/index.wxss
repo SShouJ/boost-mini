@@ -45,6 +45,11 @@
   align-items: center;
   justify-content: space-around;
 }
+.flex-aligncenter{
+  display: flex;
+  align-items: center;
+ 
+}
 
 .bg-warning{
   background: #ff6738;
@@ -67,6 +72,13 @@
   align-items: center;
   justify-content: center;
 }
+.img-upload{
+  width: 200rpx;
+  height: 190rpx;
+  border: 1rpx solid;
+  margin-left: 80rpx;
+}
+
 
 .flex-between{
   display: flex;
@@ -159,7 +171,6 @@
 .wd-125{
   width: 250rpx;
 }
-
 .ml-50{
   margin-left: 100rpx;
 }

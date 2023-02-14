@@ -123,8 +123,8 @@
           "scene": null
         },
         {
-          "name": "我的页面",
-          "pathName": "pages/mine/index",
+          "name": "订单详情",
+          "pathName": "feedback/pages/orderDetails",
           "query": "",
           "launchMode": "default",
           "scene": null

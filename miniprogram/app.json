@@ -28,7 +28,8 @@
         "pages/attendEvents",
         "pages/winningRecords",
         "pages/redemptionHistory",
-        "pages/activityAudit"
+        "pages/activityAudit",
+        "pages/orderDetails"
       ]
     }
   ],
