@@ -10,7 +10,7 @@ exports.main = async (event, context) => {
     const wxContext = cloud.getWXContext();
     const openid = wxContext.OPENID;//用户的open_id;
     let { status } = event;  //1 全部  2.待开奖 3.已结束  4. 未开始
-    let idention  =  status&&status!== 1 ? {type:status,createPeople:openid} : {createPeople:openid};
+    let idention  =  status&&status!== 1 ? {type:status,openid:openid} : {openid:openid};
     console.log('---------------根据类目筛选活动--------------------------');
     try {
      let res =  await db.collection('activity').aggregate()
@@ -18,7 +18,7 @@ exports.main = async (event, context) => {
         from: 'user_relation_activity',
         localField: '_id',
         foreignField: 'activityId',
-        as: 'peopleList',
+        as: 'row',
       }).match(idention)
       .end()
       .then(res=>{
