@@ -6,8 +6,11 @@ const db = cloud.database();
 exports.main = async (event, context) => {
     //只是获取一个商品
     let { id } = event;
+    console.log(id);
     try {
-       let res = db.collection('user').doc(id).get();
+       let res =await db.collection('user').doc(id).get();
+       console.log('----------我进入了获取一个用户-----------');
+       console.log(res);
         return {
           status:1,
           msg:'success',

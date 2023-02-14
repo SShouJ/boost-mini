@@ -13,7 +13,9 @@ Page({
     joinFlag:false,
     showFlag:false,
     percent:68,
-    timeDate:''
+    timeDate:'',
+    activityDetail:[],
+    activityId:''
   },
   openPopup(e){
     var index = e.currentTarget.dataset.index;
@@ -35,7 +37,21 @@ Page({
          var strDate = Y + M + D + h + m + s;
          return strDate   
  },
- 
+ getAcitvityDetail(id){
+  wx.cloud.callFunction({
+    name: "activity",
+   data:{
+    type:"getActivityDetail",
+    id:id
+   }
+  }).then(res=>{
+    console.log(res.result.data.list);
+    this.setData({
+      activityDetail : res.result.data.list
+    })
+    console.log(this.data.activityDetail);
+  })
+ },
   date(){
    let date = new Date().getTime()
    date = 1676246400000
@@ -58,9 +74,22 @@ Page({
       url: '/pages/'+ data.currentTarget.dataset.name+'/index',
     })
   },
+  //参加活动接口
+  joinActivity(){
+wx.cloud.callFunction({
+  name: "activity",
+ data:{
+  type:"joinActivity",
+  activityId:this.data.activityId
+ }
+}).then(res=>{
+  console.log(res);
+})
+  },
   join(data){
     console.log(data.currentTarget.dataset);
     var _this = this
+    
     // console.log(data);
     this.setData({
       joinFlag:true,
@@ -70,6 +99,7 @@ Page({
     })
     console.log(this.data.showFlag);
     if (this.data.showFlag == "true") {
+      _this.joinActivity()
       wx.showModal({
         title: '活动提示',
         content: '参与成功，分享好友的积分换豪礼',
@@ -100,8 +130,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+   this.setData({
+     activityId : options.id
+   })
     this.countdown()
     this.date()
+    this.getAcitvityDetail(options.id)
     wx.showShareMenu({
       withShareTicket: true,
       menus:['shareAppMessage','shareTimeline']

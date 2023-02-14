@@ -24,7 +24,9 @@
      <view class="fs-24">1、活动期间，同一用户每天可获得1次抽奖机会，每次抽奖机会将消耗1积分，随机出奖，积分一旦消耗不支持退回。</view>
      <view class="fs-24">2、同一支付宝账号、手机号、身份证、手机终端，符合以上任一条件的，均视为同一用户。</view>
      <view class="fs-24">3、活动仅限中国大陆地区的支付宝实名认证用户在中国大陆地区参与和使用。支付宝会员用户需保持其支付宝会员服务在活动期间未关闭方可参加本活动。</view>
-     <view class="fs-24">4、如出现不可抗力或情势变更的情况（包括重大灾害事件、活动受政府机关指令需要停止举办或调整的、活动遭受严重网络攻击或因系统故障等）导致活动需要停止或调整的，我们有权终止活动而无需向用户进行赔偿或补偿。</view> <view class="fs-24">5、在参与活动过程中，如用户出现作弊等违法违规行为我们有权撤销用户参与活动及奖励使用资格，并有权收回用户已经获得的权益。</view>
+     <view class="fs-24">4、如出现不可抗力或情势变更的情况（包括重大灾害事件、活动受政府机关指令需要停止举办或调整的、活动遭受严重网络攻击或因系统故障等）导致活动需要停止或调整的，我们有权终止活动而无需向用户进行赔偿或补偿。</view> <view class="fs-24">5、在参与活动过程中，如用户出现作弊等违法违规行为我们有权撤销用户参与活动及奖励使用资格，并有权收回用户已经获得的权益。</view><view>
+       6.{{activityDetail.rule}}
+     </view>
      </view>
     </scroll-view>
   </view>
@@ -43,7 +45,7 @@
     <view class="btn">
       多重好礼等你来拿
     </view>
-    <text class="text-time">活动时间:3.12-4.12</text>
+    <text class="text-time">活动时间:{{activityDetail[0].start}}至{{activityDetail[0].end}}</text>
   </view>
   <view class="box-content wrap">
     <view class="box-lottery">
@@ -56,20 +58,25 @@
           <text class="fs-30 fw-700">当前阶段奖品：</text>
           <text class="fs-24 cl-blue">查看全部奖品</text>
         </view>
-        <view class="box-prizeDetails">
+        <scroll-view style="width: calc(100vw - 100rpx); " 	scroll-x="{{true}}">
+        <view class="scroll">
+          
+        <view class="box-prizeDetails" wx:for="{{activityDetail[0].prizeArr}}" wx:key="id">
           <image class="img-prizeDetails" src="https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/price.png?sign=e25105db0f3e5e751f08f38eb28b7f36&t=1675752960" mode="" />
           <view class="box-rigth_prizeDetails">
             <view class="text-priceName">
-              iphone 14 Pro Max暗夜紫(12G/512G/全网通) 
+             {{item.goodName}}
             </view>
             <view class="box-state">
-              <view class="text-number">共10份奖品</view>
+              <view class="text-number">共{{item.count}}份奖品</view>
               <view class="btn-lottery">
                 开奖
               </view>
             </view>
           </view>
         </view >
+        </view>
+        </scroll-view>
         <!-- 奖品信息下半 -->
         <view class="act-message_bom">
         <!-- 进度条 -->
@@ -83,13 +90,13 @@
                <view class="box-img">
                 <image class="icon-jp" src="../../images/icon-prize.png" mode=""/>
                </view>
-                <text>200人</text>
+                <text>{{activityDetail[0].prizeArr[0].goodPrize}}人</text>
               </view>
               <view class="box-post2">
                 <view class="box-img">
                 <image class="icon-jp" src="../../images/icon-prize.png" mode=""/>
                </view>
-                <text>500人</text>
+                <text>{{activityDetail[0].prizeArr[1].goodPrize}}人</text>
               </view>
               <view class="box-post3">
                 <view class="box-img">

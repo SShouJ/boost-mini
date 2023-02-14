@@ -1,0 +1,120 @@
+.nav {
+  padding: 30rpx 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.nav .nav-item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.nav .nav-line {
+  width: 50rpx;
+  height: 6rpx;
+  background: #d85c56;
+}
+
+.item-activity {
+  padding: 24rpx;
+  background-color: #fff;
+  margin-top: 5rpx;
+}
+
+.lable {
+  border: 1rpx solid #b7c678;
+  padding: 10rpx 30rpx;
+  border-radius: 50rpx;
+  color: #b7c678;
+}
+
+.activity-img {
+  width: 220rpx;
+  height: 280rpx;
+}
+
+.img-avatar {
+  width: 100rpx;
+  height: 100rpx;
+}
+.information {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.box-information {
+  display: flex;
+  flex-direction: column;
+}
+
+.box-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mt-5 {
+  margin-top: 10rpx;
+}
+
+.cl-red {
+  color: #d85c56;
+}
+
+.ml-20 {
+  margin-left: 20rpx;
+}
+
+.pt-20 {
+  padding-top: 20rpx;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.cl-6f7a94 {
+  color: #6f7a94;
+}
+
+.cl-a2a2a2 {
+  color: #a2a2a2;
+}
+
+.flex{
+  display: flex;
+}
+.fs-35 {
+  font-size: 35rpx;
+}
+
+.fs-30 {
+  font-size: 30rpx;
+}
+
+.fs-20 {
+  font-size: 20rpx;
+}
+.mt-40{
+  margin-top: 40rpx;
+}
+
+.fs-35 {
+  font-size: 35rpx;
+}
+
+.mr-30 {
+  margin-right: 30rpx;
+}
+.pb-30{
+  padding-bottom: 30rpx;
+}
+.fs-24 {
+  font-size: 24rpx;
+}
+
+.cl-a1a1a1 {
+  color: #a1a1a1;
+}

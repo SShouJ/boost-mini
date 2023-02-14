@@ -1,0 +1,36 @@
+<view class="box">
+  <view class="nav">
+    <view class="nav-item fw-600" wx:for="{{navList}}" bindtap="changeItem" data-id="{{item.id}}" wx:key="id">
+      <view class="nav-title">
+        <text class="{{ item.id == target ? 'cl-red' : ''}} fs-14">{{item.title}}</text>
+      </view>
+      <view class="{{ item.id == target ? 'nav-line' : ''}}  mt-5"></view>
+    </view>
+  </view>
+  <view class="item-activity" wx:for="{{activityList}}">
+    <view class="information pt-20">
+      <view class="information">
+        <image src="{{item.userAvatar}}" class="img-avatar" mode="" />
+        <view class="box-information ml-20">
+        <text class="fs-35 cl-6f7a94">{{item.userName}}</text>
+          <text class="cl-a2a2a2 fs-20">{{item.userTime}}</text>
+        </view>
+      </view>
+      <view class="lable">
+        <text class="fs-25">{{item.class}}</text>
+      </view>
+    </view>
+    <view class="flex mt-40">
+      <view class="mr-30">
+        <image src="{{item.activityImg}}" class="activity-img" mode=""/>
+      </view>
+      <view class="box-content">
+        <view class="box-information">
+          <text class="fs-35 pb-30">{{item.title}}</text>
+          <text class="fs-24 cl-a1a1a1">{{item.subTitle}}</text>
+        </view>
+        <text class="fs-20 cl-a1a1a1">截止日期：{{item.date}}</text>
+      </view>
+    </view>
+  </view>
+</view>

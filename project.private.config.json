@@ -107,6 +107,20 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "兑换记录",
+          "pathName": "feedback/pages/redemptionHistory",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "活动审核",
+          "pathName": "feedback/pages/activityAudit",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

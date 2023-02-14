@@ -13,6 +13,8 @@ exports.main = async (event, context) => {
     console.log('------------------参加活动的接口-----------------------');
     try {
       let activityRes =  await getOneActivity.main({id:activityId},context);
+      console.log('--------------------------我是获取一个活动的接口----------')
+      console.log(activityRes)
       if(!Object.keys(activityRes.data).length){
         return {
           status:0,
@@ -26,8 +28,10 @@ exports.main = async (event, context) => {
           data:[]
         }
       }
+      console.log('----------------开始执行获取一个用户的接口-------------');
       let userRes     =  await getOneUser.main({id:openid},context);
-      if(!Object.keys(userRes).length){
+      console.log(userRes);
+      if(!Object.keys(userRes.data).length){
         return {
           status:0,
           msg:'用户不存在',
