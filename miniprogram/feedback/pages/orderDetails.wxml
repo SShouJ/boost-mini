@@ -1,0 +1,34 @@
+<view class="box">
+  <view class="warp" wx:for="{{detailsList}}">
+    <view class="box-details">
+      <text class="fs-30 fw-700">{{item.name}}</text>
+      <text class="fs-26 fw-700">{{item.time}}</text>
+    </view>
+    <view class="order-information">
+      <view>
+        <text class="fs-30 fw-700">营业执照：</text>
+        <image src="{{item.businessLicense}}" class="img-businesslicense" mode="" />
+      </view>
+      <view class="box-order">
+        <view class="flex">
+          <text class="fs-30 fw-700 pt-50">店铺名称：</text>
+          <text class="fs-30 fw-700 pt-50">店铺地址：</text>
+          <text class="fs-30 fw-700 pt-50">联系人：</text>
+          <text class="fs-30 fw-700 pt-50">联系人电话：</text>
+          <text class="fs-30 fw-700 pt-50">店铺简介：</text>
+        </view>
+        <view class="flex pl-20">
+          <text class="fs-30 pt-50">{{item.shopName}}</text>
+          <text class="fs-30 pt-50">{{item.shopAddress}}</text>
+          <text class="fs-30 pt-50">{{item.contacts}}</text>
+          <text class="fs-30 pt-50">{{item.contactsTelephone}}</text>
+          <text class="fs-30 pt-50">{{item.briefIntroduction}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="box-btn">
+  <button type="primary">通过</button>
+  <view class="btn cl-r fw-700">不通过</view>
+  </view>
+</view>

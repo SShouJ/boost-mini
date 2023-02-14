@@ -18,6 +18,7 @@ Page({
     this.setData({
       target:e.currentTarget.dataset.id,
     })
+    this.getActivityList()
   },
   //获取活动列表
   getActivityList(){
@@ -25,7 +26,7 @@ Page({
       name: "activity",
      data:{
       type:"getActivityByCategory",
-      status:1
+      status:this.data.target
      }
     }).then(res=>{
       console.log(res);

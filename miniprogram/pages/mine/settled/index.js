@@ -29,9 +29,7 @@ Page({
     console.log(this.data.storeinfo);
 
   },
-  updata() {
-    console.log(1);
-  },
+  
   chooseImg(e) {
     let name = e.currentTarget.dataset.name;
     let _this = this;
@@ -57,6 +55,12 @@ Page({
       }
     })
   },
+   //返回上一级
+   navigateBack(){
+    wx.navigateBack({
+      delta: 1
+    })
+  },
   submit() {
     console.log('-------------我是提交----------')
     console.log(this.data.business);
@@ -73,6 +77,21 @@ Page({
       }
     }).then(res => {
       console.log(res.result);
+      if (res.result.status == 1) {
+        this.navigateBack()
+      }else{
+        wx.showModal({
+          title: '提交失败',
+          content: res.result.msg,
+          success (res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
+            } else if (res.cancel) {
+              console.log('用户点击取消')
+            }
+          }
+        })
+      }
     })
   },
   /**
