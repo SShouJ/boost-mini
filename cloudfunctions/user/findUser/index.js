@@ -20,13 +20,12 @@ exports.main = async (event, context) => {
       msg:'success',
       data:res.data[0]
     }
+  }else{
+    await addUser.main(event,context);
+    return {
+      status:0,
+      msg:'查询不到用户',
+      data:[],
+    }
   }
-  // else{
-  //   await addUser.main(event,context);
-  //   return {
-  //     status:0,
-  //     msg:'查询不到用户',
-  //     data:[],
-  //   }
-  // }
 };
