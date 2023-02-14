@@ -23,20 +23,7 @@ Page({
       showIndex:index
     })
   },
-  //转时间
-  toHHmmss (data) {
-         //将时间戳格式转换成年月日时分秒
-         var date = new Date(data);
-         var Y = date.getFullYear() + '-';
-         var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
-         var D = (date.getDate() < 10 ? '0' + (date.getDate()) : date.getDate()) + ' ';
-   
-         var h = (date.getHours() < 10 ? '0' + (date.getHours()) : date.getHours()) + ':';
-         var m = (date.getMinutes() < 10 ? '0' + (date.getMinutes()) : date.getMinutes()) + ':';
-         var s = (date.getSeconds() < 10 ? '0' + (date.getSeconds()) : date.getSeconds());
-         var strDate = Y + M + D + h + m + s;
-         return strDate   
- },
+ 
  getAcitvityDetail(id){
   wx.cloud.callFunction({
     name: "activity",
@@ -46,22 +33,34 @@ Page({
    }
   }).then(res=>{
     console.log(res.result.data.list);
+    res.result.data.list[0].end = this.formatDate(res.result.data.list[0].end)
+    res.result.data.list[0].start = this.formatDate(res.result.data.list[0].start)
     this.setData({
       activityDetail : res.result.data.list
+
     })
     console.log(this.data.activityDetail);
   })
  },
-  date(){
-   let date = new Date().getTime()
-   date = 1676246400000
-   date = this.toHHmmss(date)
-  // let  seconds = (date % (1000 * 60)) / 1000;
-    this.setData({
-      time:date
-    })
-    console.log(this.data.time);
-  },
+ formatDate (value) {
+  if (typeof (value) == 'undefined') {
+      return ''
+  } else {
+      let date = new Date(parseInt(value))
+      let y = date.getFullYear()
+      let MM = date.getMonth() + 1
+      MM = MM < 10 ? ('0' + MM) : MM
+      let d = date.getDate()
+      d = d < 10 ? ('0' + d) : d
+      let h = date.getHours()
+      h = h < 10 ? ('0' + h) : h
+      let m = date.getMinutes()
+      m = m < 10 ? ('0' + m) : m
+      let s = date.getSeconds()
+      s = s < 10 ? ('0' + s) : s
+      return y + '-' + MM + '-' + d + ' ' + h + ':' + m + ':' + s
+  }
+},
   //关闭弹窗
   closePopup(){
     this.setData({
@@ -116,16 +115,16 @@ wx.cloud.callFunction({
     }
     // console.log(this.data.joinFalg);
   },
-  countdown(){
-    var minute=Math.floor(this.data.time  / 60 );
-    var second=this.data.time  % 60
-    second<10?second='0'+second:'';
-    this.setData({
-        countdown:minute+':'+second,
-        time:this.data.time-1
-    })
-    setTimeout(this.countdown, 1000);
-},
+//   countdown(){
+//     var minute=Math.floor(this.data.time  / 60 );
+//     var second=this.data.time  % 60
+//     second<10?second='0'+second:'';
+//     this.setData({
+//         countdown:minute+':'+second,
+//         time:this.data.time-1
+//     })
+//     setTimeout(this.countdown, 1000);
+// },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -133,8 +132,8 @@ wx.cloud.callFunction({
    this.setData({
      activityId : options.id
    })
-    this.countdown()
-    this.date()
+    // this.countdown()
+    
     this.getAcitvityDetail(options.id)
     wx.showShareMenu({
       withShareTicket: true,
@@ -142,7 +141,7 @@ wx.cloud.callFunction({
   })
     console.log(options)
   },
-  // 倒计时
+  
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -10,7 +10,8 @@ exports.main = async (event, context) => {
   console.log('-------------------我是增加用户的接口--------------------');
   const wxContext = cloud.getWXContext();
   const openid = wxContext.OPENID;//用户的open_id;
-  let {nickName,avatarUrl} = event;
+  let nickName = `${openid.substring(openid.length-4,openid.length)}`;
+  let {avatarUrl} = event;
     try {
       await db.collection('user').add({
           data:{
