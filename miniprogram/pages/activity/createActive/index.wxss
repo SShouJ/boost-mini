@@ -78,7 +78,9 @@
   border: 1rpx solid;
   margin-left: 80rpx;
 }
-
+image{
+  width: 100rpx;
+}
 
 .flex-between{
   display: flex;

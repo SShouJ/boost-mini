@@ -41,6 +41,13 @@ Page({
   },
   //获取活动列表
   getActivityList(){
+    this.setData({
+      activityList:[]
+    })
+    wx.showLoading({
+      title: '加载中',
+    })
+    
     wx.cloud.callFunction({
       name: "activity",
      data:{
@@ -58,6 +65,7 @@ Page({
       this.setData({
         activityList : list
       })
+      wx.hideLoading()
     })
   },
   /**
