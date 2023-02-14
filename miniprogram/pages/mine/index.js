@@ -71,6 +71,7 @@ Page({
       name: 'user',
       data: {
         type:"findUser",
+        avatarUrl:'cloud://cloud1-7ge7nl2m42cee9e9.636c-cloud1-7ge7nl2m42cee9e9-1316264853/avatar/avatar1.png',
       }
     }).then(res=>{
       console.log('------------我是调用查找用户的接口---------------');
@@ -100,14 +101,14 @@ Page({
           name: 'user',
           data: {
             type:'findUser',
-            nickName:res.userInfo.nickName,
-            avatarUrl:res.userInfo.avatarUrl,
+            avatarUrl:'cloud://cloud1-7ge7nl2m42cee9e9.636c-cloud1-7ge7nl2m42cee9e9-1316264853/avatar/avatar1.png',
           }
         }).then(res=>{
           console.log(res.result);
         })
+        this.login();
         this.setData({
-          userInfo: res.userInfo,
+          // userInfo: res.userInfo,
           islogin: true
         })
       }
