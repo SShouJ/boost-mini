@@ -11,29 +11,19 @@
 .box-details{
   padding: 45rpx 30rpx 45rpx 30rpx;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
   border-bottom: 2px dashed #000;
 }
 .order-information{
   padding: 45rpx 20rpx 45rpx 20rpx;
 }
-.img-businesslicense{
-  width: 670rpx;
-  height: 480rpx;
+.img-commodity{
+  width: 300rpx;
+  height: 300rpx;
 }
 .box-order{
   display: flex;
   justify-content: flex-start;
-}
-.box-btn{
-  display: flex;
-  justify-content: space-around;
-}
-.btn{
-  font-size: 33rpx;
-  padding: 25rpx 120rpx 25rpx 120rpx;
-  border-radius: 20rpx;
-  background-color: #f2f2f2;
 }
 .fs-30{
   font-size: 30rpx;
@@ -57,4 +47,7 @@
 }
 .pl-20{
   padding-left: 20rpx;
+}
+.fs-25{
+  font-size: 25rpx;
 }

@@ -59,6 +59,7 @@ swiper {
 
 .swiper-item {
   width: 715rpx;
+  height: 355rpx;
 }
 
 .cl-g {
@@ -89,36 +90,46 @@ swiper {
   align-items: center;
   justify-content: center;
 }
-.cl-r{
+
+.cl-r {
   color: #cd4d36;
 }
-.fz-25{
+
+.fz-25 {
   font-size: 25rpx;
 }
-.fw-700{
+
+.fw-700 {
   font-weight: 700;
 }
-.pd-tb_40{
+
+.pd-tb_40 {
   padding: 40rpx 0 40rpx 0;
 }
+
 .flex-center {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.fl-f{
+
+.fl-f {
   float: left;
 }
-.pr-30{
+
+.pr-30 {
   padding-right: 30rpx;
 }
-.pb-40{
+
+.pb-40 {
   padding-bottom: 40rpx;
 }
-.cl-a7a7a7{
+
+.cl-a7a7a7 {
   color: #a7a7a7;
 }
-.box-bottom{
+
+.box-bottom {
   width: 500rpx;
   margin: 0 auto;
   padding-top: 24rpx;
