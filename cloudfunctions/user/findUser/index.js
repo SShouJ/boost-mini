@@ -13,6 +13,7 @@ exports.main = async (event, context) => {
   let res = await db.collection('user').where({
     'openid':openid,
   }).get();
+  console.log(res);
   if(res.data.length){
     return {
       status:1,
