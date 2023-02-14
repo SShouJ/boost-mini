@@ -9,7 +9,7 @@ exports.main = async (event, context) => {
     //以及根据活动状态获取活动
     const wxContext = cloud.getWXContext();
     const openid = wxContext.OPENID;//用户的open_id;
-    let { status } = event;  //1 全部  2.待开奖 3.已结束  4. 未开始
+    let { status , pageSize = 2, pageNum = 1} = event;  //1 全部  2.待开奖 3.已结束  4. 未开始
     let idention  =  status&&status!== 1 ? {type:status,openid:openid} : {openid:openid};
     console.log('---------------根据类目筛选活动--------------------------');
     try {
@@ -19,7 +19,7 @@ exports.main = async (event, context) => {
         localField: '_id',
         foreignField: 'activityId',
         as: 'row',
-      }).match(idention)
+      }).match(idention).skip(pageSize*(pageNum - 1)).limit(pageSize)
       .end()
       .then(res=>{
         return {
