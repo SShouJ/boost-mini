@@ -27,7 +27,7 @@ exports.main = async (event, context) => {
         }
       }
       let userRes     =  await getOneUser.main({id:openid},context);
-      if(!Object.keys(userRes.data).length){
+      if(!Object.keys(userRes).length){
         return {
           status:0,
           msg:'用户不存在',

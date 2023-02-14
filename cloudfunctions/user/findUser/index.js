@@ -13,18 +13,20 @@ exports.main = async (event, context) => {
   let res = await db.collection('user').where({
     'openid':openid,
   }).get();
+  console.log(res);
   if(res.data.length){
     return {
       status:1,
       msg:'success',
       data:res.data[0]
     }
-  }else{
-    await addUser.main(event,context);
-    return {
-      status:0,
-      msg:'查询不到用户',
-      data:[],
-    }
   }
+  // else{
+  //   await addUser.main(event,context);
+  //   return {
+  //     status:0,
+  //     msg:'查询不到用户',
+  //     data:[],
+  //   }
+  // }
 };
