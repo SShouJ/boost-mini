@@ -5,15 +5,18 @@ Page({
    * 页面的初始数据
    */
   data: {
+    flag: 1,
+    
     item: {
-      goodImg: '',
+      goodImg: '../../../images/icon-add.png',
       count: '请输入奖品数量',
       goodName: '请输入你的活动奖品',
       goodPrize: "请输入开奖人数",
+      flag: 1,
     },
-    index: 1,
+    index: 0,
     prizeArr: [],
-    banner: '../../../images/icon-add.png', //活动图片
+    banner: 'cloud://cloud1-7ge7nl2m42cee9e9.636c-cloud1-7ge7nl2m42cee9e9-1316264853/1676377595532.png', //活动图片
     title: '', //活动标题
     start: '', //活动开始时间
     end: '', //活动结束时间
@@ -24,10 +27,11 @@ Page({
       endTime: '活动结束时间',
     },
     prizeForms: [{
-        goodImg: '',
+        goodImg: '../../../images/icon-add.png',
         count: '请输入奖品数量',
         goodName: '请输入你的活动奖品',
         goodPrize: "请输入开奖人数",
+        flag: 1,
       },
 
     ],
@@ -49,11 +53,12 @@ Page({
   // },
   addItem() {
     console.log(1);
-    this.data.prizeForms.push(this.data.item)
+    this.data.prizeForms.push(JSON.parse(JSON.stringify(this.data.item)))
     this.setData({
       index: this.data.index + 1,
       prizeForms: this.data.prizeForms
     })
+    console.log(this.data.item);
   },
   //获取inp的value
   getInputValue(e) {
@@ -78,6 +83,7 @@ Page({
     console.log(this.data.title);
   },
   closeTip(e) {
+    console.log(1);
     this.setData({
       showTip: !this.data.showTip
     })
@@ -128,8 +134,10 @@ Page({
   //   // // console.log(this.data.prizeForms[index].id);
   // },
   chooseImg(e) {
+  
     let name = e.currentTarget.dataset.name;
     let id = e.currentTarget.dataset.index;
+    console.log(id);
     let _this = this;
     wx.chooseMedia({
       count: 1,
@@ -145,12 +153,15 @@ Page({
           if (id == undefined) {
             _this.setData({
               [`${name}`]: res.fileID,
-              banner: res.fileID
+              banner: res.fileID,
+              flag:0
             })
           } else {
             _this.setData({
-              [`prizeForms[${id}].goodImg`]: res.fileID
+              [`prizeForms[${id}].goodImg`]: res.fileID,
+              [`prizeForms[${id}].flag`]:0
             })
+           
           }
         })
       },

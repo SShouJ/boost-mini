@@ -12,9 +12,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    if (options.data) {
-      console.log('这是奖品详情页面兑换成功之后传的参数', JSON.parse(options.data))
-    }
+    console.log('兑换完成兑奖码页面奖品的id：',options.id);
+    // 这里的 options.id 是兑换的奖品的id  后续需要掉接口拿到数据之后排断是哪条数据
   },
 
   /**

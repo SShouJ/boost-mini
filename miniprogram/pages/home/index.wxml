@@ -1,124 +1,89 @@
-<!--pages/home/index.wxml-->
+<!--pages/prize/index.wxml-->
 <view class="body">
-  <view class="header pb-20">
-    <view class="wrap userinfo">
-      <view bindtap="login" wx:if="{{!islogin}}" class="state">
-        <view class="text">请登录</view>
-      </view>
-      <view wx:else class="login-name">
-        <text class="text"> {{userInfo.nickName}}</text>
-        ，您好
-      </view>
-    </view>
-
-    <view class="dialog_box wrap">
-      <view wx:if="{{islogin}}" style="background-image: url('https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/home-header_jt.png?sign=c40795dd2673dd885aa489c9317bf1ef&t=1675826406'); padding: 20rpx 20rpx 20rpx 20rpx; background-size: 100% 100%;">
-        <view class="justify-space_between" style="padding-top: 20rpx;">
-          <view>
-            您当前的积分为 300
-          </view>
-          <view bindtap="toRecord">
-            兑换记录
-          </view>
+  <view class="header">
+    <view class="header_userinfo wrap flex-space-between">
+      <view class="left">
+        <view>当前积分</view>
+        <view class="a_j-center">
+          <view class="left_integral">80</view>
+          <image class="icon-more ml-10" src="../../images/icon-more_fc4b08.png" mode="" />
         </view>
       </view>
-      <view wx:else style="background-image: url('https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/home-header.png?sign=8c3c9fbd287e7a2046b2d35003cfb577&t=1675826436'); padding: 20rpx; background-size: 100% 100%;">
-        <view class="roll">
-          <view style="flex: 1;">
-            <view id="noticeItem" class="notice_item_style">
-              <view>
-                1111111111111111111111111111111111
-              </view>
-              <view>
-                2222222222222222222222222222222222
-              </view>
-              <view>
-                3333333333333333333333333333333333
-              </view>
-            </view>
-          </view>
-        </view>
-      </view>
+      <view class="right" bindtap="toRecord">兑换记录</view>
     </view>
-    <!-- <view class="arrow" wx:if="{{islogin}}"></view> -->
   </view>
-  <scroll-view scroll-y="{{true}}" style="height:calc(100vh - 300rpx)">
-    <view class="container">
-      <view class="container_bgd wrap mt-30">
-        <view class="banner justify-space_between item-center">
-          <view class="h3">限时抢购</view>
+
+  <scroll-view class="mt-20" scroll-y="{{true}}" style="height: calc(100vh - 336rpx)">
+    <view class="nav_box">
+      <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100vw;" enable-flex>
+        <view class="nav">
+          <sticky-section class="nav-item fw-600" wx:for="{{navList}}" bindtap="changeItem" data-id="{{item.id}}" wx:key="id">
+            <view class="nav-title">
+              <view class="{{ item.id == target ? 'cl-red' : ''}} fs-28">{{item.title}}</view>
+            </view>
+            <view class="{{ item.id == target ? 'nav-line' : ''}}  mt-10"></view>
+          </sticky-section>
         </view>
-        <!-- 轮播图 -->
-        <view class="swiper">
-          <view class="swiper-box">
-            <view class="swiper_item mr-20" bindtap="swiperNav" data-name="{{item}}" wx:for="{{swiperPrize}}" wx:key="index">
+      </scroll-view>
+
+      <!-- 内容部分 -->
+      <scroll-view scroll-y="{{true}}" style="height:calc(100% - 100rpx)">
+        <view class="nav_box-content">
+          <!-- 奖品列表 -->
+          <view class="activity mt-30 a_j-center">
+            <view class="activity-item" bindtap="prizeLiftNav" data-name="{{item}}" wx:for="{{ prizeLift }}" wx:key="index">
               <view class="img">
-                <image class="swiper_img" src="{{item.url}}" mode="" />
+                <image class="activity_img" src="{{item.url}}" mode="" />
               </view>
-              <view class="swiper_img-describe">
-                <view class="title">
-                  <text>{{item.title}}</text>
-                </view>
-                <view class="time mt-10">
-                  剩
-                  <text class="c-000">{{item.day}}</text>
-                  天
-                  <text class="c-000">{{item.date}}</text>
-                </view>
+              <view class="title">
+                <text>{{item.title}}</text>
               </view>
-              <view class="justify-space_between mt-10 item-center">
+              <view style="padding:0 20rpx 20rpx 20rpx" class="justify-space_between  item-center">
                 <view class="flex">
-                  <view class="bold mr-10 c-red">
+                  <view class="c-red bold mr-10">
                     {{item.integral}}
                   </view>
                   <view>
                     积分
                   </view>
                 </view>
-                <view class="bold">兑换</view>
+                <view class="btn">兑换</view>
               </view>
             </view>
           </view>
+          <!-- 奖品列表 -->
         </view>
-      </view>
-
-      <view class="activity_list wrap mtb-30">
-        <view class="title justify-space_between">
-          <image src="https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/points-redemption.png?sign=9d83768089a16b95384de16fdfb12fa6&t=1675774843" mode="" />
-        </view>
-        <!-- 奖品列表 -->
-        <view class="activity mt-30 justify-space_between">
-          <view class="activity-item" wx:if="{{ item.id < 4 }}" bindtap="prizeLiftNav" data-name="{{item}}" wx:for="{{prizeLift}}" wx:key="index">
-            <view class="img">
-              <image class="activity_img" src="{{item.url}}" mode="" />
-            </view>
-            <view class="title">
-              <text>{{item.title}}</text>
-            </view>
-            <view style="padding:0 20rpx 20rpx 20rpx" class="justify-space_between  item-center">
-              <view class="flex">
-                <view class="c-red bold mr-10">
-                  {{item.integral}}
-                </view>
-                <view>
-                  积分
-                </view>
-              </view>
-              <view class="btn">兑换</view>
-            </view>
-          </view>
-
-        </view>
-      </view>
-    </view>
-
-    <view class="footer wrap">
-      <button class="nav_activity" bindtap="toPrize" hover-class="nav_activity-hover" hover-start-time='10'>
-        <view>
-          查看更多奖品
-        </view>
-      </button>
+      </scroll-view>
     </view>
   </scroll-view>
+
+  <!-- 弹层  用户刚进入当前页面需要让用户先选择  爱好   -->
+  <view wx:if="{{ isOpenDialog }}" class="dialog item-justify_center">
+    <view class="dialog_box">
+      <!-- 标题 -->
+      <view class="dialog-header item-justify_center">
+        <view class="title">请选择您喜欢的类型</view>
+      </view>
+      <!-- 内容 -->
+      <view class="dialog-container-overflow">
+        <view class="dialog-container a_j-center">
+
+          <view class="item item-justify_center {{ item.isActive? 'active':'' }}" wx:for="{{ hobbys }}" bindtap="choice" data-name="{{ item }}" wx:key="index">
+            {{ item.hobby }}
+          </view>
+
+        </view>
+
+        <!-- vague1、vague2 是弹层里上下两个渐变模糊状态 -->
+        <view class="vague1"></view>
+        <view class="vague2"></view>
+      </view>
+      <!-- 底部 -->
+      <view class="dialog-footer flex-space-between">
+        <button bindtap="determine" class="dialog-ok mr-20" hover-class="dialog-ok_hover">确定</button>
+        <button bindtap="cancel" class="dialog-no" hover-class="dialog-no_hover">取消</button>
+      </view>
+    </view>
+  </view>
 
 </view>
