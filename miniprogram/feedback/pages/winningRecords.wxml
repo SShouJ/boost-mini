@@ -22,9 +22,9 @@
       </view>
     </view>
     <view class="pl-30">
-      <view class="fz-30">一等奖：翡翠妮【2克拉】莫桑拉 · · · <text class="cl-g">x10份</text></view>
-      <view class="pt-40 fz-30">二等奖：800元现金抵扣券<text class="cl-g">x200份</text></view>
-      <view class="pt-40 fz-30">三等奖：100元现金抵扣券<text class="cl-g">x300份</text></view>
+      <view class="fz-30">一等奖：翡翠妮【2克拉】莫桑拉 · · · <text class="cl-g fz-30">x10份</text></view>
+      <view class="pt-40 fz-30">二等奖：800元现金抵扣券<text class="cl-g fz-30">x200份</text></view>
+      <view class="pt-40 fz-30">三等奖：100元现金抵扣券<text class="cl-g fz-30">x300份</text></view>
       <view class="pd-tb_40 fz-20 flex-center">
         <view class="flex-center">
           <text class="pr-30 cl-g">02月07日 11:00自动开奖</text>

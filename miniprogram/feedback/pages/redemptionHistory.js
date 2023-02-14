@@ -6,38 +6,41 @@ Page({
    */
   data: {
     commodityList: [{
-      oddNumbers:'62056856842546',
-      detail:[
-        {
-          commodity:'../../images/commodity-one.png',
-        title:'三诺血糖测试仪100支试纸测量血糖的医仪器',
-        price:'2540',
-        num:1,
-        sum:1,
-      },
-     
+      oddNumbers: '62056856842546',
+      detail: [{
+          commodity: '../../images/commodity-one.png',
+          title: '三诺血糖测试仪100支试纸测量血糖的医仪器',
+          price: '2540',
+          num: 1,
+          sum: 1,
+        },
+
       ],
-      integral:'2540'
-    },{
-      oddNumbers:'62056856842546',
-      detail:[
+      integral: '2540'
+    }, {
+      oddNumbers: '62056856842546',
+      detail: [{
+          commodity: '../../images/commodity-one.png',
+          title: '三诺血糖测试仪100支试纸测量血糖的医仪器',
+          price: '2540',
+          num: 1,
+          sum: 1,
+        },
         {
-          commodity:'../../images/commodity-one.png',
-        title:'三诺血糖测试仪100支试纸测量血糖的医仪器',
-        price:'2540',
-        num:1,
-        sum:1,
-      },
-      {
-        commodity:'../../images/commodity-one.png',
-      title:'三诺血糖测试仪100支试纸测量血糖的医仪器',
-      price:'2540',
-      num:1,
-      sum:1,
-    }
+          commodity: '../../images/commodity-one.png',
+          title: '三诺血糖测试仪100支试纸测量血糖的医仪器',
+          price: '2540',
+          num: 1,
+          sum: 1,
+        }
       ],
-      integral:'2540'
+      integral: '2540'
     }]
+  },
+  navigateTo(e) {
+    wx.navigateTo({
+      url: '/feedback/pages/' + e.currentTarget.dataset.name
+    })
   },
 
   /**
