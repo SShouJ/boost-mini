@@ -213,14 +213,14 @@ Page({
     //     })
     //   }
     // })
-    
+
     wx.cloud.callFunction({
       name: 'user',
       data: {
         type: "findUser",
       }
     }).then(res => {
-      console.log(res);
+      console.log('首页查询接口',res);
     })
   },
 
