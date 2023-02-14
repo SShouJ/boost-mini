@@ -22,7 +22,6 @@ exports.main = async (event, context) => {
       end:{
         isRequire:true,
         msg:'活动结束时间不能为空',
-        
       },
       rule:{
         isRequire:true,
@@ -41,7 +40,6 @@ exports.main = async (event, context) => {
             msg:ruleObj[ruleKeys[i]].msg,
             data:[],
           }
-          break;
         }
     }
     let { activityName, start,end,rule,prizeArr,banner} = event;
