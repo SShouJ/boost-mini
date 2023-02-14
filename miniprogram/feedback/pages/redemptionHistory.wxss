@@ -26,7 +26,7 @@
   color: #868686;
 }
 
-.fz-28 {
+.fs-28 {
   font-size: 28rpx;
 }
 
@@ -67,7 +67,7 @@
   padding-top: 15rpx;
 }
 
-.fz-30 {
+.fs-30 {
   font-size: 30rpx;
 }
 

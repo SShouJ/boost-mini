@@ -2,12 +2,12 @@
   <view class="nav">
     <view class="nav-item fw-600" wx:for="{{navList}}" bindtap="changeItem" data-id="{{item.id}}" wx:key="id">
       <view class="nav-title">
-        <text class="{{ item.id == target ? 'cl-red' : ''}} fs-14">{{item.title}}</text>
+        <text class="fs-35 {{ item.id == target ? 'cl-red' : ''}} fs-14">{{item.title}}</text>
       </view>
       <view class="{{ item.id == target ? 'nav-line' : ''}}  mt-5"></view>
     </view>
   </view>
-  <view class="item-activity" wx:for="{{activityList}}">
+  <view class="item-activity" wx:for="{{activityList}}" wx:key="id">
     <view class="information pt-20">
       <view class="information">
         <image src="{{item.userAvatar}}" class="img-avatar" mode="" />
