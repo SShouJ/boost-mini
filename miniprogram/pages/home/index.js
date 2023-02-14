@@ -141,6 +141,16 @@ Page({
     wx.getUserProfile({
       desc: '用于获取用户头像昵称',
       success: (res) => {
+        wx.cloud.callFunction({
+          name: 'user',
+          data: {
+            type: 'addUser',
+            nickName: res.userInfo.nickName,
+            avatarUrl: res.userInfo.avatarUrl,
+          }
+        }).then(res => {
+          console.log('登录接口返回的', res.result);
+        })
         this.setData({
           userInfo: res.userInfo,
           islogin: true
@@ -175,7 +185,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    // this.login()
+
   },
 
   /**
@@ -189,14 +199,28 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-    // this.login()
-    const _this = this;
-    wx.getSetting({
-      success(res) {
-        if (res.authSetting["scope.userInfo"]) {
-          _this.setUserInfo();
-        }
+    // wx.cloud.callFunction({
+    //   name: 'user',
+    //   data:{
+    //     type:'findUser'
+    //   }
+    // }).then(res => {
+    //   console.log('登录接口返回的', res.result);
+    //   if(res.result.event.userInfo.nickName){
+    //     this.setData({
+    //       userInfo: res.result.event.userInfo.nickName,
+    //       islogin: true
+    //     })
+    //   }
+    // })
+
+    wx.cloud.callFunction({
+      name: 'user',
+      data: {
+        type: "findUser",
       }
+    }).then(res => {
+      console.log('首页查询接口',res);
     })
   },
 

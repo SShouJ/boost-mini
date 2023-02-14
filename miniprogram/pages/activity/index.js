@@ -28,10 +28,10 @@ Page({
       status:1
      }
     }).then(res=>{
-      console.log(res.result.data.list);
+      console.log(res);
       let list = res.result.data.list
       this.setData({
-        activityList : res.result.data.list
+        activityList : list
       })
     })
   },
@@ -40,9 +40,8 @@ Page({
    */
   onLoad(options) {
     this.getActivityList()
-     
-      
-      let navList = [
+    
+    let navList = [
         {
           id:1,
           title:"全部",
@@ -61,6 +60,9 @@ Page({
         },
       ]
       
+      this.setData({
+        navList : navList
+      })
   },
 
   /**

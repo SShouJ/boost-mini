@@ -99,7 +99,7 @@ Page({
         wx.cloud.callFunction({
           name: 'user',
           data: {
-            type:'addUser',
+            type:'findUser',
             nickName:res.userInfo.nickName,
             avatarUrl:res.userInfo.avatarUrl,
           }
@@ -118,7 +118,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    // this.login();
+    this.login();
   },
 
   /**
