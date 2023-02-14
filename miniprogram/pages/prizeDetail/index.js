@@ -6,85 +6,7 @@ Page({
    */
   data: {
     detailData: {},
-    data: {
-      dataName: '',
-      dataId: ''
-    },
-    // swiperPrize  prizeLift 这两个数据需要换成接口返回的数据
-    swiperPrize: [
-      {
-        id: 1,
-        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
-        title: '1这是轮播图的标题11111111',
-        day: '111',
-        date: '23:51:31',
-        integral: 100,
-        nav: 'prizeDetail',
-      },
-      {
-        id: 2,
-        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
-        title: '2这是轮播图的标题11111111',
-        day: '222',
-        date: '23:52:31',
-        integral: 200,
-        nav: 'prizeDetail',
-      },
-      {
-        id: 3,
-        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
-        title: '3这是轮播图的标题11111111',
-        day: '333',
-        date: '23:53:31',
-        integral: 300,
-        nav: 'prizeDetail',
-      },
-      {
-        id: 4,
-        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
-        title: '4这是轮播图的标题11111111',
-        day: '444',
-        date: '23:54:31',
-        integral: 400,
-        nav: 'prizeDetail',
-      },
-      {
-        id: 5,
-        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
-        title: '这是轮播图的标题11111111',
-        day: '555',
-        date: '23:55:31',
-        integral: 500,
-        nav: 'prizeDetail',
-      },
-      {
-        id: 6,
-        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
-        title: '6这是轮播图的标题11111111',
-        day: '666',
-        date: '23:56:31',
-        integral: 600,
-        nav: 'prizeDetail',
-      },
-      {
-        id: 7,
-        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
-        title: '7这是轮播图的标题11111111',
-        day: '777',
-        date: '23:57:31',
-        integral: 700,
-        nav: 'prizeDetail',
-      },
-      {
-        id: 8,
-        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
-        title: '8这是轮播图的标题11111111',
-        day: '888',
-        date: '23:58:31',
-        integral: 800,
-        nav: 'prizeDetail',
-      },
-    ],
+    dataId: '',
     prizeLift: [
       {
         id: 0,
@@ -135,20 +57,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    let dataName = options._identification.split(',')[0];
-    let dataId = options._identification.split(',')[1];
+    let dataId = options.id;
 
     this.setData({
-      data: {
-        dataName: dataName, dataId: dataId
-      },
+      dataId: dataId
     })
-    console.log(dataName + ' --- ', dataId);
-    if (dataName == 'swiper') {
-      this.pushData(this.data.swiperPrize, dataId)
-    } else {
-      this.pushData(this.data.prizeLift, dataId)
-    }
+    console.log('dataId: ', dataId);
+    this.pushData(this.data.prizeLift, dataId)
   },
   // 兑换按钮
   exchange() {
@@ -159,7 +74,7 @@ Page({
     })
     setTimeout(() => {
       wx.navigateTo({
-        url: '/pages/award/index?data=' + JSON.stringify(this.data.data)
+        url: '/pages/award/index?id=' + this.data.dataId
       })
     }, 500)
   },
