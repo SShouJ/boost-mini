@@ -7,6 +7,7 @@ Page({
   data: {
     islogin: false,
     userInfo: {},
+    avatarUrl:'',
     actInfoList:[
       {
         id:1,
@@ -79,7 +80,8 @@ Page({
       console.log('---------------------------我是调用查找用户的接口结束--------------------');
       if(res.result.status == 1){
         _this.setData({
-          userInfo:res.result.data,
+          userInfo:res.result.event.userInfo,
+          avatarUrl:res.result.event.userInfo.avatarUrl,
           islogin:true,
         })
         console.log(_this.data.userInfo);
@@ -104,6 +106,10 @@ Page({
           }
         }).then(res=>{
           console.log(res.result);
+          this.setData({
+            userInfo:res.result.event.userInfo,
+            avatarUrl:res.result.event.userInfo.avatarUrl,
+          })
         })
         this.login();
         this.setData({
