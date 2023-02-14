@@ -121,6 +121,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "订单详情",
+          "pathName": "feedback/pages/orderDetails",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

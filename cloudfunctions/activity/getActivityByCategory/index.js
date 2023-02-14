@@ -10,6 +10,7 @@ exports.main = async (event, context) => {
     let { status } = event;  //1 全部  2.待开奖 3.已结束  4. 未开始
     let idention  =  status&&status!== 1 ? {type:status} : {};
     console.log('---------------根据类目筛选活动--------------------------');
+    console.log('--------------我用了await--------------------------------');
     try {
      let res =  await db.collection('activity').aggregate()
       .lookup({
@@ -34,6 +35,7 @@ exports.main = async (event, context) => {
         }
       })
       console.log('-----------------我是根据类目获取活动-----------------------');
+      console.log(res);
       return res;
     } catch (error) {
       return {
