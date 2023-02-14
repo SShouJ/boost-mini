@@ -199,28 +199,19 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-    // wx.cloud.callFunction({
-    //   name: 'user',
-    //   data:{
-    //     type:'findUser'
-    //   }
-    // }).then(res => {
-    //   console.log('登录接口返回的', res.result);
-    //   if(res.result.event.userInfo.nickName){
-    //     this.setData({
-    //       userInfo: res.result.event.userInfo.nickName,
-    //       islogin: true
-    //     })
-    //   }
-    // })
-
     wx.cloud.callFunction({
       name: 'user',
       data: {
         type: "findUser",
       }
     }).then(res => {
-      console.log('首页查询接口',res);
+      console.log('首页查询接口', res);
+      if (res.result.status == 1) {
+        this.setData({
+          userInfo: res.result.data,
+          islogin: true
+        })
+      }
     })
   },
 
