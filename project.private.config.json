@@ -114,6 +114,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "活动审核",
+          "pathName": "feedback/pages/activityAudit",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

@@ -27,7 +27,8 @@
         "pages/personalCenter",
         "pages/attendEvents",
         "pages/winningRecords",
-        "pages/redemptionHistory"
+        "pages/redemptionHistory",
+        "pages/activityAudit"
       ]
     }
   ],
