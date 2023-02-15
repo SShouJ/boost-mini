@@ -1,7 +1,7 @@
 <!--pages/prize/index.wxml-->
-<view class="body">
+<view class="body" wx:if="{{ isDisplay }}">
   <view class="header">
-    <view class="header_userinfo wrap flex-space-between">
+    <view wx:if="{{ userInfo }}" class="header_userinfo wrap flex-space-between">
       <view class="left">
         <view>当前积分</view>
         <view class="a_j-center">
@@ -10,6 +10,9 @@
         </view>
       </view>
       <view class="right" bindtap="toRecord">兑换记录</view>
+    </view>
+    <view wx:else class="header_userinfo wrap">
+      <view class="to_login"  bindtap="toLogin">去登录</view>
     </view>
   </view>
 

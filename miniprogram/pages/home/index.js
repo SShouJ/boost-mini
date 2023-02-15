@@ -120,7 +120,43 @@ Page({
       },
     ],
     selected: [],
+    userInfo: null,
     isOpenDialog: false,
+    isDisplay: false
+  },
+  // 判断是否登录了
+  isLogin() {
+    /**
+     * 若登录 则展示正常布局页面 弹层啥的
+     * 若未登录  则在header模块展示一个 未登录 的标题，并关闭让用户选择爱好的弹层 
+     */
+    wx.cloud.callFunction({
+      name: 'user',
+      data: {
+        type: "findUser",
+      }
+    }).then(res => {
+      console.log('查找用户的接口', res);
+      if (res.result.status == 1 && res.result.data) {
+        console.log(res.result.data);
+        // 打开爱好弹层
+        this.isOpen(true);
+        // 设置 用户信息的数据给 userinfo   设置
+        this.setData({
+          userInfo: res.result.data,
+          isDisplay: true
+        })
+      } else {
+        // 先关闭让用户选择爱好的弹层
+        // 不管有没有数据 当掉完接口的时候 都要关闭加载中放开页面显示限制 
+        this.isOpen(false);
+        this.setData({
+          isDisplay: true
+        })
+      }
+      // 不管拿没拿到数据 都关闭 加载中 提示弹层
+      wx.hideToast()
+    })
   },
   // 是否打开弹层 传布尔值 true打开 反之关闭
   isOpen(isok) {
@@ -165,7 +201,6 @@ Page({
     })
     this.isOpen(false)
   },
-
   // changeItem 是监测tab列表当前选中的是哪个的方法
   changeItem(e) {
     this.setData({
@@ -174,7 +209,6 @@ Page({
     console.log('当前选中的是第', this.data.target, '个tab列表');
     this.getPrizeList(this.data.target);
   },
-
   // getPrizeList 是获取奖品列表数据的方法
   getPrizeList(type) {
     // prizeLift1 prizeLift2 prizeLift3 prizeLift4 这几个等接口出来要分别改成一个对应的 掉接口的方法
@@ -327,19 +361,24 @@ Page({
     })
     console.log('当前页的数据是', this.data.prizeLift);
   },
-
   // prizeLiftNav 跳转详情页面 + 传参 的方法
   prizeLiftNav(data) {
     let item = data.currentTarget.dataset.name;
+    console.log('item', item)
     wx.navigateTo({
       url: '/pages/' + item.nav + '/index?id=' + item.id,
     })
   },
-
   // toRecord 是跳转到兑换记录的方法
   toRecord() {
     wx.navigateTo({
       url: '/pages/record/index',
+    })
+  },
+  // toLogin
+  toLogin() {
+    wx.navigateTo({
+      url: '/pages/mine/index',
     })
   },
   /**
@@ -351,6 +390,15 @@ Page({
     this.setData({
       hobbys: this.data.hobbysData
     })
+    // 刚进页面
+    this.isLogin();
+    if (!this.data.userInfo) {
+      wx.showToast({
+        title: '加载中...',
+        icon: 'loading',
+        duration: 99999
+      });
+    }
   },
 
   /**
