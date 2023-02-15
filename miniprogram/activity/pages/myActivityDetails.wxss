@@ -1,1 +1,80 @@
-/* activity/pages/myActivityDetails.wxss */
+.box{
+  background-color: #f2f4f5;
+}
+
+.warp {
+  background-color: #fff;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.swiper-item {
+  width: 750rpx;
+  height: 350rpx;
+}
+.box-btn{
+  display: flex;
+  justify-content: flex-end;
+}
+.btn{
+  padding: 17rpx 25rpx;
+  background-color: #619ffe;
+  border-radius: 50rpx;
+  color: #fff;
+}
+.sponsor{
+  display: flex;
+  justify-content: space-between;
+    align-items: center;
+}
+.box-information{
+  background-color: #fff;
+  padding: 0 30rpx;
+  margin-bottom: 20rpx;
+}
+.box-details{
+  background-color: #fff;
+  padding: 0 30rpx;
+  margin-bottom: 20rpx;
+}
+.item-information{
+  width: 632rpx;
+}
+.br-b_g{
+  border-bottom: 1px solid #e9e9e9;
+}
+.fs-32{
+  font-size: 32rpx;
+}
+.fw-700{
+  font-weight: 700;
+}
+.mr-20{
+  margin-right: 20rpx;
+}
+.flex{
+  display: flex;
+  align-items: center;
+}
+.img-icon{
+  width: 40rpx;
+  height: 40rpx;
+}
+.mb-85{
+  margin-bottom: 85rpx;
+}
+.cl-b{
+  color: #6395db;
+}
+.fs-28{
+  font-size: 28rpx;
+}
+.ml-30{
+  margin-left: 30rpx;
+}
+.pd-tb_40{
+  padding: 40rpx 0;
+}
+.ti-2{
+  text-indent: 2em;
+}
