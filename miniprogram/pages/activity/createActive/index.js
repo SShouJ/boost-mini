@@ -6,7 +6,7 @@ Page({
    */
   data: {
     flag: 1,
-    
+
     item: {
       goodImg: '../../../images/icon-add.png',
       count: '请输入奖品数量',
@@ -14,7 +14,7 @@ Page({
       goodPrize: "请输入开奖人数",
       flag: 1,
     },
-    index: 0,
+    index: 1,
     prizeArr: [],
     banner: 'cloud://cloud1-7ge7nl2m42cee9e9.636c-cloud1-7ge7nl2m42cee9e9-1316264853/1676377595532.png', //活动图片
     title: '', //活动标题
@@ -60,6 +60,23 @@ Page({
     })
     console.log(this.data.item);
   },
+  removeItem() {
+    let that=this
+    wx.showModal({
+      title: '提示',
+      content: '确定删掉奖品吗？',
+      success(res) {
+        if (res.confirm) {
+          that.data.prizeForms.pop(JSON.parse(JSON.stringify(that.data.item)))
+          that.setData({
+            index: that.data.index - 1,
+            prizeForms: that.data.prizeForms
+          })
+        } else if (res.cancel) {
+        }
+      }
+    })
+  },
   //获取inp的value
   getInputValue(e) {
     let value = e.detail.value
@@ -97,7 +114,7 @@ Page({
     console.log(this.data.time);
   },
   //返回上一级
-  navigateBack(){
+  navigateBack() {
     wx.navigateBack({
       delta: 1
     })
@@ -134,7 +151,7 @@ Page({
   //   // // console.log(this.data.prizeForms[index].id);
   // },
   chooseImg(e) {
-  
+
     let name = e.currentTarget.dataset.name;
     let id = e.currentTarget.dataset.index;
     console.log(id);
@@ -154,14 +171,14 @@ Page({
             _this.setData({
               [`${name}`]: res.fileID,
               banner: res.fileID,
-              flag:0
+              flag: 0
             })
           } else {
             _this.setData({
               [`prizeForms[${id}].goodImg`]: res.fileID,
-              [`prizeForms[${id}].flag`]:0
+              [`prizeForms[${id}].flag`]: 0
             })
-           
+
           }
         })
       },

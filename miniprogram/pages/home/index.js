@@ -46,7 +46,7 @@ Page({
       {
         id: 1,
         isActive: false,
-        hobby: '爱好1'
+        hobby: '爱好爱好爱好爱好爱好'
       },
       {
         id: 2, isActive: false,
@@ -75,49 +75,7 @@ Page({
       }, {
         id: 10, isActive: false,
         hobby: '爱好1'
-      }, {
-        id: 11, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 12, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 13, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 14, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 15, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 16, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 17, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 18, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 18, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 19, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 20, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 21, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 22, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 23, isActive: false,
-        hobby: '爱好1',
-      },
+      }
     ],
     selected: [],
     userInfo: null,
@@ -136,7 +94,6 @@ Page({
         type: "getUserInfo",
       }
     }).then(res => {
-      console.log('查找用户的接口', res);
       if (res.result.status == 1 && res.result.data) {
         console.log(res.result.data);
         // 打开爱好弹层
@@ -378,7 +335,6 @@ Page({
   // prizeLiftNav 跳转详情页面 + 传参 的方法
   prizeLiftNav(data) {
     let item = data.currentTarget.dataset.name;
-    console.log('item', item)
     wx.navigateTo({
       url: '/pages/' + item.nav + '/index?id=' + item.id,
     })
@@ -405,8 +361,6 @@ Page({
     this.setData({
       hobbys: this.data.hobbysData
     })
-    // 刚进页面
-    this.isLogin();
   },
 
   /**
@@ -422,7 +376,11 @@ Page({
   onShow() {
     console.log('当前选中的是第', this.data.target, '个tab列表;title：', '推荐');
     this.getPrizeList(this.data.target);
-    if (!this.data.userInfo) {
+    this.setData({
+      isDisplay: false,
+    })
+    this.isLogin();
+    if (!this.data.isDisplay) {
       wx.showToast({
         title: '加载中...',
         icon: 'loading',

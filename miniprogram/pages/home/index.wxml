@@ -70,17 +70,13 @@
       </view>
       <!-- 内容 -->
       <view class="dialog-container-overflow">
-        <view class="dialog-container a_j-center">
+        <view class="dialog-container">
 
           <view class="item item-justify_center {{ item.isActive? 'active':'' }}" wx:for="{{ hobbys }}" bindtap="choice" data-name="{{ item }}" wx:key="index">
             {{ item.hobby }}
           </view>
 
         </view>
-
-        <!-- vague1、vague2 是弹层里上下两个渐变模糊状态 -->
-        <view class="vague1"></view>
-        <view class="vague2"></view>
       </view>
       <!-- 底部 -->
       <view class="dialog-footer">
