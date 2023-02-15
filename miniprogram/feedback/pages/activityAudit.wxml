@@ -20,7 +20,7 @@
         <text class="fs-25">{{item.class}}</text>
       </view>
     </view>
-    <view class="flex mt-40">
+    <view class="flex mt-40" bindtap="navigateTo" data-name="myActivityDetails">
       <view class="mr-30">
         <image src="{{item.activityImg}}" class="activity-img" mode=""/>
       </view>

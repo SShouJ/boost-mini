@@ -1,4 +1,3 @@
-
 // pages/mine/index.js
 Page({
 
@@ -6,127 +5,121 @@ Page({
    * 页面的初始数据
    */
   data: {
+    isShow:'block',
     islogin: false,
     userInfo: {},
-    actInfoList:[
-      {
-        id:1,
-        number:10,
-        acttext:'已参与活动',
-        page:"attendEvents"
+    actInfoList: [{
+      id: 1,
+      number: 10,
+      acttext: '已参与活动',
+      page: "attendEvents"
 
+    }, {
+      id: 2,
+      number: 0,
+      acttext: '中奖记录',
+      page: "winningRecords"
+    }, {
+      id: 3,
+      number: 0,
+      acttext: '兑换记录',
+      page: "redemptionHistory"
+    }],
+    mineNav: [{
+        id: 1,
+        title: "我的活动",
+        image: "../../images/icon-myactive.png",
+        name: "myActive"
+      },
+      {
+        id: 2,
+        title: "商家入驻",
+        image: "../../images/icon-settled.png",
+        name: "settled"
+      },
+      {
+        id: 3,
+        title: "入驻审核",
+        image: "../../images/icon-audit.png",
+        name: "audit"
       }, {
-        id:2,
-        number:0,
-        acttext:'中奖记录',
-        page:"winningRecords"
-      },{
-        id:3,
-        number:0,
-        acttext:'兑换记录',
-        page:"redemptionHistory"
+        id: 4,
+        title: "收货地址",
+        image: "../../images/icon-audit.png",
+        name: "address"
       }
-    ],
-   mineNav:[
-     {
-      id:1,
-      title:"我的活动",
-      image:"../../images/icon-myactive.png",
-      name:"myActive"
-    },
-    {
-      id:2,
-      title:"商家入驻",
-      image:"../../images/icon-settled.png",
-      name:"settled"
-    },
-    {
-      id:3,
-      title:"入驻审核",
-      image:"../../images/icon-audit.png",
-      name:"audit"
-    },{
-      id:4,
-      title:"收货地址",
-      image:"../../images/icon-audit.png",
-      name:"address"
+    ]
+  },
+  toPage(data) {
+    let _this = this
+    console.log(data.currentTarget.dataset.name);
+    if (this.data.userInfo.openid) {
+
+      wx.navigateTo({
+        url: '/pages/mine/' + data.currentTarget.dataset.name + '/index',
+      })
+    }else{
+      _this.addUser()
     }
-   ]
   },
-  toPage(data){
+  toFeedbackPages(data) {
+    let _this = this
     console.log(data.currentTarget.dataset.name);
-    wx.navigateTo({
-      url: '/pages/mine/'+ data.currentTarget.dataset.name+'/index',
-    })
+    if (this.data.userInfo.openid) {
+      wx.navigateTo({
+        url: '/feedback/pages/' + data.currentTarget.dataset.name,
+      })
+    } else {
+      _this.addUser()
+    }
   },
-  toFeedbackPages(data){
-    console.log(data.currentTarget.dataset.name);
-    wx.navigateTo({
-      url: '/feedback/pages/'+ data.currentTarget.dataset.name,
-    })
+  async addUser() {
+    console.log(1);
+    let {
+      getUserInfo,
+      addUserInfo,
+      getUserProfile
+    } = getApp();
+    let res = await getUserProfile();
+    console.log(res);
+    let res2 = await addUserInfo();
+    console.log(res2);
+    if (res2.result.status == 1) {
+      let res3 = await getUserInfo();
+      console.log(res3);
+      this.setData({
+        userInfo: res3.result.data,
+        islogin: true
+      })
+    }
+    
   },
-  login() {
-    const _this = this;
-    if(this.data.islogin) return;
-    wx.cloud.callFunction({
-      name: 'user',
-      data: {
-        type:"findUser",
-        avatarUrl:'cloud://cloud1-7ge7nl2m42cee9e9.636c-cloud1-7ge7nl2m42cee9e9-1316264853/avatar/avatar1.png',
-      }
-    }).then(res=>{
-      console.log('------------我是调用查找用户的接口---------------');
-      console.log(res);
-      console.log('---------------------------我是调用查找用户的接口结束--------------------');
-      if(res.result.status == 1){
-        _this.setData({
-          userInfo:res.result.data,
-          islogin:true,
-        })
-        console.log(_this.data.userInfo);
-      }else{
-        _this.setUserInfo();
-      }
-    })
-  },
-  // 设置data中userinfo和islogin的值
-  setUserInfo() {
-    console.log("--------------")
-    wx.getUserProfile({
-      desc: '用于登录',
-      success: (res) => {
-        console.log(res);
-        // 这边如果没有登录自动把数据加上去
-        wx.cloud.callFunction({
-          name: 'user',
-          data: {
-            type:'findUser',
-            avatarUrl:'cloud://cloud1-7ge7nl2m42cee9e9.636c-cloud1-7ge7nl2m42cee9e9-1316264853/avatar/avatar1.png',
-          }
-        }).then(res=>{
-          console.log(res.result);
-        })
-        this.login();
-        this.setData({
-          // userInfo: res.userInfo,
-          islogin: true
-        })
-      }
-    })
-  },
-  
+//图片加载完成触发
+onload(){
+this.setData({
+  isShow: "none"
+})
+},
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad(options) {
-    this.login();
+  async onLoad(options) {
+    let res = await getApp().getUserInfo()
+    if (res.result.status == 1) {
+      this.setData({
+        userInfo: res.result.data,
+        islogin: true,
+        
+      })
+    } else {
+      console.log(res.result.msg);
+    }
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady() {
-  },
+  onReady() {},
 
   /**
    * 生命周期函数--监听页面显示
@@ -170,4 +163,3 @@ Page({
 
   }
 })
-

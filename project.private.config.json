@@ -131,14 +131,14 @@
         },
         {
           "name": "",
-          "pathName": "feedback/pages/activityAudit",
+          "pathName": "pages/mine/index",
           "query": "",
           "launchMode": "default",
           "scene": null
         },
         {
-          "name": "",
-          "pathName": "pages/mine/index",
+          "name": "活动详情",
+          "pathName": "activity/pages/myActivityDetails",
           "query": "",
           "launchMode": "default",
           "scene": null

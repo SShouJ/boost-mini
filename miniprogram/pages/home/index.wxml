@@ -66,25 +66,21 @@
       <!-- 标题 -->
       <view class="dialog-header item-justify_center">
         <view class="title">请选择您喜欢的类型</view>
+        <view class="skip" bindtap="cancel">跳过</view>
       </view>
       <!-- 内容 -->
       <view class="dialog-container-overflow">
-        <view class="dialog-container a_j-center">
+        <view class="dialog-container">
 
           <view class="item item-justify_center {{ item.isActive? 'active':'' }}" wx:for="{{ hobbys }}" bindtap="choice" data-name="{{ item }}" wx:key="index">
             {{ item.hobby }}
           </view>
 
         </view>
-
-        <!-- vague1、vague2 是弹层里上下两个渐变模糊状态 -->
-        <view class="vague1"></view>
-        <view class="vague2"></view>
       </view>
       <!-- 底部 -->
-      <view class="dialog-footer flex-space-between">
+      <view class="dialog-footer">
         <button bindtap="determine" class="dialog-ok mr-20" hover-class="dialog-ok_hover">确定</button>
-        <button bindtap="cancel" class="dialog-no" hover-class="dialog-no_hover">取消</button>
       </view>
     </view>
   </view>

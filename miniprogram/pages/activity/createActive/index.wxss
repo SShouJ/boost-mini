@@ -48,13 +48,11 @@
 .flex-aligncenter{
   display: flex;
   align-items: center;
- 
 }
 
 .bg-warning{
   background: #ff6738;
-}                                                                                                                                                                                                                                                                                                                                        
-
+}
 .fs-14{
   font-size: 28rpx;
 }
@@ -70,7 +68,7 @@
 .all-center{
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 .img-upload{
   padding: 50rpx;
@@ -83,7 +81,7 @@
   width: 200rpx;
   height: 200rpx;
   border: 1rpx dashed #a1a1a1;
-  margin-left: 130rpx;
+  margin-left: 160rpx;
 }
 .image{
   width: 100rpx;

@@ -189,9 +189,7 @@
   padding: 0 20rpx;
 }
 
-.title {
-  width: 100vw;
-}
+
 
 .title image {
   margin: 0 auto;
@@ -217,7 +215,6 @@
 
 .activity-item .title {
   box-sizing: border-box;
-  width: 100%;
   padding: 10rpx 20rpx;
   font-size: 36rpx;
   overflow: hidden;
@@ -260,59 +257,53 @@
 }
 
 .dialog .dialog_box .dialog-header {
-  padding: 20rpx 0;
+  padding: 30rpx 0;
   text-align: center;
+  font-size: 34rpx;
+}
+
+.dialog .dialog_box .dialog-header .title {
+  width: calc(100% - 100rpx);
+}
+
+.dialog .dialog_box .dialog-header .skip {
+  font-size: 26rpx !important;
+  color: #a7a7a7;
 }
 
 .dialog .dialog_box .dialog-container-overflow {
   width: 100%;
-  background-color: #ccc;
+  background-color: #e9e9e9;
   min-height: 350rpx !important;
-  max-height: 500rpx !important;
-  overflow: scroll;
   margin-bottom: 109rpx;
   display: flex;
   flex-wrap: wrap;
-  gap: 20rpx 20rpx;
   padding: 10rpx;
   box-sizing: border-box;
 }
 
 .dialog .dialog_box .dialog-container-overflow .dialog-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 26rpx 26rpx;
-  overflow: hidden;
-  position: relative;
-  padding-top: 58rpx;
-}
-
-.vague1 {
-  position: absolute;
-  top: 81rpx;
-  left: 0;
-  height: 100rpx;
-  width: 100%;
-  background-image: linear-gradient(rgba(255, 255, 255, .9), rgba(255, 255, 255, .8), rgba(255, 255, 255, .6), rgba(255, 255, 255, .4), rgba(255, 255, 255, .2), rgba(255, 255, 255, 0));
-}
-
-.vague2 {
-  position: absolute;
-  left: 0;
-  bottom: 100rpx;
-  height: 100rpx;
-  width: 100%;
-  background-image: linear-gradient(to top, rgba(255, 255, 255, .9), rgba(255, 255, 255, .8), rgba(255, 255, 255, .6), rgba(255, 255, 255, .4), rgba(255, 255, 255, .2), rgba(255, 255, 255, 0));
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20rpx 20rpx;
 }
 
 /* 弹层中 中间内容部分 */
 .dialog-container .item {
-  width: 130rpx;
-  height: 130rpx;
+  padding: 0 25rpx;
+  border-radius: 10rpx;
   background-color: #fff;
-  border-radius: 100rpx;
   color: #000;
-  background-color: #fff;
+  display: -webkit-box;
+  overflow: hidden !important;
+  white-space: normal !important;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  height: 68rpx;
+  line-height: 68rpx;
+  text-align: center;
 }
 
 .active {
@@ -327,12 +318,12 @@
   min-height: 70rpx;
   position: absolute;
   bottom: 0 !important;
-  padding: 20rpx 0;
+  padding: 10rpx 20rpx;
 }
 
 .dialog .dialog-footer .dialog-ok,
 .dialog-no {
-  width: 160rpx !important;
+  width: calc(100% - 40rpx);
   padding: 10rpx 0;
   display: inline-block;
   color: #fff;
@@ -340,19 +331,19 @@
 }
 
 .dialog .dialog-footer .dialog-ok {
-  background-color: #fc4b08;
+  background-color: #f06c6c;
 }
 
 .dialog .dialog-footer .dialog-no {
-  background-color: #bdb9b9;
+  background-color: #fab6b6;
 }
 
 .dialog-ok_hover {
-  background-color: #f35252 !important;
+  background-color: #fab6b6 !important;
 }
 
 .dialog-no_hover {
-  background-color: #d3cdcd !important;
+  background-color: #f06c6c !important;
 }
 
 

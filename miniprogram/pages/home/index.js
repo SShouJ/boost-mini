@@ -46,7 +46,7 @@ Page({
       {
         id: 1,
         isActive: false,
-        hobby: '爱好1'
+        hobby: '爱好爱好爱好爱好爱好'
       },
       {
         id: 2, isActive: false,
@@ -75,49 +75,7 @@ Page({
       }, {
         id: 10, isActive: false,
         hobby: '爱好1'
-      }, {
-        id: 11, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 12, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 13, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 14, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 15, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 16, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 17, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 18, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 18, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 19, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 20, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 21, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 22, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 23, isActive: false,
-        hobby: '爱好1',
-      },
+      }
     ],
     selected: [],
     userInfo: null,
@@ -136,7 +94,6 @@ Page({
         type: "getUserInfo",
       }
     }).then(res => {
-      console.log('查找用户的接口', res);
       if (res.result.status == 1 && res.result.data) {
         console.log(res.result.data);
         // 打开爱好弹层
@@ -184,19 +141,27 @@ Page({
       }
     }))
     console.log('弹层里选中的', this.data.selected);
-    wx.showToast({
-      title: '选择成功！',
-      icon: 'success',//icon
-      duration: 1500 //停留时间
-    })
-    this.isOpen(false)
+    if (this.data.selected.length) {
+      wx.showToast({
+        title: '选择成功！',
+        icon: 'success',//icon
+        duration: 1500 //停留时间
+      })
+      this.isOpen(false)
+    } else {
+      wx.showToast({
+        title: '至少选择一个！',
+        icon: 'error',//icon
+        duration: 1500 //停留时间
+      })
+    }
   },
   // 弹层 取消 按钮的方法
   cancel() {
-    // 关闭弹层
+    // 关闭弹层.
     wx.showToast({
       title: '默认则展示推荐奖品。',
-      icon: 'error',//icon
+      icon: 'none',//icon
       duration: 1500 //停留时间
     })
     this.isOpen(false)
@@ -212,7 +177,7 @@ Page({
         title = item.title
       }
     })
-    console.log('当前选中的是第', this.data.target, '个tab列表; title：',title);
+    console.log('当前选中的是第', this.data.target, '个tab列表; title：', title);
     this.getPrizeList(this.data.target);
   },
   // getPrizeList 是获取奖品列表数据的方法
@@ -370,7 +335,6 @@ Page({
   // prizeLiftNav 跳转详情页面 + 传参 的方法
   prizeLiftNav(data) {
     let item = data.currentTarget.dataset.name;
-    console.log('item', item)
     wx.navigateTo({
       url: '/pages/' + item.nav + '/index?id=' + item.id,
     })
@@ -397,8 +361,6 @@ Page({
     this.setData({
       hobbys: this.data.hobbysData
     })
-    // 刚进页面
-    this.isLogin();
   },
 
   /**
@@ -412,9 +374,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-    console.log('当前选中的是第', this.data.target, '个tab列表;title：','推荐');
+    console.log('当前选中的是第', this.data.target, '个tab列表;title：', '推荐');
     this.getPrizeList(this.data.target);
-    if (!this.data.userInfo) {
+    this.setData({
+      isDisplay: false,
+    })
+    this.isLogin();
+    if (!this.data.isDisplay) {
       wx.showToast({
         title: '加载中...',
         icon: 'loading',
