@@ -184,19 +184,27 @@ Page({
       }
     }))
     console.log('弹层里选中的', this.data.selected);
-    wx.showToast({
-      title: '选择成功！',
-      icon: 'success',//icon
-      duration: 1500 //停留时间
-    })
-    this.isOpen(false)
+    if (this.data.selected.length) {
+      wx.showToast({
+        title: '选择成功！',
+        icon: 'success',//icon
+        duration: 1500 //停留时间
+      })
+      this.isOpen(false)
+    } else {
+      wx.showToast({
+        title: '至少选择一个！',
+        icon: 'error',//icon
+        duration: 1500 //停留时间
+      })
+    }
   },
   // 弹层 取消 按钮的方法
   cancel() {
-    // 关闭弹层
+    // 关闭弹层.
     wx.showToast({
       title: '默认则展示推荐奖品。',
-      icon: 'error',//icon
+      icon: 'none',//icon
       duration: 1500 //停留时间
     })
     this.isOpen(false)
@@ -212,7 +220,7 @@ Page({
         title = item.title
       }
     })
-    console.log('当前选中的是第', this.data.target, '个tab列表; title：',title);
+    console.log('当前选中的是第', this.data.target, '个tab列表; title：', title);
     this.getPrizeList(this.data.target);
   },
   // getPrizeList 是获取奖品列表数据的方法
@@ -412,7 +420,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-    console.log('当前选中的是第', this.data.target, '个tab列表;title：','推荐');
+    console.log('当前选中的是第', this.data.target, '个tab列表;title：', '推荐');
     this.getPrizeList(this.data.target);
     if (!this.data.userInfo) {
       wx.showToast({
