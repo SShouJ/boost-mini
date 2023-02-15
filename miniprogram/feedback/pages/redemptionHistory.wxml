@@ -4,7 +4,7 @@
       <text class="cl-868686 fz-28">兑换单号：{{item.oddNumbers}}</text>
       <text class="fz-28 cl-e56b58 fw-700">待发货</text>
     </view>
-    <view class="flex-space-between pd-tr_30" wx:for="{{item.detail}}" wx:key="id" wx:for-item="itemName" bindtap="navigateTo" data-name="orderDetails">
+    <view class="flex-space-between pd-tr_30" wx:for="{{item.detail}}" wx:key="id" wx:for-item="itemName" bindtap="navigateTo" data-name="myActivityDetails">
       <view class="box-commodity pd-lr_40 pt-15">
         <image src="{{itemName.commodity}}" class="img-commodity" mode="" />
       </view>

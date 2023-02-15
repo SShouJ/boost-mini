@@ -34,10 +34,20 @@ App({
       name: 'user',
       data: {
         type: 'addUser',
-        avatarUrl: 'cloud://cloud1-7ge7nl2m42cee9e9.636c-cloud1-7ge7nl2m42cee9e9-1316264853/avatar/avatar1.png',
+        avatarUrl: 'cloud://cloud1-7ge7nl2m42cee9e9.636c-cloud1-7ge7nl2m42cee9e9-1316264853/avatar-ikun.png',
       }
     }).then(res => {
       return res
+    })
+  },
+  getUserProfile() {
+    return new Promise((resolve, reject) => {
+      wx.getUserProfile({
+        desc: '用于登录',
+        success: res => {
+          resolve(res)
+        }
+      })
     })
   }
 });
