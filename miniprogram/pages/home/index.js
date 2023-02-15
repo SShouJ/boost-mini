@@ -361,8 +361,6 @@ Page({
     this.setData({
       hobbys: this.data.hobbysData
     })
-    // 刚进页面
-    this.isLogin();
   },
 
   /**
@@ -378,7 +376,11 @@ Page({
   onShow() {
     console.log('当前选中的是第', this.data.target, '个tab列表;title：', '推荐');
     this.getPrizeList(this.data.target);
-    if (!this.data.userInfo) {
+    this.setData({
+      isDisplay: false,
+    })
+    this.isLogin();
+    if (!this.data.isDisplay) {
       wx.showToast({
         title: '加载中...',
         icon: 'loading',
