@@ -1,31 +1,31 @@
 <view class="box">
   <view class="item-singlecargo warp" wx:for="{{commodityList}}" wx:key="id">
     <view class="flex-space-between pd-rb_30">
-      <text class="cl-868686 fs-28">兑换单号：{{item.oddNumbers}}</text>
-      <text class="fs-28 cl-e56b58 fw-700">待发货</text>
+      <text class="cl-868686 fz-28">兑换单号：{{item.oddNumbers}}</text>
+      <text class="fz-28 cl-e56b58 fw-700">待发货</text>
     </view>
     <view class="flex-space-between pd-tr_30" wx:for="{{item.detail}}" wx:key="id" wx:for-item="itemName" bindtap="navigateTo" data-name="orderDetails">
       <view class="box-commodity pd-lr_40 pt-15">
         <image src="{{itemName.commodity}}" class="img-commodity" mode="" />
       </view>
       <view>
-        <text class="fs-30">{{itemName.title}}</text>
+        <text class="fz-30">{{itemName.title}}</text>
         <view class="flex-space-between">
           <view>
             <image src="../../images/icon-goldcoin.png" class="icon" mode="" />
-            <text class="fs-30">{{itemName.price}}</text>
+            <text class="fz-30">{{itemName.price}}</text>
           </view>
-          <view class="fs-28">x{{itemName.num}}</view>
+          <view class="fz-28">x{{itemName.num}}</view>
         </view>
       </view>
     </view>
     <view class="box-total">
       <view class="pd-tb_20">
-        <text class="fs-30">共{{item.sum}}件，合计(积分)：</text>
-        <text class="cl-e56b58 fw-700 fs-28">{{item.integral}}</text>
+        <text class="fz-30">共{{item.sum}}件，合计(积分)：</text>
+        <text class="cl-e56b58 fw-700 fz-28">{{item.integral}}</text>
       </view>
       <view class="btn">
-        <text class="fs-30">提醒发货</text>
+        <text class="fz-30">提醒发货</text>
       </view>
     </view>
   </view>

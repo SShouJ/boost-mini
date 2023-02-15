@@ -11,7 +11,7 @@
         <view  id="btn-username" >未授权</view>
       </view>
       <view class="box-rigth"  wx:else="{{islogin}}">
-        <image class="img-avatar" src="{{avatarUrl}}" mode="" />
+        <image class="img-avatar" src="{{userInfo.avatarUrl}}" mode="" />
         <view  id="btn-username" class="fw-700">
           <view>{{userInfo.nickName}}</view>
           <view class="fs-24 box-integral">
