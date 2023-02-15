@@ -65,61 +65,31 @@ Page({
       url: '/feedback/pages/'+ data.currentTarget.dataset.name,
     })
   },
-  login() {
-    const _this = this;
-    if(this.data.islogin) return;
-    wx.cloud.callFunction({
-      name: 'user',
-      data: {
-        type:"findUser",
-        avatarUrl:'cloud://cloud1-7ge7nl2m42cee9e9.636c-cloud1-7ge7nl2m42cee9e9-1316264853/avatar/avatar1.png',
-      }
-    }).then(res=>{
-      console.log('------------我是调用查找用户的接口---------------');
-      console.log(res);
-      console.log('---------------------------我是调用查找用户的接口结束--------------------');
-      if(res.result.status == 1){
-        _this.setData({
-          userInfo:res.result.data,
-          islogin:true,
-        })
-        console.log(_this.data.userInfo);
-      }else{
-        _this.setUserInfo();
-      }
-    })
-  },
-  // 设置data中userinfo和islogin的值
-  setUserInfo() {
-    console.log("--------------")
-    wx.getUserProfile({
-      desc: '用于登录',
-      success: (res) => {
-        console.log(res);
-        // 这边如果没有登录自动把数据加上去
-        wx.cloud.callFunction({
-          name: 'user',
-          data: {
-            type:'findUser',
-            avatarUrl:'cloud://cloud1-7ge7nl2m42cee9e9.636c-cloud1-7ge7nl2m42cee9e9-1316264853/avatar/avatar1.png',
-          }
-        }).then(res=>{
-          console.log(res.result);
-        })
-        this.login();
+ async addUser(){
+    let res = await getApp().addUserInfo()
+    if (res.result.status == 1 ) {
+        let userInfo = await getApp().getUserInfo()
         this.setData({
-          // userInfo: res.userInfo,
-          islogin: true
-        })
-      }
-    })
-  },
+          userInfo : res.result.data,
+          islogin : true
+          })
+    }
+    console.log(this.data.userInfo);
+ },
   
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad(options) {
-    this.login();
+  async onLoad(options) {
+    let res= await getApp().getUserInfo()
+    if (res.result.status == 1) {
+      this.setData({
+      userInfo : res.result.data,
+      islogin : true
+      })
+    }else{
+        console.log(res.result.msg);
+    }
   },
 
   /**

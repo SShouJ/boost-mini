@@ -17,7 +17,9 @@ exports.main = async (event, context) => {
           data:{
               openid:openid,
               nickName:nickName,
-              avatarUrl:avatarUrl
+              avatarUrl:avatarUrl,
+              identify:1,//2普通用户  1 代表管理员  3.商家
+              integralNum:1000,
             }
       })
       return {

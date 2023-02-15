@@ -53,7 +53,7 @@
     </view>
   </view>
   <!-- 活动每一项 -->
-  <scroll-view style="height: calc(100vh - 480rpx);" 	scroll-y="{{true}}">
+  <scroll-view style="height: calc(100vh - 480rpx);" 	lower-threshold='10' bindscrolltolower="scrolltolower"	scroll-y="{{true}}">
   <view class="fs-30 " wx:if="{{activityList.length == 0}}">
     暂无活动
   </view>

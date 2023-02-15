@@ -15,5 +15,29 @@ App({
     }
 
     this.globalData = {};
+  },
+  //查询用户信息
+  getUserInfo() {
+    return wx.cloud.callFunction({
+      name: 'user',
+      data: {
+        type: 'getUserInfo',
+        avatarUrl: 'cloud://cloud1-7ge7nl2m42cee9e9.636c-cloud1-7ge7nl2m42cee9e9-1316264853/avatar/avatar1.png',
+      }
+    }).then(res => {
+      return res
+    })
+  },
+  //添加用户
+  addUserInfo() {
+    return wx.cloud.callFunction({
+      name: 'user',
+      data: {
+        type: 'addUser',
+        avatarUrl: 'cloud://cloud1-7ge7nl2m42cee9e9.636c-cloud1-7ge7nl2m42cee9e9-1316264853/avatar/avatar1.png',
+      }
+    }).then(res => {
+      return res
+    })
   }
 });
