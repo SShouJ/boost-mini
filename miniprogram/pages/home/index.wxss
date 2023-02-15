@@ -215,7 +215,6 @@
 
 .activity-item .title {
   box-sizing: border-box;
-  width: 100%;
   padding: 10rpx 20rpx;
   font-size: 36rpx;
   overflow: hidden;
@@ -291,12 +290,20 @@
 
 /* 弹层中 中间内容部分 */
 .dialog-container .item {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  padding: 20rpx 25rpx;
+  padding: 0 25rpx;
   border-radius: 10rpx;
   background-color: #fff;
   color: #000;
+  display: -webkit-box;
+  overflow: hidden !important;
+  white-space: normal !important;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  height: 68rpx;
+  line-height: 68rpx;
+  text-align: center;
 }
 
 .active {

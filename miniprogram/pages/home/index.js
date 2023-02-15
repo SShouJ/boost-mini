@@ -94,7 +94,6 @@ Page({
         type: "getUserInfo",
       }
     }).then(res => {
-      console.log('查找用户的接口', res);
       if (res.result.status == 1 && res.result.data) {
         console.log(res.result.data);
         // 打开爱好弹层
@@ -336,7 +335,6 @@ Page({
   // prizeLiftNav 跳转详情页面 + 传参 的方法
   prizeLiftNav(data) {
     let item = data.currentTarget.dataset.name;
-    console.log('item', item)
     wx.navigateTo({
       url: '/pages/' + item.nav + '/index?id=' + item.id,
     })
