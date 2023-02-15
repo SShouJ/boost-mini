@@ -111,7 +111,14 @@
           </view>
           <!-- 倒计时 -->
           <view class="countdown">
-                还剩2天23:59:59开奖
+               <view class="times">
+        倒计时：
+        <view class="txt-time">{{txtTime.day}}</view>:
+        <view class="txt-time">{{txtTime.hou}}</view>:
+        <view class="txt-time">{{txtTime.min}}</view>:
+        <view class="txt-time">{{txtTime.sec}}</view>
+    </view>
+
           </view>
           <!-- <view wx:if="{{joinFalg}}">
             a 

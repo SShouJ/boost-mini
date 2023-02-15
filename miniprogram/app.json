@@ -31,6 +31,12 @@
         "pages/activityAudit",
         "pages/orderDetails"
       ]
+    }, {
+      "root": "activity",
+      "pages": [
+        "pages/myActivityDetails"
+        
+      ]
     }
   ],
   "tabBar": {

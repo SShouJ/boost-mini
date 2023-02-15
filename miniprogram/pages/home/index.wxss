@@ -92,6 +92,7 @@
 
 .body {
   width: 100vw;
+  height: 100vh !important;
   font-size: 30rpx;
   background-color: #e6e9f0;
   box-sizing: border-box;
@@ -106,10 +107,22 @@
   background-repeat: no-repeat;
 }
 
+.body .header .header_userinfo {
+  height: calc(100% - 60rpx);
+  display: flex;
+  align-items: center;
+}
+
 .body .header .header_userinfo .left .left_integral {
-  font-size: 60rpx;
+  font-size: 50rpx;
   color: #fc4b08;
   font-weight: 700;
+}
+
+.body .header .header_userinfo .to_login {
+  font-size: 40rpx;
+  font-weight: 700;
+  color: #fc4b08;
 }
 
 .body .header .header_userinfo .left .icon-more {
@@ -266,7 +279,6 @@
 }
 
 .dialog .dialog_box .dialog-container-overflow .dialog-container {
-  margin-bottom: 109rpx;
   display: flex;
   flex-wrap: wrap;
   gap: 26rpx 26rpx;
