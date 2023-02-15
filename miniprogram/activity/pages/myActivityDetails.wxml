@@ -1,2 +1,51 @@
-<!--activity/pages/myActivityDetails.wxml-->
-<text>activity/pages/myActivityDetails.wxml</text>
+<view class="box">
+  <view>
+    <image src="../../images/bg5.png" class="swiper-item" mode=""/>
+  </view>
+  <view wx:for="{{activityList}}" wx:key="id">
+    <view class="warp">
+      <text class="fs-32 fw-700">{{item.title}}</text>
+      <view class="box-btn">
+        <view class="btn mr-20">
+          加入群聊
+        </view>
+        <view class="btn">
+          加入报名
+        </view>
+      </view>
+    </view>
+    <view class="box-information">
+      <view class="flex">
+        <image src="../../images/icon-time.png" class="img-icon" mode="" />
+        <view class="item-information br-b_g pd-tb_40 ml-30">
+          <text>{{item.time}}</text>
+        </view>
+      </view>
+      <view class="flex">
+        <image src="../../images/icon-position.png" class="img-icon" mode="" />
+        <view class="item-information br-b_g pd-tb_40 ml-30">
+          <text>{{item.address}}</text>
+        </view>
+      </view>
+      <view class="flex">
+        <image src="../../images/icon-signup.png" class="img-icon" mode="" />
+        <view class="item-information br-b_g pd-tb_40 ml-30">
+          <text>已报名人数<text class="cl-b ml-30">{{item.signUp}}</text>/40人</text>
+        </view>
+      </view>
+      <view class="flex">
+        <image src="../../images/icon-sponsor.png" class="img-icon" mode="" />
+        <view class="item-information pd-tb_40 ml-30">
+          <text>发起人<text class="cl-b ml-30">{{item.sponsor}}</text></text>
+        </view>
+        <image src="../../images/icon-more.png" class="img-icon" mode=""/>
+      </view>
+    </view>
+    <view class="box-details">
+      <view class="pd-tb_40 br-b_g">
+        <text class="fs-32">活动详情</text>
+      </view>
+      <view class="ti-2 pd-tb_40">{{item.content}}</view>
+    </view>
+  </view>
+</view>

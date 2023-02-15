@@ -46,6 +46,11 @@ Page({
       target:e.currentTarget.dataset.id,
     })
   },
+  navigateTo(e) {
+    wx.navigateTo({
+      url: '/activity/pages/' + e.currentTarget.dataset.name
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
