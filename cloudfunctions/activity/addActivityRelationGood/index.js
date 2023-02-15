@@ -39,7 +39,6 @@ exports.main = async (event, context) => {
           msg:ruleObj[ruleKeys[i]].msg,
           data:[],
         }
-        break;
       }
   }
     //之前需要判断活动和奖品是否存在

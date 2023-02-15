@@ -8,7 +8,7 @@ exports.main = async (event, context) => {
     //获取商品列表
     //以及根据活动状态获取活动
     console.log('-------------获取我参与的活动----------------');
-    let { status } = event;  //1 全部  2.待开奖 3.已结束  4. 未开始
+    let { status , pageSize = 2, pageNum = 1} = event;  //1 全部  2.待开奖 3.已结束  4. 未开始
     const wxContext = cloud.getWXContext();
     const openid = wxContext.OPENID;//用户的open_id;
     let idention  =  status&&status!== 1 ? {type:status,openid:openid} : {openid:openid};
@@ -22,7 +22,7 @@ exports.main = async (event, context) => {
         from:"user",
         localField:"userId",
         foreignField:"openid",
-      }).match(idention)
+      }).match(idention).skip(pageSize*(pageNum - 1)).limit(pageSize)
       .end()
       .then(res=>{
         return {
