@@ -83,7 +83,7 @@
   width: 200rpx;
   height: 200rpx;
   border: 1rpx dashed #a1a1a1;
-  margin-left: 130rpx;
+  margin-left: 160rpx;
 }
 .image{
   width: 100rpx;

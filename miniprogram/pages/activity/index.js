@@ -54,9 +54,7 @@ Page({
     this.setData({
       activityList: []
     })
-    wx.showLoading({
-      title: '加载中',
-    })
+   
     wx.cloud.callFunction({
       name: "activity",
       data: {
@@ -76,13 +74,13 @@ Page({
       this.setData({
         activityList: list
       })
-      wx.hideLoading()
+     
     })
   },
   scrolltolower() {
     console.log("------------------------------------");
     this.setData({
-      num : this.data.num + 1
+      size : this.data.size + 2 
     })
     this.getActivityList()
   },

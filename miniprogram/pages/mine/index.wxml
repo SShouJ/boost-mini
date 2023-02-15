@@ -1,5 +1,6 @@
 <!--pages/mine/index.wxml-->
-<view class="box">
+<view class="box" >
+  <loading isShow="{{isShow}}"></loading>
   <view class="box-info mb-20" style="background:url('https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/mine.png?sign=97dec5690cf2f917fbaa7e43259ff13a&t=1675753004') no-repeat; background-size: 100% 100%;  background-color: #f6f6f6;" >
     <view class="box-scan warp">
       <image class="img-scan" src="../../images/icon-message.png" mode="" />
@@ -11,12 +12,12 @@
         <view  id="btn-username" >未授权</view>
       </view>
       <view class="box-rigth"  wx:else="{{islogin}}">
-        <image class="img-avatar" src="{{userInfo.avatarUrl}}" mode="" />
+        <image class="img-avatar" src="{{userInfo.avatarUrl}}" onload="onload" mode="" />
         <view  id="btn-username" class="fw-700">
           <view>{{userInfo.nickName}}</view>
           <view class="fs-24 box-integral">
           <image class="icon-integral" src="../../images/icon-success.png" mode=""/>
-          <text class="fs-24">{{userInfo.integralNum}}</text>
+          <text class="fs-24">{{userInfo.integralNum}}积分</text>
           </view>
         </view>
       </view>
