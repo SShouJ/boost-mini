@@ -131,13 +131,6 @@
         },
         {
           "name": "",
-          "pathName": "feedback/pages/activityAudit",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
           "pathName": "pages/mine/index",
           "query": "",
           "launchMode": "default",

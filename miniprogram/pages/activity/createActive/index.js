@@ -58,7 +58,7 @@ Page({
       index: this.data.index + 1,
       prizeForms: this.data.prizeForms
     })
-    console.log(this.data.index);
+    console.log(this.data.item);
   },
   removeItem() {
     let that=this
