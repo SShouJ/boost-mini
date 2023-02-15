@@ -133,7 +133,7 @@ Page({
     wx.cloud.callFunction({
       name: 'user',
       data: {
-        type: "findUser",
+        type: "getUserInfo",
       }
     }).then(res => {
       console.log('查找用户的接口', res);
@@ -206,7 +206,13 @@ Page({
     this.setData({
       target: e.currentTarget.dataset.id,
     })
-    console.log('当前选中的是第', this.data.target, '个tab列表');
+    let title = ''
+    this.data.navList.forEach((item) => {
+      if (item.id == this.data.target) {
+        title = item.title
+      }
+    })
+    console.log('当前选中的是第', this.data.target, '个tab列表; title：',title);
     this.getPrizeList(this.data.target);
   },
   // getPrizeList 是获取奖品列表数据的方法
@@ -377,7 +383,8 @@ Page({
   },
   // toLogin
   toLogin() {
-    wx.navigateTo({
+    console.log('走了tologin')
+    wx.switchTab({
       url: '/pages/mine/index',
     })
   },
@@ -392,13 +399,6 @@ Page({
     })
     // 刚进页面
     this.isLogin();
-    if (!this.data.userInfo) {
-      wx.showToast({
-        title: '加载中...',
-        icon: 'loading',
-        duration: 99999
-      });
-    }
   },
 
   /**
@@ -412,8 +412,15 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-    console.log('当前选中的是第', this.data.target, '个tab列表');
+    console.log('当前选中的是第', this.data.target, '个tab列表;title：','推荐');
     this.getPrizeList(this.data.target);
+    if (!this.data.userInfo) {
+      wx.showToast({
+        title: '加载中...',
+        icon: 'loading',
+        duration: 99999
+      });
+    }
   },
 
   /**

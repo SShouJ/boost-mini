@@ -114,7 +114,7 @@
 }
 
 .body .header .header_userinfo .left .left_integral {
-  font-size: 60rpx;
+  font-size: 50rpx;
   color: #fc4b08;
   font-weight: 700;
 }
