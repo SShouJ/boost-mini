@@ -46,7 +46,7 @@ Page({
       {
         id: 1,
         isActive: false,
-        hobby: '爱好1'
+        hobby: '爱好爱好爱好爱好爱好'
       },
       {
         id: 2, isActive: false,
@@ -75,49 +75,7 @@ Page({
       }, {
         id: 10, isActive: false,
         hobby: '爱好1'
-      }, {
-        id: 11, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 12, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 13, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 14, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 15, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 16, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 17, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 18, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 18, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 19, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 20, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 21, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 22, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 23, isActive: false,
-        hobby: '爱好1',
-      },
+      }
     ],
     selected: [],
     userInfo: null,
