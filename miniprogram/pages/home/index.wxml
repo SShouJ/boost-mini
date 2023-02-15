@@ -1,15 +1,18 @@
 <!--pages/prize/index.wxml-->
-<view class="body">
+<view class="body" wx:if="{{ isDisplay }}">
   <view class="header">
-    <view class="header_userinfo wrap flex-space-between">
+    <view wx:if="{{ userInfo }}" class="header_userinfo wrap flex-space-between">
       <view class="left">
         <view>当前积分</view>
         <view class="a_j-center">
-          <view class="left_integral">80</view>
+          <view class="ml-30 left_integral">{{userInfo.integralNum?userInfo.integralNum:0}}</view>
           <image class="icon-more ml-10" src="../../images/icon-more_fc4b08.png" mode="" />
         </view>
       </view>
       <view class="right" bindtap="toRecord">兑换记录</view>
+    </view>
+    <view wx:else class="header_userinfo wrap">
+      <view class="to_login" bindtap="toLogin">去登录</view>
     </view>
   </view>
 
@@ -63,6 +66,7 @@
       <!-- 标题 -->
       <view class="dialog-header item-justify_center">
         <view class="title">请选择您喜欢的类型</view>
+        <view class="skip" bindtap="cancel">跳过</view>
       </view>
       <!-- 内容 -->
       <view class="dialog-container-overflow">
@@ -79,9 +83,8 @@
         <view class="vague2"></view>
       </view>
       <!-- 底部 -->
-      <view class="dialog-footer flex-space-between">
+      <view class="dialog-footer">
         <button bindtap="determine" class="dialog-ok mr-20" hover-class="dialog-ok_hover">确定</button>
-        <button bindtap="cancel" class="dialog-no" hover-class="dialog-no_hover">取消</button>
       </view>
     </view>
   </view>

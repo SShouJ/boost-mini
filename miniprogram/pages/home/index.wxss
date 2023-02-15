@@ -92,6 +92,7 @@
 
 .body {
   width: 100vw;
+  height: 100vh !important;
   font-size: 30rpx;
   background-color: #e6e9f0;
   box-sizing: border-box;
@@ -106,10 +107,22 @@
   background-repeat: no-repeat;
 }
 
+.body .header .header_userinfo {
+  height: calc(100% - 60rpx);
+  display: flex;
+  align-items: center;
+}
+
 .body .header .header_userinfo .left .left_integral {
-  font-size: 60rpx;
+  font-size: 50rpx;
   color: #fc4b08;
   font-weight: 700;
+}
+
+.body .header .header_userinfo .to_login {
+  font-size: 40rpx;
+  font-weight: 700;
+  color: #fc4b08;
 }
 
 .body .header .header_userinfo .left .icon-more {
@@ -176,9 +189,7 @@
   padding: 0 20rpx;
 }
 
-.title {
-  width: 100vw;
-}
+
 
 .title image {
   margin: 0 auto;
@@ -249,6 +260,15 @@
 .dialog .dialog_box .dialog-header {
   padding: 20rpx 0;
   text-align: center;
+  position: relative;
+  font-size: 34rpx;
+}
+.dialog .dialog_box .dialog-header .skip{
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+  font-size: 26rpx !important;
+  color: #a7a7a7;
 }
 
 .dialog .dialog_box .dialog-container-overflow {
@@ -266,7 +286,6 @@
 }
 
 .dialog .dialog_box .dialog-container-overflow .dialog-container {
-  margin-bottom: 109rpx;
   display: flex;
   flex-wrap: wrap;
   gap: 26rpx 26rpx;
@@ -315,12 +334,12 @@
   min-height: 70rpx;
   position: absolute;
   bottom: 0 !important;
-  padding: 20rpx 0;
+  padding:10rpx 20rpx;
 }
 
 .dialog .dialog-footer .dialog-ok,
 .dialog-no {
-  width: 160rpx !important;
+  width: calc(100% - 40rpx);
   padding: 10rpx 0;
   display: inline-block;
   color: #fff;
@@ -328,19 +347,19 @@
 }
 
 .dialog .dialog-footer .dialog-ok {
-  background-color: #fc4b08;
+  background-color: #f06c6c;
 }
 
 .dialog .dialog-footer .dialog-no {
-  background-color: #bdb9b9;
+  background-color: #fab6b6;
 }
 
 .dialog-ok_hover {
-  background-color: #f35252 !important;
+  background-color: #fab6b6 !important;
 }
 
 .dialog-no_hover {
-  background-color: #d3cdcd !important;
+  background-color: #f06c6c !important;
 }
 
 

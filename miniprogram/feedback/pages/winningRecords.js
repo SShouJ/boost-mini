@@ -30,7 +30,7 @@ Page({
       target:e.currentTarget.dataset.id,
     })
   },
-  onLoad(){
+  async onLoad(){
     this.setData({
       autoplay: !this.data.autoplay
     })
