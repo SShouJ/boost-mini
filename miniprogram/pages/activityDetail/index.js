@@ -15,8 +15,10 @@ Page({
     percent:68,
     timeDate:'',
     activityDetail:[],
-    activityId:''
+    activityId:'',
+    countDown: ''
   },
+  
   openPopup(e){
     var index = e.currentTarget.dataset.index;
     this.setData({

@@ -15,11 +15,12 @@
 
   <view class="form-item pd-17 fs-15">
     <view class="label  pd-17">
-      <text class="cl-red">*</text>
-      <text class="ml-5">活动主题图</text>
+      
+      <text class="">活动主题图<text class="cl-grey fs-14">(活动主题图非必填)</text></text>
     </view>
-    <view class="upload-wrap pd-50  all-center" bindtap="chooseImg">
-      <image class="" src="{{banner}}" mode="aspectFit" />
+    <view class="upload-wrap   all-center" bindtap="chooseImg">
+     
+      <image   src="{{banner}}" mode="aspectFit" />
     </view>
   </view>
   <view class="form-item pd-17 fs-15 flex-between">
@@ -32,7 +33,7 @@
   <view class="form-item pd-17 fs-15">
     <view class="label">
       <text class="cl-red">*</text>
-      <text class="ml-5">活动时间</text>
+      <text class="ml-5">活动时间<text class="cl-grey fs-14">(默认时间为: 8:00至18.00)</text></text>
     </view>
     <view class="pd-17 flex-around fs-15">
       <picker bindchange="bindDateChange" data-name="startTime" mode="date">
@@ -48,7 +49,7 @@
       </picker>
     </view>
   </view>
-  <view class="prize-container pd-12_20  bg-whte" wx:for="{{prizeForms}}" wx:key="index">
+  <view class="prize-container pd-12  bg-whte" wx:for="{{prizeForms}}" wx:key="index">
     <view class="form-item pd-17 fs-15 flex-between">
       <view class="label">
         <text class="cl-red">*</text>
@@ -63,7 +64,9 @@
         <text class="ml-5">奖品图片</text>
       </view>
        <view >
-        <image class="img-upload" bindtap="chooseImg" src="{{item.goodImg}}" data-index="{{index}}" alt=""/>
+        <image class="img-upload"  wx:if="{{item.flag == 1}}" bindtap="chooseImg" src="{{item.goodImg}}" data-index="{{index}}" alt=""/>
+        <image class="img-uploads"  wx:else bindtap="chooseImg" src="{{item.goodImg}}" data-index="{{index}}" alt=""/>
+     
        </view>
     </view>
     <view class="form-item pd-17 fs-15 flex-between">
@@ -71,7 +74,7 @@
         <text class="cl-red">*</text>
         <text class="ml-5">奖品数量</text>
       </view>
-      <input class="wd-210" type="text" bindinput="getInputValue" placeholder="{{item.count}}" data-index="{{index}}" data-name="count" />
+      <input class="wd-210" type="number" bindinput="getInputValue" placeholder="{{item.count}}" data-index="{{index}}" data-name="count" />
     </view>
     <view class="form-item pd-17 fs-15 flex-between">
       <view class="label">
@@ -84,7 +87,7 @@
       </view>
     </view>
   </view>
-  <view class="all-center pd-12_20  bg-whte fs-15">
+  <view class="all-center pd-12  bg-whte fs-15">
     <view class="all-center pd-5">
       <image class="icon-15" src="../../../images/icon-add.png" mode="widthFix" />
     </view>

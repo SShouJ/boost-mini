@@ -8,13 +8,15 @@ exports.main = async (event, context) => {
     let { id } = event;
     console.log(id);
     try {
-       let res =await db.collection('user').doc(id).get();
+       let res =await db.collection('user').where({
+         openid:id,
+       }).get();
        console.log('----------我进入了获取一个用户-----------');
        console.log(res);
         return {
           status:1,
           msg:'success',
-          data:res.data,
+          data:res.data[0],
         }
     } catch (error) {
       return {

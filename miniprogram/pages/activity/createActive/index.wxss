@@ -26,7 +26,7 @@
 }
 
 .upload-wrap{
-  border:1px solid #ccc;
+  border:1px dashed #ccc;
 }
 
 .flex-center{
@@ -73,12 +73,21 @@
   justify-content: center;
 }
 .img-upload{
-  width: 200rpx;
-  height: 190rpx;
-  border: 1rpx solid;
-  margin-left: 80rpx;
+  padding: 50rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border: 1rpx dashed #a1a1a1;
+  margin-left: 160rpx;
 }
-
+.img-uploads{
+  width: 200rpx;
+  height: 200rpx;
+  border: 1rpx dashed #a1a1a1;
+  margin-left: 130rpx;
+}
+.image{
+  width: 100rpx;
+}
 
 .flex-between{
   display: flex;
@@ -147,8 +156,11 @@
   background: #38acff;
 }
 
+.pd-12{
+  padding: 24rpx 0 ;
+}
 .pd-12_20{
-  padding: 24rpx 40rpx;
+  padding: 24rpx 40rpx ;
 }
 
 .date{

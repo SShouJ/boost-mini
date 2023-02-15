@@ -7,7 +7,7 @@ const db = cloud.database();
 exports.main = async (event, context) => {
     //获取商品列表
     //以及根据活动状态获取活动
-    let { status } = event;  //1 全部  2.待开奖 3.已结束  4. 未开始
+    let { status , pageSize = 2, pageNum = 1} = event;  //1 全部  2.待开奖 3.已结束  4. 未开始
     let idention  =  status&&status!== 1 ? {type:status} : {};
     console.log('---------------根据类目筛选活动--------------------------');
     console.log('--------------我用了await--------------------------------');
@@ -18,7 +18,9 @@ exports.main = async (event, context) => {
         localField: '_id',
         foreignField: 'activityId',
         as: 'peopleList',
-      }).match(idention)
+      }).match(idention).sort({
+        created:-1,
+      }).skip(pageSize*(pageNum - 1)).limit(pageSize)
       .end()
       .then(res=>{
         return {

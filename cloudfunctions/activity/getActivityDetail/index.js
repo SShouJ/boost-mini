@@ -14,7 +14,7 @@ exports.main = async (event, context) => {
         from: 'user_relation_activity',
         localField: '_id',
         foreignField: 'activityId',
-        as: 'peopleList',
+        as: 'row',
       }).match({
         _id:id
       })
