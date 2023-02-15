@@ -77,13 +77,13 @@
   width: 100rpx;
   height: 100rpx;
   border: 1rpx dashed #a1a1a1;
-  margin-left: 130rpx;
+  margin-left: 160rpx;
 }
 .img-uploads{
   width: 200rpx;
   height: 200rpx;
   border: 1rpx dashed #a1a1a1;
-  margin-left: 80rpx;
+  margin-left: 130rpx;
 }
 .image{
   width: 100rpx;
