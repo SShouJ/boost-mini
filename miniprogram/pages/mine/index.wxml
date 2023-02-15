@@ -6,7 +6,7 @@
       <image class="img-scan" src="../../images/icon-set.png" mode="" />
     </view>
     <view class="box-userinfo">
-    <view class="box-rigth" bindtap="setUserInfo" wx:if="{{!islogin}}">
+    <view class="box-rigth" bindtap="addUser" wx:if="{{!islogin}}">
         <image class="img-avatar" src="../../images/avatar-nologin.png" mode="" />
         <view  id="btn-username" >未授权</view>
       </view>
@@ -16,7 +16,7 @@
           <view>{{userInfo.nickName}}</view>
           <view class="fs-24 box-integral">
           <image class="icon-integral" src="../../images/icon-success.png" mode=""/>
-          <text class="fs-24">300积分</text>
+          <text class="fs-24">{{userInfo.integralNum}}</text>
           </view>
         </view>
       </view>
