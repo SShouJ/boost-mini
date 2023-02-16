@@ -22,7 +22,9 @@
         <view class="nav">
           <sticky-section class="nav-item fw-600" wx:for="{{navList}}" bindtap="changeItem" data-id="{{item.id}}" wx:key="id">
             <view class="nav-title">
-              <view class="{{ item.id == target ? 'cl-red' : ''}} fs-28">{{item.title}}</view>
+              <view class="{{ item.id == target ? 'cl-red' : ''}} fs-28">
+                {{item.title}}
+              </view>
             </view>
             <view class="{{ item.id == target ? 'nav-line' : ''}}  mt-10"></view>
           </sticky-section>
