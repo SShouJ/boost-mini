@@ -123,15 +123,19 @@ Page({
   },
   // choice 是来排断爱好选择的方法
   choice(data) {
+    // item就是当前用户选中的 爱好
     let item = data.currentTarget.dataset.name;
-    this.data.hobbysData.forEach((e) => {
-      if (e.id == item.id) {
-        e.isActive = !e.isActive;
-      }
-    })
-    this.setData({
-      hobbys: this.data.hobbysData
-    })
+    console.log(item)
+    if (this.data.hobbys.length) {
+      this.data.hobbysData.forEach((e) => {
+        if (e.id == item.id) {
+          e.isActive = !e.isActive;
+        }
+      })
+      this.setData({
+        hobbys: this.data.hobbysData
+      })
+    }
   },
   // 弹层 确定 按钮的方法
   determine() {
@@ -140,7 +144,10 @@ Page({
         this.data.selected.push(e);
       }
     }))
+    // this.data.selected 就是最终用户选择的爱好
     console.log('弹层里选中的', this.data.selected);
+
+
     if (this.data.selected.length) {
       wx.showToast({
         title: '选择成功！',
@@ -352,12 +359,25 @@ Page({
       url: '/pages/mine/index',
     })
   },
+  // 获取类目
+  getClassList() {
+    wx.cloud.callFunction({
+      name: 'good',
+      data: {
+        type: "getCategoryListr",
+      }
+    }).then(res => {
+      console.log('类目：',res)
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
     // 用户用户第一次进入该页面就打开弹层让用户选择爱好
     this.isOpen(false);
+    // 调用获取类目的接口  给爱好以及tab切换的title赋值
+    this.getClassList()
     this.setData({
       hobbys: this.data.hobbysData
     })
