@@ -1,0 +1,30 @@
+/* components/loading/index.wxss */
+.bodys{
+    background-color: rgb(249, 249, 249);
+    height: 100vh;
+    position: fixed;
+    z-index: 200;
+    width: 100vw;
+    overflow: hidden;
+}
+.bodys image{
+    width: 100vw;
+    height: 400rpx;
+}
+.content{
+    /* width: 400rpx; */
+    height: 400rpx;
+    position: relative;
+    top: 30%;
+}
+.content .text{
+    color: rgb(231, 116, 93);
+    font-weight: 550;
+    text-align: center;
+    position: absolute;
+    bottom: 10rpx;
+    /* left: 80%; */
+    transform: translate(-50%);
+    left: 50%;
+    
+}

@@ -22,7 +22,7 @@ App({
       name: 'user',
       data: {
         type: 'getUserInfo',
-        avatarUrl: 'cloud://cloud1-7ge7nl2m42cee9e9.636c-cloud1-7ge7nl2m42cee9e9-1316264853/avatar/avatar1.png',
+        avatarUrl: 'cloud://cloud1-7ge7nl2m42cee9e9.636c-cloud1-7ge7nl2m42cee9e9-1316264853/avatar-ikun.png',
       }
     }).then(res => {
       return res
@@ -49,5 +49,8 @@ App({
         }
       })
     })
+  },
+  load(flag){
+     return true
   }
 });

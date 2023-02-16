@@ -4,13 +4,13 @@
   </view>
   <view wx:for="{{activityList}}" wx:key="id">
     <view class="warp">
-      <text class="fs-32 fw-700">{{item.title}}</text>
+      <view class="fs-32 fw-700 mb-20">{{item.title}}</view>
       <view class="box-btn">
         <view class="btn mr-20">
-          加入群聊
+          查看主页
         </view>
         <view class="btn">
-          加入报名
+          修改活动
         </view>
       </view>
     </view>

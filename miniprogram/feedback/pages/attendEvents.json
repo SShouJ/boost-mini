@@ -1,3 +1,4 @@
 {
-  "usingComponents": { "activity":"/components/activityModal/activityModal"}
+  "usingComponents": { "activity":"/components/activityModal/activityModal"},
+  "navigationBarTitleText":"我的活动"  
 }

@@ -90,8 +90,12 @@
   <view class="all-center pd-12  bg-whte fs-15">
     <view class="all-center pd-5">
       <image class="icon-15" src="../../../images/icon-add.png" mode="widthFix" />
-    </view>
     <text class="ml-5 cl-green" bindtap="addItem">添加奖品</text>
+    </view>
+    <view class="all-center pd-5" wx:if="{{index!=1}}">
+      <image class="icon-15" src="../../../images/icon-remove.png" mode="widthFix" />
+    <text class="ml-5 cl-green" bindtap="removeItem">删除奖品</text>
+    </view>
   </view>
   <!-- 活动规则 -->
   <view class="title cl-grey pd-17">

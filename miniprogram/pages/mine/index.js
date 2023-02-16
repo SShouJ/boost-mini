@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    isShow:'block',
     islogin: false,
     userInfo: {},
     actInfoList: [{
@@ -91,24 +92,14 @@ Page({
         islogin: true
       })
     }
-    // console.log('同意');
-    // wx.getUserProfile({
-    //   desc: '用于登录',
-    //   success: async(res) => {
-    //     let res = await getApp().addUserInfo()
-    //     console.log(res);
-    //   }
-    // })
-    //   if (res.result.status == 1 ) {
-    //       let userInfo = await getApp().getUserInfo();
-    //       this.setData({
-    //         userInfo : userInfo,
-    //         islogin : true
-    //         })
-    //   }
-    //   console.log(this.data.userInfo);
+    
   },
-
+//图片加载完成触发
+onload(){
+this.setData({
+  isShow: "none"
+})
+},
   /**
    * 生命周期函数--监听页面加载
    */
@@ -117,7 +108,8 @@ Page({
     if (res.result.status == 1) {
       this.setData({
         userInfo: res.result.data,
-        islogin: true
+        islogin: true,
+        
       })
     } else {
       console.log(res.result.msg);
