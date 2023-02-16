@@ -1,55 +1,58 @@
 <!--pages/activityDetail/index.wxml-->
 <view class="box">
-<!-- 积分商城 -->
- <view class="box-exchange" bindtap="toPage" data-name='prize'>
-   <image class="icon-exchange" src="../../images/icon-exchange.png" mode=""/>
-   <text class="fs-20">兑换</text>
- </view>
- <!-- 活动规则 -->
- <view class="box-rule" bindtap="openPopup" data-index="0">
-  <image class="icon-rule" src="../../images/icon-rule.png" mode=""/>
-  <text class="fs-20" bindtap="openPopup" data-index="0">规则</text>
- </view>
- <view class="popup-box" wx:if="{{showIndex=='0'}}" ></view> 
-<view class="info-top" wx:if="{{showIndex=='0'}}">
-  <view class="row-info">
-    <view>
-      <image class="img-rule" src="https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/ceshi.png?sign=76cf024b1abc4882d93b7f57a55d423e&t=1675752981" mode=""/>
+  <!-- 积分商城 -->
+  <view class="box-exchange" bindtap="toPage" data-name='prize'>
+    <image class="icon-exchange" src="../../images/icon-exchange.png" mode="" />
+    <text class="fs-20">兑换</text>
+  </view>
+  <!-- 活动规则 -->
+  <view class="box-rule" bindtap="openPopup" data-index="0">
+    <image class="icon-rule" src="../../images/icon-rule.png" mode="" />
+    <text class="fs-20" bindtap="openPopup" data-index="0">规则</text>
+  </view>
+  <view class="popup-box" wx:if="{{showIndex=='0'}}"></view>
+  <view class="info-top" wx:if="{{showIndex=='0'}}">
+    <view class="row-info">
+      <view>
+        <image class="img-rule" src="https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/ceshi.png?sign=76cf024b1abc4882d93b7f57a55d423e&t=1675752981" mode="" />
+      </view>
+      <scroll-view style="height: calc(100vh - 800rpx);" scroll-y="{{true}}">
+        <view class="box-rule_text">
+          <text class="fs-30 fw-700"> 一、活动时间</text>
+          <view class="fs-24">即日起—2020年3月31日</view>
+          <text class="fs-30 fw-700"> 二、活动规则</text>
+          <view class="fs-24">1、活动期间，同一用户每天可获得1次抽奖机会，每次抽奖机会将消耗1积分，随机出奖，积分一旦消耗不支持退回。</view>
+          <view class="fs-24">2、同一支付宝账号、手机号、身份证、手机终端，符合以上任一条件的，均视为同一用户。</view>
+          <view class="fs-24">3、活动仅限中国大陆地区的支付宝实名认证用户在中国大陆地区参与和使用。支付宝会员用户需保持其支付宝会员服务在活动期间未关闭方可参加本活动。</view>
+          <view class="fs-24">4、如出现不可抗力或情势变更的情况（包括重大灾害事件、活动受政府机关指令需要停止举办或调整的、活动遭受严重网络攻击或因系统故障等）导致活动需要停止或调整的，我们有权终止活动而无需向用户进行赔偿或补偿。</view>
+          <view class="fs-24">5、在参与活动过程中，如用户出现作弊等违法违规行为我们有权撤销用户参与活动及奖励使用资格，并有权收回用户已经获得的权益。</view>
+          <view>
+            6.{{activityDetail.rule}}
+          </view>
+        </view>
+      </scroll-view>
     </view>
-    <scroll-view style="height: calc(100vh - 800rpx);" 	scroll-y="{{true}}">
-     <view class="box-rule_text">
-     <text class="fs-30 fw-700"> 一、活动时间</text>
-     <view class="fs-24">即日起—2020年3月31日</view>
-     <text class="fs-30 fw-700"> 二、活动规则</text>
-     <view class="fs-24">1、活动期间，同一用户每天可获得1次抽奖机会，每次抽奖机会将消耗1积分，随机出奖，积分一旦消耗不支持退回。</view>
-     <view class="fs-24">2、同一支付宝账号、手机号、身份证、手机终端，符合以上任一条件的，均视为同一用户。</view>
-     <view class="fs-24">3、活动仅限中国大陆地区的支付宝实名认证用户在中国大陆地区参与和使用。支付宝会员用户需保持其支付宝会员服务在活动期间未关闭方可参加本活动。</view>
-     <view class="fs-24">4、如出现不可抗力或情势变更的情况（包括重大灾害事件、活动受政府机关指令需要停止举办或调整的、活动遭受严重网络攻击或因系统故障等）导致活动需要停止或调整的，我们有权终止活动而无需向用户进行赔偿或补偿。</view> <view class="fs-24">5、在参与活动过程中，如用户出现作弊等违法违规行为我们有权撤销用户参与活动及奖励使用资格，并有权收回用户已经获得的权益。</view><view>
-       6.{{activityDetail.rule}}
-     </view>
-     </view>
-    </scroll-view>
+    <view class="row-btn" bindtap="closePopup">
+      <image class="icon-shut" src="../../images/icon-shut.png" mode="" />
+    </view>
   </view>
-  <view class="row-btn" bindtap="closePopup">
-   <image class="icon-shut" src="../../images/icon-shut.png" mode=""/>
+
+  <!-- 客服 -->
+  <view class="box-customer">
+    <image class="icon-customer" src="../../images/icon-customer.png" mode="" />
+    <text class="fs-20">客服</text>
   </view>
-</view>
- 
- <!-- 客服 -->
- <view class="box-customer">
-  <image class="icon-customer" src="../../images/icon-customer.png" mode=""/>
-  <text class="fs-20">客服</text>
- </view>
   <view class="box-title">
     <image class="img-title" src="https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/title.png?sign=40a6a46b242154af85f44e4d775070f8&t=1675752922" mode="" />
     <view class="btn">
       多重好礼等你来拿
     </view>
     <view class="text-time">
-    <text>活动时间:</text>
-            <text> {{activityDetail[0].start}}</text>
-            <text>至</text>
-           <text>{{activityDetail[0].end}}</text></view>
+      <text>活动时间:</text>
+      <text> {{activityDetail[0].start}}</text>
+      <text>至</text>
+      <text>{{activityDetail[0].end}}</text>
+    </view>
   </view>
   <view class="box-content wrap">
     <view class="box-lottery">
@@ -59,38 +62,39 @@
       <!-- 奖品信息展示 -->
       <view class="box-act_message wrap">
         <view class="box-morePrice">
-          <text class="fs-30 fw-700">当前阶段奖品：</text>
+          <!-- <text class="fs-30 fw-700">当前阶段奖品：</text> -->
           <text class="fs-24 cl-blue">查看全部奖品</text>
         </view>
-        <scroll-view style="width: calc(100vw - 100rpx); " 	scroll-x="{{true}}">
-        <view class="scroll">
-          
-        <view class="box-prizeDetails" wx:for="{{activityDetail[0].prizeArr}}" wx:key="id">
-          <image class="img-prizeDetails" src="https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/price.png?sign=e25105db0f3e5e751f08f38eb28b7f36&t=1675752960" mode="" />
-          <view class="box-rigth_prizeDetails">
-            <view class="text-priceName">
-             {{item.goodName}}
-            </view>
-            <view class="box-state">
-              <view class="text-number">共{{item.count}}份奖品</view>
-              <view class="btn-lottery">
-                开奖
+        <scroll-view style="width: calc(100vw - 100rpx); " scroll-x="{{true}}">
+          <view class="scroll">
+
+            <view class="box-prizeDetails" wx:for="{{activityDetail[0].prizeArr}}" wx:key="id">
+              <image class="img-prizeDetails" src="https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/price.png?sign=e25105db0f3e5e751f08f38eb28b7f36&t=1675752960" mode="" />
+              <view class="box-rigth_prizeDetails">
+                <view class="text-priceName">
+                  {{item.goodName}}
+                </view>
+                <view class="box-state">
+                  <view class="text-number">共{{item.count}}份奖品</view>
+                  <view class="btn-lottery">
+                    开奖
+                  </view>
+                </view>
               </view>
             </view>
           </view>
-        </view >
-        </view>
         </scroll-view>
         <!-- 奖品信息下半 -->
+            <text class="fs-30 fw-700 pl-20">当前阶段奖品：</text>
         <view class="act-message_bom">
-        <!-- 进度条 -->
+          <!-- 进度条 -->
           <view class="box-progressBar">
-              <!-- <view class="progressBar">
+            <!-- <view class="progressBar">
               </view> -->
-              <view class="progress-box">
-  <progress percent="{{percent}}" border-radius="20" activeColor="#FA3D2A" backgroundColor="#ece6e6" active stroke-width="8" active-mode="forwards" />
-</view>
-              <view class="box-post">
+            <view class="progress-box">
+              <progress percent="{{percent}}" border-radius="20" activeColor="#FA3D2A" backgroundColor="#ece6e6" active stroke-width="8" active-mode="forwards" />
+            </view>
+            <!-- <view class="box-post">
                <view class="box-img">
                 <image class="icon-jp" src="../../images/icon-prize.png" mode=""/>
                </view>
@@ -107,17 +111,26 @@
                 <image class="icon-jp" src="../../images/icon-prize.png" mode=""/>
                </view>
                 <text>1000人</text>
-              </view>
+              </view> -->
           </view>
           <!-- 倒计时 -->
           <view class="countdown">
-               <view class="times">
-        倒计时：
-        <view class="txt-time">{{txtTime.day}}</view>:
-        <view class="txt-time">{{txtTime.hou}}</view>:
-        <view class="txt-time">{{txtTime.min}}</view>:
-        <view class="txt-time">{{txtTime.sec}}</view>
-    </view>
+            <view class="countdown-item">
+              <view class="countdown-title">
+                <block>
+                  <text class='tui-conutdown-box'>{{days}}</text>
+                  <text class="countdown-text">天</text>
+                  <text class='tui-conutdown-box'>{{hours}}</text>
+                  <text class="countdown-text">时</text>
+                  <text class='tui-conutdown-box'>{{minutes}}</text>
+                  <text class="countdown-text">分</text>
+                  <text class='tui-conutdown-box'>{{seconds}}</text>
+                  <text class="countdown-text">秒</text>
+                </block>
+              </view>
+              <view class="title-item">后开奖</view>
+            </view>
+
 
           </view>
           <!-- <view wx:if="{{joinFalg}}">
@@ -125,20 +138,20 @@
           </view> -->
           <!-- 分享btn -->
           <button wx:if="{{joinFlag}}" class="style-clear" type="default" open-type="share" bindshare="onShareAppMessage">
-          <view class="btn-share"  bindtap="join"  data-flag="false">
-                  {{text}}
-          </view>
+            <view class="btn-share" bindtap="join" data-flag="false">
+              {{text}}
+            </view>
           </button>
-          <button wx:else="{{!joinFlag}}" class="style-clear" type="default" >
-          <view class="btn-share"  bindtap="join" data-flag="true">
-                  {{text}}
-          </view>
+          <button wx:else="{{!joinFlag}}" class="style-clear" type="default">
+            <view class="btn-share" bindtap="join" data-flag="true">
+              {{text}}
+            </view>
           </button>
         </view>
       </view>
     </view>
   </view>
 
-  
+
 
 </view>
