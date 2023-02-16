@@ -19,7 +19,7 @@ exports.main = async (event, context) => {
         foreignField: 'activityId',
         as: 'peopleList',
       }).match(idention).sort({
-        created:-1,
+        end:1,
       }).skip(pageSize*(pageNum - 1)).limit(pageSize)
       .end()
       .then(res=>{

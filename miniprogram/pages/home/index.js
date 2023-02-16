@@ -6,77 +6,9 @@ Page({
    */
   data: {
     target: 1, // target ：当前页--
-    navList: [
-      {
-        id: 1,
-        title: "推荐",
-      },
-      {
-        id: 2,
-        title: "全部2",
-      },
-      {
-        id: 3,
-        title: "全部3",
-      },
-      {
-        id: 4,
-        title: "全部4",
-      },
-      {
-        id: 5,
-        title: "全部5",
-      },
-      {
-        id: 6,
-        title: "全部6",
-      },
-      {
-        id: 7,
-        title: "全部7",
-      },
-      {
-        id: 8,
-        title: "全部8",
-      },
-    ],
+    navList: [],
     prizeLift: [],
     hobbys: [],
-    hobbysData: [
-      {
-        id: 1,
-        isActive: false,
-        hobby: '爱好爱好爱好爱好爱好'
-      },
-      {
-        id: 2, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 3, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 4, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 5, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 6, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 7, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 8, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 9, isActive: false,
-        hobby: '爱好1'
-      }, {
-        id: 10, isActive: false,
-        hobby: '爱好1'
-      }
-    ],
     selected: [],
     userInfo: null,
     isOpenDialog: false,
@@ -95,7 +27,7 @@ Page({
       }
     }).then(res => {
       if (res.result.status == 1 && res.result.data) {
-        console.log(res.result.data);
+        console.log('userinfo', res.result.data);
         // 打开爱好弹层
         this.isOpen(true);
         // 设置 用户信息的数据给 userinfo   设置
@@ -111,8 +43,10 @@ Page({
           isDisplay: true
         })
       }
-      // 不管拿没拿到数据 都关闭 加载中 提示弹层
-      wx.hideToast()
+      if ((this.data.userInfo && this.data.prizeLift.length) || (this.data.hobbys.length && this.data.prizeLift.length)) {
+        // 加载中的这个动画  要么用户登录成功 并且所有奖品的数据都拿到了才关闭   要么就  爱好列表的数据和奖品列表的数据全拿到的时候 也关闭
+        wx.hideToast()
+      }
     })
   },
   // 是否打开弹层 传布尔值 true打开 反之关闭
@@ -125,43 +59,41 @@ Page({
   choice(data) {
     // item就是当前用户选中的 爱好
     let item = data.currentTarget.dataset.name;
-    console.log(item)
-    if (this.data.hobbys.length) {
-      this.data.hobbysData.forEach((e) => {
-        if (e.id == item.id) {
+      this.data.hobbys.forEach((e) => {
+        if (e._id == item._id) {
           e.isActive = !e.isActive;
         }
       })
       this.setData({
-        hobbys: this.data.hobbysData
+        hobbys: this.data.hobbys
       })
-    }
   },
   // 弹层 确定 按钮的方法
   determine() {
-    this.data.hobbysData.forEach((e => {
+    this.data.hobbys.forEach((e => {
       if (e.isActive) {
-        this.data.selected.push(e);
+        this.data.selected.push(e._id);
       }
     }))
     // this.data.selected 就是最终用户选择的爱好
     console.log('弹层里选中的', this.data.selected);
-
-
-    if (this.data.selected.length) {
-      wx.showToast({
-        title: '选择成功！',
-        icon: 'success',//icon
-        duration: 1500 //停留时间
-      })
-      this.isOpen(false)
-    } else {
-      wx.showToast({
-        title: '至少选择一个！',
-        icon: 'error',//icon
-        duration: 1500 //停留时间
-      })
-    }
+    // 用户选择爱好完成点击确定按钮的时候  在这里调用设置用户爱好的接口
+    // 判断用户是否选择了至少一个  选择了就调用接口设置  否则 就不调用 提示用户至少选择一个  或跳过   跳过的话  需要在登录接口返回之后加个排断  用户爱好是否有值  有则继续正常流程  没有就重新打开让用户设置爱好的弹层让用户设置
+    // this.setUserHobby(this.data.selected)
+    // if (this.data.selected.length) {
+    //   wx.showToast({
+    //     title: '选择成功！',
+    //     icon: 'success',//icon
+    //     duration: 1500 //停留时间
+    //   })
+    //   this.isOpen(false)
+    // } else {
+    //   wx.showToast({
+    //     title: '至少选择一个！',
+    //     icon: 'error',//icon
+    //     duration: 1500 //停留时间
+    //   })
+    // }
   },
   // 弹层 取消 按钮的方法
   cancel() {
@@ -175,13 +107,14 @@ Page({
   },
   // changeItem 是监测tab列表当前选中的是哪个的方法
   changeItem(e) {
+    console.log(e.currentTarget.dataset.id)
     this.setData({
       target: e.currentTarget.dataset.id,
     })
     let title = ''
-    this.data.navList.forEach((item) => {
-      if (item.id == this.data.target) {
-        title = item.title
+    this.data.navList.forEach((item, i) => {
+      if ((i + 1) == this.data.target) {
+        title = item.name
       }
     })
     console.log('当前选中的是第', this.data.target, '个tab列表; title：', title);
@@ -364,10 +297,54 @@ Page({
     wx.cloud.callFunction({
       name: 'good',
       data: {
-        type: "getCategoryListr",
+        type: "getCategoryList",
       }
     }).then(res => {
-      console.log('类目：',res)
+      if (res.result.data.data.length) {
+        let data = JSON.parse(JSON.stringify(res.result.data.data));
+        data.forEach(e => {
+          e.isActive = false;
+        });
+        let navData = [
+          {
+            _id: '111',
+            name: '推荐'
+          },
+        ]
+        res.result.data.data.forEach((e) => {
+          navData.push(e);
+        })
+        this.setData({
+          hobbys: data,
+          navList: navData
+        })
+        console.log('nav列表', this.data.navList)
+        console.log('类目列表：', this.data.hobbys)
+      }
+    })
+  },
+  // 根据类目获取商品
+  getGoodByCategory(id) {
+    wx.cloud.callFunction({
+      name: 'good',
+      data: {
+        type: 'getGoodByCategory',
+        category: id
+      }
+    }).then(res => {
+      console.log('根据类目获取商品', res)
+    })
+  },
+  // 设置用户爱好
+  setUserHobby(hobbys) {
+    wx.cloud.callFunction({
+      name: 'user',
+      data: {
+        type: "updateUser",
+        hobbys,
+      }
+    }).then(res => {
+      console.log('设置爱好接口返回的：', res)
     })
   },
   /**
@@ -378,9 +355,6 @@ Page({
     this.isOpen(false);
     // 调用获取类目的接口  给爱好以及tab切换的title赋值
     this.getClassList()
-    this.setData({
-      hobbys: this.data.hobbysData
-    })
   },
 
   /**
