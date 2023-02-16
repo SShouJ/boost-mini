@@ -16,22 +16,32 @@ exports.main = async (event, context) => {
       ginseng[keys[i]] = event[keys[i]];
     }
   }
-  let res = await db.collection('user').where({
-    'openid':openid,
-  }).update({
-    data:ginseng,
-  })
-  if(res.data.length){
-    return {
-      status:1,
-      msg:'success',
-      data:res.data[0]
+  try {
+    console.log('-------------我是调用更改用户信息的--------------------');
+    console.log(ginseng);
+    let res = await db.collection('user').where({
+      'openid':openid,
+    }).update({
+      data:ginseng,
+    })
+    if(res.data.length){
+      return {
+        status:1,
+        msg:'success',
+        data:res.data[0]
+      }
+    }else{
+      return {
+        status:0,
+        msg:'没有找到该用户',
+        data:[],
+      }
     }
-  }else{
-    return {
-      status:0,
-      msg:'没有找到该用户',
-      data:[],
-    }
+  } catch (error) {
+      return {
+        status:0,
+        msg:error,
+        data:[],
+      }
   }
 };

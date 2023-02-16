@@ -11,7 +11,7 @@ exports.main = async (event, context) => {
   let changeTyp1 = () => {
     return new Promise((resolve, reject) => {
       db.collection('activity').where({
-        start: _.lt(nowTime)
+        start: _.gt(nowTime)
       }).update({
         data: {
           type: 4
@@ -27,7 +27,7 @@ exports.main = async (event, context) => {
   let changeType2 = ()=>{
     return new Promise((resolve,reject)=>{
       db.collection('activity').where({
-        start: _.gt(nowTime)
+        start: _.lt(nowTime)
       }).update({
         data: {
           type: 2,
@@ -43,7 +43,7 @@ exports.main = async (event, context) => {
   let changeType3 = ()=>{
     return new Promise((resolve,reject)=>{
       db.collection('activity').where({
-        end: _.gt(nowTime)
+        end: _.lt(nowTime)
       }).update({
         data: {
           type: 3

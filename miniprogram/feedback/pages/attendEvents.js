@@ -167,14 +167,19 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh() {
-
+   
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom() {
-
+    console.log(1)
+    return {
+      title: '自定义标题',
+      imageUrl: 'http://demo.png',
+      query: 'name=xxx&age=xxx',
+    }
   },
 
   /**

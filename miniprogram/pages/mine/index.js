@@ -84,7 +84,7 @@ Page({
     console.log(res);
     let res2 = await addUserInfo();
     console.log(res2);
-    if (res2.result.status == 1) {
+    if (res2.result.status == 1 || res2.result.openid) {
       let res3 = await getUserInfo();
       console.log(res3);
       this.setData({
@@ -95,7 +95,7 @@ Page({
     
   },
 //图片加载完成触发
-onload(){
+onloading(){
 this.setData({
   isShow: "none"
 })
@@ -104,14 +104,28 @@ this.setData({
    * 生命周期函数--监听页面加载
    */
   async onLoad(options) {
+    // wx.cloud.callFunction({
+    //   name: 'user',
+    //   data: {
+    //     type: 'getUserInfo',
+    //   }
+    // }).then(res => {
+    // console.log(res.result);
+    // this.setData({
+    //       userInfo: res.result.data,
+    //       islogin: true,
+    //     })
+    // })
     let res = await getApp().getUserInfo()
     if (res.result.status == 1) {
       this.setData({
         userInfo: res.result.data,
         islogin: true,
-        
       })
     } else {
+      this.setData({
+        isShow: "none"
+      })
       console.log(res.result.msg);
     }
   },

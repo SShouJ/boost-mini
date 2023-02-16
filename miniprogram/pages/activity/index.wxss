@@ -107,7 +107,12 @@
   height: 10rpx;
   border-radius: 50%;
 }
-
+.actwu{
+  margin-top: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 /* 活动头像 */
 .activity-img{
   width: 710rpx;
