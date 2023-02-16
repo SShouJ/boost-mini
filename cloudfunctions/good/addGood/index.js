@@ -37,7 +37,7 @@ exports.main = async (event, context) => {
         data:{
           goodImage,
           goodName,
-          integral
+          integral,
         }
       })
       return{
