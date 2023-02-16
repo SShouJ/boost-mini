@@ -63,7 +63,7 @@ Page({
       console.log("=========");
       console.log(this.data.activityList);
  },
-
+//时间戳转换日期
   formatDate(value) {
     if (typeof (value) == 'undefined') {
       return ''
@@ -94,6 +94,9 @@ Page({
   //获取活动列表
   getActivityList() {
     console.log(this.data.target);
+    console.log(this.data.size);
+    console.log(this.data.num);
+
   return  wx.cloud.callFunction({
       name: "activity",
       data: {
@@ -118,6 +121,7 @@ Page({
      
     // })
   },
+  //上拉加载
  async scrolltolower() {
     console.log("------------------------------------");
     this.setData({
@@ -129,7 +133,7 @@ Page({
       mask:"ture",
     })
   let actList =await this.getActivityList()
-  console.log(actList.result.data.list.length);
+  console.log(actList.result.data);
   if (actList.result.data.list.length == 0) {
     wx.hideLoading()
     wx.showLoading({
@@ -188,7 +192,30 @@ async  onLoad(options) {
     this.setData({
       navList: navList
     })
+    wx.showLoading({
+      title: '加载中',
+      mask:"ture",
+    })
     let res = await this.getActivityList()
+    if (res.result.status == 1) {
+      wx.hideLoading()
+      wx.showLoading({
+        title: '加载成功',
+        mask:"ture",
+      })
+      setTimeout(function () {
+        wx.hideLoading()
+      }, 500)
+    } else {
+      wx.hideLoading()
+      wx.showLoading({
+        title: '加载失败',
+        mask:"ture",
+      })
+      setTimeout(function () {
+        wx.hideLoading()
+      }, 500)
+    }
     let list = res.result.data.list
     list.forEach(item => {
       console.log(item);
