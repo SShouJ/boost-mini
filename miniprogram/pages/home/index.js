@@ -59,7 +59,6 @@ Page({
   choice(data) {
     // item就是当前用户选中的 爱好
     let item = data.currentTarget.dataset.name;
-    if (this.data.hobbys.length) {
       this.data.hobbys.forEach((e) => {
         if (e._id == item._id) {
           e.isActive = !e.isActive;
@@ -68,7 +67,6 @@ Page({
       this.setData({
         hobbys: this.data.hobbys
       })
-    }
   },
   // 弹层 确定 按钮的方法
   determine() {
@@ -81,7 +79,7 @@ Page({
     console.log('弹层里选中的', this.data.selected);
     // 用户选择爱好完成点击确定按钮的时候  在这里调用设置用户爱好的接口
     // 判断用户是否选择了至少一个  选择了就调用接口设置  否则 就不调用 提示用户至少选择一个  或跳过   跳过的话  需要在登录接口返回之后加个排断  用户爱好是否有值  有则继续正常流程  没有就重新打开让用户设置爱好的弹层让用户设置
-    this.setUserHobby(this.data.selected)
+    // this.setUserHobby(this.data.selected)
     // if (this.data.selected.length) {
     //   wx.showToast({
     //     title: '选择成功！',
