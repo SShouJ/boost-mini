@@ -7,7 +7,7 @@ const db = cloud.database();
 exports.main = async (event, context) => {
     //获取商品列表
     //以及根据类目获取商品
-    let { goodImage , goodName , integral } = event;
+    let { goodImage , goodName , integral, status } = event;
     let ruleObj = {
       goodImage:{
         isRequire:true,
@@ -20,6 +20,10 @@ exports.main = async (event, context) => {
       integral:{
         isRequire:true,
         msg:'商品价格不能为空'
+      },
+      status:{
+        isRequire:true,
+        msg:'商品类型不能为空'
       }
     }
     let keys = Object.keys(ruleObj);
@@ -38,6 +42,7 @@ exports.main = async (event, context) => {
           goodImage,
           goodName,
           integral,
+          type:status,
         }
       })
       return{
