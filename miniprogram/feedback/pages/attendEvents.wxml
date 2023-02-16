@@ -13,7 +13,5 @@
   <view class="wrap mb-10" wx:for="{{activityList}}"  wx:key="id">
     <activity bindtap="toDetail" activityItem="{{item}}" data-id="{{item.id}}"></activity>
   </view>
-
-  
 </view>
 

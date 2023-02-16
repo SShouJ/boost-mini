@@ -85,14 +85,41 @@ Page({
     let res2 = await addUserInfo();
     console.log(res2);
     if (res2.result.status == 1 || res2.result.openid) {
+      wx.showLoading({
+        title: '登陆中',
+        mask:"ture",
+      })
       let res3 = await getUserInfo();
       console.log(res3);
       this.setData({
         userInfo: res3.result.data,
         islogin: true
       })
+      wx.hideLoading()
+      wx.showLoading({
+        title: '登陆成功',
+        mask:"ture",
+      })
+      setTimeout(function () {
+        wx.hideLoading()
+      }, 500)
+    }else{
+      wx.showLoading({
+        title: '登陆中',
+        mask:"ture",
+      })
+      setTimeout(function () {
+        wx.hideLoading()
+      }, 500)
+      wx.showLoading({
+        title: '登陆失败',
+        mask:"ture",
+      })
+      setTimeout(function () {
+        wx.hideLoading()
+      }, 500)
     }
-    
+   
   },
 //图片加载完成触发
 onloading(){
@@ -104,19 +131,10 @@ this.setData({
    * 生命周期函数--监听页面加载
    */
   async onLoad(options) {
-    // wx.cloud.callFunction({
-    //   name: 'user',
-    //   data: {
-    //     type: 'getUserInfo',
-    //   }
-    // }).then(res => {
-    // console.log(res.result);
-    // this.setData({
-    //       userInfo: res.result.data,
-    //       islogin: true,
-    //     })
-    // })
-    let res = await getApp().getUserInfo()
+    const app = getApp();
+    let res = await app.getUserInfo()
+    console.log('----------userinfo------------')
+    console.log(res)
     if (res.result.status == 1) {
       this.setData({
         userInfo: res.result.data,
