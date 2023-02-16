@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    
     activityList: [],
     navList: [],
     target: 2,
@@ -16,12 +17,53 @@ Page({
       url: '/pages/activityDetail/index?id=' + e.currentTarget.dataset.id
     })
   },
-  changeItem(e) {
+  //切换tab方法
+ async changeItem(e) {
     this.setData({
+      size: 2,
+      num:1,
       target: e.currentTarget.dataset.id,
+      activityList:[]
     })
-    this.getActivityList()
-  },
+    wx.showLoading({
+      title: '加载中',
+      mask:"ture",
+    })
+    let res =await this.getActivityList()
+    if (res.result.data.list.length == 0) {
+      wx.hideLoading()
+      wx.showLoading({
+        title: '没有更多了',
+        mask:"ture",
+      })
+      setTimeout(function () {
+        wx.hideLoading()
+      }, 500)
+     
+    } else {
+      wx.hideLoading()
+      wx.showLoading({
+        title: '加载成功',
+        mask:"ture",
+      })
+      let list = res.result.data.list
+      list.forEach(item => {
+        console.log(item);
+        item.end = this.formatDate(item.end)
+        item.start = this.formatDate(item.start)
+  })
+  this.setData({
+        activityList: list
+      })
+      setTimeout(function () {
+        wx.hideLoading()
+      }, 500)
+    }
+    
+      console.log("=========");
+      console.log(this.data.activityList);
+ },
+
   formatDate(value) {
     if (typeof (value) == 'undefined') {
       return ''
@@ -42,20 +84,17 @@ Page({
     }
   },
   //下拉
-  onPullDownRefresh() {
-    wx.stopPullDownRefresh({
-      success: (res) => {
-        console.log(1);
-      }
-    })
-  },
+  // onPullDownRefresh() {
+  //   wx.stopPullDownRefresh({
+  //     success: (res) => {
+  //       console.log(1);
+  //     }
+  //   })
+  // },
   //获取活动列表
   getActivityList() {
-    this.setData({
-      activityList: []
-    })
-   
-    wx.cloud.callFunction({
+    console.log(this.data.target);
+  return  wx.cloud.callFunction({
       name: "activity",
       data: {
         type: "getActivityByCategory",
@@ -63,33 +102,71 @@ Page({
         pageSize: this.data.size,
         pageNum: this.data.num,
       }
-    }).then(res => {
-      console.log(res);
-      let list = res.result.data.list
+    })
+    // .then(res => {
+    //   console.log(res);
+    //   let list = res.result.data.list
+    //   list.forEach(item => {
+    //     console.log(item);
+    //     item.end = this.formatDate(item.end)
+    //     item.start = this.formatDate(item.start)
+    //   })
+    //   let concatList = this.data.activityList.concat(list)
+    //   this.setData({
+    //     activityList: concatList
+    //   })
+     
+    // })
+  },
+ async scrolltolower() {
+    console.log("------------------------------------");
+    this.setData({
+      num: this.data.num + 1,
+      size : this.data.size 
+    })
+    wx.showLoading({
+      title: '加载中',
+      mask:"ture",
+    })
+  let actList =await this.getActivityList()
+  console.log(actList.result.data.list.length);
+  if (actList.result.data.list.length == 0) {
+    wx.hideLoading()
+    wx.showLoading({
+      title: '没有更多了',
+      mask:"ture",
+    })
+    setTimeout(function () {
+      wx.hideLoading()
+    }, 500)
+   
+  } else {
+    wx.hideLoading()
+    wx.showLoading({
+      title: '加载成功',
+      mask:"ture",
+    })
+    let list = actList.result.data.list
       list.forEach(item => {
         console.log(item);
         item.end = this.formatDate(item.end)
         item.start = this.formatDate(item.start)
       })
+      let concatList = this.data.activityList.concat(list)
       this.setData({
-        activityList: list
+        activityList: concatList
       })
-     
-    })
-  },
-  scrolltolower() {
-    console.log("------------------------------------");
-    this.setData({
-      size : this.data.size + 2 
-    })
-    this.getActivityList()
+    setTimeout(function () {
+      wx.hideLoading()
+    }, 500)
+  }
+  
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad(options) {
-    this.getActivityList()
-
+async  onLoad(options) {
+  
     let navList = [{
         id: 1,
         title: "全部",
@@ -111,6 +188,17 @@ Page({
     this.setData({
       navList: navList
     })
+    let res = await this.getActivityList()
+    let list = res.result.data.list
+    list.forEach(item => {
+      console.log(item);
+      item.end = this.formatDate(item.end)
+      item.start = this.formatDate(item.start)
+})
+this.setData({
+      activityList: list
+    })
+
   },
 
   /**
@@ -152,12 +240,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom() {
-    console.log(1);
-    wx.stopPullDownRefresh({
-      success: (res) => {
-        console.log(1);
-      }
-    })
+  
   },
 
   /**
