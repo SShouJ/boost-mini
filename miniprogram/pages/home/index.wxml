@@ -9,7 +9,7 @@
           <image class="icon-more ml-10" src="../../images/icon-more_fc4b08.png" mode="" />
         </view>
       </view>
-      <view class="right" bindtap="toRecord">兑换记录</view>
+      <view class="right" bindtap="toRecord">兑奖明细</view>
     </view>
     <view wx:else class="header_userinfo wrap">
       <view class="to_login" bindtap="toLogin">去登录</view>
