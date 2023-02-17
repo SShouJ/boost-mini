@@ -38,10 +38,10 @@
           <view class="activity mt-30 a_j-center">
             <view class="activity-item" bindtap="prizeLiftNav" data-name="{{item}}" wx:for="{{ prizeLift }}" wx:key="index">
               <view class="img">
-                <image class="activity_img" src="{{item.url}}" mode="" />
+                <image class="activity_img" src="{{item.goodImage}}" mode="" />
               </view>
               <view class="title">
-                <text>{{item.title}}</text>
+                <text>{{item.goodName}}</text>
               </view>
               <view style="padding:0 20rpx 20rpx 20rpx" class="justify-space_between  item-center">
                 <view class="flex">

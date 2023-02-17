@@ -254,9 +254,9 @@ Page({
     } else if (type == 4) {
       data = prizeLift4
     }
-    this.setData({
-      prizeLift: data
-    })
+    // this.setData({
+    //   prizeLift: data
+    // })
     console.log('当前页的数据是', this.data.prizeLift);
   },
   // prizeLiftNav 跳转详情页面 + 传参 的方法
@@ -316,7 +316,7 @@ Page({
         category: id
       }
     }).then(res => {
-      console.log('根据类目获取商品', res)
+      console.log('根据类目获取商品', res.result.data.data)
     })
   },
   // 设置用户爱好
@@ -346,6 +346,12 @@ Page({
       })
     }
   },
+  // 监测是否满足关闭加载动画
+  hideToast() {
+    if (this.data.prizeLift.length) {
+      wx.hideToast()
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -354,6 +360,21 @@ Page({
     this.isOpen(false);
     // 调用获取类目的接口  给爱好以及tab切换的title赋值
     this.getClassList()
+    // 默认初始状态掉一次获取商品的接口
+    wx.cloud.callFunction({
+      name: 'good',
+      data: {
+        type: 'getGoodByCategory',
+      }
+    }).then(res => {
+      if (res.result.data.data.length) {
+        this.setData({
+          prizeLift: res.result.data.data
+        })
+        console.log('this.data.prizeLift', this.data.prizeLift)
+        this.hideToast();
+      }
+    })
   },
 
   /**
@@ -368,7 +389,7 @@ Page({
    */
   onShow() {
     console.log('当前选中的是第', this.data.target, '个tab列表;title：', '推荐');
-    this.getPrizeList(this.data.target);
+    // this.getPrizeList(this.data.target);
     this.setData({
       isDisplay: false,
     })
