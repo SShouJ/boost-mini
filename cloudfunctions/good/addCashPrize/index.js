@@ -63,10 +63,11 @@ exports.main = async (event, context) => {
         msg: 'success',
         data: [],
       }
-    } catch (error) {
+    } catch (e) {
+      console.log('事务报错'+e);
       await transaction.rollback({
         status: 0,
-        msg: error,
+        msg: e,
         data: [],
       })
     }
