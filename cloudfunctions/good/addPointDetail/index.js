@@ -10,7 +10,7 @@ exports.main = async (event, context) => {
     let { integralNum } = event;//这个是积分
     const wxContext = cloud.getWXContext();
     const openid = wxContext.OPENID;//用户的open_id;
-    let userRes = await getUserInfo(event,context);
+    let userRes = await getUserInfo.main(event,context);
     if(userRes.status){
       return {
         status:0,
