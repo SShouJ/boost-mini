@@ -7,6 +7,7 @@ Page({
   data: {
     detailData: {},
     dataId: '',
+    isOpenDialog: false,
     prizeLift: [],
   },
 
@@ -23,18 +24,35 @@ Page({
   },
   // 兑换按钮
   exchange() {
-    wx.showToast({
-      title: '成功',
-      icon: 'success',
-      duration: 600,
+    this.setData({
+      isOpenDialog: true,
     })
-    setTimeout(() => {
-      wx.navigateTo({
-        url: '/pages/award/index?id=' + this.data.dataId
-      })
-    }, 500)
   },
-  // 
+  // 确认兑换
+  determine() {
+    // 先掉接口兑换  同时显示 兑换中 的一个遮罩层来优化
+    // 兑换结果返回之后 显示兑换成功 并跳转页面到 看兑换码的页面
+    this.getPrize(this.data.dataId);
+    // wx.showToast({
+    //   title: '成功',
+    //   icon: 'success',
+    //   duration: 600,
+    // })
+    // setTimeout(() => {
+    //   wx.navigateTo({
+    //     url: '/pages/award/index?id=' + this.data.dataId
+    //   })
+    //   this.setData({
+    //     isOpenDialog: false,
+    //   })
+    // }, 500)
+  },
+  // 取消兑换的按钮
+  cancel() {
+    this.setData({
+      isOpenDialog: false,
+    })
+  },
   pushData(data, id) {
     data.forEach(item => {
       if (item.id == id) {
@@ -45,6 +63,19 @@ Page({
         })
       }
     });
+  },
+  // 兑换奖品的接口
+  async getPrize(prizeId) {
+    let res = await wx.cloud.callFunction({
+      name: 'good',
+      data: {
+        type: "addCashPrize",
+        prizeId: prizeId
+      }
+    })
+    if (res) {
+      console.log('res', res)
+    }
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
