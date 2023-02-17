@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "activity":"/components/activityModal/activityModal"
-  }
+  },
+  "navigationBarTitleText":"活动列表"
 }

@@ -21,7 +21,7 @@
           </view>
         </view>
       </view>
-    <view class="box-infopage" bindtap="toFeedbackPages" data-name="personalCenter">
+    <view class="box-infopage" wx:if="{{islogin}}" bindtap="toFeedbackPages" data-name="personalCenter">
       <text class="fs-24">个人主页</text>
       <image class="icon-info" src="../../images/icon-more.png" mode=""/>
     </view>

@@ -13,6 +13,7 @@ exports.main = async (event, context) => {
     'openid':openid,
   }).get();
   if(res.data.length){
+    console.log('----------------res userinfo------------------')
     return {
       status:1,
       msg:'success',
@@ -22,7 +23,7 @@ exports.main = async (event, context) => {
     return {
       status:0,
       msg:'没有找到该用户',
-      data:[],
+      data:{},
     }
   }
 };

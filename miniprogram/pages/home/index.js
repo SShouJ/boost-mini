@@ -28,8 +28,10 @@ Page({
     }).then(res => {
       if (res.result.status == 1 && res.result.data) {
         console.log('userinfo', res.result.data);
-        // 打开爱好弹层
-        this.isOpen(true);
+        if (res.result.data.hobbys.length == 0) {
+          // 打开爱好弹层
+          this.isOpen(true);
+        }
         // 设置 用户信息的数据给 userinfo   设置
         this.setData({
           userInfo: res.result.data,
@@ -59,41 +61,27 @@ Page({
   choice(data) {
     // item就是当前用户选中的 爱好
     let item = data.currentTarget.dataset.name;
-      this.data.hobbys.forEach((e) => {
-        if (e._id == item._id) {
-          e.isActive = !e.isActive;
-        }
-      })
-      this.setData({
-        hobbys: this.data.hobbys
-      })
+    this.data.hobbys.forEach((e) => {
+      if (e._id == item._id) {
+        e.isActive = !e.isActive;
+      }
+    })
+    this.setData({
+      hobbys: this.data.hobbys
+    })
   },
   // 弹层 确定 按钮的方法
   determine() {
+    let data = [];
     this.data.hobbys.forEach((e => {
       if (e.isActive) {
-        this.data.selected.push(e._id);
+        data.push(e._id);
       }
     }))
     // this.data.selected 就是最终用户选择的爱好
-    console.log('弹层里选中的', this.data.selected);
     // 用户选择爱好完成点击确定按钮的时候  在这里调用设置用户爱好的接口
     // 判断用户是否选择了至少一个  选择了就调用接口设置  否则 就不调用 提示用户至少选择一个  或跳过   跳过的话  需要在登录接口返回之后加个排断  用户爱好是否有值  有则继续正常流程  没有就重新打开让用户设置爱好的弹层让用户设置
-    // this.setUserHobby(this.data.selected)
-    // if (this.data.selected.length) {
-    //   wx.showToast({
-    //     title: '选择成功！',
-    //     icon: 'success',//icon
-    //     duration: 1500 //停留时间
-    //   })
-    //   this.isOpen(false)
-    // } else {
-    //   wx.showToast({
-    //     title: '至少选择一个！',
-    //     icon: 'error',//icon
-    //     duration: 1500 //停留时间
-    //   })
-    // }
+    this.setUserHobby(data);
   },
   // 弹层 取消 按钮的方法
   cancel() {
@@ -107,7 +95,6 @@ Page({
   },
   // changeItem 是监测tab列表当前选中的是哪个的方法
   changeItem(e) {
-    console.log(e.currentTarget.dataset.id)
     this.setData({
       target: e.currentTarget.dataset.id,
     })
@@ -267,9 +254,9 @@ Page({
     } else if (type == 4) {
       data = prizeLift4
     }
-    this.setData({
-      prizeLift: data
-    })
+    // this.setData({
+    //   prizeLift: data
+    // })
     console.log('当前页的数据是', this.data.prizeLift);
   },
   // prizeLiftNav 跳转详情页面 + 传参 的方法
@@ -287,7 +274,6 @@ Page({
   },
   // toLogin
   toLogin() {
-    console.log('走了tologin')
     wx.switchTab({
       url: '/pages/mine/index',
     })
@@ -301,8 +287,8 @@ Page({
       }
     }).then(res => {
       if (res.result.data.data.length) {
-        let data = JSON.parse(JSON.stringify(res.result.data.data));
-        data.forEach(e => {
+        let resData = JSON.parse(JSON.stringify(res.result.data.data));
+        resData.forEach(e => {
           e.isActive = false;
         });
         let navData = [
@@ -315,11 +301,9 @@ Page({
           navData.push(e);
         })
         this.setData({
-          hobbys: data,
+          hobbys: resData,
           navList: navData
         })
-        console.log('nav列表', this.data.navList)
-        console.log('类目列表：', this.data.hobbys)
       }
     })
   },
@@ -332,7 +316,7 @@ Page({
         category: id
       }
     }).then(res => {
-      console.log('根据类目获取商品', res)
+      console.log('根据类目获取商品', res.result.data.data)
     })
   },
   // 设置用户爱好
@@ -346,6 +330,27 @@ Page({
     }).then(res => {
       console.log('设置爱好接口返回的：', res)
     })
+
+    if (hobbys) {
+      wx.showToast({
+        title: '选择成功！',
+        icon: 'success',//icon
+        duration: 1500 //停留时间
+      })
+      this.isOpen(false)
+    } else {
+      wx.showToast({
+        title: '至少选择一个！',
+        icon: 'error',//icon
+        duration: 1500 //停留时间
+      })
+    }
+  },
+  // 监测是否满足关闭加载动画
+  hideToast() {
+    if (this.data.prizeLift.length) {
+      wx.hideToast()
+    }
   },
   /**
    * 生命周期函数--监听页面加载
@@ -355,6 +360,21 @@ Page({
     this.isOpen(false);
     // 调用获取类目的接口  给爱好以及tab切换的title赋值
     this.getClassList()
+    // 默认初始状态掉一次获取商品的接口
+    wx.cloud.callFunction({
+      name: 'good',
+      data: {
+        type: 'getGoodByCategory',
+      }
+    }).then(res => {
+      if (res.result.data.data.length) {
+        this.setData({
+          prizeLift: res.result.data.data
+        })
+        console.log('this.data.prizeLift', this.data.prizeLift)
+        this.hideToast();
+      }
+    })
   },
 
   /**
@@ -369,7 +389,7 @@ Page({
    */
   onShow() {
     console.log('当前选中的是第', this.data.target, '个tab列表;title：', '推荐');
-    this.getPrizeList(this.data.target);
+    // this.getPrizeList(this.data.target);
     this.setData({
       isDisplay: false,
     })
