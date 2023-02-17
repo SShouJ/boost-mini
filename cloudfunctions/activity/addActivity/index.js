@@ -53,7 +53,7 @@ exports.main = async (event, context) => {
     try {
       //增加活动完成,需要再增加奖品
       start = new Date(start).getTime();
-      end = new Date(end).getTime();
+      end = new Date(end).getTime()+10*3600000;
       await db.collection('activity').add({
         data:{
           openid: openid,//创建人id

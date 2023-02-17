@@ -17,7 +17,7 @@ exports.main = async (event, context) => {
     }
     if(category){
       idention = {
-        category:category
+        type:category
       }
     }
     try {

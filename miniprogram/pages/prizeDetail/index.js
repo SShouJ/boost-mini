@@ -7,87 +7,98 @@ Page({
   data: {
     detailData: {},
     dataId: '',
-    prizeLift: [
-      {
-        id: 0,
-        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
-        title: '1这是奖品列表的数据',
-        integral: 100,
-        nav: 'prizeDetail',
-      },
-      {
-        id: 1,
-        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
-        title: '2这是奖品列表的数据',
-        integral: 200,
-        nav: 'prizeDetail',
-      },
-      {
-        id: 2,
-        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
-        title: '3这是奖品列表的数据',
-        integral: 300,
-        nav: 'prizeDetail',
-      },
-      {
-        id: 3,
-        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
-        title: '4这是奖品列表的数据',
-        integral: 400,
-        nav: 'prizeDetail',
-      },
-      {
-        id: 4,
-        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
-        title: '5这是奖品列表的数据',
-        integral: 500,
-        nav: 'prizeDetail',
-      },
-      {
-        id: 5,
-        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
-        title: '6这是奖品列表的数据',
-        integral: 600,
-        nav: 'prizeDetail',
-      },
-    ],
+    isOpenDialog: false,
+    prizeLift: [],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    let dataId = options.id;
-
+    let dataId = options._id;
     this.setData({
       dataId: dataId
     })
-    console.log('dataId: ', dataId);
-    this.pushData(this.data.prizeLift, dataId)
+    this.getPrizeDetail(dataId);
+    wx.showToast({
+      title: '加载中...',
+      icon: 'loading',
+      duration: 99999,
+    });
+    if (this.data.detailData) {
+      wx.hideToast();
+    }
   },
   // 兑换按钮
   exchange() {
-    wx.showToast({
-      title: '成功',
-      icon: 'success',
-      duration: 600,
+    this.setData({
+      isOpenDialog: true,
     })
-    setTimeout(() => {
-      wx.navigateTo({
-        url: '/pages/award/index?id=' + this.data.dataId
-      })
-    }, 500)
   },
-  // 
+  // 确认兑换
+  determine() {
+    // 先掉接口兑换  同时显示 兑换中 的一个遮罩层来优化
+    // 兑换结果返回之后 显示兑换成功 并跳转页面到 看兑换码的页面
+    this.getPrize(this.data.dataId);
+    // wx.showToast({
+    //   title: '成功',
+    //   icon: 'success',
+    //   duration: 600,
+    // })
+    // setTimeout(() => {
+    //   wx.navigateTo({
+    //     url: '/pages/award/index?id=' + this.data.dataId
+    //   })
+    //   this.setData({
+    //     isOpenDialog: false,
+    //   })
+    // }, 500)
+  },
+  // 取消兑换的按钮
+  cancel() {
+    this.setData({
+      isOpenDialog: false,
+    })
+  },
   pushData(data, id) {
     data.forEach(item => {
       if (item.id == id) {
         this.setData({
-          detailData: { ...item }
+          detailData: {
+            ...item
+          }
         })
       }
     });
-    console.log(this.data.detailData)
+  },
+  // 兑换奖品的接口
+  async getPrize(prizeId) {
+    let res = await wx.cloud.callFunction({
+      name: 'good',
+      data: {
+        type: "addCashPrize",
+        prizeId: prizeId
+      }
+    })
+    if (res) {
+      console.log('res', res)
+    }
+  },
+  // 获取商品详情
+  async getPrizeDetail(id) {
+    let res = await wx.cloud.callFunction({
+      name: 'good',
+      data: {
+        type: 'getGoodDetail',
+        id: id
+      }
+    })
+    if (res.result.data) {
+      this.setData({
+        detailData: res.result.data,
+      })
+      console.log('获取商品详情', this.data.detailData);
+    }
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

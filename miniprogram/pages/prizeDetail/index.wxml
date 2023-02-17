@@ -4,7 +4,7 @@
     <view class="header">
       <view class="prize">
         <view class="prize_img">
-          <image mode="widthFix" src="{{ detailData.url }}" />
+          <image mode="widthFix" src="{{ detailData.goodImage }}" />
         </view>
         <view class="prize_img-prompt_box">
           <!-- 奖品顶部图片部分 -->
@@ -30,7 +30,7 @@
           </view>
           <view class="right">4件已兑换</view>
         </view>
-        <view class="prize_title mt-20 bold_7">{{ detailData.title }}</view>
+        <view class="prize_title mt-20 bold_7">{{ detailData.goodName }}</view>
       </view>
     </view>
     <view class="container">
@@ -80,6 +80,21 @@
   <view class="footer mt-20 justify-space_around">
     <view bindtap="exchange" class="exchange item-center justify-space_around" hover-class="active" hover-stay-time="0">
       立即兑换
+    </view>
+  </view>
+</view>
+
+<!-- 弹层 -->
+<view wx:if="{{ isOpenDialog }}" class="dialog item-justify_center">
+  <view class="dialog_box">
+    <!-- 内容 -->
+    <view class="dialog-container-overflow">
+      您确认兑换吗？
+    </view>
+    <!-- 底部 -->
+    <view class="dialog-footer justify-space_between">
+      <button bindtap="cancel" class="dialog-no" hover-class="dialog-no_hover">取消</button>
+      <button bindtap="determine" class="dialog-ok" hover-class="dialog-ok_hover">确定</button>
     </view>
   </view>
 </view>
