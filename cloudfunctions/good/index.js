@@ -14,7 +14,7 @@ exports.main = async (event, context) => {
       return await getGoodByCategory.main(event,context);
     case 'addCashPrize':
       return await addCashPrize.main(event,context);
-    case 'getGoodDetail':
+    case 'getGoodDetail': 
       return await getGoodDetail.main(event,context);  
   }
 }
