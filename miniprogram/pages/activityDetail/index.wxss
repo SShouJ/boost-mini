@@ -140,8 +140,8 @@ margin: 20rpx;
 }
 .img-prizeDetails{
   border-radius:10rpx 0 0 10rpx ;
-  width: 180rpx;
-  height: 170rpx;
+  width: 188rpx;
+  height: 188rpx;
 }
 .box-rigth_prizeDetails{
   box-sizing: border-box;
@@ -247,7 +247,7 @@ margin: 20rpx;
 }
 .btn-share{
   margin-top: 5%;
-  width: 90%;
+ 
   border: 1rpx solid;
   border-radius: 50rpx;
   text-align: center;
@@ -265,6 +265,9 @@ font-weight: 600;
 }
 .fw-700{
   font-weight: 700;
+}
+.cl-red{
+  color: #ff292d;
 }
 
 .scroll{

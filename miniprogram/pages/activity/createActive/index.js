@@ -17,6 +17,8 @@ Page({
     index: 1,
     prizeArr: [],
     banner: 'cloud://cloud1-7ge7nl2m42cee9e9.636c-cloud1-7ge7nl2m42cee9e9-1316264853/1676377595532.png', //活动图片
+    endTime:'',
+    startTime:'',
     title: '', //活动标题
     start: '', //活动开始时间
     end: '', //活动结束时间
@@ -140,18 +142,8 @@ Page({
       }
     })
   },
-  // 复现
-  // bindPriceChange:function(e){
-  //   console.log(e);
-  //   let index = e.target.dataset.index;//所处的下标
-  //   console.log(index);
-  //   this.setData({
-  //     [`prizeForms[${index}].goodName`]:this.data.prizeArr[e.detail.value].goodName
-  //   }); 
-  //   // // console.log(this.data.prizeForms[index].id);
-  // },
+ //上传
   chooseImg(e) {
-
     let name = e.currentTarget.dataset.name;
     let id = e.currentTarget.dataset.index;
     console.log(id);
@@ -187,11 +179,35 @@ Page({
       }
     })
   },
+  //时间戳转换日期
+  formatDate(value,e) {
+    if (typeof (value) == 'undefined') {
+      return ''
+    } else {
+      let date = new Date(parseInt(value))
+      let y = date.getFullYear()
+      let MM = date.getMonth() + 1
+      MM = MM < 10 ? ('0' + MM) : MM
+      let d = date.getDate()
+      d = d < 10 ? ('0' + d) : d + e
+      let h = date.getHours()
+      h = h < 10 ? ('0' + h) : h
+      let m = date.getMinutes()
+      m = m < 10 ? ('0' + m) : m
+      let s = date.getSeconds()
+      s = s < 10 ? ('0' + s) : s
+      return y + '-' + MM + '-' + d + ' ' + h + ':' + m + ':' + s
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    // this.getGoodList()
+   let _this = this
+  this.setData({
+    startTime: _this.formatDate(new Date().getTime(),1),
+    endTime:_this.formatDate(new Date().getTime(),2)
+  })
   },
   //添加奖品
 

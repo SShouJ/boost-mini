@@ -13,10 +13,10 @@ Page({
     minutes: '00', //分
     seconds: '00', //秒
 
-
-    joinNum:0,
-    number:0,
-    countdown:'',
+    isShow: '',
+    joinNum: 0,
+    number: 0,
+    countdown: '',
     text: '还差10人可抽取下一级奖品，立即参与',
     showIndex: null, //打开弹窗的对应下标
     height: '', //屏幕高度
@@ -44,15 +44,6 @@ Page({
         id: id
       }
     })
-    // .then(res=>{
-    // console.log(res.result.data.list);
-    // res.result.data.list[0].end = this.formatDate(res.result.data.list[0].end)
-    // res.result.data.list[0].start = this.formatDate(res.result.data.list[0].start)
-    // this.setData({
-    //   activityDetail : res.result.data.list,
-    // })
-    // console.log(this.data.activityDetail);
-    // })
   },
   countTime() {
     let days, hours, minutes, seconds;
@@ -106,10 +97,10 @@ Page({
       m = m < 10 ? ('0' + m) : m
       let s = date.getSeconds()
       s = s < 10 ? ('0' + s) : s
-      return y + '-' + MM + '-' + d + ' ' + h + ':' + m + ':' + s
+      return y + ' ' + MM + '-' + d + ' ' + h + ':' + m
     }
   },
-  //关闭弹窗
+  //关闭规则弹窗
   closePopup() {
     this.setData({
       showIndex: null
@@ -142,7 +133,7 @@ Page({
       joinFlag: true,
       showFlag: data.currentTarget.dataset.flag,
       text: '还差10人可抽取下一级奖品，点击分享',
-      percent: this.data.joinNum+1
+      percent: this.data.joinNum + 1
     })
     console.log(this.data.percent);
     console.log(this.data.showFlag);
@@ -162,18 +153,8 @@ Page({
         }
       })
     }
-    // console.log(this.data.joinFalg);
   },
-  //   countdown(){
-  //     var minute=Math.floor(this.data.time  / 60 );
-  //     var second=this.data.time  % 60
-  //     second<10?second='0'+second:'';
-  //     this.setData({
-  //         countdown:minute+':'+second,
-  //         time:this.data.time-1
-  //     })
-  //     setTimeout(this.countdown, 1000);
-  // },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -181,25 +162,83 @@ Page({
     this.setData({
       activityId: options.id
     })
-    // this.countdown()
 
-    let res = await this.getAcitvityDetail(options.id)
-    res.result.data.list[0].end = this.formatDate(res.result.data.list[0].end)
-    res.result.data.list[0].start = this.formatDate(res.result.data.list[0].start)
-    res.result.data.list[0].prizeArr = res.result.data.list[0].prizeArr.sort((a,b)=>{
-      return a.goodPrize - b.goodPrize
-    })
-    console.log(res.result.data.list[0].row.length);
-    this.setData({
-      activityDetail: res.result.data.list,
-      nowDate: res.result.data.list[0].end,
-      joinNum:res.result.data.list[0].row.length,
-      percent: res.result.data.list[0].row.length/res.result.data.list[0].prizeArr[res.result.data.list[0].prizeArr.length - 1].goodPrize*100
-    })
-    console.log(res.result.data.list[0].prizeArr[res.result.data.list[0].prizeArr.length - 1].goodPrize);
+    let acitvityDetail = await this.getAcitvityDetail(options.id)
+    console.log(acitvityDetail.result.data);
+    if (acitvityDetail.result.status == 1) {
+      this.setData({
+        isShow: "none"
+      })
+      if (acitvityDetail.result.data.list[0].type == 4) {
+        wx.showLoading({
+          title: '活动未开始',
+          mask: "ture",
+        })
+        setTimeout(function () {
+          wx.hideLoading()
+        }, 1000)
+        acitvityDetail.result.data.list[0].end = this.formatDate(acitvityDetail.result.data.list[0].end)
+        acitvityDetail.result.data.list[0].start = this.formatDate(acitvityDetail.result.data.list[0].start)
+        acitvityDetail.result.data.list[0].prizeArr = acitvityDetail.result.data.list[0].prizeArr.sort((a, b) => {
+          return a.goodPrize - b.goodPrize
+        })
+        this.setData({
+          activityDetail: acitvityDetail.result.data.list,
+          nowDate: acitvityDetail.result.data.list[0].end,
+          joinNum: acitvityDetail.result.data.list[0].row.length,
+          percent: acitvityDetail.result.data.list[0].row.length / acitvityDetail.result.data.list[0].prizeArr[acitvityDetail.result.data.list[0].prizeArr.length - 1].goodPrize * 100,
+          isShow: 'none',
+          
+        })
+      } else if (acitvityDetail.result.data.list[0].type == 3) {
+        wx.showLoading({
+          title: '活动已结束',
+          mask: "ture",
+        })
+        setTimeout(function () {
+          wx.hideLoading()
+        }, 1000)
+        acitvityDetail.result.data.list[0].end = this.formatDate(acitvityDetail.result.data.list[0].end)
+        acitvityDetail.result.data.list[0].start = this.formatDate(acitvityDetail.result.data.list[0].start)
+        acitvityDetail.result.data.list[0].prizeArr = acitvityDetail.result.data.list[0].prizeArr.sort((a, b) => {
+          return a.goodPrize - b.goodPrize
+        })
+        this.setData({
+          activityDetail: acitvityDetail.result.data.list,
+          nowDate: acitvityDetail.result.data.list[0].end,
+          joinNum: acitvityDetail.result.data.list[0].row.length,
+          percent: acitvityDetail.result.data.list[0].row.length / acitvityDetail.result.data.list[0].prizeArr[acitvityDetail.result.data.list[0].prizeArr.length - 1].goodPrize * 100,
+          isShow: 'none',
+          
+        })
+      } else {
+        acitvityDetail.result.data.list[0].row.forEach(item => {
+          //已参与
+          if (item.userId == options.openid) {
+            this.setData({
+              joinFlag: true,
+              showFlag: true,
+              text: '还差10人可抽取下一级奖品，点击分享',
+              
+            })
+          }
+        })
+        acitvityDetail.result.data.list[0].end = this.formatDate(acitvityDetail.result.data.list[0].end)
+        acitvityDetail.result.data.list[0].start = this.formatDate(acitvityDetail.result.data.list[0].start)
+        acitvityDetail.result.data.list[0].prizeArr = acitvityDetail.result.data.list[0].prizeArr.sort((a, b) => {
+          return a.goodPrize - b.goodPrize
+        })
+        this.setData({
+          activityDetail: acitvityDetail.result.data.list,
+          nowDate: acitvityDetail.result.data.list[0].end,
+          joinNum: acitvityDetail.result.data.list[0].row.length,
+          percent: acitvityDetail.result.data.list[0].row.length / acitvityDetail.result.data.list[0].prizeArr[acitvityDetail.result.data.list[0].prizeArr.length - 1].goodPrize * 100,
+          isShow: 'none'
+        })
+      }
 
-
-    
+    }
+    //倒计时
     this.countTime();
     wx.showShareMenu({
       withShareTicket: true,

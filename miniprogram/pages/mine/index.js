@@ -133,8 +133,6 @@ this.setData({
   async onLoad(options) {
     const app = getApp();
     let res = await app.getUserInfo()
-    console.log('----------userinfo------------')
-    console.log(res)
     if (res.result.status == 1) {
       this.setData({
         userInfo: res.result.data,
@@ -144,7 +142,6 @@ this.setData({
       this.setData({
         isShow: "none"
       })
-      console.log(res.result.msg);
     }
   },
 
@@ -178,7 +175,7 @@ this.setData({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh() {
-
+         
   },
 
   /**

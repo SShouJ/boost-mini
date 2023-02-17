@@ -1,5 +1,5 @@
 <!--feedback/pages/message.wxml-->
-<view class="news-page">
+<!-- <view class="news-page">
     <scroll-view scroll-y="{{true}}" style="height: 100%;">
         <view class="wrap box">
 
@@ -51,4 +51,12 @@
             </view>
         </view>
     </scroll-view>
-</view>
+</view> -->
+<!-- 数据列表 -->
+<scroll-view class="box-scroll" scroll-y='true' refresher-enabled="true" refresher-threshold="{{100}}" refresher-default-style="black" refresher-background="white" refresher-triggered="{{triggered}}" bindrefresherrefresh="onScrollRefresh" bindscrolltolower="bindscrolltolowerFn">
+    <view>
+       
+    </view>
+    <view class="loading" hidden="{{!searchLoading}}">正在载入更多...</view>
+    <view class="loading" hidden="{{!searchLoadingComplete}}">已加载全部</view>
+</scroll-view>
