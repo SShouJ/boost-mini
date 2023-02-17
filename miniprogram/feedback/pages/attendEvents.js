@@ -8,11 +8,15 @@ Page({
     navList:[],
     activityList:[],
     target:2,
+    pageSize:2,
+    pageNum:1,
   },
-  changeItem(e){
+  async changeItem(e){
     this.setData({
       target:e.currentTarget.dataset.id,
     })
+    let res = await this.getMyJoinAcitivity(this.data.target,this.data.pageSize,this.data.pageNum);
+    console.log(res);
   },
   toDetail(e){
     wx.navigateTo({
@@ -24,6 +28,26 @@ Page({
       url: "/pages/activity/createActive/index",
     })
   },
+  getMyJoinAcitivity(status,pageSize,pageNum){
+    return new Promise((resolve,reject)=>{
+      wx.cloud.callFunction({
+        name:'activity',
+        data:{
+          type:'myJoinActivity',
+          status:status,
+          pageSize:pageSize,
+          pageNum:pageNum,
+        },
+        success(res){
+          resolve(res);
+        },
+        fail(err){
+          reject(err);
+        }
+      })
+    })
+  },
+
 
   /**
    * 生命周期函数--监听页面加载
