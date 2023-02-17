@@ -91,7 +91,8 @@ Page({
       icon: 'none',//icon
       duration: 1500 //停留时间
     })
-    this.isOpen(false)
+    this.isOpen(false);
+    this.getAllGoodByCategory();
   },
   // changeItem 是监测tab列表当前选中的是哪个的方法
   changeItem(e) {
@@ -201,7 +202,7 @@ Page({
         prizeLift: res.result.data.data,
         showPrize: true,
       })
-      this.hideToast();
+      wx.hideToast();
     }
   },
   // 设置用户爱好
@@ -247,7 +248,7 @@ Page({
         showPrize:true,
         prizeLift: res.result.data.data
       })
-      wx.hideToast()
+      this.hideToast()
     }
   },
   // 监测是否满足关闭加载动画
