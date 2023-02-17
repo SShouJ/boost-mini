@@ -2,7 +2,8 @@
 const cloud = require('wx-server-sdk')
 cloud.init({ env: cloud.DYNAMIC_CURRENT_ENV }) // 使用当前云环境
 const getUserInfo = require("../../user/getUserInfo/index");
-const updateUserInfo = require("../../user/updateUser/index")
+const updateUserInfo = require("../../user/updateUser/index");
+const addPointDetail = require("../addPointDetail/index");
 const db = cloud.database();
 // 云函数入口函数
 exports.main = async (event, context) => {
@@ -42,6 +43,10 @@ exports.main = async (event, context) => {
       let tempIntegralNum = userRes.data.integralNum - goodRes.data.integral;
       await updateUserInfo.main({
         integralNum:tempIntegralNum,
+      },context);
+      //这个是增加用户信息
+      await addPointDetail.main({
+        integralNum:-tempIntegralNum
       },context);
       console.log('-------------我是剩余积分-------------------');
       console.log(tempIntegralNum);
