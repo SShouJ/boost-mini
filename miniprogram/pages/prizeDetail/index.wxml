@@ -83,3 +83,18 @@
     </view>
   </view>
 </view>
+
+<!-- 弹层 -->
+<view wx:if="{{ isOpenDialog }}" class="dialog item-justify_center">
+  <view class="dialog_box">
+    <!-- 内容 -->
+    <view class="dialog-container-overflow">
+      您确认兑换吗？
+    </view>
+    <!-- 底部 -->
+    <view class="dialog-footer justify-space_between">
+      <button bindtap="cancel" class="dialog-no" hover-class="dialog-no_hover">取消</button>
+      <button bindtap="determine" class="dialog-ok" hover-class="dialog-ok_hover">确定</button>
+    </view>
+  </view>
+</view>

@@ -1,4 +1,109 @@
 /* pages/prizeDetail/index.wxss */
+
+/* 弹层样式开始 */
+.dialog {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(82, 82, 82, 0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.dialog .dialog_box {
+  width: 700rpx;
+  /* min-height: 400rpx; */
+  background-color: #fff;
+  color: #000;
+  box-sizing: border-box;
+  border-radius: 20rpx;
+  position: relative;
+}
+
+.dialog .dialog_box .dialog-header {
+  padding: 30rpx 0;
+  text-align: center;
+  font-size: 34rpx;
+}
+
+.dialog .dialog_box .dialog-header .title {
+  width: calc(100% - 100rpx);
+}
+
+.dialog .dialog_box .dialog-header .skip {
+  font-size: 26rpx !important;
+  color: #a1a1a1 !important;
+}
+
+.dialog .dialog_box .dialog-container-overflow {
+  margin-bottom: 90rpx;
+  padding: 50rpx 0rpx 50rpx 0;
+  font-size: 40rpx;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* 弹层中 中间内容部分 */
+.dialog-container .item {
+  padding: 0 25rpx;
+  border-radius: 10rpx;
+  background-color: #fff;
+  color: #000;
+  display: -webkit-box;
+  overflow: hidden !important;
+  white-space: normal !important;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  height: 68rpx;
+  line-height: 68rpx;
+  text-align: center;
+}
+
+.active {
+  background-color: red !important;
+  color: #fff !important;
+}
+
+/* 弹层中 中间内容部分 */
+
+.dialog .dialog-footer {
+  width: 100%;
+  min-height: 70rpx;
+  position: absolute;
+  bottom: 0 !important;
+  box-sizing: border-box;
+  padding: 10rpx 20rpx;
+  gap: 0 20rpx !important;
+}
+
+.dialog .dialog-footer .dialog-ok,
+.dialog .dialog-footer .dialog-no {
+  width: 50%;
+  padding: 10rpx 0;
+  color: #fff;
+  border-radius: 15rpx;
+}
+
+.dialog .dialog-footer .dialog-ok {
+  background-color: #f06c6c;
+}
+
+.dialog .dialog-footer .dialog-no {
+  background-color: #fab6b6;
+}
+
+.dialog-ok_hover {
+  background-color: #fab6b6 !important;
+}
+
+.dialog-no_hover {
+  background-color: #f06c6c !important;
+}
+
+/* 弹层样式结束 */
+
 .wrap {
   width: 710rpx !important;
   margin: 0 auto;
@@ -7,6 +112,12 @@
 .flex {
   display: flex;
   justify-items: center;
+}
+
+.item-justify_center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .justify-space_between {
@@ -220,12 +331,12 @@
   width: 100%;
   padding: 20rpx 20rpx;
   background-color: rgb(216, 92, 86);
-  color: #fff; 
+  color: #fff;
   font-size: 36rpx;
   border-radius: 20rpx;
 }
 
-.footer .active{
+.footer .active {
   background-color: rgba(216, 92, 86, 0.5);
   color: #fff;
 }
