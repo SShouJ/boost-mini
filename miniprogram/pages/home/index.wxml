@@ -35,10 +35,10 @@
       <scroll-view scroll-y="{{true}}" style="height:calc(100% - 100rpx)">
         <view class="nav_box-content">
           <!-- 奖品列表 -->
-          <view class="activity mt-30 a_j-center">
+          <view class="activity mt-30 a_j-center" wx:if="{{showPrize}}">
             <view class="activity-item" bindtap="prizeLiftNav" data-name="{{item}}" wx:for="{{ prizeLift }}" wx:key="index">
               <view class="img">
-                <image class="activity_img" src="{{item.goodImage}}" mode="" />
+                <image class="activity_img" src="{{ item.goodImage }}" mode="" />
               </view>
               <view class="title">
                 <text>{{item.goodName}}</text>
