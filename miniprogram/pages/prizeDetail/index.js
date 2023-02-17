@@ -19,8 +19,15 @@ Page({
     this.setData({
       dataId: dataId
     })
-    console.log('dataId: ', dataId);
-    // this.pushData(this.data.prizeLift, dataId)
+    this.getPrizeDetail(dataId);
+    wx.showToast({
+      title: '加载中...',
+      icon: 'loading',
+      duration: 99999,
+    });
+    if (this.data.detailData) {
+      wx.hideToast();
+    }
   },
   // 兑换按钮
   exchange() {
@@ -75,6 +82,22 @@ Page({
     })
     if (res) {
       console.log('res', res)
+    }
+  },
+  // 获取商品详情
+  async getPrizeDetail(id) {
+    let res = await wx.cloud.callFunction({
+      name: 'good',
+      data: {
+        type: 'getGoodDetail',
+        id: id
+      }
+    })
+    if (res.result.data) {
+      this.setData({
+        detailData: res.result.data,
+      })
+      console.log('获取商品详情', this.data.detailData);
     }
   },
   /**

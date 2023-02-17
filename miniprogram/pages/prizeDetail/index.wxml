@@ -4,7 +4,7 @@
     <view class="header">
       <view class="prize">
         <view class="prize_img">
-          <image mode="widthFix" src="{{ detailData.url }}" />
+          <image mode="widthFix" src="{{ detailData.goodImage }}" />
         </view>
         <view class="prize_img-prompt_box">
           <!-- 奖品顶部图片部分 -->
@@ -30,7 +30,7 @@
           </view>
           <view class="right">4件已兑换</view>
         </view>
-        <view class="prize_title mt-20 bold_7">{{ detailData.title }}</view>
+        <view class="prize_title mt-20 bold_7">{{ detailData.goodName }}</view>
       </view>
     </view>
     <view class="container">
