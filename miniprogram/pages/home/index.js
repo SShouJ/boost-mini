@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    target: 1, // target ：当前页--
+    target: 0, // target ：当前页--
     navList: [],
     prizeLift: [],
     hobbys: [],
@@ -100,166 +100,177 @@ Page({
     })
     let title = ''
     this.data.navList.forEach((item, i) => {
-      if ((i + 1) == this.data.target) {
+      if (i == this.data.target) {
         title = item.name
       }
     })
+    wx.showToast({
+      title: '加载中...',
+      icon: 'loading',
+    });
     console.log('当前选中的是第', this.data.target, '个tab列表; title：', title);
-    this.getPrizeList(this.data.target);
+    let navId = this.data.navList[this.data.target]._id
+    if (this.data.target == 0) {
+      // 若类目的 id 为 0 则调用所有商品的接口
+      this.getAllGoodByCategory()
+    } else {
+      this.getGoodByCategory(navId)
+    }
   },
   // getPrizeList 是获取奖品列表数据的方法
-  getPrizeList(type) {
-    // prizeLift1 prizeLift2 prizeLift3 prizeLift4 这几个等接口出来要分别改成一个对应的 掉接口的方法
-    let prizeLift1 = [
-      {
-        id: 0,
-        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
-        title: '1这是奖品列表的数据',
-        integral: 100,
-        nav: 'prizeDetail',
-      },
-      {
-        id: 1,
-        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
-        title: '2这是奖品列表的数据',
-        integral: 200,
-        nav: 'prizeDetail',
-      },
-      {
-        id: 2,
-        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
-        title: '3这是奖品列表的数据',
-        integral: 300,
-        nav: 'prizeDetail',
-      },
-      {
-        id: 3,
-        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
-        title: '4这是奖品列表的数据',
-        integral: 400,
-        nav: 'prizeDetail',
-      },
-      {
-        id: 4,
-        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
-        title: '5这是奖品列表的数据',
-        integral: 500,
-        nav: 'prizeDetail',
-      },
-      {
-        id: 5,
-        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
-        title: '6这是奖品列表的数据',
-        integral: 600,
-        nav: 'prizeDetail',
-      },
-    ];
-    let prizeLift2 = [
-      {
-        id: 0,
-        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
-        title: '1这是分类2里的数据',
-        integral: 100,
-        nav: 'prizeDetail',
-      },
-      {
-        id: 1,
-        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
-        title: '2这是分类2里的数据',
-        integral: 200,
-        nav: 'prizeDetail',
-      },
-      {
-        id: 2,
-        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
-        title: '3这是分类2里的数据',
-        integral: 300,
-        nav: 'prizeDetail',
-      },
-      {
-        id: 3,
-        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
-        title: '4这是分类2里的数据',
-        integral: 400,
-        nav: 'prizeDetail',
-      },
-    ];
-    let prizeLift3 = [
-      {
-        id: 0,
-        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
-        title: '1分类三的数据',
-        integral: 100,
-        nav: 'prizeDetail',
-      },
-      {
-        id: 1,
-        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
-        title: '2分类三的数据',
-        integral: 200,
-        nav: 'prizeDetail',
-      },
-      {
-        id: 2,
-        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
-        title: '3分类三的数据',
-        integral: 300,
-        nav: 'prizeDetail',
-      },
-      {
-        id: 3,
-        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
-        title: '4分类三的数据',
-        integral: 400,
-        nav: 'prizeDetail',
-      },
-    ];
-    let prizeLift4 = [
-      {
-        id: 0,
-        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
-        title: '1分类四的数据',
-        integral: 100,
-        nav: 'prizeDetail',
-      },
-      {
-        id: 1,
-        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
-        title: '2分类四的数据',
-        integral: 200,
-        nav: 'prizeDetail',
-      },
-      {
-        id: 2,
-        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
-        title: '3分类四的数据',
-        integral: 300,
-        nav: 'prizeDetail',
-      },
-      {
-        id: 3,
-        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
-        title: '4分类四的数据',
-        integral: 400,
-        nav: 'prizeDetail',
-      },
-    ];
-    let data = null
-    if (type == 1) {
-      data = prizeLift1
-    } else if (type == 2) {
-      data = prizeLift2
-    } else if (type == 3) {
-      data = prizeLift3
-    } else if (type == 4) {
-      data = prizeLift4
-    }
-    // this.setData({
-    //   prizeLift: data
-    // })
-    console.log('当前页的数据是', this.data.prizeLift);
-  },
+  // getPrizeList(type) {
+  //   // prizeLift1 prizeLift2 prizeLift3 prizeLift4 这几个等接口出来要分别改成一个对应的 掉接口的方法
+  //   let prizeLift1 = [
+  //     {
+  //       id: 0,
+  //       url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
+  //       title: '1这是奖品列表的数据',
+  //       integral: 100,
+  //       nav: 'prizeDetail',
+  //     },
+  //     {
+  //       id: 1,
+  //       url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
+  //       title: '2这是奖品列表的数据',
+  //       integral: 200,
+  //       nav: 'prizeDetail',
+  //     },
+  //     {
+  //       id: 2,
+  //       url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
+  //       title: '3这是奖品列表的数据',
+  //       integral: 300,
+  //       nav: 'prizeDetail',
+  //     },
+  //     {
+  //       id: 3,
+  //       url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
+  //       title: '4这是奖品列表的数据',
+  //       integral: 400,
+  //       nav: 'prizeDetail',
+  //     },
+  //     {
+  //       id: 4,
+  //       url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
+  //       title: '5这是奖品列表的数据',
+  //       integral: 500,
+  //       nav: 'prizeDetail',
+  //     },
+  //     {
+  //       id: 5,
+  //       url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
+  //       title: '6这是奖品列表的数据',
+  //       integral: 600,
+  //       nav: 'prizeDetail',
+  //     },
+  //   ];
+  //   let prizeLift2 = [
+  //     {
+  //       id: 0,
+  //       url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
+  //       title: '1这是分类2里的数据',
+  //       integral: 100,
+  //       nav: 'prizeDetail',
+  //     },
+  //     {
+  //       id: 1,
+  //       url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
+  //       title: '2这是分类2里的数据',
+  //       integral: 200,
+  //       nav: 'prizeDetail',
+  //     },
+  //     {
+  //       id: 2,
+  //       url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
+  //       title: '3这是分类2里的数据',
+  //       integral: 300,
+  //       nav: 'prizeDetail',
+  //     },
+  //     {
+  //       id: 3,
+  //       url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
+  //       title: '4这是分类2里的数据',
+  //       integral: 400,
+  //       nav: 'prizeDetail',
+  //     },
+  //   ];
+  //   let prizeLift3 = [
+  //     {
+  //       id: 0,
+  //       url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
+  //       title: '1分类三的数据',
+  //       integral: 100,
+  //       nav: 'prizeDetail',
+  //     },
+  //     {
+  //       id: 1,
+  //       url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
+  //       title: '2分类三的数据',
+  //       integral: 200,
+  //       nav: 'prizeDetail',
+  //     },
+  //     {
+  //       id: 2,
+  //       url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
+  //       title: '3分类三的数据',
+  //       integral: 300,
+  //       nav: 'prizeDetail',
+  //     },
+  //     {
+  //       id: 3,
+  //       url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
+  //       title: '4分类三的数据',
+  //       integral: 400,
+  //       nav: 'prizeDetail',
+  //     },
+  //   ];
+  //   let prizeLift4 = [
+  //     {
+  //       id: 0,
+  //       url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
+  //       title: '1分类四的数据',
+  //       integral: 100,
+  //       nav: 'prizeDetail',
+  //     },
+  //     {
+  //       id: 1,
+  //       url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
+  //       title: '2分类四的数据',
+  //       integral: 200,
+  //       nav: 'prizeDetail',
+  //     },
+  //     {
+  //       id: 2,
+  //       url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
+  //       title: '3分类四的数据',
+  //       integral: 300,
+  //       nav: 'prizeDetail',
+  //     },
+  //     {
+  //       id: 3,
+  //       url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
+  //       title: '4分类四的数据',
+  //       integral: 400,
+  //       nav: 'prizeDetail',
+  //     },
+  //   ];
+  //   let data = null
+  //   if (type == 1) {
+  //     data = prizeLift1
+  //   } else if (type == 2) {
+  //     data = prizeLift2
+  //   } else if (type == 3) {
+  //     data = prizeLift3
+  //   } else if (type == 4) {
+  //     data = prizeLift4
+  //   }
+  //   // this.setData({
+  //   //   prizeLift: data
+  //   // })
+  //   console.log('当前页的数据是', this.data.prizeLift);
+  // },
   // prizeLiftNav 跳转详情页面 + 传参 的方法
+
   prizeLiftNav(data) {
     let item = data.currentTarget.dataset.name;
     wx.navigateTo({
@@ -297,6 +308,7 @@ Page({
             name: '推荐'
           },
         ]
+        console.log('类目', navData)
         res.result.data.data.forEach((e) => {
           navData.push(e);
         })
@@ -308,16 +320,38 @@ Page({
     })
   },
   // 根据类目获取商品
-  getGoodByCategory(id) {
-    wx.cloud.callFunction({
+  async getGoodByCategory(id) {
+    let res = await wx.cloud.callFunction({
       name: 'good',
       data: {
         type: 'getGoodByCategory',
         category: id
       }
-    }).then(res => {
-      console.log('根据类目获取商品', res.result.data.data)
     })
+    if (res.result.data.data.length) {
+      console.log('数据为：', res.result.data.data);
+      this.setData({
+        prizeLift: res.result.data.data
+      })
+      wx.hideToast()
+    }
+  },
+  // 获取所有商品
+  async getAllGoodByCategory() {
+    // 默认初始状态掉一次获取商品的接口
+    let res = await wx.cloud.callFunction({
+      name: 'good',
+      data: {
+        type: 'getGoodByCategory',
+      }
+    })
+    if (res.result.data.data.length) {
+      console.log('数据为：', res.result.data.data);
+      this.setData({
+        prizeLift: res.result.data.data
+      })
+      this.hideToast();
+    }
   },
   // 设置用户爱好
   setUserHobby(hobbys) {
@@ -360,21 +394,8 @@ Page({
     this.isOpen(false);
     // 调用获取类目的接口  给爱好以及tab切换的title赋值
     this.getClassList()
-    // 默认初始状态掉一次获取商品的接口
-    wx.cloud.callFunction({
-      name: 'good',
-      data: {
-        type: 'getGoodByCategory',
-      }
-    }).then(res => {
-      if (res.result.data.data.length) {
-        this.setData({
-          prizeLift: res.result.data.data
-        })
-        console.log('this.data.prizeLift', this.data.prizeLift)
-        this.hideToast();
-      }
-    })
+    // 初始状态调用一次获取所有商品的接口
+    this.getAllGoodByCategory()
   },
 
   /**

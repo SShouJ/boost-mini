@@ -20,13 +20,13 @@
     <view class="nav_box">
       <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100vw;" enable-flex>
         <view class="nav">
-          <sticky-section class="nav-item fw-600" wx:for="{{ navList }}" bindtap="changeItem" data-id="{{ index + 1 }}" wx:key="_id">
+          <sticky-section class="nav-item fw-600" wx:for="{{ navList }}" bindtap="changeItem" data-id="{{ index }}" wx:key="_id">
             <view class="nav-title">
-              <view class="{{ (index + 1) == target ? 'cl-red' : ''}} fs-28">
+              <view class="{{ (index) == target ? 'cl-red' : ''}} fs-28">
                 {{item.name}}
               </view>
             </view>
-            <view class="{{ (index + 1) == target ? 'nav-line' : ''}}  mt-10"></view>
+            <view class="{{ (index) == target ? 'nav-line' : ''}}  mt-10"></view>
           </sticky-section>
         </view>
       </scroll-view>
