@@ -125,7 +125,7 @@ Page({
   prizeLiftNav(data) {
     let item = data.currentTarget.dataset.name;
     wx.navigateTo({
-      url: '/pages/' + item.nav + '/index?id=' + item.id,
+      url: '/pages/prizeDetail/index?_id=' + item._id,
     })
   },
   // toRecord 是跳转到兑换记录的方法

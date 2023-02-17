@@ -7,63 +7,19 @@ Page({
   data: {
     detailData: {},
     dataId: '',
-    prizeLift: [
-      {
-        id: 0,
-        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
-        title: '1这是奖品列表的数据',
-        integral: 100,
-        nav: 'prizeDetail',
-      },
-      {
-        id: 1,
-        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
-        title: '2这是奖品列表的数据',
-        integral: 200,
-        nav: 'prizeDetail',
-      },
-      {
-        id: 2,
-        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
-        title: '3这是奖品列表的数据',
-        integral: 300,
-        nav: 'prizeDetail',
-      },
-      {
-        id: 3,
-        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
-        title: '4这是奖品列表的数据',
-        integral: 400,
-        nav: 'prizeDetail',
-      },
-      {
-        id: 4,
-        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
-        title: '5这是奖品列表的数据',
-        integral: 500,
-        nav: 'prizeDetail',
-      },
-      {
-        id: 5,
-        url: 'https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/goods1.png?sign=a05f2c0805a974e22e8be43c4f4d5c40&t=1675763308',
-        title: '6这是奖品列表的数据',
-        integral: 600,
-        nav: 'prizeDetail',
-      },
-    ],
+    prizeLift: [],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    let dataId = options.id;
-
+    let dataId = options._id;
     this.setData({
       dataId: dataId
     })
     console.log('dataId: ', dataId);
-    this.pushData(this.data.prizeLift, dataId)
+    // this.pushData(this.data.prizeLift, dataId)
   },
   // 兑换按钮
   exchange() {
@@ -83,11 +39,12 @@ Page({
     data.forEach(item => {
       if (item.id == id) {
         this.setData({
-          detailData: { ...item }
+          detailData: {
+            ...item
+          }
         })
       }
     });
-    console.log(this.data.detailData)
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
