@@ -31,7 +31,7 @@ exports.main = async (event, context) => {
         }
       })
       .catch(err=>{
-        return {·
+        return {
           status:0,
           msg:err,
           data:[],
