@@ -35,14 +35,20 @@ exports.main = async (event, context) => {
           data:[],
         })
       }
-      if(userInfo.integralNum < goodInfo.integral){
+      // goodInfo.integral
+      if(userInfo.integralNum <= 0){
         await transaction.rollback({
           status:0,
-          msg:'没有足够的积分',
+          msg:'您的积分不足！',
           data:[],
         })
       }
-      let tempIntegralNum = userInfo.integralNum - goodInfo.integral;
+      let tempIntegralNum;
+      if(userInfo.integralNum>0){
+        tempIntegralNum = userInfo.integralNum - goodInfo.integral;
+      }else{
+        tempIntegralNum=0;
+      }
       //走一个更改用户信息的接口
       await transaction.collection('user').where({
         openid
