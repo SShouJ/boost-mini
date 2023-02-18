@@ -37,22 +37,12 @@ Page({
   },
   // 确认兑换
   determine() {
+    wx.showToast({
+      title: '加载中...',
+      icon: 'loading',
+    });
     // 先掉接口兑换  同时显示 兑换中 的一个遮罩层来优化
-    // 兑换结果返回之后 显示兑换成功 并跳转页面到 看兑换码的页面
     this.getPrize(this.data.dataId);
-    // wx.showToast({
-    //   title: '成功',
-    //   icon: 'success',
-    //   duration: 600,
-    // })
-    // setTimeout(() => {
-    //   wx.navigateTo({
-    //     url: '/pages/award/index?id=' + this.data.dataId
-    //   })
-    //   this.setData({
-    //     isOpenDialog: false,
-    //   })
-    // }, 500)
   },
   // 取消兑换的按钮
   cancel() {
@@ -80,8 +70,27 @@ Page({
         prizeId: prizeId
       }
     })
-    if (res) {
-      console.log('res', res)
+    if (res.result.status == 1) {
+      wx.hideToast()
+      console.log('兑换成功,您兑换的奖品为：', this.data.detailData.goodName)
+      // 兑换结果返回之后 显示兑换成功 并跳转页面到 看兑换码的页面
+      wx.showToast({
+        title: '成功',
+        icon: 'success',
+        duration: 600,
+      })
+      // 兑换成功之后需要把返回值传给兑奖嘛页面
+      setTimeout(() => {
+        wx.navigateTo({
+          url: '/pages/award/index?id=' + this.data.dataId
+        })
+        this.setData({
+          isOpenDialog: false,
+        })
+      }, 500)
+    } else if (res.result.status == 0) {
+      console.log(res.result)
+      console.log('兑换失败', res.result.msg)
     }
   },
   // 获取商品详情

@@ -109,6 +109,14 @@
   margin: 0 auto;
 }
 
+.fs-30 {
+  font-size: 30rpx;
+}
+
+.c-ccc {
+  color: #ccc;
+}
+
 .flex {
   display: flex;
   justify-items: center;
