@@ -16,7 +16,7 @@
 
             <view class="right_text">
               <text wx:if="{{ detailData.date }}" class="bold_9">{{ detailData.date }}开抢</text>
-              <text wx:else>目前无信息</text>
+              <text wx:else>今日特惠</text>
             </view>
           </view>
         </view>
