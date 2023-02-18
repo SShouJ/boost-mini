@@ -23,6 +23,7 @@ exports.main = async (event, context) => {
       }).skip(pageSize*(pageNum - 1)).limit(pageSize)
       .end()
       .then(res=>{
+        //
         return {
           status:1,
           msg:'success',
@@ -30,7 +31,7 @@ exports.main = async (event, context) => {
         }
       })
       .catch(err=>{
-        return {
+        return {·
           status:0,
           msg:err,
           data:[],
