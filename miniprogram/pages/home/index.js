@@ -218,7 +218,7 @@ Page({
       console.log(res)
     }
     this.isLogin();
-    if (hobbys) {
+    if (hobbys.length) {
       wx.showToast({
         title: '选择成功！',
         icon: 'success',//icon
