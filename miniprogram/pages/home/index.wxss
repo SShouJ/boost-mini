@@ -128,7 +128,6 @@
 .body .header .header_userinfo .left .icon-more {
   width: 30rpx;
   height: 30rpx;
-  margin-top: 10rpx;
 }
 
 .body .header .header_userinfo .right {
