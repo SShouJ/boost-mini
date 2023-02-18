@@ -36,13 +36,13 @@
       <text class="ml-5">活动时间<text class="cl-grey fs-14">(默认时间为: 8:00至18.00)</text></text>
     </view>
     <view class="pd-17 flex-around fs-15">
-      <picker bindchange="bindDateChange" data-name="startTime" mode="date">
+      <picker bindchange="bindDateChange" data-name="startTime" mode="date" start="{{startTime}}">
         <view  class="date">
          {{time.startTime}} 
         </view>
       </picker>
       <text>至</text>
-      <picker bindchange="bindDateChange" data-name="endTime" mode="date">
+      <picker bindchange="bindDateChange" data-name="endTime" mode="date" start="{{endTime}}" >
         <view class="date">
           {{time.endTime}}
         </view>

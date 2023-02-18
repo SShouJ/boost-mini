@@ -19,8 +19,8 @@ Component({
    * 组件的初始数据
    */
   data: {
-    btnClass:['','them-light','them-low'],
-    btnText:['','进入活动','活动已结束'],
+    btnClass:['','them-light','them-low','them-un'],
+    btnText:['','进入活动','活动已结束','活动未开始'],
   },
 
   /**
