@@ -68,7 +68,9 @@
   background: #f3f5f5;
   min-height: 100vh;
 }
-
+.scrolltolower{
+  margin: 10% 38%;
+}
 /* 每一项活动 */
 .activity-item{
   background: #fff;

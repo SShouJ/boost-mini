@@ -1,5 +1,6 @@
 <!--pages/activity/index.wxml-->
 <view class="activity">
+  <loading isShow="{{isShow}}"></loading>
   <!-- 活动提示 -->
   <view class="welfare">
      <!-- <image class="welfare-img" src="cloud://cloud1-7ge7nl2m42cee9e9.636c-cloud1-7ge7nl2m42cee9e9-1316264853/fuli.png" mode="scaleToFill"/> -->
@@ -53,13 +54,16 @@
     </view>
   </view>
   <!-- 活动每一项 -->
-  <scroll-view style="height: calc(100vh - 480rpx);" 	lower-threshold='10' bindscrolltolower="scrolltolower"	scroll-y="{{true}}">
+  <scroll-view style="height: calc(100vh - 480rpx);" lower-threshold="3"	 bindscrolltolower="scrolltolower"	scroll-y="{{true}}">
   <view class="fs-30 fw-600 actwu" wx:if="{{activityList.length == 0}}">
     暂无活动。。。
   </view>
     <view wx:else="">
       <view class="wrap mb-10" wx:for="{{activityList}}"  wx:key="id">
-      <activity bindtap="toDetails" activityItem="{{item}}" data-id="{{item._id}}"></activity>
+      <activity bindtap="toDetails" activityItem="{{item}}" data-openid="{{item.openid}}" data-id="{{item._id}}" data-type='{{item.type}}'></activity>
+    </view>
+    <view class="fs-12 scrolltolower wrap">
+      {{fooderText}}
     </view>
     </view>
   </scroll-view>

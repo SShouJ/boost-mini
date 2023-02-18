@@ -5,65 +5,74 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    isShow:'block',
+    islogin: false,
+    userInfo: {},
     activityList: [],
     navList: [],
     target: 2,
-    size:2,
-    num:1
+    size: 2,
+    num: 1,
+    fooderText:'上拉加载更多活动'
   },
   toDetails(e) {
+  
     wx.navigateTo({
-      url: '/pages/activityDetail/index?id=' + e.currentTarget.dataset.id
+      url: '/pages/activityDetail/index?id=' + e.currentTarget.dataset.id+'&openid='+e.currentTarget.dataset.openid+'&type='+ e.currentTarget.dataset.type
     })
+  
+  
   },
+  
   //切换tab方法
- async changeItem(e) {
+  async changeItem(e) {
     this.setData({
       size: 2,
-      num:1,
+      num: 1,
       target: e.currentTarget.dataset.id,
-      activityList:[]
+      activityList: [],
+        fooderText:'上拉加载更多活动'
     })
     wx.showLoading({
       title: '加载中',
-      mask:"ture",
+      mask: "ture",
     })
-    let res =await this.getActivityList()
+    let res = await this.getActivityList()
     if (res.result.data.list.length == 0) {
       wx.hideLoading()
       wx.showLoading({
-        title: '没有更多了',
-        mask:"ture",
+        title: '已经没有更多了',
+        mask: "ture",
       })
+     
       setTimeout(function () {
         wx.hideLoading()
       }, 500)
-     
+
     } else {
       wx.hideLoading()
       wx.showLoading({
         title: '加载成功',
-        mask:"ture",
+        mask: "ture",
       })
       let list = res.result.data.list
       list.forEach(item => {
         console.log(item);
         item.end = this.formatDate(item.end)
         item.start = this.formatDate(item.start)
-  })
-  this.setData({
+      })
+      this.setData({
         activityList: list
       })
       setTimeout(function () {
         wx.hideLoading()
       }, 500)
     }
-    
-      console.log("=========");
-      console.log(this.data.activityList);
- },
-//时间戳转换日期
+
+    console.log("=========");
+    console.log(this.data.activityList);
+  },
+  //时间戳转换日期
   formatDate(value) {
     if (typeof (value) == 'undefined') {
       return ''
@@ -83,21 +92,14 @@ Page({
       return y + '-' + MM + '-' + d
     }
   },
-  //下拉
-  // onPullDownRefresh() {
-  //   wx.stopPullDownRefresh({
-  //     success: (res) => {
-  //       console.log(1);
-  //     }
-  //   })
-  // },
+
   //获取活动列表
   getActivityList() {
     console.log(this.data.target);
     console.log(this.data.size);
     console.log(this.data.num);
 
-  return  wx.cloud.callFunction({
+    return wx.cloud.callFunction({
       name: "activity",
       data: {
         type: "getActivityByCategory",
@@ -106,51 +108,40 @@ Page({
         pageNum: this.data.num,
       }
     })
-    // .then(res => {
-    //   console.log(res);
-    //   let list = res.result.data.list
-    //   list.forEach(item => {
-    //     console.log(item);
-    //     item.end = this.formatDate(item.end)
-    //     item.start = this.formatDate(item.start)
-    //   })
-    //   let concatList = this.data.activityList.concat(list)
-    //   this.setData({
-    //     activityList: concatList
-    //   })
-     
-    // })
   },
   //上拉加载
- async scrolltolower() {
+  async scrolltolower() {
     console.log("------------------------------------");
     this.setData({
       num: this.data.num + 1,
-      size : this.data.size 
+      size: this.data.size
     })
     wx.showLoading({
       title: '加载中',
-      mask:"ture",
+      mask: "ture",
     })
-  let actList =await this.getActivityList()
-  console.log(actList.result.data);
-  if (actList.result.data.list.length == 0) {
-    wx.hideLoading()
-    wx.showLoading({
-      title: '没有更多了',
-      mask:"ture",
-    })
-    setTimeout(function () {
+    let actList = await this.getActivityList()
+    console.log(actList.result.data);
+    if (actList.result.data.list.length == 0) {
       wx.hideLoading()
-    }, 500)
-   
-  } else {
-    wx.hideLoading()
-    wx.showLoading({
-      title: '加载成功',
-      mask:"ture",
-    })
-    let list = actList.result.data.list
+      wx.showLoading({
+        title: '已经没有更多了',
+        mask: "ture",
+      })
+      this.setData({
+        fooderText:'已经到最底部了'
+    }),
+      setTimeout(function () {
+        wx.hideLoading()
+      }, 500)
+
+    } else {
+      wx.hideLoading()
+      wx.showLoading({
+        title: '加载成功',
+        mask: "ture",
+      })
+      let list = actList.result.data.list
       list.forEach(item => {
         console.log(item);
         item.end = this.formatDate(item.end)
@@ -160,17 +151,17 @@ Page({
       this.setData({
         activityList: concatList
       })
-    setTimeout(function () {
-      wx.hideLoading()
-    }, 500)
-  }
-  
+      setTimeout(function () {
+        wx.hideLoading()
+      }, 500)
+    }
+
   },
   /**
    * 生命周期函数--监听页面加载
    */
-async  onLoad(options) {
-  
+  async onLoad(options) {
+
     let navList = [{
         id: 1,
         title: "全部",
@@ -192,40 +183,44 @@ async  onLoad(options) {
     this.setData({
       navList: navList
     })
-    wx.showLoading({
-      title: '加载中',
-      mask:"ture",
-    })
-    let res = await this.getActivityList()
-    if (res.result.status == 1) {
-      wx.hideLoading()
-      wx.showLoading({
-        title: '加载成功',
-        mask:"ture",
+    const app = getApp();
+    let getUserInfoRes = await app.getUserInfo()
+    if (getUserInfoRes.result.status == 1) {
+      let getActivityListRes = await this.getActivityList()
+      if (getActivityListRes.result.status == 1) {
+        let list = getActivityListRes.result.data.list
+      list.forEach(item => {
+        console.log(item);
+        item.end = this.formatDate(item.end)
+        item.start = this.formatDate(item.start)
       })
-      setTimeout(function () {
-        wx.hideLoading()
-      }, 500)
+      this.setData({
+        userInfo: getUserInfoRes.result.data,
+        islogin: true,
+        activityList: list,
+        isShow:'none'
+      })
+      } else {
+        this.setData({
+          isShow:'none'
+        })
+        wx.showLoading({
+          title: '加载失败',
+          mask: "ture",
+        })
+        setTimeout(function () {
+          wx.hideLoading()
+        }, 500)
+      }
     } else {
-      wx.hideLoading()
-      wx.showLoading({
-        title: '加载失败',
-        mask:"ture",
+      this.setData({
+        isShow: "none"
       })
-      setTimeout(function () {
-        wx.hideLoading()
-      }, 500)
     }
-    let list = res.result.data.list
-    list.forEach(item => {
-      console.log(item);
-      item.end = this.formatDate(item.end)
-      item.start = this.formatDate(item.start)
-})
-this.setData({
-      activityList: list
-    })
 
+
+
+   
   },
 
   /**
@@ -266,9 +261,7 @@ this.setData({
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom() {
-  
-  },
+  onReachBottom() {},
 
   /**
    * 用户点击右上角分享

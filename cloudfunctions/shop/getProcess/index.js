@@ -12,7 +12,7 @@ exports.main = async (event, context) => {
   //审核
   let condition = status == 3 ? {} : { type: status };
   try {
-    let res = await db.collection('process').where(condition).get();
+    let res = await db.collection('process').where(condition).orderBy('time','desc').get();
     return {
       status:1,
       msg:'success',

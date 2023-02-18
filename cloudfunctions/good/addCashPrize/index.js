@@ -65,6 +65,7 @@ exports.main = async (event, context) => {
       }
     } catch (e) {
       console.log('事务报错'+e);
+      transaction.rollback(-100)
       await transaction.rollback({
         status: 0,
         msg: e,

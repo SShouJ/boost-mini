@@ -1,5 +1,6 @@
 <!--pages/activityDetail/index.wxml-->
 <view class="box">
+  <loading isShow="{{isShow}}"></loading>
   <!-- 积分商城 -->
   <view class="box-exchange" bindtap="toPage" data-name='prize'>
     <image class="icon-exchange" src="../../images/icon-exchange.png" mode="" />
@@ -74,6 +75,9 @@
                 <view class="text-priceName">
                   {{item.goodName}}
                 </view>
+                <view class="fs-24">
+                 <text class="cl-red fw-700">{{item.goodPrize}}</text>人参与可开奖
+                </view>
                 <view class="box-state">
                   <view class="text-number">共{{item.count}}份奖品</view>
                   <view class="btn-lottery">
@@ -94,28 +98,42 @@
             <view class="progress-box">
               <progress percent="{{percent}}" border-radius="20" activeColor="#FA3D2A" backgroundColor="#ece6e6" active stroke-width="8" active-mode="forwards" />
             </view>
-            <!-- <view class="box-post">
-               <view class="box-img">
-                <image class="icon-jp" src="../../images/icon-prize.png" mode=""/>
-               </view>
-                <text>{{activityDetail[0].prizeArr[0].goodPrize}}人</text>
-              </view>
-              <view class="box-post2">
-                <view class="box-img">
-                <image class="icon-jp" src="../../images/icon-prize.png" mode=""/>
-               </view>
-                <text>{{activityDetail[0].prizeArr[1].goodPrize}}人</text>
-              </view>
-              <view class="box-post3">
-                <view class="box-img">
-                <image class="icon-jp" src="../../images/icon-prize.png" mode=""/>
-               </view>
-                <text>1000人</text>
-              </view> -->
+        
           </view>
           <!-- 倒计时 -->
           <view class="countdown">
-            <view class="countdown-item">
+
+            <view class="countdown-item" wx:if="{{activityDetail[0].type == 4}}">
+              <view class="countdown-title">
+                <block>
+                  <text class='tui-conutdown-box'>00</text>
+                  <text class="countdown-text">天</text>
+                  <text class='tui-conutdown-box'>00</text>
+                  <text class="countdown-text">时</text>
+                  <text class='tui-conutdown-box'>00</text>
+                  <text class="countdown-text">分</text>
+                  <text class='tui-conutdown-box'>00</text>
+                  <text class="countdown-text">秒</text>
+                </block>
+              </view>
+              <view class="title-item">后开奖</view>
+            </view>
+            <view class="countdown-item" wx:elif="{{activityDetail[0].type == 3}}">
+              <view class="countdown-title">
+                <block>
+                  <text class='tui-conutdown-box'>00</text>
+                  <text class="countdown-text">天</text>
+                  <text class='tui-conutdown-box'>00</text>
+                  <text class="countdown-text">时</text>
+                  <text class='tui-conutdown-box'>00</text>
+                  <text class="countdown-text">分</text>
+                  <text class='tui-conutdown-box'>00</text>
+                  <text class="countdown-text">秒</text>
+                </block>
+              </view>
+              <view class="title-item">后开奖</view>
+            </view>
+            <view class="countdown-item" wx:else>
               <view class="countdown-title">
                 <block>
                   <text class='tui-conutdown-box'>{{days}}</text>
@@ -131,12 +149,27 @@
               <view class="title-item">后开奖</view>
             </view>
 
-
           </view>
-          <!-- <view wx:if="{{joinFalg}}">
-            a 
-          </view> -->
+        
           <!-- 分享btn -->
+        </view>
+          <view wx:if="{{activityDetail[0].type == 4}}">
+            <button  class="style-clear" type="default"  bindshare="onShareAppMessage">
+            <view class="btn-share">
+              活动未开始
+            </view>
+          </button>
+          </view>
+
+          <view wx:elif="{{activityDetail[0].type == 3}}">
+            <button  class="style-clear" type="default"  bindshare="onShareAppMessage">
+            <view class="btn-share">
+             活动已结束
+            </view>
+          </button>
+          </view>
+
+          <view wx:else>
           <button wx:if="{{joinFlag}}" class="style-clear" type="default" open-type="share" bindshare="onShareAppMessage">
             <view class="btn-share" bindtap="join" data-flag="false">
               {{text}}
@@ -147,7 +180,7 @@
               {{text}}
             </view>
           </button>
-        </view>
+          </view>
       </view>
     </view>
   </view>

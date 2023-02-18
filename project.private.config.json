@@ -142,6 +142,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "f",
+          "pathName": "feedback/pages/message",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }
