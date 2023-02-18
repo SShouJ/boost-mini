@@ -14,7 +14,7 @@ exports.main = async (event, context) => {
     try {
       //首先获取用户是否存在, 再是获取奖品是否存在，然后就是判断积分是否足够，够的话，直接减少积分，并更改倒用户表
       //查询用户
-      let userRes = transaction.collection('user').where({
+      let userRes =await transaction.collection('user').where({
         openid:openid,
       }).get();
       let userInfo = userRes.data[0];
@@ -26,7 +26,7 @@ exports.main = async (event, context) => {
           data:[],
         })
       }
-      let goodRes = transaction.collection('good').doc(prizeId).get();
+      let goodRes =await transaction.collection('good').doc(prizeId).get();
       let goodInfo = goodRes.data;
       if(!Object.keys(goodInfo).length){
         await transaction.rollback({
