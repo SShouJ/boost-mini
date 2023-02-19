@@ -16,7 +16,7 @@ Page({
   },
   toDetail(e){
     wx.navigateTo({
-      url: "/pages/activityDetail/index?id="+e.currentTarget.dataset.id,
+      url: '/feedback/pages/' + e.currentTarget.dataset.name
     })
   },
   toActive(){
@@ -29,88 +29,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    let activityList = [
-      {
-        id:1,
-        activityTitle:"妙克管家：一元搬家嗨FUN天",
-        begin:"2022年2月3日",
-        end:"2022年2月26日",
-        position:"上海市杨浦区宁国路百联滨江购物中心",
-        count:200,
-        banner:"../../images/bg1.png",
-        type:1,
-        pressList:[
-          {
-            id:10001,
-            name:'笔记本电脑',
-          },
-          {
-            id:10001,
-            name:'笔筒',
-          },
-        ]
-      },
-      {
-        id:2,
-        activityTitle:"妙克管家：一元搬家嗨FUN天1",
-        begin:"2022年2月3日",
-        end:"2022年2月26日",
-        banner:"../../images/bg2.png",
-        position:"乌拉拉小斑马",
-        count:300,
-        type:2,
-        pressList:[
-          {
-            id:10001,
-            name:'笔筒',
-          },
-          {
-            id:10001,
-            name:'笔记本电脑',
-          },
-        ]
-      },
-      {
-        id:3,
-        activityTitle:"妙克管家：一元搬家嗨FUN天1",
-        begin:"2022年2月3日",
-        end:"2022年2月26日",
-        banner:"../../images/bg3.png",
-        position:"乌拉拉小斑马",
-        count:300,
-        type:2,
-        pressList:[
-          {
-            id:10001,
-            name:'笔筒',
-          },
-          {
-            id:10001,
-            name:'笔记本电脑',
-          },
-        ]
-      },
-      {
-        id:4,
-        activityTitle:"妙克管家：一元搬家嗨FUN天1",
-        begin:"2022年2月3日",
-        end:"2022年2月26日",
-        banner:"../../images/bg4.png",
-        position:"乌拉拉小斑马",
-        count:300,
-        type:2,
-        pressList:[
-          {
-            id:10001,
-            name:'笔筒',
-          },
-          {
-            id:10001,
-            name:'笔记本电脑',
-          },
-        ]
-      },
-    ];
     let navList = [
       {
         id:1,
@@ -130,8 +48,26 @@ Page({
       },
     ]
     this.setData({
-      activityList,
       navList
+    })
+  },
+  getActivity(){
+    wx.cloud.callFunction({
+      // 需调用的云函数名
+      name: 'activity',
+      // 传给云函数的参数
+      data: {
+        type:'getMyActivity',
+        status:1,
+        pageSize: 2,
+        pageNum: 1,
+      },
+      // 成功回调
+    }).then(res => {
+      console.log(res.result.data.list[0]);
+      this.setData({
+        activityList:res.result.data.list
+      })
     })
   },
 
@@ -146,7 +82,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    this.getActivity()
   },
 
   /**

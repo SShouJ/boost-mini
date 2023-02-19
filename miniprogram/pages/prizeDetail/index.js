@@ -89,6 +89,7 @@ Page({
         })
       }, 500)
     } else if (res.result.status == 0) {
+      wx.hideToast()
       console.log(res.result)
       console.log('兑换失败', res.result.msg)
     }

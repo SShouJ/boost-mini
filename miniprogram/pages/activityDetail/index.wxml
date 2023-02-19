@@ -2,7 +2,7 @@
 <view class="box">
   <loading isShow="{{isShow}}"></loading>
   <!-- 积分商城 -->
-  <view class="box-exchange" bindtap="toPage" data-name='prize'>
+  <view class="box-exchange" bindtap="toPage">
     <image class="icon-exchange" src="../../images/icon-exchange.png" mode="" />
     <text class="fs-20">兑换</text>
   </view>
