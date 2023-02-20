@@ -95,28 +95,33 @@ Page({
       title: '加载中...',
       icon: 'loading',
     });
-    this.setData({
-      target: e.currentTarget.dataset.id,
-      showPrize: false,
-    })
-    let navId = this.data.navList[this.data.target]._id;
-    if (this.data.target == 0) {
-      if (this.data.userInfo.hobbys) {
-        this.accordingToHobbiesGetCommodity(this.data.userInfo.hobbys);
+    if (e.currentTarget.dataset) {
+      this.setData({
+        target: e.currentTarget.dataset.id,
+        showPrize: false,
+      })
+      let navId = this.data.navList[this.data.target]._id;
+      if (this.data.target == 0) {
+        if (this.data.userInfo.hobbys) {
+          this.accordingToHobbiesGetCommodity(this.data.userInfo.hobbys);
+        } else {
+          // 若类目的 id 为 0 且没有选择爱好则调用所有商品的接口
+          this.getAllGoodByCategory()
+        }
       } else {
-        // 若类目的 id 为 0 且没有选择爱好则调用所有商品的接口
-        this.getAllGoodByCategory()
+        this.getGoodByCategory(navId)
       }
-    } else {
-      this.getGoodByCategory(navId)
     }
   },
   // prizeLiftNav 跳转详情页面 + 传参 的方法
   prizeLiftNav(data) {
-    let item = data.currentTarget.dataset.name;
-    wx.navigateTo({
-      url: '/pages/prizeDetail/index?_id=' + item._id,
-    })
+    console.log(data.currentTarget.dataset.name._id)
+    if (data) {
+      let item = data.currentTarget.dataset.name;
+      wx.navigateTo({
+        url: '/pages/prizeDetail/index?_id=' + item._id,
+      })
+    }
   },
   // toRecord 是跳转到兑换记录的方法
   toRecord() {

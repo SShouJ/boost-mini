@@ -28,7 +28,7 @@
             <view class="integral mr-20 c-red">{{ detailData.integral }}积分</view>
             <view class="original_price pt-10">3.3元</view>
           </view>
-          <view class="right">4件已兑换</view>
+          <view class="right">{{detailData.row.length}}件已兑换</view>
         </view>
         <view class="prize_title mt-20 bold_7">{{ detailData.goodName }}</view>
       </view>
