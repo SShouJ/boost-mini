@@ -108,7 +108,10 @@
     </view>
   </view>
   <view class="btn-wrap all-center pd-30">
-    <view class="btn pd-12_20 bg-blue cl-white fs-15" bindtap="createActive">
+    <view class="btn pd-12_20 bg-red cl-white fs-15" bindtap="createActive">
+      立即发布
+    </view>
+    <view class="btn pd-12_20 bg-red cl-white fs-15" bindtap="createActive">
       立即发布
     </view>
   </view>

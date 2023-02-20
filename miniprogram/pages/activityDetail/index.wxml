@@ -96,7 +96,13 @@
             <!-- <view class="progressBar">
               </view> -->
             <view class="progress-box">
-              <progress percent="{{percent}}" border-radius="20" activeColor="#FA3D2A" backgroundColor="#ece6e6" active stroke-width="8" active-mode="forwards" />
+              <view>
+                <progress percent="{{percent}}" border-radius="20" activeColor="#FA3D2A" backgroundColor="#ece6e6" active stroke-width="8" active-mode="forwards" />
+              </view>
+              <view class="fs-24">
+                
+              <text class="cl-red">{{activityDetail[0].row.length}}</text>人已参与
+              </view>
             </view>
         
           </view>
@@ -164,7 +170,7 @@
           <view wx:elif="{{activityDetail[0].type == 3}}">
             <button  class="style-clear" type="default"  bindshare="onShareAppMessage">
             <view class="btn-share">
-             活动已结束
+             点击开奖
             </view>
           </button>
           </view>

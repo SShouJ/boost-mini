@@ -8,7 +8,7 @@
     </view>
   </view>
   <view class="item-personalCenter item-pd">
-    <text class="fw-700 fs-28">姓名</text>
+    <text class="fw-700 fs-28">用户名</text>
     <view class="item-personalCenter_right">
     <text class="cl-g pr-33 fs-28">张三</text>
     <image src="../../images/icon-more.png" class="icon-more" mode=""/>
@@ -31,7 +31,7 @@
   <view class="item-personalCenter item-pd">
     <text class="fw-700 fs-28">手机号码</text>
     <view class="item-personalCenter_right">
-    <text class="cl-g pr-33 fs-28">187292827777</text>
+    <input class="cl-g pr-33 fs-28">187292827777</input>
     <image src="../../images/icon-more.png" class="icon-more" mode=""/>
     </view>
   </view>

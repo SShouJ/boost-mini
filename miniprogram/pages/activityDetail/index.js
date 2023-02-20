@@ -26,7 +26,8 @@ Page({
     timeDate: '',
     activityDetail: [],
     activityId: '',
-    countDown: ''
+    countDown: '',
+    totalPeople:0
   },
 
   openPopup(e) {
@@ -132,7 +133,7 @@ Page({
       joinFlag: true,
       showFlag: data.currentTarget.dataset.flag,
       text: '还差10人可抽取下一级奖品，点击分享',
-      percent: this.data.joinNum + 1
+      
     })
     console.log(this.data.percent);
     console.log(this.data.showFlag);
@@ -145,7 +146,8 @@ Page({
         success(res) {
           if (res.confirm) {
             _this.setData({
-              showFlag: false
+              showFlag: false,
+              percent: this.data.joinNum + 1 /this.data.totalPeople*100
             })
             console.log(_this.data.showFlag)
           }
@@ -161,7 +163,6 @@ Page({
     this.setData({
       activityId: options.id
     })
-
     let acitvityDetail = await this.getAcitvityDetail(options.id)
     console.log(acitvityDetail.result.data);
     if (acitvityDetail.result.status == 1) {
@@ -182,6 +183,7 @@ Page({
           return a.goodPrize - b.goodPrize
         })
         this.setData({
+          totalPeople:acitvityDetail.result.data.list[0].prizeArr[acitvityDetail.result.data.list[0].prizeArr.length - 1].goodPrize,
           activityDetail: acitvityDetail.result.data.list,
           nowDate: acitvityDetail.result.data.list[0].end,
           joinNum: acitvityDetail.result.data.list[0].row.length,
@@ -213,6 +215,8 @@ Page({
       } else {
         acitvityDetail.result.data.list[0].row.forEach(item => {
           //已参与
+          console.log(item.userId);
+          console.log(options.openid);
           if (item.userId == options.openid) {
             this.setData({
               joinFlag: true,

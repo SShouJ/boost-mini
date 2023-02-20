@@ -1,4 +1,4 @@
-/* feedback/pages/message.wxss */
+/* pages/mine/mineNews/index.wxss */
 .news-page{
   height: 100vh;
 }
@@ -54,4 +54,8 @@ line-clamp: 2;
   display: block;
   width: 20rpx;
   height: 20rpx;
+}
+.flex-between{
+  display: flex;
+  justify-content: space-between;
 }

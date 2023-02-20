@@ -112,7 +112,8 @@ Page({
   //上拉加载
   async scrolltolower() {
     console.log("------------------------------------");
-    this.setData({
+    // if (this.data.activityList.length != 0 ) {
+      this.setData({
       num: this.data.num + 1,
       size: this.data.size
     })
@@ -154,6 +155,7 @@ Page({
       setTimeout(function () {
         wx.hideLoading()
       }, 500)
+    // }
     }
 
   },
@@ -185,7 +187,12 @@ Page({
     })
     const app = getApp();
     let getUserInfoRes = await app.getUserInfo()
+    
     if (getUserInfoRes.result.status == 1) {
+      this.setData({
+       userInfo : getUserInfoRes.result.data
+
+      })
       let getActivityListRes = await this.getActivityList()
       if (getActivityListRes.result.status == 1) {
         let list = getActivityListRes.result.data.list

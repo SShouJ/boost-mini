@@ -179,7 +179,7 @@ margin: 20rpx;
 .box-progressBar{  
   margin-top: 4%;
   width: 90%;
-  background-color: #ece6e6 ;
+ 
   border-radius: 50rpx;
   position: relative;
 }

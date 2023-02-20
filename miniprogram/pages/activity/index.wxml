@@ -54,17 +54,17 @@
     </view>
   </view>
   <!-- 活动每一项 -->
-  <scroll-view style="height: calc(100vh - 480rpx);" lower-threshold="3"	 bindscrolltolower="scrolltolower"	scroll-y="{{true}}">
-  <view class="fs-30 fw-600 actwu" wx:if="{{activityList.length == 0}}">
+  <view class="fs-30 fw-600 actwu " wx:if="{{activityList.length == 0}}">
     暂无活动。。。
   </view>
     <view wx:else="">
+  <scroll-view style="height: calc(100vh - 90rpx);" lower-threshold="3"	 bindscrolltolower="scrolltolower"	scroll-y="{{true}}">
       <view class="wrap mb-10" wx:for="{{activityList}}"  wx:key="id">
-      <activity bindtap="toDetails" activityItem="{{item}}" data-openid="{{item.openid}}" data-id="{{item._id}}" data-type='{{item.type}}'></activity>
+      <activity bindtap="toDetails" activityItem="{{item}}" data-openid="{{userInfo.openid}}" data-id="{{item._id}}" data-type='{{item.type}}'></activity>
     </view>
     <view class="fs-12 scrolltolower wrap">
       {{fooderText}}
     </view>
-    </view>
   </scroll-view>
+    </view>
 </view>

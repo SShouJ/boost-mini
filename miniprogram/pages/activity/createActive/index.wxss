@@ -150,8 +150,8 @@
   border: 2rpx solid #ccc;
 }
 
-.bg-blue{
-  background: #38acff;
+.bg-red{
+  background: #ff6738;
 }
 
 .pd-12{
