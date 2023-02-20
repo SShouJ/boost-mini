@@ -3,7 +3,7 @@
   <loading isShow="{{isShow}}"></loading>
   <view class="box-info mb-20" style="background:url('https://636c-cloud1-7ge7nl2m42cee9e9-1316264853.tcb.qcloud.la/mine.png?sign=97dec5690cf2f917fbaa7e43259ff13a&t=1675753004') no-repeat; background-size: 100% 100%;  background-color: #f6f6f6;" >
     <view class="box-scan warp">
-      <image class="img-scan" src="../../images/icon-message.png" mode="" />
+      <image class="img-scan" bindtap="toFeedbackPages" data-name="message" src="../../images/icon-message.png" mode="" />
       <image class="img-scan" src="../../images/icon-set.png" mode="" />
     </view>
     <view class="box-userinfo">

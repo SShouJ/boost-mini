@@ -75,9 +75,9 @@ Page({
       console.log('兑换成功,您兑换的奖品为：', this.data.detailData.goodName)
       // 兑换结果返回之后 显示兑换成功 并跳转页面到 看兑换码的页面
       wx.showToast({
-        title: '成功',
+        title: '兑换成功！',
         icon: 'success',
-        duration: 600,
+        duration: 1500,
       })
       // 兑换成功之后需要把返回值传给兑奖嘛页面
       setTimeout(() => {
@@ -89,7 +89,11 @@ Page({
         })
       }, 500)
     } else if (res.result.status == 0) {
-      wx.hideToast()
+      wx.showToast({
+        title: '积分不足!',
+        icon: 'error',
+        duration: 1500,
+      })
       console.log(res.result)
       console.log('兑换失败', res.result.msg)
     }

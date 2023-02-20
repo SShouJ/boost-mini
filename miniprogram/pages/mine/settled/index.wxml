@@ -75,7 +75,8 @@
           </view>
         </view>
         <view class="box-rigth" bindtap="chooseImg" data-name="businessLicense">
-             <image class="icon-add"  src="{{businessLicense ? businessLicense : '../../../images/icon-add.png'}}" bindtap="updata" mode=""/>
+             <image class="icon-add" wx:if="{{businessLicense}}" src="{{businessLicense}}" bindtap="updata" mode=""/>
+             <image class="icon-adds" wx:else src="{{'../../../images/icon-add.png'}}" bindtap="updata" mode=""/>
         </view>
       </view>
 

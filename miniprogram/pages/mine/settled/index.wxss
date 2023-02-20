@@ -94,12 +94,17 @@ body{
 }
 .authentication-content_item .box-rigth{
   border: 1rpx solid #ccc;
- padding: 30rpx;
+ /* padding: 30rpx; */
  box-sizing: border-box;
 }
 .icon-add{
-  width: 56rpx;
-  height: 56rpx;
+  width: 120rpx;
+  height: 120rpx;
+}
+.icon-adds{
+  width: 60rpx;
+  height: 60rpx;
+  padding: 30rpx;
 }
 .btn{
   margin-top: 20rpx;
