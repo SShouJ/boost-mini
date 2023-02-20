@@ -77,7 +77,7 @@ Page({
       wx.showToast({
         title: '兑换成功！',
         icon: 'success',
-        duration: 600,
+        duration: 1500,
       })
       // 兑换成功之后需要把返回值传给兑奖嘛页面
       setTimeout(() => {
@@ -90,11 +90,10 @@ Page({
       }, 500)
     } else if (res.result.status == 0) {
       wx.showToast({
-        title: '兑换失败',
+        title: '积分不足!',
         icon: 'error',
-        duration: 600,
+        duration: 1500,
       })
-      wx.hideToast()
       console.log(res.result)
       console.log('兑换失败', res.result.msg)
     }
