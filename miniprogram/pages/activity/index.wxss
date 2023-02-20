@@ -47,9 +47,13 @@
 
 /* nav列表 */
 .nav{
+  background-color: #fff;
+  position: sticky;
+  top: 0;
   padding: 30rpx 0;
   display: flex;
   justify-content: space-around;
+  z-index:100;
 }
 
 .nav .nav-item{
@@ -110,6 +114,7 @@
   border-radius: 50%;
 }
 .actwu{
+ 
   color: rgb(136, 130, 130);
   margin-top: 10%;
   display: flex;
