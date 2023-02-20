@@ -9,6 +9,7 @@ exports.main = async (event, context) => {
   const openid = wxContext.OPENID;//用户的open_id;
   let { prizeId } = event;//奖品id
   let nowTime =  Date.now(); //开始时间
+  let code = Math.trunc(Math.random()*1000000) + 1000000 + '';
   let endTime = nowTime + 86400000 * 7;
   const result = await db.runTransaction(async transaction => {
     try {
@@ -58,7 +59,8 @@ exports.main = async (event, context) => {
           userId:openid,
           start:nowTime,
           end:endTime,
-          address:'乌拉拉工作室'
+          address:'乌拉拉工作室',
+          code:code,
         }
       });
       return {
