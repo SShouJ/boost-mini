@@ -6,22 +6,26 @@ const db = cloud.database();
 const _ = db.command
 // 云函数入口函数
 exports.main = async (event, context) => {
-    //获取商品列表
-    //以及根据类目获取商品
-    let {  id } = event;
-    try {
-      let res = await db.collection('good').doc(id).get();
-      console.log('----------获取所有good的接口---------');
+    //获取商品详情
+    let { id } = event;
+      let res = await db.collection('good').aggregate().lookup({
+        from:'cash_prize',
+        localField:'_id',
+        foreignField: 'prizeId',
+        as: 'row',
+    }).match({
+      _id:id,
+    }).end().then(res=>{
       return{
         status:1,
         msg:'success',
         data:res.data,
       }
-    } catch (error) {
+    }).catch(err=>{
       return {
         status:0,
         msg:error,
         data:[],
       }
-    }     
+    })
 }
