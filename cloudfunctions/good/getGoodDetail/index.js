@@ -19,7 +19,7 @@ exports.main = async (event, context) => {
       return{
         status:1,
         msg:'success',
-        data:res.data,
+        data:res.list,
       }
     }).catch(err=>{
       return {
@@ -28,4 +28,5 @@ exports.main = async (event, context) => {
         data:[],
       }
     })
+    return res;
 }
