@@ -16,7 +16,7 @@
 
             <view class="right_text">
               <text wx:if="{{ detailData.date }}" class="bold_9">{{ detailData.date }}开抢</text>
-              <text wx:else>目前无信息</text>
+              <text wx:else>今日特惠</text>
             </view>
           </view>
         </view>
@@ -89,12 +89,13 @@
   <view class="dialog_box">
     <!-- 内容 -->
     <view class="dialog-container-overflow">
-      您确认兑换吗？
+      <view>您确认兑换吗？</view>
+      <view class="fs-30 mt-10 c-ccc">需要积分：{{ detailData.integral }}</view>
     </view>
     <!-- 底部 -->
     <view class="dialog-footer justify-space_between">
       <button bindtap="cancel" class="dialog-no" hover-class="dialog-no_hover">取消</button>
-      <button bindtap="determine" class="dialog-ok" hover-class="dialog-ok_hover">确定</button>
+      <button bindtap="determine" class="dialog-ok" hover-class="dialog-ok_hover">确认支付</button>
     </view>
   </view>
 </view>

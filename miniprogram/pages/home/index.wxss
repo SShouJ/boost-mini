@@ -128,7 +128,6 @@
 .body .header .header_userinfo .left .icon-more {
   width: 30rpx;
   height: 30rpx;
-  margin-top: 20rpx;
 }
 
 .body .header .header_userinfo .right {
@@ -209,7 +208,7 @@
   border-radius: 20rpx;
   color: #000;
   box-sizing: border-box;
-  text-align: center;
+  /* text-align: center; */
   background-color: #faf8f8;
 }
 

@@ -27,7 +27,8 @@ exports.main = async (event, context) => {
   let changeType2 = ()=>{
     return new Promise((resolve,reject)=>{
       db.collection('activity').where({
-        start: _.lt(nowTime)
+        start: _.lt(nowTime),//开始时间小于当前时间更改为进行中
+        end:_.gt(nowTime),//大于当前时间
       }).update({
         data: {
           type: 2,

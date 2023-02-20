@@ -107,10 +107,9 @@ Page({
       showIndex: null
     })
   },
-  toPage(data) {
-    console.log(data.currentTarget.dataset.name);
-    wx.navigateTo({
-      url: '/pages/' + data.currentTarget.dataset.name + '/index',
+  toPage() {
+    wx.switchTab({
+      url: '/pages/home/index',
     })
   },
   //参加活动接口

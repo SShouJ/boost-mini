@@ -149,6 +149,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/award/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }
