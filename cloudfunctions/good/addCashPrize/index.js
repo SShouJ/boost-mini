@@ -20,33 +20,28 @@ exports.main = async (event, context) => {
       let userInfo = userRes.data[0];
       //用户信息有了
       if(!Object.keys(userInfo).length){
-        await transaction.rollback({
+        return {
           status:0,
           msg:'没有查询到用户信息',
           data:[],
-        })
+        }
       }
       let goodRes =await transaction.collection('good').doc(prizeId).get();
       let goodInfo = goodRes.data;
       if(!Object.keys(goodInfo).length){
-        await transaction.rollback({
+        return {
           status:0,
           msg:'没有查询到商品',
           data:[],
-        })
+        }
       }
-      if(userInfo.integralNum <=0){
-        await transaction.rollback({
+      let tempIntegralNum = userInfo.integralNum - goodInfo.integral;
+      if(tempIntegralNum < 0){
+        return {
           status:0,
           msg:'没有足够的积分',
           data:[],
-        })
-      }
-      let tempIntegralNum;
-      if(userInfo.integralNum>0){
-        tempIntegralNum = userInfo.integralNum - goodInfo.integral;
-      }else{
-        tempIntegralNum=0
+        }
       }
 
       //走一个更改用户信息的接口
