@@ -201,7 +201,7 @@ Page({
         name: 'user',
         data: {
           type: "updateUser",
-          hobbys,
+          hobbys: hobbys,
         }
       })
       if (res.result) {
