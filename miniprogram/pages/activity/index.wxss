@@ -2,6 +2,7 @@
 .wrap{
   width: 710rpx;
   margin: 0 auto;
+ 
 }
 
 /* 福利 */

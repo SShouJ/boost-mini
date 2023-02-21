@@ -53,8 +53,9 @@ Page({
   toPage(data) {
     let _this = this
     console.log(data.currentTarget.dataset.name);
+    
     if (this.data.userInfo.openid) {
-
+       
       wx.navigateTo({
         url: '/pages/mine/' + data.currentTarget.dataset.name + '/index',
       })

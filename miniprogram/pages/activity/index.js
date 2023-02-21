@@ -193,7 +193,13 @@ Page({
        userInfo : getUserInfoRes.result.data
 
       })
-      let getActivityListRes = await this.getActivityList()
+      
+    } else {
+      this.setData({
+        isShow: "none"
+      })
+    }
+    let getActivityListRes = await this.getActivityList()
       if (getActivityListRes.result.status == 1) {
         let list = getActivityListRes.result.data.list
       list.forEach(item => {
@@ -219,11 +225,6 @@ Page({
           wx.hideLoading()
         }, 500)
       }
-    } else {
-      this.setData({
-        isShow: "none"
-      })
-    }
 
 
 
