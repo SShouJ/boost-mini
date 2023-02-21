@@ -50,17 +50,6 @@ Page({
       isOpenDialog: false,
     })
   },
-  pushData(data, id) {
-    data.forEach(item => {
-      if (item.id == id) {
-        this.setData({
-          detailData: {
-            ...item
-          }
-        })
-      }
-    });
-  },
   // 兑换奖品的接口
   async getPrize(prizeId) {
     let res = await wx.cloud.callFunction({
@@ -77,7 +66,7 @@ Page({
       wx.showToast({
         title: '兑换成功！',
         icon: 'success',
-        duration: 600,
+        duration: 1500,
       })
       // 兑换成功之后需要把返回值传给兑奖嘛页面
       setTimeout(() => {
@@ -90,11 +79,10 @@ Page({
       }, 500)
     } else if (res.result.status == 0) {
       wx.showToast({
-        title: '兑换失败',
+        title: '积分不足!',
         icon: 'error',
-        duration: 600,
+        duration: 1500,
       })
-      wx.hideToast()
       console.log(res.result)
       console.log('兑换失败', res.result.msg)
     }
@@ -110,10 +98,21 @@ Page({
     })
     if (res.result.data) {
       this.setData({
-        detailData: res.result.data,
+        detailData: res.result.data[0],
       })
       console.log('获取商品详情', this.data.detailData);
     }
+  },
+// 格式化时间戳的方法
+  timestampToTime(timestamp) {
+    let date = new Date(timestamp);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+    let Y = date.getFullYear() + '-';
+    let M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+    let D = (date.getDate() < 10 ? '0' + (date.getDate()) : date.getDate()) + ' ';
+    let h = (date.getHours() < 10 ? '0' + (date.getHours()) : date.getHours()) + ':';
+    let m = (date.getMinutes() < 10 ? '0' + (date.getMinutes()) : date.getMinutes()) + ':';
+    let s = (date.getSeconds() < 10 ? '0' + (date.getSeconds()) : date.getSeconds());
+    return Y + M + D + h + m + s;
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

@@ -6,13 +6,13 @@ Page({
    */
   data: {
     target: 0, // target ：当前页--
+    isShow: 'block',
     navList: [],
     prizeLift: [],
     hobbys: [],
     selected: [],
     userInfo: null,
     isOpenDialog: false,
-    isDisplay: false,
     showPrize: true,
   },
   // 判断是否登录了
@@ -37,18 +37,16 @@ Page({
       // 设置 用户信息的数据给 userinfo   设置
       this.setData({
         userInfo: res.result.data,
-        isDisplay: true
       })
     } else {
       // 先关闭让用户选择爱好的弹层
       // 不管有没有数据 当掉完接口的时候 都要关闭加载中放开页面显示限制 
       this.getAllGoodByCategory()
       this.isOpen(false);
-      this.setData({
-        isDisplay: true
-      })
     }
-
+    this.setData({
+      isShow: 'none'
+    })
     wx.hideToast()
   },
   // 是否打开弹层 传布尔值 true打开 反之关闭
@@ -97,28 +95,33 @@ Page({
       title: '加载中...',
       icon: 'loading',
     });
-    this.setData({
-      target: e.currentTarget.dataset.id,
-      showPrize: false,
-    })
-    let navId = this.data.navList[this.data.target]._id;
-    if (this.data.target == 0) {
-      if (this.data.userInfo.hobbys) {
-        this.accordingToHobbiesGetCommodity(this.data.userInfo.hobbys);
+    if (e.currentTarget.dataset) {
+      this.setData({
+        target: e.currentTarget.dataset.id,
+        showPrize: false,
+      })
+      let navId = this.data.navList[this.data.target]._id;
+      if (this.data.target == 0) {
+        if (this.data.userInfo.hobbys) {
+          this.accordingToHobbiesGetCommodity(this.data.userInfo.hobbys);
+        } else {
+          // 若类目的 id 为 0 且没有选择爱好则调用所有商品的接口
+          this.getAllGoodByCategory()
+        }
       } else {
-        // 若类目的 id 为 0 且没有选择爱好则调用所有商品的接口
-        this.getAllGoodByCategory()
+        this.getGoodByCategory(navId)
       }
-    } else {
-      this.getGoodByCategory(navId)
     }
   },
   // prizeLiftNav 跳转详情页面 + 传参 的方法
   prizeLiftNav(data) {
-    let item = data.currentTarget.dataset.name;
-    wx.navigateTo({
-      url: '/pages/prizeDetail/index?_id=' + item._id,
-    })
+    console.log(data.currentTarget.dataset.name._id)
+    if (data) {
+      let item = data.currentTarget.dataset.name;
+      wx.navigateTo({
+        url: '/pages/prizeDetail/index?_id=' + item._id,
+      })
+    }
   },
   // toRecord 是跳转到兑换记录的方法
   toRecord() {
@@ -198,16 +201,15 @@ Page({
   },
   // 设置用户爱好
   async setUserHobby(hobbys) {
-    if (!hobbys.length == 0) {
+    if (hobbys.length) {
       let res = await wx.cloud.callFunction({
         name: 'user',
         data: {
           type: "updateUser",
-          hobbys,
+          hobbys: hobbys,
         }
       })
-      if (res) {
-        console.log(res)
+      if (res.result) {
         wx.showToast({
           title: '选择成功！',
           icon: 'success',//icon
@@ -223,7 +225,7 @@ Page({
         duration: 1500 //停留时间
       })
     }
-    
+
   },
   // 根据爱好获取商品的接口
   async accordingToHobbiesGetCommodity(data) {
@@ -271,17 +273,7 @@ Page({
    */
   onShow() {
     // this.getPrizeList(this.data.target);
-    this.setData({
-      isDisplay: false,
-    })
     this.isLogin();
-    if (!this.data.isDisplay) {
-      wx.showToast({
-        title: '加载中...',
-        icon: 'loading',
-        duration: 99999
-      });
-    }
   },
 
   /**

@@ -1,5 +1,6 @@
 <!--pages/prize/index.wxml-->
-<view class="body" wx:if="{{ isDisplay }}">
+<view class="body">
+  <loading isShow="{{isShow}}"></loading>
   <view class="header">
     <view wx:if="{{ userInfo }}" class="header_userinfo wrap flex-space-between">
       <view class="left">

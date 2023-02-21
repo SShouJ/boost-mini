@@ -1,5 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "loading":"/components/loading/index"
+  },
   "enablePullDownRefresh": true,
   "navigationBarTitleText":"首页"
 }
